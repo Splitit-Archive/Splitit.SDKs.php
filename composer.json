@@ -1,0 +1,36 @@
+{
+    "name": "splitit/sdk",
+    "version": "1.3.12",
+    "description": "Splitit Web API SDK for PHP",
+    "keywords": [
+        "splitit",
+        "sdk",
+        "api"
+    ],
+    "homepage": "https://www.splitit.com/developers/overview/",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "SplititSDK",
+            "homepage": "https://github.com/Splitit/Splitit.SDKs.php"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "squizlabs/php_codesniffer": "~2.6",
+        "friendsofphp/php-cs-fixer": "~2.12"
+    },
+    "autoload": {
+        "psr-4": { "SplititSdkClient\\" : "Splitit/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "SplititSdkClient\\" : "test/" }
+    }
+}
