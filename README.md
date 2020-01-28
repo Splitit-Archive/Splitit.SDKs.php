@@ -19,11 +19,15 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "[to be added]"
+      "url": "https://github.com/Splitit/Splitit.SDKs.php.git"
     }
   ],
   "require": {
-    "[to be added]": "*@dev"
+    "php": ">=5.5",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "guzzlehttp/guzzle": "^6.2"
   }
 }
 ```
