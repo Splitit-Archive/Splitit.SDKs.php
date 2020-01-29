@@ -136,7 +136,6 @@ All URIs are relative to *https://webapi.production.splitit.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*CreateInstallmentPlanApi* | [**createInstallmentPlanGet**](docs/Api/CreateInstallmentPlanApi.md#createinstallmentplanget) | **GET** /api/CreateInstallmentPlan | 
 *InstallmentPlanApi* | [**installmentPlanApprove**](docs/Api/InstallmentPlanApi.md#installmentplanapprove) | **POST** /api/InstallmentPlan/Approve | 
 *InstallmentPlanApi* | [**installmentPlanCancel**](docs/Api/InstallmentPlanApi.md#installmentplancancel) | **POST** /api/InstallmentPlan/Cancel | 
 *InstallmentPlanApi* | [**installmentPlanCreate**](docs/Api/InstallmentPlanApi.md#installmentplancreate) | **POST** /api/InstallmentPlan/Create | 
@@ -149,7 +148,6 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanTermsAndConditions**](docs/Api/InstallmentPlanApi.md#installmentplantermsandconditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 *InstallmentPlanApi* | [**installmentPlanUpdate**](docs/Api/InstallmentPlanApi.md#installmentplanupdate) | **POST** /api/InstallmentPlan/Update | 
 *InstallmentPlanApi* | [**installmentPlanVerifyPayment**](docs/Api/InstallmentPlanApi.md#installmentplanverifypayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
-*LoginApi* | [**loginGet**](docs/Api/LoginApi.md#loginget) | **GET** /api/Login | 
 *LoginApi* | [**loginPost**](docs/Api/LoginApi.md#loginpost) | **POST** /api/Login | 
 
 
