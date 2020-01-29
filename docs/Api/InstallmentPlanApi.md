@@ -26,13 +26,14 @@ Method | HTTP request | Description
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\ApproveInstallmentPlanRequest(); // \SplititSdkClient\Model\ApproveInstallmentPlanRequest | 
 
 try {
@@ -56,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 
@@ -73,13 +74,14 @@ No authorization required
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\CancelInstallmentPlanRequest(); // \SplititSdkClient\Model\CancelInstallmentPlanRequest | 
 
 try {
@@ -103,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 
@@ -120,13 +122,14 @@ No authorization required
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\CreateInstallmentPlanRequest(); // \SplititSdkClient\Model\CreateInstallmentPlanRequest | 
 
 try {
@@ -150,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 
@@ -167,13 +170,14 @@ No authorization required
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\GetInstallmentsPlanSearchCriteriaRequest(); // \SplititSdkClient\Model\GetInstallmentsPlanSearchCriteriaRequest | 
 
 try {
@@ -197,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 
@@ -214,13 +218,14 @@ No authorization required
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\Get3DSecureParametersRequest(); // \SplititSdkClient\Model\Get3DSecureParametersRequest | 
 
 try {
@@ -244,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 
@@ -261,13 +266,14 @@ No authorization required
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\GetInstallmentsPlanSearchCriteriaRequest(); // \SplititSdkClient\Model\GetInstallmentsPlanSearchCriteriaRequest | 
 
 try {
@@ -291,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 
@@ -308,13 +314,14 @@ No authorization required
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\InitiateInstallmentPlanRequest(); // \SplititSdkClient\Model\InitiateInstallmentPlanRequest | 
 
 try {
@@ -338,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 
@@ -355,13 +362,14 @@ No authorization required
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\RefundPlanRequest(); // \SplititSdkClient\Model\RefundPlanRequest | 
 
 try {
@@ -385,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 
@@ -402,13 +410,14 @@ No authorization required
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\StartInstallmentsRequest(); // \SplititSdkClient\Model\StartInstallmentsRequest | 
 
 try {
@@ -432,7 +441,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 
@@ -449,13 +458,14 @@ No authorization required
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\TermsAndConditionsGetRequest(); // \SplititSdkClient\Model\TermsAndConditionsGetRequest | 
 
 try {
@@ -479,7 +489,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 
@@ -496,13 +506,14 @@ No authorization required
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\UpdateInstallmentPlanRequest(); // \SplititSdkClient\Model\UpdateInstallmentPlanRequest | 
 
 try {
@@ -526,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 
@@ -543,13 +554,14 @@ No authorization required
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $request = new \SplititSdkClient\Model\VerifyPaymentRequest(); // \SplititSdkClient\Model\VerifyPaymentRequest | 
 
 try {
@@ -573,7 +585,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
 
 ### HTTP request headers
 

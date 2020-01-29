@@ -15,13 +15,14 @@ Method | HTTP request | Description
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+require __DIR__ . '/vendor/autoload.php';
 
+# Use Configuration::production() for production API
 $apiInstance = new SplititSdkClient\Api\CreateInstallmentPlanApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    Configuration::sandbox(),
+    $session_id
 );
+
 $amount_before_fees = 8.14; // float | 
 $api_key = "api_key_example"; // string | 
 $avs_address = "avs_address_example"; // string | 
@@ -75,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+Use session_id received from LoginApi and pass it to CreateInstallmentPlanApi constructor.
 
 ### HTTP request headers
 
