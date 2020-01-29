@@ -16,31 +16,13 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 
 ```
 {
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/Splitit/Splitit.SDKs.php.git"
-    }
-  ],
   "require": {
-    "php": ">=5.5",
-    "ext-curl": "*",
-    "ext-json": "*",
-    "ext-mbstring": "*",
-    "guzzlehttp/guzzle": "^6.2"
+    "splitit/sdk": "^1.3.13"
   }
 }
 ```
 
-Then run `composer install`
-
-### Manual Installation
-
-Download the files and include `autoload.php`:
-
-```php
-    require_once('/path/to/splitit-sdk/vendor/autoload.php');
-```
+Then run `composer install`.
 
 ## Getting Started
 
