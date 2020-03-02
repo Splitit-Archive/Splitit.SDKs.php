@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.3.14
+- Package version: 1.3.16
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.3.14"
+    "splitit/sdk": "^1.3.16"
   }
 }
 ```
@@ -136,6 +136,7 @@ All URIs are relative to *https://webapi.production.splitit.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*InfrastructureApi* | [**infrastructureGetResources**](docs/Api/InfrastructureApi.md#infrastructuregetresources) | **POST** /api/Infrastructure/GetResources | 
 *InstallmentPlanApi* | [**installmentPlanApprove**](docs/Api/InstallmentPlanApi.md#installmentplanapprove) | **POST** /api/InstallmentPlan/Approve | 
 *InstallmentPlanApi* | [**installmentPlanCancel**](docs/Api/InstallmentPlanApi.md#installmentplancancel) | **POST** /api/InstallmentPlan/Cancel | 
 *InstallmentPlanApi* | [**installmentPlanCreate**](docs/Api/InstallmentPlanApi.md#installmentplancreate) | **POST** /api/InstallmentPlan/Create | 
@@ -172,6 +173,9 @@ Class | Method | HTTP request | Description
  - [Get3DSecureParametersResponse](docs/Model/Get3DSecureParametersResponse.md)
  - [GetInstallmentsPlanResponse](docs/Model/GetInstallmentsPlanResponse.md)
  - [GetInstallmentsPlanSearchCriteriaRequest](docs/Model/GetInstallmentsPlanSearchCriteriaRequest.md)
+ - [GetResourcesRequest](docs/Model/GetResourcesRequest.md)
+ - [GetResourcesRequestContext](docs/Model/GetResourcesRequestContext.md)
+ - [GetResourcesResponse](docs/Model/GetResourcesResponse.md)
  - [InitiateInstallmentPlanRequest](docs/Model/InitiateInstallmentPlanRequest.md)
  - [Installment](docs/Model/Installment.md)
  - [InstallmentPlan](docs/Model/InstallmentPlan.md)
@@ -208,7 +212,8 @@ Class | Method | HTTP request | Description
  - [ResponseHeader](docs/Model/ResponseHeader.md)
  - [ResponseStatus](docs/Model/ResponseStatus.md)
  - [StartInstallmentsRequest](docs/Model/StartInstallmentsRequest.md)
- - [TermsAndConditions2](docs/Model/TermsAndConditions2.md)
+ - [SystemTextCategory](docs/Model/SystemTextCategory.md)
+ - [TermsAndConditions](docs/Model/TermsAndConditions.md)
  - [TermsAndConditionsGetRequest](docs/Model/TermsAndConditionsGetRequest.md)
  - [TermsAndConditionsGetResponse](docs/Model/TermsAndConditionsGetResponse.md)
  - [TestModes](docs/Model/TestModes.md)
@@ -232,7 +237,6 @@ Class | Method | HTTP request | Description
  - [LoginResponse](docs/Model/LoginResponse.md)
  - [MerchantRef](docs/Model/MerchantRef.md)
  - [RefundInstallmentPlanResponse](docs/Model/RefundInstallmentPlanResponse.md)
- - [TermsAndConditions](docs/Model/TermsAndConditions.md)
  - [UpdateInstallmentPlanRequest](docs/Model/UpdateInstallmentPlanRequest.md)
  - [UpdateInstallmentsPlanResponse](docs/Model/UpdateInstallmentsPlanResponse.md)
 

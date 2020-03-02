@@ -62,6 +62,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         'checkout_url' => 'string',
         'approval_url' => 'string',
         'terms_and_conditions_url' => 'string',
+        'privacy_policy_url' => 'string',
         'installment_plan_info_url' => 'string',
         'public_token' => 'string'
     ];
@@ -77,6 +78,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         'checkout_url' => null,
         'approval_url' => null,
         'terms_and_conditions_url' => null,
+        'privacy_policy_url' => null,
         'installment_plan_info_url' => null,
         'public_token' => null
     ];
@@ -113,6 +115,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         'checkout_url' => 'CheckoutUrl',
         'approval_url' => 'ApprovalUrl',
         'terms_and_conditions_url' => 'TermsAndConditionsUrl',
+        'privacy_policy_url' => 'PrivacyPolicyUrl',
         'installment_plan_info_url' => 'InstallmentPlanInfoUrl',
         'public_token' => 'PublicToken'
     ];
@@ -128,6 +131,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         'checkout_url' => 'setCheckoutUrl',
         'approval_url' => 'setApprovalUrl',
         'terms_and_conditions_url' => 'setTermsAndConditionsUrl',
+        'privacy_policy_url' => 'setPrivacyPolicyUrl',
         'installment_plan_info_url' => 'setInstallmentPlanInfoUrl',
         'public_token' => 'setPublicToken'
     ];
@@ -143,6 +147,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         'checkout_url' => 'getCheckoutUrl',
         'approval_url' => 'getApprovalUrl',
         'terms_and_conditions_url' => 'getTermsAndConditionsUrl',
+        'privacy_policy_url' => 'getPrivacyPolicyUrl',
         'installment_plan_info_url' => 'getInstallmentPlanInfoUrl',
         'public_token' => 'getPublicToken'
     ];
@@ -212,6 +217,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         $this->container['checkout_url'] = isset($data['checkout_url']) ? $data['checkout_url'] : null;
         $this->container['approval_url'] = isset($data['approval_url']) ? $data['approval_url'] : null;
         $this->container['terms_and_conditions_url'] = isset($data['terms_and_conditions_url']) ? $data['terms_and_conditions_url'] : null;
+        $this->container['privacy_policy_url'] = isset($data['privacy_policy_url']) ? $data['privacy_policy_url'] : null;
         $this->container['installment_plan_info_url'] = isset($data['installment_plan_info_url']) ? $data['installment_plan_info_url'] : null;
         $this->container['public_token'] = isset($data['public_token']) ? $data['public_token'] : null;
     }
@@ -356,6 +362,30 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     public function setTermsAndConditionsUrl($terms_and_conditions_url)
     {
         $this->container['terms_and_conditions_url'] = $terms_and_conditions_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets privacy_policy_url
+     *
+     * @return string
+     */
+    public function getPrivacyPolicyUrl()
+    {
+        return $this->container['privacy_policy_url'];
+    }
+
+    /**
+     * Sets privacy_policy_url
+     *
+     * @param string $privacy_policy_url privacy_policy_url
+     *
+     * @return $this
+     */
+    public function setPrivacyPolicyUrl($privacy_policy_url)
+    {
+        $this->container['privacy_policy_url'] = $privacy_policy_url;
 
         return $this;
     }

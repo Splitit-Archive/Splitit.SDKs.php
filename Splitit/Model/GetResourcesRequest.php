@@ -1,6 +1,6 @@
 <?php
 /**
- * TouchPoint
+ * GetResourcesRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * TouchPoint Class Doc Comment
+ * GetResourcesRequest Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TouchPoint implements ModelInterface, ArrayAccess
+class GetResourcesRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TouchPoint implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TouchPoint';
+    protected static $swaggerModelName = 'GetResourcesRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,8 @@ class TouchPoint implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'string',
-        'version' => 'string',
-        'sub_version' => 'string',
-        'versioned_touchpoint_id' => 'int'
+        'system_text_categories' => '\SplititSdkClient\Model\SystemTextCategory[]',
+        'request_context' => '\SplititSdkClient\Model\GetResourcesRequestContext'
     ];
 
     /**
@@ -69,10 +67,8 @@ class TouchPoint implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => null,
-        'version' => null,
-        'sub_version' => null,
-        'versioned_touchpoint_id' => 'int64'
+        'system_text_categories' => null,
+        'request_context' => null
     ];
 
     /**
@@ -102,10 +98,8 @@ class TouchPoint implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'Code',
-        'version' => 'Version',
-        'sub_version' => 'SubVersion',
-        'versioned_touchpoint_id' => 'VersionedTouchpointId'
+        'system_text_categories' => 'SystemTextCategories',
+        'request_context' => 'RequestContext'
     ];
 
     /**
@@ -114,10 +108,8 @@ class TouchPoint implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'version' => 'setVersion',
-        'sub_version' => 'setSubVersion',
-        'versioned_touchpoint_id' => 'setVersionedTouchpointId'
+        'system_text_categories' => 'setSystemTextCategories',
+        'request_context' => 'setRequestContext'
     ];
 
     /**
@@ -126,10 +118,8 @@ class TouchPoint implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'version' => 'getVersion',
-        'sub_version' => 'getSubVersion',
-        'versioned_touchpoint_id' => 'getVersionedTouchpointId'
+        'system_text_categories' => 'getSystemTextCategories',
+        'request_context' => 'getRequestContext'
     ];
 
     /**
@@ -192,10 +182,8 @@ class TouchPoint implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
-        $this->container['sub_version'] = isset($data['sub_version']) ? $data['sub_version'] : null;
-        $this->container['versioned_touchpoint_id'] = isset($data['versioned_touchpoint_id']) ? $data['versioned_touchpoint_id'] : null;
+        $this->container['system_text_categories'] = isset($data['system_text_categories']) ? $data['system_text_categories'] : null;
+        $this->container['request_context'] = isset($data['request_context']) ? $data['request_context'] : null;
     }
 
     /**
@@ -223,97 +211,49 @@ class TouchPoint implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets code
+     * Gets system_text_categories
      *
-     * @return string
+     * @return \SplititSdkClient\Model\SystemTextCategory[]
      */
-    public function getCode()
+    public function getSystemTextCategories()
     {
-        return $this->container['code'];
+        return $this->container['system_text_categories'];
     }
 
     /**
-     * Sets code
+     * Sets system_text_categories
      *
-     * @param string $code code
+     * @param \SplititSdkClient\Model\SystemTextCategory[] $system_text_categories system_text_categories
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setSystemTextCategories($system_text_categories)
     {
-        $this->container['code'] = $code;
+        $this->container['system_text_categories'] = $system_text_categories;
 
         return $this;
     }
 
     /**
-     * Gets version
+     * Gets request_context
      *
-     * @return string
+     * @return \SplititSdkClient\Model\GetResourcesRequestContext
      */
-    public function getVersion()
+    public function getRequestContext()
     {
-        return $this->container['version'];
+        return $this->container['request_context'];
     }
 
     /**
-     * Sets version
+     * Sets request_context
      *
-     * @param string $version version
+     * @param \SplititSdkClient\Model\GetResourcesRequestContext $request_context request_context
      *
      * @return $this
      */
-    public function setVersion($version)
+    public function setRequestContext($request_context)
     {
-        $this->container['version'] = $version;
-
-        return $this;
-    }
-
-    /**
-     * Gets sub_version
-     *
-     * @return string
-     */
-    public function getSubVersion()
-    {
-        return $this->container['sub_version'];
-    }
-
-    /**
-     * Sets sub_version
-     *
-     * @param string $sub_version sub_version
-     *
-     * @return $this
-     */
-    public function setSubVersion($sub_version)
-    {
-        $this->container['sub_version'] = $sub_version;
-
-        return $this;
-    }
-
-    /**
-     * Gets versioned_touchpoint_id
-     *
-     * @return int
-     */
-    public function getVersionedTouchpointId()
-    {
-        return $this->container['versioned_touchpoint_id'];
-    }
-
-    /**
-     * Sets versioned_touchpoint_id
-     *
-     * @param int $versioned_touchpoint_id versioned_touchpoint_id
-     *
-     * @return $this
-     */
-    public function setVersionedTouchpointId($versioned_touchpoint_id)
-    {
-        $this->container['versioned_touchpoint_id'] = $versioned_touchpoint_id;
+        $this->container['request_context'] = $request_context;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * TouchPoint
+ * GetResourcesResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * TouchPoint Class Doc Comment
+ * GetResourcesResponse Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TouchPoint implements ModelInterface, ArrayAccess
+class GetResourcesResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TouchPoint implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TouchPoint';
+    protected static $swaggerModelName = 'GetResourcesResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,10 @@ class TouchPoint implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'string',
-        'version' => 'string',
-        'sub_version' => 'string',
-        'versioned_touchpoint_id' => 'int'
+        'logos' => 'map[string,string]',
+        'touch_point_colors' => 'map[string,string]',
+        'resources_grouped_by_categories' => 'map[string,map[string,string]]',
+        'response_header' => '\SplititSdkClient\Model\ResponseHeader'
     ];
 
     /**
@@ -69,10 +69,10 @@ class TouchPoint implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => null,
-        'version' => null,
-        'sub_version' => null,
-        'versioned_touchpoint_id' => 'int64'
+        'logos' => null,
+        'touch_point_colors' => null,
+        'resources_grouped_by_categories' => null,
+        'response_header' => null
     ];
 
     /**
@@ -102,10 +102,10 @@ class TouchPoint implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'Code',
-        'version' => 'Version',
-        'sub_version' => 'SubVersion',
-        'versioned_touchpoint_id' => 'VersionedTouchpointId'
+        'logos' => 'Logos',
+        'touch_point_colors' => 'TouchPointColors',
+        'resources_grouped_by_categories' => 'ResourcesGroupedByCategories',
+        'response_header' => 'ResponseHeader'
     ];
 
     /**
@@ -114,10 +114,10 @@ class TouchPoint implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'version' => 'setVersion',
-        'sub_version' => 'setSubVersion',
-        'versioned_touchpoint_id' => 'setVersionedTouchpointId'
+        'logos' => 'setLogos',
+        'touch_point_colors' => 'setTouchPointColors',
+        'resources_grouped_by_categories' => 'setResourcesGroupedByCategories',
+        'response_header' => 'setResponseHeader'
     ];
 
     /**
@@ -126,10 +126,10 @@ class TouchPoint implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'version' => 'getVersion',
-        'sub_version' => 'getSubVersion',
-        'versioned_touchpoint_id' => 'getVersionedTouchpointId'
+        'logos' => 'getLogos',
+        'touch_point_colors' => 'getTouchPointColors',
+        'resources_grouped_by_categories' => 'getResourcesGroupedByCategories',
+        'response_header' => 'getResponseHeader'
     ];
 
     /**
@@ -192,10 +192,10 @@ class TouchPoint implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
-        $this->container['sub_version'] = isset($data['sub_version']) ? $data['sub_version'] : null;
-        $this->container['versioned_touchpoint_id'] = isset($data['versioned_touchpoint_id']) ? $data['versioned_touchpoint_id'] : null;
+        $this->container['logos'] = isset($data['logos']) ? $data['logos'] : null;
+        $this->container['touch_point_colors'] = isset($data['touch_point_colors']) ? $data['touch_point_colors'] : null;
+        $this->container['resources_grouped_by_categories'] = isset($data['resources_grouped_by_categories']) ? $data['resources_grouped_by_categories'] : null;
+        $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
     }
 
     /**
@@ -223,97 +223,97 @@ class TouchPoint implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets code
+     * Gets logos
      *
-     * @return string
+     * @return map[string,string]
      */
-    public function getCode()
+    public function getLogos()
     {
-        return $this->container['code'];
+        return $this->container['logos'];
     }
 
     /**
-     * Sets code
+     * Sets logos
      *
-     * @param string $code code
+     * @param map[string,string] $logos logos
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setLogos($logos)
     {
-        $this->container['code'] = $code;
+        $this->container['logos'] = $logos;
 
         return $this;
     }
 
     /**
-     * Gets version
+     * Gets touch_point_colors
      *
-     * @return string
+     * @return map[string,string]
      */
-    public function getVersion()
+    public function getTouchPointColors()
     {
-        return $this->container['version'];
+        return $this->container['touch_point_colors'];
     }
 
     /**
-     * Sets version
+     * Sets touch_point_colors
      *
-     * @param string $version version
+     * @param map[string,string] $touch_point_colors touch_point_colors
      *
      * @return $this
      */
-    public function setVersion($version)
+    public function setTouchPointColors($touch_point_colors)
     {
-        $this->container['version'] = $version;
+        $this->container['touch_point_colors'] = $touch_point_colors;
 
         return $this;
     }
 
     /**
-     * Gets sub_version
+     * Gets resources_grouped_by_categories
      *
-     * @return string
+     * @return map[string,map[string,string]]
      */
-    public function getSubVersion()
+    public function getResourcesGroupedByCategories()
     {
-        return $this->container['sub_version'];
+        return $this->container['resources_grouped_by_categories'];
     }
 
     /**
-     * Sets sub_version
+     * Sets resources_grouped_by_categories
      *
-     * @param string $sub_version sub_version
+     * @param map[string,map[string,string]] $resources_grouped_by_categories resources_grouped_by_categories
      *
      * @return $this
      */
-    public function setSubVersion($sub_version)
+    public function setResourcesGroupedByCategories($resources_grouped_by_categories)
     {
-        $this->container['sub_version'] = $sub_version;
+        $this->container['resources_grouped_by_categories'] = $resources_grouped_by_categories;
 
         return $this;
     }
 
     /**
-     * Gets versioned_touchpoint_id
+     * Gets response_header
      *
-     * @return int
+     * @return \SplititSdkClient\Model\ResponseHeader
      */
-    public function getVersionedTouchpointId()
+    public function getResponseHeader()
     {
-        return $this->container['versioned_touchpoint_id'];
+        return $this->container['response_header'];
     }
 
     /**
-     * Sets versioned_touchpoint_id
+     * Sets response_header
      *
-     * @param int $versioned_touchpoint_id versioned_touchpoint_id
+     * @param \SplititSdkClient\Model\ResponseHeader $response_header response_header
      *
      * @return $this
      */
-    public function setVersionedTouchpointId($versioned_touchpoint_id)
+    public function setResponseHeader($response_header)
     {
-        $this->container['versioned_touchpoint_id'] = $versioned_touchpoint_id;
+        $this->container['response_header'] = $response_header;
 
         return $this;
     }

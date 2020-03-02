@@ -1,6 +1,6 @@
 <?php
 /**
- * TouchPoint
+ * GetResourcesRequestContext
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * TouchPoint Class Doc Comment
+ * GetResourcesRequestContext Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TouchPoint implements ModelInterface, ArrayAccess
+class GetResourcesRequestContext implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TouchPoint implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TouchPoint';
+    protected static $swaggerModelName = 'GetResourcesRequestContext';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,9 @@ class TouchPoint implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'string',
-        'version' => 'string',
-        'sub_version' => 'string',
-        'versioned_touchpoint_id' => 'int'
+        'merchant_code' => 'string',
+        'culture_name' => 'string',
+        'touch_point_code' => 'string'
     ];
 
     /**
@@ -69,10 +68,9 @@ class TouchPoint implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => null,
-        'version' => null,
-        'sub_version' => null,
-        'versioned_touchpoint_id' => 'int64'
+        'merchant_code' => null,
+        'culture_name' => null,
+        'touch_point_code' => null
     ];
 
     /**
@@ -102,10 +100,9 @@ class TouchPoint implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'Code',
-        'version' => 'Version',
-        'sub_version' => 'SubVersion',
-        'versioned_touchpoint_id' => 'VersionedTouchpointId'
+        'merchant_code' => 'MerchantCode',
+        'culture_name' => 'CultureName',
+        'touch_point_code' => 'TouchPointCode'
     ];
 
     /**
@@ -114,10 +111,9 @@ class TouchPoint implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'version' => 'setVersion',
-        'sub_version' => 'setSubVersion',
-        'versioned_touchpoint_id' => 'setVersionedTouchpointId'
+        'merchant_code' => 'setMerchantCode',
+        'culture_name' => 'setCultureName',
+        'touch_point_code' => 'setTouchPointCode'
     ];
 
     /**
@@ -126,10 +122,9 @@ class TouchPoint implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'version' => 'getVersion',
-        'sub_version' => 'getSubVersion',
-        'versioned_touchpoint_id' => 'getVersionedTouchpointId'
+        'merchant_code' => 'getMerchantCode',
+        'culture_name' => 'getCultureName',
+        'touch_point_code' => 'getTouchPointCode'
     ];
 
     /**
@@ -192,10 +187,9 @@ class TouchPoint implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
-        $this->container['sub_version'] = isset($data['sub_version']) ? $data['sub_version'] : null;
-        $this->container['versioned_touchpoint_id'] = isset($data['versioned_touchpoint_id']) ? $data['versioned_touchpoint_id'] : null;
+        $this->container['merchant_code'] = isset($data['merchant_code']) ? $data['merchant_code'] : null;
+        $this->container['culture_name'] = isset($data['culture_name']) ? $data['culture_name'] : null;
+        $this->container['touch_point_code'] = isset($data['touch_point_code']) ? $data['touch_point_code'] : null;
     }
 
     /**
@@ -223,97 +217,73 @@ class TouchPoint implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets code
+     * Gets merchant_code
      *
      * @return string
      */
-    public function getCode()
+    public function getMerchantCode()
     {
-        return $this->container['code'];
+        return $this->container['merchant_code'];
     }
 
     /**
-     * Sets code
+     * Sets merchant_code
      *
-     * @param string $code code
+     * @param string $merchant_code merchant_code
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setMerchantCode($merchant_code)
     {
-        $this->container['code'] = $code;
+        $this->container['merchant_code'] = $merchant_code;
 
         return $this;
     }
 
     /**
-     * Gets version
+     * Gets culture_name
      *
      * @return string
      */
-    public function getVersion()
+    public function getCultureName()
     {
-        return $this->container['version'];
+        return $this->container['culture_name'];
     }
 
     /**
-     * Sets version
+     * Sets culture_name
      *
-     * @param string $version version
+     * @param string $culture_name culture_name
      *
      * @return $this
      */
-    public function setVersion($version)
+    public function setCultureName($culture_name)
     {
-        $this->container['version'] = $version;
+        $this->container['culture_name'] = $culture_name;
 
         return $this;
     }
 
     /**
-     * Gets sub_version
+     * Gets touch_point_code
      *
      * @return string
      */
-    public function getSubVersion()
+    public function getTouchPointCode()
     {
-        return $this->container['sub_version'];
+        return $this->container['touch_point_code'];
     }
 
     /**
-     * Sets sub_version
+     * Sets touch_point_code
      *
-     * @param string $sub_version sub_version
+     * @param string $touch_point_code touch_point_code
      *
      * @return $this
      */
-    public function setSubVersion($sub_version)
+    public function setTouchPointCode($touch_point_code)
     {
-        $this->container['sub_version'] = $sub_version;
-
-        return $this;
-    }
-
-    /**
-     * Gets versioned_touchpoint_id
-     *
-     * @return int
-     */
-    public function getVersionedTouchpointId()
-    {
-        return $this->container['versioned_touchpoint_id'];
-    }
-
-    /**
-     * Sets versioned_touchpoint_id
-     *
-     * @param int $versioned_touchpoint_id versioned_touchpoint_id
-     *
-     * @return $this
-     */
-    public function setVersionedTouchpointId($versioned_touchpoint_id)
-    {
-        $this->container['versioned_touchpoint_id'] = $versioned_touchpoint_id;
+        $this->container['touch_point_code'] = $touch_point_code;
 
         return $this;
     }

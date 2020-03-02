@@ -1,12 +1,11 @@
-# TouchPoint
+# GetResourcesRequestContext
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **string** |  | [optional] 
-**version** | **string** |  | [optional] 
-**sub_version** | **string** |  | [optional] 
-**versioned_touchpoint_id** | **int** |  | [optional] 
+**merchant_code** | **string** |  | [optional] 
+**culture_name** | **string** |  | [optional] 
+**touch_point_code** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
