@@ -65,6 +65,8 @@ class CreateInstallmentPlanApi
      */
     protected $sessionId;
 
+    protected $culture;
+
     /**
      * @var HeaderSelector
      */
@@ -94,6 +96,11 @@ class CreateInstallmentPlanApi
         return $this->config;
     }
 
+    public function setCulture($culture)
+    {
+        $this->culture = $culture;
+    }
+
     protected function injectSessionRequestHeaders($request)
     {
         if (!is_null($this->sessionId)){
@@ -105,6 +112,10 @@ class CreateInstallmentPlanApi
 
             if (!is_null($this->config->getApiKey())){
                 $requestHeader->setApiKey($this->config->getApiKey());
+            }
+
+            if (!is_null($this->culture)){
+                $requestHeader->setCultureName($this->culture);
             }
 
             $request->offsetSet('request_header', $requestHeader);

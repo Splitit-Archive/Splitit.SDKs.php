@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**installmentPlanGet**](InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 [**installmentPlanGet3DSecureParameters**](InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 [**installmentPlanGetExtended**](InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
+[**installmentPlanGetInitiatedInstallmentPlanRequest**](InstallmentPlanApi.md#installmentPlanGetInitiatedInstallmentPlanRequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
 [**installmentPlanInitiate**](InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installmentPlanRefund**](InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
 [**installmentPlanStartInstallments**](InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -294,6 +295,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\SplititSdkClient\Model\GetInstallmentsPlanExtendedResponse**](../Model/GetInstallmentsPlanExtendedResponse.md)
+
+### Authorization
+
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **installmentPlanGetInitiatedInstallmentPlanRequest**
+> \SplititSdkClient\Model\GetInitiatedInstallmentPlanResponse installmentPlanGetInitiatedInstallmentPlanRequest($request)
+
+
+
+### Example
+```php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+# Use Configuration::production() for production API
+$apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
+    Configuration::sandbox(),
+    $session_id
+);
+
+$request = new \SplititSdkClient\Model\GetInitiatedInstallmentPlanRequest(); // \SplititSdkClient\Model\GetInitiatedInstallmentPlanRequest | 
+
+try {
+    $result = $apiInstance->installmentPlanGetInitiatedInstallmentPlanRequest($request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InstallmentPlanApi->installmentPlanGetInitiatedInstallmentPlanRequest: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\SplititSdkClient\Model\GetInitiatedInstallmentPlanRequest**](../Model/GetInitiatedInstallmentPlanRequest.md)|  |
+
+### Return type
+
+[**\SplititSdkClient\Model\GetInitiatedInstallmentPlanResponse**](../Model/GetInitiatedInstallmentPlanResponse.md)
 
 ### Authorization
 

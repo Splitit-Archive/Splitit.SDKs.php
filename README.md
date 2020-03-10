@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.3.33
+- Package version: 1.3.34
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.3.33"
+    "splitit/sdk": "^1.3.34"
   }
 }
 ```
@@ -69,6 +69,8 @@ try{
         Configuration::sandbox(),
         $session_id
     );
+
+    //$installmentPlanApi->setCulture('de-DE'); -> optionally set culture to be used in subsequent calls to this API.
     
     $initiateRequest = new InitiateInstallmentPlanRequest();
     
@@ -143,6 +145,7 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanGet**](docs/Api/InstallmentPlanApi.md#installmentplanget) | **POST** /api/InstallmentPlan/Get | 
 *InstallmentPlanApi* | [**installmentPlanGet3DSecureParameters**](docs/Api/InstallmentPlanApi.md#installmentplanget3dsecureparameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 *InstallmentPlanApi* | [**installmentPlanGetExtended**](docs/Api/InstallmentPlanApi.md#installmentplangetextended) | **POST** /api/InstallmentPlan/GetExtended | 
+*InstallmentPlanApi* | [**installmentPlanGetInitiatedInstallmentPlanRequest**](docs/Api/InstallmentPlanApi.md#installmentplangetinitiatedinstallmentplanrequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
 *InstallmentPlanApi* | [**installmentPlanInitiate**](docs/Api/InstallmentPlanApi.md#installmentplaninitiate) | **POST** /api/InstallmentPlan/Initiate | 
 *InstallmentPlanApi* | [**installmentPlanRefund**](docs/Api/InstallmentPlanApi.md#installmentplanrefund) | **POST** /api/InstallmentPlan/Refund | 
 *InstallmentPlanApi* | [**installmentPlanStartInstallments**](docs/Api/InstallmentPlanApi.md#installmentplanstartinstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -155,12 +158,16 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AddressData2](docs/Model/AddressData2.md)
+ - [Agent](docs/Model/Agent.md)
  - [AmountDetails2](docs/Model/AmountDetails2.md)
  - [ApproveInstallmentPlanRequest](docs/Model/ApproveInstallmentPlanRequest.md)
  - [AuthenticationType](docs/Model/AuthenticationType.md)
+ - [BankDetails](docs/Model/BankDetails.md)
  - [CancelInstallmentPlanRequest](docs/Model/CancelInstallmentPlanRequest.md)
  - [CardData](docs/Model/CardData.md)
  - [CartData](docs/Model/CartData.md)
+ - [ContactPerson](docs/Model/ContactPerson.md)
+ - [ContactPersonType](docs/Model/ContactPersonType.md)
  - [CreateInstallmentPlanLegacyResponse](docs/Model/CreateInstallmentPlanLegacyResponse.md)
  - [CreateInstallmentPlanRequest](docs/Model/CreateInstallmentPlanRequest.md)
  - [DelayResolution](docs/Model/DelayResolution.md)
@@ -171,6 +178,8 @@ Class | Method | HTTP request | Description
  - [FraudCheckResult](docs/Model/FraudCheckResult.md)
  - [Get3DSecureParametersRequest](docs/Model/Get3DSecureParametersRequest.md)
  - [Get3DSecureParametersResponse](docs/Model/Get3DSecureParametersResponse.md)
+ - [GetInitiatedInstallmentPlanRequest](docs/Model/GetInitiatedInstallmentPlanRequest.md)
+ - [GetInitiatedInstallmentPlanResponse](docs/Model/GetInitiatedInstallmentPlanResponse.md)
  - [GetInstallmentsPlanResponse](docs/Model/GetInstallmentsPlanResponse.md)
  - [GetInstallmentsPlanSearchCriteriaRequest](docs/Model/GetInstallmentsPlanSearchCriteriaRequest.md)
  - [GetResourcesRequest](docs/Model/GetResourcesRequest.md)
@@ -190,6 +199,8 @@ Class | Method | HTTP request | Description
  - [ItemData](docs/Model/ItemData.md)
  - [LoginRequest](docs/Model/LoginRequest.md)
  - [LoginResponse2](docs/Model/LoginResponse2.md)
+ - [Merchant](docs/Model/Merchant.md)
+ - [MerchantVertical](docs/Model/MerchantVertical.md)
  - [Money](docs/Model/Money.md)
  - [MoneyWithCurrencyCode](docs/Model/MoneyWithCurrencyCode.md)
  - [PagingRequestHeader](docs/Model/PagingRequestHeader.md)
@@ -211,6 +222,8 @@ Class | Method | HTTP request | Description
  - [ResponseError](docs/Model/ResponseError.md)
  - [ResponseHeader](docs/Model/ResponseHeader.md)
  - [ResponseStatus](docs/Model/ResponseStatus.md)
+ - [SalesAssociate](docs/Model/SalesAssociate.md)
+ - [SplititEntity](docs/Model/SplititEntity.md)
  - [StartInstallmentsRequest](docs/Model/StartInstallmentsRequest.md)
  - [SystemTextCategory](docs/Model/SystemTextCategory.md)
  - [TermsAndConditions](docs/Model/TermsAndConditions.md)
@@ -228,6 +241,7 @@ Class | Method | HTTP request | Description
  - [AddressData](docs/Model/AddressData.md)
  - [AmountDetails](docs/Model/AmountDetails.md)
  - [BuRef](docs/Model/BuRef.md)
+ - [BusinessUnitRef](docs/Model/BusinessUnitRef.md)
  - [ConsumerData](docs/Model/ConsumerData.md)
  - [CreateInstallmentsPlanResponse](docs/Model/CreateInstallmentsPlanResponse.md)
  - [Currency](docs/Model/Currency.md)
@@ -236,6 +250,7 @@ Class | Method | HTTP request | Description
  - [InitiateInstallmentsPlanResponse](docs/Model/InitiateInstallmentsPlanResponse.md)
  - [LoginResponse](docs/Model/LoginResponse.md)
  - [MerchantRef](docs/Model/MerchantRef.md)
+ - [PaymentWizardDataResponse](docs/Model/PaymentWizardDataResponse.md)
  - [RefundInstallmentPlanResponse](docs/Model/RefundInstallmentPlanResponse.md)
  - [UpdateInstallmentPlanRequest](docs/Model/UpdateInstallmentPlanRequest.md)
  - [UpdateInstallmentsPlanResponse](docs/Model/UpdateInstallmentsPlanResponse.md)
