@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**installmentPlanApprove**](InstallmentPlanApi.md#installmentPlanApprove) | **POST** /api/InstallmentPlan/Approve | 
 [**installmentPlanCancel**](InstallmentPlanApi.md#installmentPlanCancel) | **POST** /api/InstallmentPlan/Cancel | 
+[**installmentPlanChargeBack**](InstallmentPlanApi.md#installmentPlanChargeBack) | **POST** /api/InstallmentPlan/ChargeBack | 
 [**installmentPlanCreate**](InstallmentPlanApi.md#installmentPlanCreate) | **POST** /api/InstallmentPlan/Create | 
 [**installmentPlanGet**](InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 [**installmentPlanGet3DSecureParameters**](InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
@@ -99,6 +100,54 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**\SplititSdkClient\Model\CancelInstallmentPlanRequest**](../Model/CancelInstallmentPlanRequest.md)|  |
+
+### Return type
+
+[**\SplititSdkClient\Model\InstallmentPlanResponse**](../Model/InstallmentPlanResponse.md)
+
+### Authorization
+
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **installmentPlanChargeBack**
+> \SplititSdkClient\Model\InstallmentPlanResponse installmentPlanChargeBack($request)
+
+
+
+### Example
+```php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+# Use Configuration::production() for production API
+$apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
+    Configuration::sandbox(),
+    $session_id
+);
+
+$request = new \SplititSdkClient\Model\ChargebackRequest(); // \SplititSdkClient\Model\ChargebackRequest | 
+
+try {
+    $result = $apiInstance->installmentPlanChargeBack($request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InstallmentPlanApi->installmentPlanChargeBack: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\SplititSdkClient\Model\ChargebackRequest**](../Model/ChargebackRequest.md)|  |
 
 ### Return type
 

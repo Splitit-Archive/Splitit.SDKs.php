@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.4.0
+- Package version: 1.4.1
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.4.0"
+    "splitit/sdk": "^1.4.1"
   }
 }
 ```
@@ -141,6 +141,7 @@ Class | Method | HTTP request | Description
 *InfrastructureApi* | [**infrastructureGetResources**](docs/Api/InfrastructureApi.md#infrastructuregetresources) | **POST** /api/Infrastructure/GetResources | 
 *InstallmentPlanApi* | [**installmentPlanApprove**](docs/Api/InstallmentPlanApi.md#installmentplanapprove) | **POST** /api/InstallmentPlan/Approve | 
 *InstallmentPlanApi* | [**installmentPlanCancel**](docs/Api/InstallmentPlanApi.md#installmentplancancel) | **POST** /api/InstallmentPlan/Cancel | 
+*InstallmentPlanApi* | [**installmentPlanChargeBack**](docs/Api/InstallmentPlanApi.md#installmentplanchargeback) | **POST** /api/InstallmentPlan/ChargeBack | 
 *InstallmentPlanApi* | [**installmentPlanCreate**](docs/Api/InstallmentPlanApi.md#installmentplancreate) | **POST** /api/InstallmentPlan/Create | 
 *InstallmentPlanApi* | [**installmentPlanGet**](docs/Api/InstallmentPlanApi.md#installmentplanget) | **POST** /api/InstallmentPlan/Get | 
 *InstallmentPlanApi* | [**installmentPlanGet3DSecureParameters**](docs/Api/InstallmentPlanApi.md#installmentplanget3dsecureparameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
@@ -166,6 +167,7 @@ Class | Method | HTTP request | Description
  - [CancelInstallmentPlanRequest](docs/Model/CancelInstallmentPlanRequest.md)
  - [CardData](docs/Model/CardData.md)
  - [CartData](docs/Model/CartData.md)
+ - [ChargebackRequest](docs/Model/ChargebackRequest.md)
  - [ContactPerson](docs/Model/ContactPerson.md)
  - [ContactPersonType](docs/Model/ContactPersonType.md)
  - [CreateInstallmentPlanLegacyResponse](docs/Model/CreateInstallmentPlanLegacyResponse.md)

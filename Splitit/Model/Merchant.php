@@ -66,6 +66,8 @@ class Merchant implements ModelInterface, ArrayAccess
         'business_dba_name' => 'string',
         'business_unit_id' => 'int',
         'on_boarding_status' => 'int',
+        'declared_annual_volume_usd' => 'float',
+        'declared_aovusd' => 'float',
         'vertical' => '\SplititSdkClient\Model\MerchantVertical',
         'email' => 'string',
         'website_url' => 'string',
@@ -111,6 +113,8 @@ class Merchant implements ModelInterface, ArrayAccess
         'business_dba_name' => null,
         'business_unit_id' => 'int64',
         'on_boarding_status' => null,
+        'declared_annual_volume_usd' => 'decimal',
+        'declared_aovusd' => 'decimal',
         'vertical' => null,
         'email' => null,
         'website_url' => null,
@@ -177,6 +181,8 @@ class Merchant implements ModelInterface, ArrayAccess
         'business_dba_name' => 'BusinessDBAName',
         'business_unit_id' => 'BusinessUnitId',
         'on_boarding_status' => 'OnBoardingStatus',
+        'declared_annual_volume_usd' => 'DeclaredAnnualVolumeUSD',
+        'declared_aovusd' => 'DeclaredAOVUSD',
         'vertical' => 'Vertical',
         'email' => 'Email',
         'website_url' => 'WebsiteUrl',
@@ -222,6 +228,8 @@ class Merchant implements ModelInterface, ArrayAccess
         'business_dba_name' => 'setBusinessDbaName',
         'business_unit_id' => 'setBusinessUnitId',
         'on_boarding_status' => 'setOnBoardingStatus',
+        'declared_annual_volume_usd' => 'setDeclaredAnnualVolumeUsd',
+        'declared_aovusd' => 'setDeclaredAovusd',
         'vertical' => 'setVertical',
         'email' => 'setEmail',
         'website_url' => 'setWebsiteUrl',
@@ -267,6 +275,8 @@ class Merchant implements ModelInterface, ArrayAccess
         'business_dba_name' => 'getBusinessDbaName',
         'business_unit_id' => 'getBusinessUnitId',
         'on_boarding_status' => 'getOnBoardingStatus',
+        'declared_annual_volume_usd' => 'getDeclaredAnnualVolumeUsd',
+        'declared_aovusd' => 'getDeclaredAovusd',
         'vertical' => 'getVertical',
         'email' => 'getEmail',
         'website_url' => 'getWebsiteUrl',
@@ -366,6 +376,8 @@ class Merchant implements ModelInterface, ArrayAccess
         $this->container['business_dba_name'] = isset($data['business_dba_name']) ? $data['business_dba_name'] : null;
         $this->container['business_unit_id'] = isset($data['business_unit_id']) ? $data['business_unit_id'] : null;
         $this->container['on_boarding_status'] = isset($data['on_boarding_status']) ? $data['on_boarding_status'] : null;
+        $this->container['declared_annual_volume_usd'] = isset($data['declared_annual_volume_usd']) ? $data['declared_annual_volume_usd'] : null;
+        $this->container['declared_aovusd'] = isset($data['declared_aovusd']) ? $data['declared_aovusd'] : null;
         $this->container['vertical'] = isset($data['vertical']) ? $data['vertical'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['website_url'] = isset($data['website_url']) ? $data['website_url'] : null;
@@ -413,6 +425,12 @@ class Merchant implements ModelInterface, ArrayAccess
         }
         if ($this->container['on_boarding_status'] === null) {
             $invalidProperties[] = "'on_boarding_status' can't be null";
+        }
+        if ($this->container['declared_annual_volume_usd'] === null) {
+            $invalidProperties[] = "'declared_annual_volume_usd' can't be null";
+        }
+        if ($this->container['declared_aovusd'] === null) {
+            $invalidProperties[] = "'declared_aovusd' can't be null";
         }
         if ($this->container['vertical'] === null) {
             $invalidProperties[] = "'vertical' can't be null";
@@ -660,6 +678,54 @@ class Merchant implements ModelInterface, ArrayAccess
     public function setOnBoardingStatus($on_boarding_status)
     {
         $this->container['on_boarding_status'] = $on_boarding_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets declared_annual_volume_usd
+     *
+     * @return float
+     */
+    public function getDeclaredAnnualVolumeUsd()
+    {
+        return $this->container['declared_annual_volume_usd'];
+    }
+
+    /**
+     * Sets declared_annual_volume_usd
+     *
+     * @param float $declared_annual_volume_usd declared_annual_volume_usd
+     *
+     * @return $this
+     */
+    public function setDeclaredAnnualVolumeUsd($declared_annual_volume_usd)
+    {
+        $this->container['declared_annual_volume_usd'] = $declared_annual_volume_usd;
+
+        return $this;
+    }
+
+    /**
+     * Gets declared_aovusd
+     *
+     * @return float
+     */
+    public function getDeclaredAovusd()
+    {
+        return $this->container['declared_aovusd'];
+    }
+
+    /**
+     * Sets declared_aovusd
+     *
+     * @param float $declared_aovusd declared_aovusd
+     *
+     * @return $this
+     */
+    public function setDeclaredAovusd($declared_aovusd)
+    {
+        $this->container['declared_aovusd'] = $declared_aovusd;
 
         return $this;
     }

@@ -57,6 +57,7 @@ class MerchantVertical
     const SPECIALITY = 'Speciality';
     const MEDICAL_HEALTH = 'MedicalHealth';
     const SPORTING_GOODS = 'SportingGoods';
+    const HOUSEWARE_HOMEFURNISHINGS = 'Houseware_Homefurnishings';
     
     /**
      * Gets allowable values of the enum
@@ -78,6 +79,7 @@ class MerchantVertical
             self::SPECIALITY,
             self::MEDICAL_HEALTH,
             self::SPORTING_GOODS,
+            self::HOUSEWARE_HOMEFURNISHINGS,
         ];
     }
 }

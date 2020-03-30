@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **business_dba_name** | **string** |  | [optional] 
 **business_unit_id** | **int** |  | 
 **on_boarding_status** | **int** |  | 
+**declared_annual_volume_usd** | **float** |  | 
+**declared_aovusd** | **float** |  | 
 **vertical** | [**\SplititSdkClient\Model\MerchantVertical**](MerchantVertical.md) |  | 
 **email** | **string** |  | [optional] 
 **website_url** | **string** |  | [optional] 

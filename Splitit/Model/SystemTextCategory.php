@@ -65,6 +65,7 @@ class SystemTextCategory
     const SMS_CONTENT = 'SMSContent';
     const POS = 'POS';
     const FLEX_FIELDS = 'FlexFields';
+    const MESSAGING_SYSTEM = 'MessagingSystem';
     
     /**
      * Gets allowable values of the enum
@@ -94,6 +95,7 @@ class SystemTextCategory
             self::SMS_CONTENT,
             self::POS,
             self::FLEX_FIELDS,
+            self::MESSAGING_SYSTEM,
         ];
     }
 }
