@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **plan_data** | [**\SplititSdkClient\Model\PlanData**](PlanData.md) |  | [optional] 
 **cart_data** | [**\SplititSdkClient\Model\CartData**](CartData.md) |  | [optional] 
 **consumer_data** | [**\SplititSdkClient\Model\ConsumerData**](ConsumerData.md) |  | [optional] 
-**merchant_data** | [**\SplititSdkClient\Model\Merchant**](Merchant.md) |  | [optional] 
+**merchant_data** | [**\SplititSdkClient\Model\MerchantRef**](MerchantRef.md) |  | [optional] 
 **billing_address** | [**\SplititSdkClient\Model\AddressData**](AddressData.md) |  | [optional] 
 **payment_wizard_data_response** | [**\SplititSdkClient\Model\PaymentWizardDataResponse**](PaymentWizardDataResponse.md) |  | [optional] 
 **error_indicator** | [**\SplititSdkClient\Model\Error**](Error.md) |  | [optional] 

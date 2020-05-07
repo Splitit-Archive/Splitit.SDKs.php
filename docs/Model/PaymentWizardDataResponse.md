@@ -21,6 +21,9 @@ Name | Type | Description | Notes
 **number_of_installments_selections_option** | **string** |  | [optional] 
 **address_is_readonly** | **bool** |  | 
 **logo_url** | **string** |  | [optional] 
+**privacy_policy_url** | **string** |  | [optional] 
+**terms_and_conditions_url** | **string** |  | [optional] 
+**learn_more_url** | **string** |  | [optional] 
 **payment_form_messages** | **string[]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * ContactPerson
+ * FlexFieldsDataResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * ContactPerson Class Doc Comment
+ * FlexFieldsDataResponse Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ContactPerson implements ModelInterface, ArrayAccess
+class FlexFieldsDataResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ContactPerson implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ContactPerson';
+    protected static $swaggerModelName = 'FlexFieldsDataResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,9 @@ class ContactPerson implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-        'full_name' => 'string',
-        'type' => '\SplititSdkClient\Model\ContactPersonType',
-        'email_address' => 'string',
-        'mobile_phone_number' => 'string',
-        'office_phone_number' => 'string',
-        'business_unit' => '\SplititSdkClient\Model\BusinessUnitRef'
+        'response_header' => '\SplititSdkClient\Model\ResponseHeader',
+        'picker_type' => 'string',
+        'is_secured' => 'bool'
     ];
 
     /**
@@ -72,13 +68,9 @@ class ContactPerson implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int64',
-        'full_name' => null,
-        'type' => null,
-        'email_address' => null,
-        'mobile_phone_number' => null,
-        'office_phone_number' => null,
-        'business_unit' => null
+        'response_header' => null,
+        'picker_type' => null,
+        'is_secured' => null
     ];
 
     /**
@@ -108,13 +100,9 @@ class ContactPerson implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'Id',
-        'full_name' => 'FullName',
-        'type' => 'Type',
-        'email_address' => 'EmailAddress',
-        'mobile_phone_number' => 'MobilePhoneNumber',
-        'office_phone_number' => 'OfficePhoneNumber',
-        'business_unit' => 'BusinessUnit'
+        'response_header' => 'ResponseHeader',
+        'picker_type' => 'PickerType',
+        'is_secured' => 'IsSecured'
     ];
 
     /**
@@ -123,13 +111,9 @@ class ContactPerson implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'full_name' => 'setFullName',
-        'type' => 'setType',
-        'email_address' => 'setEmailAddress',
-        'mobile_phone_number' => 'setMobilePhoneNumber',
-        'office_phone_number' => 'setOfficePhoneNumber',
-        'business_unit' => 'setBusinessUnit'
+        'response_header' => 'setResponseHeader',
+        'picker_type' => 'setPickerType',
+        'is_secured' => 'setIsSecured'
     ];
 
     /**
@@ -138,13 +122,9 @@ class ContactPerson implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'full_name' => 'getFullName',
-        'type' => 'getType',
-        'email_address' => 'getEmailAddress',
-        'mobile_phone_number' => 'getMobilePhoneNumber',
-        'office_phone_number' => 'getOfficePhoneNumber',
-        'business_unit' => 'getBusinessUnit'
+        'response_header' => 'getResponseHeader',
+        'picker_type' => 'getPickerType',
+        'is_secured' => 'getIsSecured'
     ];
 
     /**
@@ -207,13 +187,9 @@ class ContactPerson implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['email_address'] = isset($data['email_address']) ? $data['email_address'] : null;
-        $this->container['mobile_phone_number'] = isset($data['mobile_phone_number']) ? $data['mobile_phone_number'] : null;
-        $this->container['office_phone_number'] = isset($data['office_phone_number']) ? $data['office_phone_number'] : null;
-        $this->container['business_unit'] = isset($data['business_unit']) ? $data['business_unit'] : null;
+        $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
+        $this->container['picker_type'] = isset($data['picker_type']) ? $data['picker_type'] : null;
+        $this->container['is_secured'] = isset($data['is_secured']) ? $data['is_secured'] : null;
     }
 
     /**
@@ -225,11 +201,8 @@ class ContactPerson implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
+        if ($this->container['is_secured'] === null) {
+            $invalidProperties[] = "'is_secured' can't be null";
         }
         return $invalidProperties;
     }
@@ -247,169 +220,73 @@ class ContactPerson implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets response_header
      *
-     * @return int
+     * @return \SplititSdkClient\Model\ResponseHeader
      */
-    public function getId()
+    public function getResponseHeader()
     {
-        return $this->container['id'];
+        return $this->container['response_header'];
     }
 
     /**
-     * Sets id
+     * Sets response_header
      *
-     * @param int $id id
+     * @param \SplititSdkClient\Model\ResponseHeader $response_header response_header
      *
      * @return $this
      */
-    public function setId($id)
+    public function setResponseHeader($response_header)
     {
-        $this->container['id'] = $id;
+        $this->container['response_header'] = $response_header;
 
         return $this;
     }
 
     /**
-     * Gets full_name
+     * Gets picker_type
      *
      * @return string
      */
-    public function getFullName()
+    public function getPickerType()
     {
-        return $this->container['full_name'];
+        return $this->container['picker_type'];
     }
 
     /**
-     * Sets full_name
+     * Sets picker_type
      *
-     * @param string $full_name full_name
+     * @param string $picker_type picker_type
      *
      * @return $this
      */
-    public function setFullName($full_name)
+    public function setPickerType($picker_type)
     {
-        $this->container['full_name'] = $full_name;
+        $this->container['picker_type'] = $picker_type;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets is_secured
      *
-     * @return \SplititSdkClient\Model\ContactPersonType
+     * @return bool
      */
-    public function getType()
+    public function getIsSecured()
     {
-        return $this->container['type'];
+        return $this->container['is_secured'];
     }
 
     /**
-     * Sets type
+     * Sets is_secured
      *
-     * @param \SplititSdkClient\Model\ContactPersonType $type type
+     * @param bool $is_secured is_secured
      *
      * @return $this
      */
-    public function setType($type)
+    public function setIsSecured($is_secured)
     {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets email_address
-     *
-     * @return string
-     */
-    public function getEmailAddress()
-    {
-        return $this->container['email_address'];
-    }
-
-    /**
-     * Sets email_address
-     *
-     * @param string $email_address email_address
-     *
-     * @return $this
-     */
-    public function setEmailAddress($email_address)
-    {
-        $this->container['email_address'] = $email_address;
-
-        return $this;
-    }
-
-    /**
-     * Gets mobile_phone_number
-     *
-     * @return string
-     */
-    public function getMobilePhoneNumber()
-    {
-        return $this->container['mobile_phone_number'];
-    }
-
-    /**
-     * Sets mobile_phone_number
-     *
-     * @param string $mobile_phone_number mobile_phone_number
-     *
-     * @return $this
-     */
-    public function setMobilePhoneNumber($mobile_phone_number)
-    {
-        $this->container['mobile_phone_number'] = $mobile_phone_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets office_phone_number
-     *
-     * @return string
-     */
-    public function getOfficePhoneNumber()
-    {
-        return $this->container['office_phone_number'];
-    }
-
-    /**
-     * Sets office_phone_number
-     *
-     * @param string $office_phone_number office_phone_number
-     *
-     * @return $this
-     */
-    public function setOfficePhoneNumber($office_phone_number)
-    {
-        $this->container['office_phone_number'] = $office_phone_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets business_unit
-     *
-     * @return \SplititSdkClient\Model\BusinessUnitRef
-     */
-    public function getBusinessUnit()
-    {
-        return $this->container['business_unit'];
-    }
-
-    /**
-     * Sets business_unit
-     *
-     * @param \SplititSdkClient\Model\BusinessUnitRef $business_unit business_unit
-     *
-     * @return $this
-     */
-    public function setBusinessUnit($business_unit)
-    {
-        $this->container['business_unit'] = $business_unit;
+        $this->container['is_secured'] = $is_secured;
 
         return $this;
     }

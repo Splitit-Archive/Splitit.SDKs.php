@@ -1,6 +1,6 @@
 <?php
 /**
- * SalesAssociate
+ * PublicTokenResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * SalesAssociate Class Doc Comment
+ * PublicTokenResponse Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SalesAssociate implements ModelInterface, ArrayAccess
+class PublicTokenResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class SalesAssociate implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SalesAssociate';
+    protected static $swaggerModelName = 'PublicTokenResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,11 @@ class SalesAssociate implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'first_name' => 'string',
-        'last_name' => 'string'
+        'public_token' => 'string',
+        'checkout_url' => 'string',
+        'privacy_policy_url' => 'string',
+        'terms_and_conditions_url' => 'string',
+        'response_header' => '\SplititSdkClient\Model\ResponseHeader'
     ];
 
     /**
@@ -68,9 +70,11 @@ class SalesAssociate implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'first_name' => null,
-        'last_name' => null
+        'public_token' => null,
+        'checkout_url' => null,
+        'privacy_policy_url' => null,
+        'terms_and_conditions_url' => null,
+        'response_header' => null
     ];
 
     /**
@@ -100,9 +104,11 @@ class SalesAssociate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'Id',
-        'first_name' => 'FirstName',
-        'last_name' => 'LastName'
+        'public_token' => 'PublicToken',
+        'checkout_url' => 'CheckoutUrl',
+        'privacy_policy_url' => 'PrivacyPolicyUrl',
+        'terms_and_conditions_url' => 'TermsAndConditionsUrl',
+        'response_header' => 'ResponseHeader'
     ];
 
     /**
@@ -111,9 +117,11 @@ class SalesAssociate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'first_name' => 'setFirstName',
-        'last_name' => 'setLastName'
+        'public_token' => 'setPublicToken',
+        'checkout_url' => 'setCheckoutUrl',
+        'privacy_policy_url' => 'setPrivacyPolicyUrl',
+        'terms_and_conditions_url' => 'setTermsAndConditionsUrl',
+        'response_header' => 'setResponseHeader'
     ];
 
     /**
@@ -122,9 +130,11 @@ class SalesAssociate implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'first_name' => 'getFirstName',
-        'last_name' => 'getLastName'
+        'public_token' => 'getPublicToken',
+        'checkout_url' => 'getCheckoutUrl',
+        'privacy_policy_url' => 'getPrivacyPolicyUrl',
+        'terms_and_conditions_url' => 'getTermsAndConditionsUrl',
+        'response_header' => 'getResponseHeader'
     ];
 
     /**
@@ -187,9 +197,11 @@ class SalesAssociate implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['public_token'] = isset($data['public_token']) ? $data['public_token'] : null;
+        $this->container['checkout_url'] = isset($data['checkout_url']) ? $data['checkout_url'] : null;
+        $this->container['privacy_policy_url'] = isset($data['privacy_policy_url']) ? $data['privacy_policy_url'] : null;
+        $this->container['terms_and_conditions_url'] = isset($data['terms_and_conditions_url']) ? $data['terms_and_conditions_url'] : null;
+        $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
     }
 
     /**
@@ -217,73 +229,121 @@ class SalesAssociate implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets public_token
      *
      * @return string
      */
-    public function getId()
+    public function getPublicToken()
     {
-        return $this->container['id'];
+        return $this->container['public_token'];
     }
 
     /**
-     * Sets id
+     * Sets public_token
      *
-     * @param string $id id
+     * @param string $public_token public_token
      *
      * @return $this
      */
-    public function setId($id)
+    public function setPublicToken($public_token)
     {
-        $this->container['id'] = $id;
+        $this->container['public_token'] = $public_token;
 
         return $this;
     }
 
     /**
-     * Gets first_name
+     * Gets checkout_url
      *
      * @return string
      */
-    public function getFirstName()
+    public function getCheckoutUrl()
     {
-        return $this->container['first_name'];
+        return $this->container['checkout_url'];
     }
 
     /**
-     * Sets first_name
+     * Sets checkout_url
      *
-     * @param string $first_name first_name
+     * @param string $checkout_url checkout_url
      *
      * @return $this
      */
-    public function setFirstName($first_name)
+    public function setCheckoutUrl($checkout_url)
     {
-        $this->container['first_name'] = $first_name;
+        $this->container['checkout_url'] = $checkout_url;
 
         return $this;
     }
 
     /**
-     * Gets last_name
+     * Gets privacy_policy_url
      *
      * @return string
      */
-    public function getLastName()
+    public function getPrivacyPolicyUrl()
     {
-        return $this->container['last_name'];
+        return $this->container['privacy_policy_url'];
     }
 
     /**
-     * Sets last_name
+     * Sets privacy_policy_url
      *
-     * @param string $last_name last_name
+     * @param string $privacy_policy_url privacy_policy_url
      *
      * @return $this
      */
-    public function setLastName($last_name)
+    public function setPrivacyPolicyUrl($privacy_policy_url)
     {
-        $this->container['last_name'] = $last_name;
+        $this->container['privacy_policy_url'] = $privacy_policy_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets terms_and_conditions_url
+     *
+     * @return string
+     */
+    public function getTermsAndConditionsUrl()
+    {
+        return $this->container['terms_and_conditions_url'];
+    }
+
+    /**
+     * Sets terms_and_conditions_url
+     *
+     * @param string $terms_and_conditions_url terms_and_conditions_url
+     *
+     * @return $this
+     */
+    public function setTermsAndConditionsUrl($terms_and_conditions_url)
+    {
+        $this->container['terms_and_conditions_url'] = $terms_and_conditions_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets response_header
+     *
+     * @return \SplititSdkClient\Model\ResponseHeader
+     */
+    public function getResponseHeader()
+    {
+        return $this->container['response_header'];
+    }
+
+    /**
+     * Sets response_header
+     *
+     * @param \SplititSdkClient\Model\ResponseHeader $response_header response_header
+     *
+     * @return $this
+     */
+    public function setResponseHeader($response_header)
+    {
+        $this->container['response_header'] = $response_header;
 
         return $this;
     }

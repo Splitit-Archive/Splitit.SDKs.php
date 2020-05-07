@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**installmentPlanCancel**](InstallmentPlanApi.md#installmentPlanCancel) | **POST** /api/InstallmentPlan/Cancel | 
 [**installmentPlanChargeBack**](InstallmentPlanApi.md#installmentPlanChargeBack) | **POST** /api/InstallmentPlan/ChargeBack | 
 [**installmentPlanCreate**](InstallmentPlanApi.md#installmentPlanCreate) | **POST** /api/InstallmentPlan/Create | 
+[**installmentPlanCreatePublicToken**](InstallmentPlanApi.md#installmentPlanCreatePublicToken) | **POST** /api/InstallmentPlan/CreatePublicToken | 
 [**installmentPlanGet**](InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 [**installmentPlanGet3DSecureParameters**](InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 [**installmentPlanGetExtended**](InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
@@ -200,6 +201,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\SplititSdkClient\Model\CreateInstallmentsPlanResponse**](../Model/CreateInstallmentsPlanResponse.md)
+
+### Authorization
+
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **installmentPlanCreatePublicToken**
+> \SplititSdkClient\Model\PublicTokenResponse installmentPlanCreatePublicToken($request)
+
+
+
+### Example
+```php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+# Use Configuration::production() for production API
+$apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
+    Configuration::sandbox(),
+    $session_id
+);
+
+$request = new \SplititSdkClient\Model\PublicTokenRequest(); // \SplititSdkClient\Model\PublicTokenRequest | 
+
+try {
+    $result = $apiInstance->installmentPlanCreatePublicToken($request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InstallmentPlanApi->installmentPlanCreatePublicToken: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\SplititSdkClient\Model\PublicTokenRequest**](../Model/PublicTokenRequest.md)|  |
+
+### Return type
+
+[**\SplititSdkClient\Model\PublicTokenResponse**](../Model/PublicTokenResponse.md)
 
 ### Authorization
 

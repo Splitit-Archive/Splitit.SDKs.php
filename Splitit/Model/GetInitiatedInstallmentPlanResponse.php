@@ -62,7 +62,7 @@ class GetInitiatedInstallmentPlanResponse implements ModelInterface, ArrayAccess
         'plan_data' => '\SplititSdkClient\Model\PlanData',
         'cart_data' => '\SplititSdkClient\Model\CartData',
         'consumer_data' => '\SplititSdkClient\Model\ConsumerData',
-        'merchant_data' => '\SplititSdkClient\Model\Merchant',
+        'merchant_data' => '\SplititSdkClient\Model\MerchantRef',
         'billing_address' => '\SplititSdkClient\Model\AddressData',
         'payment_wizard_data_response' => '\SplititSdkClient\Model\PaymentWizardDataResponse',
         'error_indicator' => '\SplititSdkClient\Model\Error'
@@ -375,7 +375,7 @@ class GetInitiatedInstallmentPlanResponse implements ModelInterface, ArrayAccess
     /**
      * Gets merchant_data
      *
-     * @return \SplititSdkClient\Model\Merchant
+     * @return \SplititSdkClient\Model\MerchantRef
      */
     public function getMerchantData()
     {
@@ -385,7 +385,7 @@ class GetInitiatedInstallmentPlanResponse implements ModelInterface, ArrayAccess
     /**
      * Sets merchant_data
      *
-     * @param \SplititSdkClient\Model\Merchant $merchant_data merchant_data
+     * @param \SplititSdkClient\Model\MerchantRef $merchant_data merchant_data
      *
      * @return $this
      */

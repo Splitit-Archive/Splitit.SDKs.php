@@ -75,6 +75,9 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'string',
         'address_is_readonly' => 'bool',
         'logo_url' => 'string',
+        'privacy_policy_url' => 'string',
+        'terms_and_conditions_url' => 'string',
+        'learn_more_url' => 'string',
         'payment_form_messages' => 'string[]'
     ];
 
@@ -102,6 +105,9 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => null,
         'address_is_readonly' => null,
         'logo_url' => null,
+        'privacy_policy_url' => null,
+        'terms_and_conditions_url' => null,
+        'learn_more_url' => null,
         'payment_form_messages' => null
     ];
 
@@ -150,6 +156,9 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'NumberOfInstallmentsSelectionsOption',
         'address_is_readonly' => 'AddressIsReadonly',
         'logo_url' => 'LogoURL',
+        'privacy_policy_url' => 'PrivacyPolicyUrl',
+        'terms_and_conditions_url' => 'TermsAndConditionsUrl',
+        'learn_more_url' => 'LearnMoreUrl',
         'payment_form_messages' => 'PaymentFormMessages'
     ];
 
@@ -177,6 +186,9 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'setNumberOfInstallmentsSelectionsOption',
         'address_is_readonly' => 'setAddressIsReadonly',
         'logo_url' => 'setLogoUrl',
+        'privacy_policy_url' => 'setPrivacyPolicyUrl',
+        'terms_and_conditions_url' => 'setTermsAndConditionsUrl',
+        'learn_more_url' => 'setLearnMoreUrl',
         'payment_form_messages' => 'setPaymentFormMessages'
     ];
 
@@ -204,6 +216,9 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'getNumberOfInstallmentsSelectionsOption',
         'address_is_readonly' => 'getAddressIsReadonly',
         'logo_url' => 'getLogoUrl',
+        'privacy_policy_url' => 'getPrivacyPolicyUrl',
+        'terms_and_conditions_url' => 'getTermsAndConditionsUrl',
+        'learn_more_url' => 'getLearnMoreUrl',
         'payment_form_messages' => 'getPaymentFormMessages'
     ];
 
@@ -285,6 +300,9 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         $this->container['number_of_installments_selections_option'] = isset($data['number_of_installments_selections_option']) ? $data['number_of_installments_selections_option'] : null;
         $this->container['address_is_readonly'] = isset($data['address_is_readonly']) ? $data['address_is_readonly'] : null;
         $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
+        $this->container['privacy_policy_url'] = isset($data['privacy_policy_url']) ? $data['privacy_policy_url'] : null;
+        $this->container['terms_and_conditions_url'] = isset($data['terms_and_conditions_url']) ? $data['terms_and_conditions_url'] : null;
+        $this->container['learn_more_url'] = isset($data['learn_more_url']) ? $data['learn_more_url'] : null;
         $this->container['payment_form_messages'] = isset($data['payment_form_messages']) ? $data['payment_form_messages'] : null;
     }
 
@@ -761,6 +779,78 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     public function setLogoUrl($logo_url)
     {
         $this->container['logo_url'] = $logo_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets privacy_policy_url
+     *
+     * @return string
+     */
+    public function getPrivacyPolicyUrl()
+    {
+        return $this->container['privacy_policy_url'];
+    }
+
+    /**
+     * Sets privacy_policy_url
+     *
+     * @param string $privacy_policy_url privacy_policy_url
+     *
+     * @return $this
+     */
+    public function setPrivacyPolicyUrl($privacy_policy_url)
+    {
+        $this->container['privacy_policy_url'] = $privacy_policy_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets terms_and_conditions_url
+     *
+     * @return string
+     */
+    public function getTermsAndConditionsUrl()
+    {
+        return $this->container['terms_and_conditions_url'];
+    }
+
+    /**
+     * Sets terms_and_conditions_url
+     *
+     * @param string $terms_and_conditions_url terms_and_conditions_url
+     *
+     * @return $this
+     */
+    public function setTermsAndConditionsUrl($terms_and_conditions_url)
+    {
+        $this->container['terms_and_conditions_url'] = $terms_and_conditions_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets learn_more_url
+     *
+     * @return string
+     */
+    public function getLearnMoreUrl()
+    {
+        return $this->container['learn_more_url'];
+    }
+
+    /**
+     * Sets learn_more_url
+     *
+     * @param string $learn_more_url learn_more_url
+     *
+     * @return $this
+     */
+    public function setLearnMoreUrl($learn_more_url)
+    {
+        $this->container['learn_more_url'] = $learn_more_url;
 
         return $this;
     }

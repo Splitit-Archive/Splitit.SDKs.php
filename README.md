@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.4.3
+- Package version: 1.4.4
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.4.3"
+    "splitit/sdk": "^1.4.4"
   }
 }
 ```
@@ -130,6 +130,66 @@ try{
 ?>
 ```
 
+## Flex Fields
+
+Commong usage for Splitit PHP SDK is in making necessary server-side requests as part of FlexFields product integration.
+The code below is an example of how SDK wrappers can be used to simplify acquiring public token and verifying payment.
+For more information, please visit [FlexFields documentation](https://hosted.production.splitit.com/#php).
+
+Server-side code consists of two parts: acquiring public token which needs to be passed to FlexFields JS library 
+and verifying payment before order is finalized and shipped.
+
+### Getting public token
+```php
+<?php
+
+use SplititSdkClient\Configuration;
+use SplititSdkClient\ObjectSerializer;
+use SplititSdkClient\FlexFields;
+
+Configuration::sandbox()->setApiKey('_YOUR_SANDBOX_API_KEY_');
+Configuration::production()->setApiKey('_YOUR_PRODUCTION_API_KEY_');
+
+try{
+    $ff = FlexFields::authenticate(Configuration::sandbox(), 'YOUR_USERNAME', 'YOUR_PASSWORD');
+    $publicToken = $ff->getPublicToken(1000, "USD");
+
+    echo $publicToken;
+} catch(Exception $e){
+    ...
+}
+?>
+```
+
+### Payment verification
+```php
+<?php
+
+use SplititSdkClient\Configuration;
+use SplititSdkClient\ObjectSerializer;
+use SplititSdkClient\FlexFields;
+
+Configuration::sandbox()->setApiKey('_YOUR_SANDBOX_API_KEY_');
+Configuration::production()->setApiKey('_YOUR_PRODUCTION_API_KEY_');
+
+try{
+    $ff = FlexFields::authenticate(Configuration::sandbox(), 'YOUR_USERNAME', 'YOUR_PASSWORD');
+    $verifyPaymentResponse = $ff->verifyPayment($installmentPlanNumber, 1000);
+
+    if ($verifyPaymentResponse) 
+    {
+        # all good
+    }
+    else
+    {
+        # error
+    }
+} catch(Exception $e){
+    ...
+}
+?>
+```
+
 For detailed information on request and response procedures, please visit [Splitit Web API documentation](https://documenter.getpostman.com/view/795699/RWaNQSJH?version=latest)
 
 ## Documentation for API Endpoints
@@ -139,10 +199,12 @@ All URIs are relative to *https://webapi.production.splitit.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *InfrastructureApi* | [**infrastructureGetResources**](docs/Api/InfrastructureApi.md#infrastructuregetresources) | **POST** /api/Infrastructure/GetResources | 
+*InfrastructureApi* | [**infrastructureGetResources2**](docs/Api/InfrastructureApi.md#infrastructuregetresources2) | **GET** /api/Infrastructure/GetResources | 
 *InstallmentPlanApi* | [**installmentPlanApprove**](docs/Api/InstallmentPlanApi.md#installmentplanapprove) | **POST** /api/InstallmentPlan/Approve | 
 *InstallmentPlanApi* | [**installmentPlanCancel**](docs/Api/InstallmentPlanApi.md#installmentplancancel) | **POST** /api/InstallmentPlan/Cancel | 
 *InstallmentPlanApi* | [**installmentPlanChargeBack**](docs/Api/InstallmentPlanApi.md#installmentplanchargeback) | **POST** /api/InstallmentPlan/ChargeBack | 
 *InstallmentPlanApi* | [**installmentPlanCreate**](docs/Api/InstallmentPlanApi.md#installmentplancreate) | **POST** /api/InstallmentPlan/Create | 
+*InstallmentPlanApi* | [**installmentPlanCreatePublicToken**](docs/Api/InstallmentPlanApi.md#installmentplancreatepublictoken) | **POST** /api/InstallmentPlan/CreatePublicToken | 
 *InstallmentPlanApi* | [**installmentPlanGet**](docs/Api/InstallmentPlanApi.md#installmentplanget) | **POST** /api/InstallmentPlan/Get | 
 *InstallmentPlanApi* | [**installmentPlanGet3DSecureParameters**](docs/Api/InstallmentPlanApi.md#installmentplanget3dsecureparameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 *InstallmentPlanApi* | [**installmentPlanGetExtended**](docs/Api/InstallmentPlanApi.md#installmentplangetextended) | **POST** /api/InstallmentPlan/GetExtended | 
@@ -154,28 +216,26 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanUpdate**](docs/Api/InstallmentPlanApi.md#installmentplanupdate) | **POST** /api/InstallmentPlan/Update | 
 *InstallmentPlanApi* | [**installmentPlanVerifyPayment**](docs/Api/InstallmentPlanApi.md#installmentplanverifypayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
 *LoginApi* | [**loginPost**](docs/Api/LoginApi.md#loginpost) | **POST** /api/Login | 
+*TouchPointsApi* | [**touchPointsFlexFieldsData**](docs/Api/TouchPointsApi.md#touchpointsflexfieldsdata) | **GET** /api/TouchPoints/SetupData/FlexFieldsData | 
 
 
 ## Documentation For Models
 
  - [AddressData2](docs/Model/AddressData2.md)
- - [Agent](docs/Model/Agent.md)
  - [AmountDetails2](docs/Model/AmountDetails2.md)
  - [ApproveInstallmentPlanRequest](docs/Model/ApproveInstallmentPlanRequest.md)
  - [AuthenticationType](docs/Model/AuthenticationType.md)
- - [BankDetails](docs/Model/BankDetails.md)
  - [CancelInstallmentPlanRequest](docs/Model/CancelInstallmentPlanRequest.md)
  - [CardData](docs/Model/CardData.md)
  - [CartData](docs/Model/CartData.md)
  - [ChargebackRequest](docs/Model/ChargebackRequest.md)
- - [ContactPerson](docs/Model/ContactPerson.md)
- - [ContactPersonType](docs/Model/ContactPersonType.md)
  - [CreateInstallmentPlanLegacyResponse](docs/Model/CreateInstallmentPlanLegacyResponse.md)
  - [CreateInstallmentPlanRequest](docs/Model/CreateInstallmentPlanRequest.md)
  - [DelayResolution](docs/Model/DelayResolution.md)
  - [Error](docs/Model/Error.md)
  - [EventsEndpoints](docs/Model/EventsEndpoints.md)
  - [ExternalAuth](docs/Model/ExternalAuth.md)
+ - [FlexFieldsDataResponse](docs/Model/FlexFieldsDataResponse.md)
  - [FraudCheck](docs/Model/FraudCheck.md)
  - [FraudCheckResult](docs/Model/FraudCheckResult.md)
  - [Get3DSecureParametersRequest](docs/Model/Get3DSecureParametersRequest.md)
@@ -201,8 +261,6 @@ Class | Method | HTTP request | Description
  - [ItemData](docs/Model/ItemData.md)
  - [LoginRequest](docs/Model/LoginRequest.md)
  - [LoginResponse2](docs/Model/LoginResponse2.md)
- - [Merchant](docs/Model/Merchant.md)
- - [MerchantVertical](docs/Model/MerchantVertical.md)
  - [Money](docs/Model/Money.md)
  - [MoneyWithCurrencyCode](docs/Model/MoneyWithCurrencyCode.md)
  - [PagingRequestHeader](docs/Model/PagingRequestHeader.md)
@@ -212,6 +270,8 @@ Class | Method | HTTP request | Description
  - [PlanApprovalEvidence](docs/Model/PlanApprovalEvidence.md)
  - [PlanData](docs/Model/PlanData.md)
  - [PlanStrategy](docs/Model/PlanStrategy.md)
+ - [PublicTokenRequest](docs/Model/PublicTokenRequest.md)
+ - [PublicTokenResponse](docs/Model/PublicTokenResponse.md)
  - [PurchaseMethod](docs/Model/PurchaseMethod.md)
  - [ReAuthorization](docs/Model/ReAuthorization.md)
  - [RedirectUrls](docs/Model/RedirectUrls.md)
@@ -224,8 +284,6 @@ Class | Method | HTTP request | Description
  - [ResponseError](docs/Model/ResponseError.md)
  - [ResponseHeader](docs/Model/ResponseHeader.md)
  - [ResponseStatus](docs/Model/ResponseStatus.md)
- - [SalesAssociate](docs/Model/SalesAssociate.md)
- - [SplititEntity](docs/Model/SplititEntity.md)
  - [StartInstallmentsRequest](docs/Model/StartInstallmentsRequest.md)
  - [SystemTextCategory](docs/Model/SystemTextCategory.md)
  - [TermsAndConditions](docs/Model/TermsAndConditions.md)
@@ -243,7 +301,6 @@ Class | Method | HTTP request | Description
  - [AddressData](docs/Model/AddressData.md)
  - [AmountDetails](docs/Model/AmountDetails.md)
  - [BuRef](docs/Model/BuRef.md)
- - [BusinessUnitRef](docs/Model/BusinessUnitRef.md)
  - [ConsumerData](docs/Model/ConsumerData.md)
  - [CreateInstallmentsPlanResponse](docs/Model/CreateInstallmentsPlanResponse.md)
  - [Currency](docs/Model/Currency.md)

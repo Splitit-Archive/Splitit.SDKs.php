@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateInstallmentPlanApi
+ * TouchPointsApi
  * PHP version 5
  *
  * @category Class
@@ -41,14 +41,14 @@ use SplititSdkClient\HeaderSelector;
 use SplititSdkClient\ObjectSerializer;
 
 /**
- * CreateInstallmentPlanApi Class Doc Comment
+ * TouchPointsApi Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Splitit
  * @link     https://github.com/Splitit/Splitit.SDKs
  */
-class CreateInstallmentPlanApi
+class TouchPointsApi
 {
     /**
      * @var ClientInterface
@@ -123,63 +123,35 @@ class CreateInstallmentPlanApi
     }
 
     /**
-     * Operation createInstallmentPlanGet
+     * Operation touchPointsFlexFieldsData
      *
-     * @param  float $amount_before_fees amount_before_fees (optional)
      * @param  string $api_key api_key (optional)
-     * @param  string $avs_address avs_address (optional)
-     * @param  string $avs_zip avs_zip (optional)
-     * @param  string $card_cvv card_cvv (optional)
-     * @param  string $card_exp_month card_exp_month (optional)
-     * @param  string $card_exp_year card_exp_year (optional)
-     * @param  string $card_holder card_holder (optional)
-     * @param  string $card_number card_number (optional)
-     * @param  int $card_type_id card_type_id (optional)
-     * @param  string $consumer_full_name consumer_full_name (optional)
-     * @param  int $country_id country_id (optional)
-     * @param  string $email email (optional)
-     * @param  int $installment_number installment_number (optional)
-     * @param  string $param_x param_x (optional)
-     * @param  string $session_id session_id (optional)
+     * @param  string $requested_number_of_installments requested_number_of_installments (optional)
      *
      * @throws \SplititSdkClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplititSdkClient\Model\CreateInstallmentPlanLegacyResponse
+     * @return \SplititSdkClient\Model\FlexFieldsDataResponse
      */
-    public function createInstallmentPlanGet($amount_before_fees = null, $api_key = null, $avs_address = null, $avs_zip = null, $card_cvv = null, $card_exp_month = null, $card_exp_year = null, $card_holder = null, $card_number = null, $card_type_id = null, $consumer_full_name = null, $country_id = null, $email = null, $installment_number = null, $param_x = null, $session_id = null)
+    public function touchPointsFlexFieldsData($api_key = null, $requested_number_of_installments = null)
     {
-        list($response) = $this->createInstallmentPlanGetWithHttpInfo($amount_before_fees, $api_key, $avs_address, $avs_zip, $card_cvv, $card_exp_month, $card_exp_year, $card_holder, $card_number, $card_type_id, $consumer_full_name, $country_id, $email, $installment_number, $param_x, $session_id);
+        list($response) = $this->touchPointsFlexFieldsDataWithHttpInfo($api_key, $requested_number_of_installments);
         return $response;
     }
 
     /**
-     * Operation createInstallmentPlanGetWithHttpInfo
+     * Operation touchPointsFlexFieldsDataWithHttpInfo
      *
-     * @param  float $amount_before_fees (optional)
      * @param  string $api_key (optional)
-     * @param  string $avs_address (optional)
-     * @param  string $avs_zip (optional)
-     * @param  string $card_cvv (optional)
-     * @param  string $card_exp_month (optional)
-     * @param  string $card_exp_year (optional)
-     * @param  string $card_holder (optional)
-     * @param  string $card_number (optional)
-     * @param  int $card_type_id (optional)
-     * @param  string $consumer_full_name (optional)
-     * @param  int $country_id (optional)
-     * @param  string $email (optional)
-     * @param  int $installment_number (optional)
-     * @param  string $param_x (optional)
-     * @param  string $session_id (optional)
+     * @param  string $requested_number_of_installments (optional)
      *
      * @throws \SplititSdkClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplititSdkClient\Model\CreateInstallmentPlanLegacyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplititSdkClient\Model\FlexFieldsDataResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createInstallmentPlanGetWithHttpInfo($amount_before_fees = null, $api_key = null, $avs_address = null, $avs_zip = null, $card_cvv = null, $card_exp_month = null, $card_exp_year = null, $card_holder = null, $card_number = null, $card_type_id = null, $consumer_full_name = null, $country_id = null, $email = null, $installment_number = null, $param_x = null, $session_id = null)
+    public function touchPointsFlexFieldsDataWithHttpInfo($api_key = null, $requested_number_of_installments = null)
     {
-        $returnType = '\SplititSdkClient\Model\CreateInstallmentPlanLegacyResponse';
-        $request = $this->createInstallmentPlanGetRequest($amount_before_fees, $api_key, $avs_address, $avs_zip, $card_cvv, $card_exp_month, $card_exp_year, $card_holder, $card_number, $card_type_id, $consumer_full_name, $country_id, $email, $installment_number, $param_x, $session_id);
+        $returnType = '\SplititSdkClient\Model\FlexFieldsDataResponse';
+        $request = $this->touchPointsFlexFieldsDataRequest($api_key, $requested_number_of_installments);
 
         try {
             $options = $this->createHttpClientOption();
@@ -237,7 +209,7 @@ class CreateInstallmentPlanApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplititSdkClient\Model\CreateInstallmentPlanLegacyResponse',
+                        '\SplititSdkClient\Model\FlexFieldsDataResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -248,33 +220,19 @@ class CreateInstallmentPlanApi
     }
 
     /**
-     * Operation createInstallmentPlanGetAsync
+     * Operation touchPointsFlexFieldsDataAsync
      *
      * 
      *
-     * @param  float $amount_before_fees (optional)
      * @param  string $api_key (optional)
-     * @param  string $avs_address (optional)
-     * @param  string $avs_zip (optional)
-     * @param  string $card_cvv (optional)
-     * @param  string $card_exp_month (optional)
-     * @param  string $card_exp_year (optional)
-     * @param  string $card_holder (optional)
-     * @param  string $card_number (optional)
-     * @param  int $card_type_id (optional)
-     * @param  string $consumer_full_name (optional)
-     * @param  int $country_id (optional)
-     * @param  string $email (optional)
-     * @param  int $installment_number (optional)
-     * @param  string $param_x (optional)
-     * @param  string $session_id (optional)
+     * @param  string $requested_number_of_installments (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createInstallmentPlanGetAsync($amount_before_fees = null, $api_key = null, $avs_address = null, $avs_zip = null, $card_cvv = null, $card_exp_month = null, $card_exp_year = null, $card_holder = null, $card_number = null, $card_type_id = null, $consumer_full_name = null, $country_id = null, $email = null, $installment_number = null, $param_x = null, $session_id = null)
+    public function touchPointsFlexFieldsDataAsync($api_key = null, $requested_number_of_installments = null)
     {
-        return $this->createInstallmentPlanGetAsyncWithHttpInfo($amount_before_fees, $api_key, $avs_address, $avs_zip, $card_cvv, $card_exp_month, $card_exp_year, $card_holder, $card_number, $card_type_id, $consumer_full_name, $country_id, $email, $installment_number, $param_x, $session_id)
+        return $this->touchPointsFlexFieldsDataAsyncWithHttpInfo($api_key, $requested_number_of_installments)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -283,34 +241,20 @@ class CreateInstallmentPlanApi
     }
 
     /**
-     * Operation createInstallmentPlanGetAsyncWithHttpInfo
+     * Operation touchPointsFlexFieldsDataAsyncWithHttpInfo
      *
      * 
      *
-     * @param  float $amount_before_fees (optional)
      * @param  string $api_key (optional)
-     * @param  string $avs_address (optional)
-     * @param  string $avs_zip (optional)
-     * @param  string $card_cvv (optional)
-     * @param  string $card_exp_month (optional)
-     * @param  string $card_exp_year (optional)
-     * @param  string $card_holder (optional)
-     * @param  string $card_number (optional)
-     * @param  int $card_type_id (optional)
-     * @param  string $consumer_full_name (optional)
-     * @param  int $country_id (optional)
-     * @param  string $email (optional)
-     * @param  int $installment_number (optional)
-     * @param  string $param_x (optional)
-     * @param  string $session_id (optional)
+     * @param  string $requested_number_of_installments (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createInstallmentPlanGetAsyncWithHttpInfo($amount_before_fees = null, $api_key = null, $avs_address = null, $avs_zip = null, $card_cvv = null, $card_exp_month = null, $card_exp_year = null, $card_holder = null, $card_number = null, $card_type_id = null, $consumer_full_name = null, $country_id = null, $email = null, $installment_number = null, $param_x = null, $session_id = null)
+    public function touchPointsFlexFieldsDataAsyncWithHttpInfo($api_key = null, $requested_number_of_installments = null)
     {
-        $returnType = '\SplititSdkClient\Model\CreateInstallmentPlanLegacyResponse';
-        $request = $this->createInstallmentPlanGetRequest($amount_before_fees, $api_key, $avs_address, $avs_zip, $card_cvv, $card_exp_month, $card_exp_year, $card_holder, $card_number, $card_type_id, $consumer_full_name, $country_id, $email, $installment_number, $param_x, $session_id);
+        $returnType = '\SplititSdkClient\Model\FlexFieldsDataResponse';
+        $request = $this->touchPointsFlexFieldsDataRequest($api_key, $requested_number_of_installments);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -357,32 +301,18 @@ class CreateInstallmentPlanApi
     }
 
     /**
-     * Create request for operation 'createInstallmentPlanGet'
+     * Create request for operation 'touchPointsFlexFieldsData'
      *
-     * @param  float $amount_before_fees (optional)
      * @param  string $api_key (optional)
-     * @param  string $avs_address (optional)
-     * @param  string $avs_zip (optional)
-     * @param  string $card_cvv (optional)
-     * @param  string $card_exp_month (optional)
-     * @param  string $card_exp_year (optional)
-     * @param  string $card_holder (optional)
-     * @param  string $card_number (optional)
-     * @param  int $card_type_id (optional)
-     * @param  string $consumer_full_name (optional)
-     * @param  int $country_id (optional)
-     * @param  string $email (optional)
-     * @param  int $installment_number (optional)
-     * @param  string $param_x (optional)
-     * @param  string $session_id (optional)
+     * @param  string $requested_number_of_installments (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createInstallmentPlanGetRequest($amount_before_fees = null, $api_key = null, $avs_address = null, $avs_zip = null, $card_cvv = null, $card_exp_month = null, $card_exp_year = null, $card_holder = null, $card_number = null, $card_type_id = null, $consumer_full_name = null, $country_id = null, $email = null, $installment_number = null, $param_x = null, $session_id = null)
+    protected function touchPointsFlexFieldsDataRequest($api_key = null, $requested_number_of_installments = null)
     {
 
-        $resourcePath = '/api/CreateInstallmentPlan';
+        $resourcePath = '/api/TouchPoints/SetupData/FlexFieldsData';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -390,68 +320,12 @@ class CreateInstallmentPlanApi
         $multipart = false;
 
         // query params
-        if ($amount_before_fees !== null) {
-            $queryParams['AmountBeforeFees'] = ObjectSerializer::toQueryValue($amount_before_fees);
-        }
-        // query params
         if ($api_key !== null) {
-            $queryParams['ApiKey'] = ObjectSerializer::toQueryValue($api_key);
+            $queryParams['apiKey'] = ObjectSerializer::toQueryValue($api_key);
         }
         // query params
-        if ($avs_address !== null) {
-            $queryParams['AvsAddress'] = ObjectSerializer::toQueryValue($avs_address);
-        }
-        // query params
-        if ($avs_zip !== null) {
-            $queryParams['AvsZip'] = ObjectSerializer::toQueryValue($avs_zip);
-        }
-        // query params
-        if ($card_cvv !== null) {
-            $queryParams['CardCvv'] = ObjectSerializer::toQueryValue($card_cvv);
-        }
-        // query params
-        if ($card_exp_month !== null) {
-            $queryParams['CardExpMonth'] = ObjectSerializer::toQueryValue($card_exp_month);
-        }
-        // query params
-        if ($card_exp_year !== null) {
-            $queryParams['CardExpYear'] = ObjectSerializer::toQueryValue($card_exp_year);
-        }
-        // query params
-        if ($card_holder !== null) {
-            $queryParams['CardHolder'] = ObjectSerializer::toQueryValue($card_holder);
-        }
-        // query params
-        if ($card_number !== null) {
-            $queryParams['CardNumber'] = ObjectSerializer::toQueryValue($card_number);
-        }
-        // query params
-        if ($card_type_id !== null) {
-            $queryParams['CardTypeId'] = ObjectSerializer::toQueryValue($card_type_id);
-        }
-        // query params
-        if ($consumer_full_name !== null) {
-            $queryParams['ConsumerFullName'] = ObjectSerializer::toQueryValue($consumer_full_name);
-        }
-        // query params
-        if ($country_id !== null) {
-            $queryParams['CountryId'] = ObjectSerializer::toQueryValue($country_id);
-        }
-        // query params
-        if ($email !== null) {
-            $queryParams['Email'] = ObjectSerializer::toQueryValue($email);
-        }
-        // query params
-        if ($installment_number !== null) {
-            $queryParams['InstallmentNumber'] = ObjectSerializer::toQueryValue($installment_number);
-        }
-        // query params
-        if ($param_x !== null) {
-            $queryParams['ParamX'] = ObjectSerializer::toQueryValue($param_x);
-        }
-        // query params
-        if ($session_id !== null) {
-            $queryParams['SessionId'] = ObjectSerializer::toQueryValue($session_id);
+        if ($requested_number_of_installments !== null) {
+            $queryParams['requestedNumberOfInstallments'] = ObjectSerializer::toQueryValue($requested_number_of_installments);
         }
 
 

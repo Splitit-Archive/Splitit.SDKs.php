@@ -1,6 +1,6 @@
 <?php
 /**
- * BankDetails
+ * PublicTokenRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * BankDetails Class Doc Comment
+ * PublicTokenRequest Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BankDetails implements ModelInterface, ArrayAccess
+class PublicTokenRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class BankDetails implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BankDetails';
+    protected static $swaggerModelName = 'PublicTokenRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,7 @@ class BankDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'bank_account_name' => 'string',
-        'bank_routing_number' => 'string',
-        'bank_account_number' => 'string'
+        'amount' => '\SplititSdkClient\Model\MoneyWithCurrencyCode'
     ];
 
     /**
@@ -68,9 +66,7 @@ class BankDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'bank_account_name' => null,
-        'bank_routing_number' => null,
-        'bank_account_number' => null
+        'amount' => null
     ];
 
     /**
@@ -100,9 +96,7 @@ class BankDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'bank_account_name' => 'BankAccountName',
-        'bank_routing_number' => 'BankRoutingNumber',
-        'bank_account_number' => 'BankAccountNumber'
+        'amount' => 'Amount'
     ];
 
     /**
@@ -111,9 +105,7 @@ class BankDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'bank_account_name' => 'setBankAccountName',
-        'bank_routing_number' => 'setBankRoutingNumber',
-        'bank_account_number' => 'setBankAccountNumber'
+        'amount' => 'setAmount'
     ];
 
     /**
@@ -122,9 +114,7 @@ class BankDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'bank_account_name' => 'getBankAccountName',
-        'bank_routing_number' => 'getBankRoutingNumber',
-        'bank_account_number' => 'getBankAccountNumber'
+        'amount' => 'getAmount'
     ];
 
     /**
@@ -187,9 +177,7 @@ class BankDetails implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['bank_account_name'] = isset($data['bank_account_name']) ? $data['bank_account_name'] : null;
-        $this->container['bank_routing_number'] = isset($data['bank_routing_number']) ? $data['bank_routing_number'] : null;
-        $this->container['bank_account_number'] = isset($data['bank_account_number']) ? $data['bank_account_number'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
     }
 
     /**
@@ -217,73 +205,25 @@ class BankDetails implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets bank_account_name
+     * Gets amount
      *
-     * @return string
+     * @return \SplititSdkClient\Model\MoneyWithCurrencyCode
      */
-    public function getBankAccountName()
+    public function getAmount()
     {
-        return $this->container['bank_account_name'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets bank_account_name
+     * Sets amount
      *
-     * @param string $bank_account_name bank_account_name
+     * @param \SplititSdkClient\Model\MoneyWithCurrencyCode $amount amount
      *
      * @return $this
      */
-    public function setBankAccountName($bank_account_name)
+    public function setAmount($amount)
     {
-        $this->container['bank_account_name'] = $bank_account_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets bank_routing_number
-     *
-     * @return string
-     */
-    public function getBankRoutingNumber()
-    {
-        return $this->container['bank_routing_number'];
-    }
-
-    /**
-     * Sets bank_routing_number
-     *
-     * @param string $bank_routing_number bank_routing_number
-     *
-     * @return $this
-     */
-    public function setBankRoutingNumber($bank_routing_number)
-    {
-        $this->container['bank_routing_number'] = $bank_routing_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets bank_account_number
-     *
-     * @return string
-     */
-    public function getBankAccountNumber()
-    {
-        return $this->container['bank_account_number'];
-    }
-
-    /**
-     * Sets bank_account_number
-     *
-     * @param string $bank_account_number bank_account_number
-     *
-     * @return $this
-     */
-    public function setBankAccountNumber($bank_account_number)
-    {
-        $this->container['bank_account_number'] = $bank_account_number;
+        $this->container['amount'] = $amount;
 
         return $this;
     }

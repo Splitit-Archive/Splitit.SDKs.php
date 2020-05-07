@@ -45,8 +45,8 @@ use SplititSdkClient\ObjectSerializer;
  *
  * @category Class
  * @package  SplititSdkClient
- * @author   Swagger Codegen team
- * @link     https://github.com/swagger-api/swagger-codegen
+ * @author   Splitit
+ * @link     https://github.com/Splitit/Splitit.SDKs
  */
 class LoginApi
 {

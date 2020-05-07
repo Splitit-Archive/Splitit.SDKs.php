@@ -59,7 +59,8 @@ class MerchantRef implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'code' => 'string',
-        'description' => 'string'
+        'description' => 'string',
+        'name' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class MerchantRef implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => 'int64',
         'code' => null,
-        'description' => null
+        'description' => null,
+        'name' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class MerchantRef implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'Id',
         'code' => 'Code',
-        'description' => 'Description'
+        'description' => 'Description',
+        'name' => 'Name'
     ];
 
     /**
@@ -113,7 +116,8 @@ class MerchantRef implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'code' => 'setCode',
-        'description' => 'setDescription'
+        'description' => 'setDescription',
+        'name' => 'setName'
     ];
 
     /**
@@ -124,7 +128,8 @@ class MerchantRef implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'code' => 'getCode',
-        'description' => 'getDescription'
+        'description' => 'getDescription',
+        'name' => 'getName'
     ];
 
     /**
@@ -190,6 +195,7 @@ class MerchantRef implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -287,6 +293,30 @@ class MerchantRef implements ModelInterface, ArrayAccess
     public function setDescription($description)
     {
         $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
