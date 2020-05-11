@@ -9,6 +9,13 @@ use SplititSdkClient\Model\LoginRequest;
 use SplititSdkClient\Model\PublicTokenRequest;
 use SplititSdkClient\Model\MoneyWithCurrencyCode;
 use SplititSdkClient\Model\VerifyPaymentRequest;
+use SplititSdkClient\Model\PlanData;
+use SplititSdkClient\Model\ConsumerData;
+use SplititSdkClient\Model\PaymentWizardData;
+use SplititSdkClient\Model\RedirectUrls;
+use SplititSdkClient\Model\AddressData;
+use SplititSdkClient\Model\CardData;
+use SplititSdkClient\Model\InitiateInstallmentPlanRequest;
 
 /**
  * Configuration Class Doc Comment
@@ -21,12 +28,16 @@ use SplititSdkClient\Model\VerifyPaymentRequest;
 class FlexFields
 {
     protected $configuration;
-    protected $sessionId;
+
+    protected $api;
+    protected $request;
 
     public function __construct(
         Configuration $configuration
     ) {
         $this->configuration = $configuration;
+        $this->request = new InitiateInstallmentPlanRequest();
+        $this->request->setPlanData(new PlanData());
     }
 
     public static function authenticate(Configuration $configuration, string $username, string $password, string $apiKey = null)
@@ -36,33 +47,73 @@ class FlexFields
         }
 
         $ff = new FlexFields($configuration);
-        $ff->sessionId = $ff->getSessionId($username, $password);
+        $sessionId = $ff->getSessionId($username, $password);
+        $ff->api = new InstallmentPlanApi($configuration, $sessionId);
         return $ff;
     }
 
-    public function getPublicToken($amount, string $currencyCode, string $culture = null)
+    public function addCulture(string $culture)
     {
-        $installmentPlanApi = new InstallmentPlanApi($this->configuration, $this->sessionId);
+        $this->api->setCulture($culture);
+        return $this;
+    }
 
-        if ($culture !== null)
+    public function addInstallments($installmentOptions, $defaultNumInstallments)
+    {
+        $this->request->getPlanData()->setNumberOfInstallments($defaultNumInstallments);
+
+        if (is_null($this->request->getPaymentWizardData()))
         {
-            $installmentPlanApi->setCulture(culture);
+            $this->request->setPaymentWizardData(new PaymentWizardData());
         }
 
-        $claimTokenRequest = new PublicTokenRequest();
-        $claimTokenRequest->setAmount(new MoneyWithCurrencyCode(array("value" => $amount, "currency_code" => $currencyCode)));
+        $this->request->getPaymentWizardData()->setRequestedNumberOfInstallments(implode(",", $installmentOptions));
+        return $this;
+    }
 
-        $claimTokenResponse = $installmentPlanApi->installmentPlanCreatePublicToken($claimTokenRequest);
+    public function addBillingInformation(AddressData $billingAddress, ConsumerData $consumerData)
+    {
+        $this->request->setBillingAddress($billingAddress);
+        $this->request->setConsumerData($consumerData);
+        return $this;
+    }
 
-        return $claimTokenResponse->getPublicToken();
+    public function add3DSecure(RedirectUrls $redirectUrls)
+    {
+        $this->request->getPlanData()->setAttempt3DSecure(true);
+        $this->request->setRedirectUrls($redirectUrls);
+        return $this;
+    }
+
+    public function addDeferredCapture(
+        $autoCapture = false, 
+        $firstInstallmentAmount = null,
+        string $currencyCode = null,
+        $firstChargeDate = null)
+    {
+        $this->request->getPlanData()->setAutoCapture($autoCapture);
+        
+        if ($firstInstallmentAmount != null){
+            $this->request->getPlanData()->setFirstInstallmentAmount(
+                new MoneyWithCurrencyCode(array("value" => $firstInstallmentAmount, "currency_code" => $currencyCode))
+            );
+        }
+        
+        $this->request->getPlanData()->setFirstChargeDate($firstChargeDate);
+        return $this;
+    }
+
+    public function getPublicToken($amount, string $currencyCode)
+    {
+        $this->request->getPlanData()->setAmount(new MoneyWithCurrencyCode(array("value" => $amount, "currency_code" => $currencyCode)));
+        $initResponse = $this->api->installmentPlanInitiate($this->request);
+        return $initResponse->getPublicToken();
     }
 
     public function verifyPayment(string $planNumber, $orderAmount)
     {
-        $installmentPlanApi = new InstallmentPlanApi($this->configuration, $this->sessionId);
-
         $verifyPaymentRequest = new VerifyPaymentRequest(array("installment_plan_number" => $planNumber));
-        $verifyPaymentResponse = $installmentPlanApi->installmentPlanVerifyPayment($verifyPaymentRequest);
+        $verifyPaymentResponse = $this->api->installmentPlanVerifyPayment($verifyPaymentRequest);
 
         if ($verifyPaymentResponse->getIsPaid() && $verifyPaymentResponse->getOriginalAmountPaid() == $orderAmount)
         {
