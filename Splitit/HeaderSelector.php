@@ -56,7 +56,7 @@ class HeaderSelector
         }
 
         $headers['Content-Type'] = $this->selectContentTypeHeader($contentTypes);
-        $headers['Splitit-SDK'] = "PHP-1.4.5";
+        $headers['Splitit-SDK'] = "PHP-1.4.6";
         return $headers;
     }
 

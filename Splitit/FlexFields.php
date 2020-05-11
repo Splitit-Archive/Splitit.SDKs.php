@@ -85,7 +85,7 @@ class FlexFields
         return $this;
     }
 
-    public function addDeferredCapture(
+    public function addCaptureSettings(
         $autoCapture = false, 
         $firstInstallmentAmount = null,
         string $currencyCode = null,
