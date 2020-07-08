@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **scp_funding_percent** | **float** |  | 
 **test_mode** | [**\SplititSdkClient\Model\TestModes**](TestModes.md) |  | 
 **creation_date_time** | [**\DateTime**](\DateTime.md) |  | 
-**installments** | [**\SplititSdkClient\Model\Installment[]**](Installment.md) |  | [optional] 
+**installments** | [**\SplititSdkClient\Model\Installment2[]**](Installment2.md) |  | [optional] 
 **secure_authorizations** | [**\SplititSdkClient\Model\ReAuthorization[]**](ReAuthorization.md) |  | [optional] 
 **business_unit** | [**\SplititSdkClient\Model\BuRef**](BuRef.md) |  | [optional] 
 **shopper_payment_request_time** | [**\DateTime**](\DateTime.md) |  | [optional] 

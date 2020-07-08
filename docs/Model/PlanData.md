@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **first_charge_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **auto_capture** | **bool** |  | [optional] 
 **is_funded** | **bool** |  | [optional] 
-**attempt3_d_secure** | **object** |  | [optional] 
+**attempt3_d_secure** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

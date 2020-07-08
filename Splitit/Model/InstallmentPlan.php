@@ -80,7 +80,7 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'scp_funding_percent' => 'float',
         'test_mode' => '\SplititSdkClient\Model\TestModes',
         'creation_date_time' => '\DateTime',
-        'installments' => '\SplititSdkClient\Model\Installment[]',
+        'installments' => '\SplititSdkClient\Model\Installment2[]',
         'secure_authorizations' => '\SplititSdkClient\Model\ReAuthorization[]'
     ];
 
@@ -927,7 +927,7 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
     /**
      * Gets installments
      *
-     * @return \SplititSdkClient\Model\Installment[]
+     * @return \SplititSdkClient\Model\Installment2[]
      */
     public function getInstallments()
     {
@@ -937,7 +937,7 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
     /**
      * Sets installments
      *
-     * @param \SplititSdkClient\Model\Installment[] $installments installments
+     * @param \SplititSdkClient\Model\Installment2[] $installments installments
      *
      * @return $this
      */

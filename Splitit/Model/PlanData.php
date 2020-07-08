@@ -68,7 +68,7 @@ class PlanData implements ModelInterface, ArrayAccess
         'first_charge_date' => '\DateTime',
         'auto_capture' => 'bool',
         'is_funded' => 'bool',
-        'attempt3_d_secure' => 'object'
+        'attempt3_d_secure' => 'bool'
     ];
 
     /**
@@ -537,7 +537,7 @@ class PlanData implements ModelInterface, ArrayAccess
     /**
      * Gets attempt3_d_secure
      *
-     * @return object
+     * @return bool
      */
     public function getAttempt3DSecure()
     {
@@ -547,7 +547,7 @@ class PlanData implements ModelInterface, ArrayAccess
     /**
      * Sets attempt3_d_secure
      *
-     * @param object $attempt3_d_secure attempt3_d_secure
+     * @param bool $attempt3_d_secure attempt3_d_secure
      *
      * @return $this
      */

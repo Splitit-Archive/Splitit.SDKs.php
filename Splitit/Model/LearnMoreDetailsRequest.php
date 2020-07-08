@@ -1,6 +1,6 @@
 <?php
 /**
- * PublicTokenRequest
+ * LearnMoreDetailsRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * PublicTokenRequest Class Doc Comment
+ * LearnMoreDetailsRequest Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PublicTokenRequest implements ModelInterface, ArrayAccess
+class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PublicTokenRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PublicTokenRequest';
+    protected static $swaggerModelName = 'LearnMoreDetailsRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,8 @@ class PublicTokenRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'amount' => '\SplititSdkClient\Model\MoneyWithCurrencyCode'
+        'amount' => '\SplititSdkClient\Model\MoneyWithCurrencyCode',
+        'number_of_installments' => 'int'
     ];
 
     /**
@@ -66,7 +67,8 @@ class PublicTokenRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'amount' => null
+        'amount' => null,
+        'number_of_installments' => 'int32'
     ];
 
     /**
@@ -96,7 +98,8 @@ class PublicTokenRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'Amount'
+        'amount' => 'Amount',
+        'number_of_installments' => 'NumberOfInstallments'
     ];
 
     /**
@@ -105,7 +108,8 @@ class PublicTokenRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount'
+        'amount' => 'setAmount',
+        'number_of_installments' => 'setNumberOfInstallments'
     ];
 
     /**
@@ -114,7 +118,8 @@ class PublicTokenRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount'
+        'amount' => 'getAmount',
+        'number_of_installments' => 'getNumberOfInstallments'
     ];
 
     /**
@@ -178,6 +183,7 @@ class PublicTokenRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['number_of_installments'] = isset($data['number_of_installments']) ? $data['number_of_installments'] : null;
     }
 
     /**
@@ -224,6 +230,30 @@ class PublicTokenRequest implements ModelInterface, ArrayAccess
     public function setAmount($amount)
     {
         $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets number_of_installments
+     *
+     * @return int
+     */
+    public function getNumberOfInstallments()
+    {
+        return $this->container['number_of_installments'];
+    }
+
+    /**
+     * Sets number_of_installments
+     *
+     * @param int $number_of_installments number_of_installments
+     *
+     * @return $this
+     */
+    public function setNumberOfInstallments($number_of_installments)
+    {
+        $this->container['number_of_installments'] = $number_of_installments;
 
         return $this;
     }

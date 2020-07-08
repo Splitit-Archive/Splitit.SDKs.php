@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**installmentPlanCancel**](InstallmentPlanApi.md#installmentPlanCancel) | **POST** /api/InstallmentPlan/Cancel | 
 [**installmentPlanChargeBack**](InstallmentPlanApi.md#installmentPlanChargeBack) | **POST** /api/InstallmentPlan/ChargeBack | 
 [**installmentPlanCreate**](InstallmentPlanApi.md#installmentPlanCreate) | **POST** /api/InstallmentPlan/Create | 
-[**installmentPlanCreatePublicToken**](InstallmentPlanApi.md#installmentPlanCreatePublicToken) | **POST** /api/InstallmentPlan/CreatePublicToken | 
 [**installmentPlanGet**](InstallmentPlanApi.md#installmentPlanGet) | **POST** /api/InstallmentPlan/Get | 
 [**installmentPlanGet3DSecureParameters**](InstallmentPlanApi.md#installmentPlanGet3DSecureParameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 [**installmentPlanGetExtended**](InstallmentPlanApi.md#installmentPlanGetExtended) | **POST** /api/InstallmentPlan/GetExtended | 
+[**installmentPlanGetFraudStatusDisplay**](InstallmentPlanApi.md#installmentPlanGetFraudStatusDisplay) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
 [**installmentPlanGetInitiatedInstallmentPlanRequest**](InstallmentPlanApi.md#installmentPlanGetInitiatedInstallmentPlanRequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
+[**installmentPlanGetLearnMoreDetails**](InstallmentPlanApi.md#installmentPlanGetLearnMoreDetails) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
 [**installmentPlanInitiate**](InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installmentPlanRefund**](InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
 [**installmentPlanStartInstallments**](InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -213,54 +214,6 @@ Use session_id received from LoginApi and pass it to InstallmentPlanApi construc
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **installmentPlanCreatePublicToken**
-> \SplititSdkClient\Model\PublicTokenResponse installmentPlanCreatePublicToken($request)
-
-
-
-### Example
-```php
-<?php
-require __DIR__ . '/vendor/autoload.php';
-
-# Use Configuration::production() for production API
-$apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
-    Configuration::sandbox(),
-    $session_id
-);
-
-$request = new \SplititSdkClient\Model\PublicTokenRequest(); // \SplititSdkClient\Model\PublicTokenRequest | 
-
-try {
-    $result = $apiInstance->installmentPlanCreatePublicToken($request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling InstallmentPlanApi->installmentPlanCreatePublicToken: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\SplititSdkClient\Model\PublicTokenRequest**](../Model/PublicTokenRequest.md)|  |
-
-### Return type
-
-[**\SplititSdkClient\Model\PublicTokenResponse**](../Model/PublicTokenResponse.md)
-
-### Authorization
-
-Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **installmentPlanGet**
 > \SplititSdkClient\Model\GetInstallmentsPlanResponse installmentPlanGet($request)
 
@@ -405,6 +358,54 @@ Use session_id received from LoginApi and pass it to InstallmentPlanApi construc
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **installmentPlanGetFraudStatusDisplay**
+> \SplititSdkClient\Model\GetFraudStatusDisplayResponse installmentPlanGetFraudStatusDisplay($request)
+
+
+
+### Example
+```php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+# Use Configuration::production() for production API
+$apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
+    Configuration::sandbox(),
+    $session_id
+);
+
+$request = new \SplititSdkClient\Model\GetFraudStatusDisplayRequest(); // \SplititSdkClient\Model\GetFraudStatusDisplayRequest | 
+
+try {
+    $result = $apiInstance->installmentPlanGetFraudStatusDisplay($request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InstallmentPlanApi->installmentPlanGetFraudStatusDisplay: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\SplititSdkClient\Model\GetFraudStatusDisplayRequest**](../Model/GetFraudStatusDisplayRequest.md)|  |
+
+### Return type
+
+[**\SplititSdkClient\Model\GetFraudStatusDisplayResponse**](../Model/GetFraudStatusDisplayResponse.md)
+
+### Authorization
+
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **installmentPlanGetInitiatedInstallmentPlanRequest**
 > \SplititSdkClient\Model\GetInitiatedInstallmentPlanResponse installmentPlanGetInitiatedInstallmentPlanRequest($request)
 
@@ -441,6 +442,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\SplititSdkClient\Model\GetInitiatedInstallmentPlanResponse**](../Model/GetInitiatedInstallmentPlanResponse.md)
+
+### Authorization
+
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **installmentPlanGetLearnMoreDetails**
+> \SplititSdkClient\Model\LearnMoreDetailsResponse installmentPlanGetLearnMoreDetails($request)
+
+
+
+### Example
+```php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+# Use Configuration::production() for production API
+$apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
+    Configuration::sandbox(),
+    $session_id
+);
+
+$request = new \SplititSdkClient\Model\LearnMoreDetailsRequest(); // \SplititSdkClient\Model\LearnMoreDetailsRequest | 
+
+try {
+    $result = $apiInstance->installmentPlanGetLearnMoreDetails($request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InstallmentPlanApi->installmentPlanGetLearnMoreDetails: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\SplititSdkClient\Model\LearnMoreDetailsRequest**](../Model/LearnMoreDetailsRequest.md)|  |
+
+### Return type
+
+[**\SplititSdkClient\Model\LearnMoreDetailsResponse**](../Model/LearnMoreDetailsResponse.md)
 
 ### Authorization
 

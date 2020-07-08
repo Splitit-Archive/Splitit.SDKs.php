@@ -1,6 +1,6 @@
 <?php
 /**
- * FlexFieldsDataResponse
+ * GetFraudStatusDisplayResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * FlexFieldsDataResponse Class Doc Comment
+ * GetFraudStatusDisplayResponse Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class FlexFieldsDataResponse implements ModelInterface, ArrayAccess
+class GetFraudStatusDisplayResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class FlexFieldsDataResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'FlexFieldsDataResponse';
+    protected static $swaggerModelName = 'GetFraudStatusDisplayResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,11 @@ class FlexFieldsDataResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'response_header' => '\SplititSdkClient\Model\ResponseHeader',
-        'picker_type' => 'string',
-        'is_secured' => 'bool'
+        'provider' => 'string',
+        'full_log' => 'string',
+        'provider_result_description' => 'string',
+        'installment_plan_id' => 'int',
+        'provider_result_code' => 'string'
     ];
 
     /**
@@ -69,8 +72,11 @@ class FlexFieldsDataResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'response_header' => null,
-        'picker_type' => null,
-        'is_secured' => null
+        'provider' => null,
+        'full_log' => null,
+        'provider_result_description' => null,
+        'installment_plan_id' => 'int64',
+        'provider_result_code' => null
     ];
 
     /**
@@ -101,8 +107,11 @@ class FlexFieldsDataResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'response_header' => 'ResponseHeader',
-        'picker_type' => 'PickerType',
-        'is_secured' => 'IsSecured'
+        'provider' => 'Provider',
+        'full_log' => 'FullLog',
+        'provider_result_description' => 'ProviderResultDescription',
+        'installment_plan_id' => 'InstallmentPlanId',
+        'provider_result_code' => 'ProviderResultCode'
     ];
 
     /**
@@ -112,8 +121,11 @@ class FlexFieldsDataResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'response_header' => 'setResponseHeader',
-        'picker_type' => 'setPickerType',
-        'is_secured' => 'setIsSecured'
+        'provider' => 'setProvider',
+        'full_log' => 'setFullLog',
+        'provider_result_description' => 'setProviderResultDescription',
+        'installment_plan_id' => 'setInstallmentPlanId',
+        'provider_result_code' => 'setProviderResultCode'
     ];
 
     /**
@@ -123,8 +135,11 @@ class FlexFieldsDataResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'response_header' => 'getResponseHeader',
-        'picker_type' => 'getPickerType',
-        'is_secured' => 'getIsSecured'
+        'provider' => 'getProvider',
+        'full_log' => 'getFullLog',
+        'provider_result_description' => 'getProviderResultDescription',
+        'installment_plan_id' => 'getInstallmentPlanId',
+        'provider_result_code' => 'getProviderResultCode'
     ];
 
     /**
@@ -188,8 +203,11 @@ class FlexFieldsDataResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
-        $this->container['picker_type'] = isset($data['picker_type']) ? $data['picker_type'] : null;
-        $this->container['is_secured'] = isset($data['is_secured']) ? $data['is_secured'] : null;
+        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
+        $this->container['full_log'] = isset($data['full_log']) ? $data['full_log'] : null;
+        $this->container['provider_result_description'] = isset($data['provider_result_description']) ? $data['provider_result_description'] : null;
+        $this->container['installment_plan_id'] = isset($data['installment_plan_id']) ? $data['installment_plan_id'] : null;
+        $this->container['provider_result_code'] = isset($data['provider_result_code']) ? $data['provider_result_code'] : null;
     }
 
     /**
@@ -201,8 +219,8 @@ class FlexFieldsDataResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['is_secured'] === null) {
-            $invalidProperties[] = "'is_secured' can't be null";
+        if ($this->container['installment_plan_id'] === null) {
+            $invalidProperties[] = "'installment_plan_id' can't be null";
         }
         return $invalidProperties;
     }
@@ -244,49 +262,121 @@ class FlexFieldsDataResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets picker_type
+     * Gets provider
      *
      * @return string
      */
-    public function getPickerType()
+    public function getProvider()
     {
-        return $this->container['picker_type'];
+        return $this->container['provider'];
     }
 
     /**
-     * Sets picker_type
+     * Sets provider
      *
-     * @param string $picker_type picker_type
+     * @param string $provider provider
      *
      * @return $this
      */
-    public function setPickerType($picker_type)
+    public function setProvider($provider)
     {
-        $this->container['picker_type'] = $picker_type;
+        $this->container['provider'] = $provider;
 
         return $this;
     }
 
     /**
-     * Gets is_secured
+     * Gets full_log
      *
-     * @return bool
+     * @return string
      */
-    public function getIsSecured()
+    public function getFullLog()
     {
-        return $this->container['is_secured'];
+        return $this->container['full_log'];
     }
 
     /**
-     * Sets is_secured
+     * Sets full_log
      *
-     * @param bool $is_secured is_secured
+     * @param string $full_log full_log
      *
      * @return $this
      */
-    public function setIsSecured($is_secured)
+    public function setFullLog($full_log)
     {
-        $this->container['is_secured'] = $is_secured;
+        $this->container['full_log'] = $full_log;
+
+        return $this;
+    }
+
+    /**
+     * Gets provider_result_description
+     *
+     * @return string
+     */
+    public function getProviderResultDescription()
+    {
+        return $this->container['provider_result_description'];
+    }
+
+    /**
+     * Sets provider_result_description
+     *
+     * @param string $provider_result_description provider_result_description
+     *
+     * @return $this
+     */
+    public function setProviderResultDescription($provider_result_description)
+    {
+        $this->container['provider_result_description'] = $provider_result_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets installment_plan_id
+     *
+     * @return int
+     */
+    public function getInstallmentPlanId()
+    {
+        return $this->container['installment_plan_id'];
+    }
+
+    /**
+     * Sets installment_plan_id
+     *
+     * @param int $installment_plan_id installment_plan_id
+     *
+     * @return $this
+     */
+    public function setInstallmentPlanId($installment_plan_id)
+    {
+        $this->container['installment_plan_id'] = $installment_plan_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets provider_result_code
+     *
+     * @return string
+     */
+    public function getProviderResultCode()
+    {
+        return $this->container['provider_result_code'];
+    }
+
+    /**
+     * Sets provider_result_code
+     *
+     * @param string $provider_result_code provider_result_code
+     *
+     * @return $this
+     */
+    public function setProviderResultCode($provider_result_code)
+    {
+        $this->container['provider_result_code'] = $provider_result_code;
 
         return $this;
     }

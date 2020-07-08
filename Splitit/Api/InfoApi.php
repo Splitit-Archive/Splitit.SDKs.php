@@ -1,6 +1,6 @@
 <?php
 /**
- * TouchPointsApi
+ * InfoApi
  * PHP version 5
  *
  * @category Class
@@ -41,14 +41,14 @@ use SplititSdkClient\HeaderSelector;
 use SplititSdkClient\ObjectSerializer;
 
 /**
- * TouchPointsApi Class Doc Comment
+ * InfoApi Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Splitit
  * @link     https://github.com/Splitit/Splitit.SDKs
  */
-class TouchPointsApi
+class InfoApi
 {
     /**
      * @var ClientInterface
@@ -114,6 +114,10 @@ class TouchPointsApi
                 $requestHeader->setApiKey($this->config->getApiKey());
             }
 
+            if (!is_null($this->config->getTouchPoint())){
+                $requestHeader->setTouchPoint($this->config->getTouchPoint());
+            }
+
             if (!is_null($this->culture)){
                 $requestHeader->setCultureName($this->culture);
             }
@@ -123,35 +127,33 @@ class TouchPointsApi
     }
 
     /**
-     * Operation touchPointsFlexFieldsData
+     * Operation infoGetLearnMoreDetails
      *
-     * @param  string $api_key api_key (optional)
-     * @param  string $requested_number_of_installments requested_number_of_installments (optional)
+     * @param  \SplititSdkClient\Model\LearnMoreDetailsRequest $request request (required)
      *
      * @throws \SplititSdkClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplititSdkClient\Model\FlexFieldsDataResponse
+     * @return \SplititSdkClient\Model\LearnMoreDetailsResponse
      */
-    public function touchPointsFlexFieldsData($api_key = null, $requested_number_of_installments = null)
+    public function infoGetLearnMoreDetails($request)
     {
-        list($response) = $this->touchPointsFlexFieldsDataWithHttpInfo($api_key, $requested_number_of_installments);
+        list($response) = $this->infoGetLearnMoreDetailsWithHttpInfo($request);
         return $response;
     }
 
     /**
-     * Operation touchPointsFlexFieldsDataWithHttpInfo
+     * Operation infoGetLearnMoreDetailsWithHttpInfo
      *
-     * @param  string $api_key (optional)
-     * @param  string $requested_number_of_installments (optional)
+     * @param  \SplititSdkClient\Model\LearnMoreDetailsRequest $request (required)
      *
      * @throws \SplititSdkClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplititSdkClient\Model\FlexFieldsDataResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplititSdkClient\Model\LearnMoreDetailsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function touchPointsFlexFieldsDataWithHttpInfo($api_key = null, $requested_number_of_installments = null)
+    public function infoGetLearnMoreDetailsWithHttpInfo($request)
     {
-        $returnType = '\SplititSdkClient\Model\FlexFieldsDataResponse';
-        $request = $this->touchPointsFlexFieldsDataRequest($api_key, $requested_number_of_installments);
+        $returnType = '\SplititSdkClient\Model\LearnMoreDetailsResponse';
+        $request = $this->infoGetLearnMoreDetailsRequest($request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -209,7 +211,7 @@ class TouchPointsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplititSdkClient\Model\FlexFieldsDataResponse',
+                        '\SplititSdkClient\Model\LearnMoreDetailsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -220,19 +222,18 @@ class TouchPointsApi
     }
 
     /**
-     * Operation touchPointsFlexFieldsDataAsync
+     * Operation infoGetLearnMoreDetailsAsync
      *
      * 
      *
-     * @param  string $api_key (optional)
-     * @param  string $requested_number_of_installments (optional)
+     * @param  \SplititSdkClient\Model\LearnMoreDetailsRequest $request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function touchPointsFlexFieldsDataAsync($api_key = null, $requested_number_of_installments = null)
+    public function infoGetLearnMoreDetailsAsync($request)
     {
-        return $this->touchPointsFlexFieldsDataAsyncWithHttpInfo($api_key, $requested_number_of_installments)
+        return $this->infoGetLearnMoreDetailsAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -241,20 +242,19 @@ class TouchPointsApi
     }
 
     /**
-     * Operation touchPointsFlexFieldsDataAsyncWithHttpInfo
+     * Operation infoGetLearnMoreDetailsAsyncWithHttpInfo
      *
      * 
      *
-     * @param  string $api_key (optional)
-     * @param  string $requested_number_of_installments (optional)
+     * @param  \SplititSdkClient\Model\LearnMoreDetailsRequest $request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function touchPointsFlexFieldsDataAsyncWithHttpInfo($api_key = null, $requested_number_of_installments = null)
+    public function infoGetLearnMoreDetailsAsyncWithHttpInfo($request)
     {
-        $returnType = '\SplititSdkClient\Model\FlexFieldsDataResponse';
-        $request = $this->touchPointsFlexFieldsDataRequest($api_key, $requested_number_of_installments);
+        $returnType = '\SplititSdkClient\Model\LearnMoreDetailsResponse';
+        $request = $this->infoGetLearnMoreDetailsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -301,36 +301,37 @@ class TouchPointsApi
     }
 
     /**
-     * Create request for operation 'touchPointsFlexFieldsData'
+     * Create request for operation 'infoGetLearnMoreDetails'
      *
-     * @param  string $api_key (optional)
-     * @param  string $requested_number_of_installments (optional)
+     * @param  \SplititSdkClient\Model\LearnMoreDetailsRequest $request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function touchPointsFlexFieldsDataRequest($api_key = null, $requested_number_of_installments = null)
+    protected function infoGetLearnMoreDetailsRequest($request)
     {
+        // verify the required parameter 'request' is set
+        if ($request === null || (is_array($request) && count($request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $request when calling infoGetLearnMoreDetails'
+            );
+        }
 
-        $resourcePath = '/api/TouchPoints/SetupData/FlexFieldsData';
+        $resourcePath = '/api/Merchant/GetLearnMoreDetails';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($api_key !== null) {
-            $queryParams['apiKey'] = ObjectSerializer::toQueryValue($api_key);
-        }
-        // query params
-        if ($requested_number_of_installments !== null) {
-            $queryParams['requestedNumberOfInstallments'] = ObjectSerializer::toQueryValue($requested_number_of_installments);
-        }
 
 
         // body params
         $_tempBody = null;
+        if (isset($request)) {
+            $this->injectSessionRequestHeaders($request);
+            $_tempBody = $request;
+        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -339,7 +340,7 @@ class TouchPointsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['text/plain', 'application/json', 'text/json'],
-                []
+                ['application/json-patch+json', 'application/json', 'text/json', 'application/_*+json']
             );
         }
 
@@ -393,7 +394,7 @@ class TouchPointsApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'GET',
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

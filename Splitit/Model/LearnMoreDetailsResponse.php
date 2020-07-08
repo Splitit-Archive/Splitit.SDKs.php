@@ -1,6 +1,6 @@
 <?php
 /**
- * InitiateInstallmentsPlanResponse
+ * LearnMoreDetailsResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * InitiateInstallmentsPlanResponse Class Doc Comment
+ * LearnMoreDetailsResponse Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
+class LearnMoreDetailsResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InitiateInstallmentsPlanResponse';
+    protected static $swaggerModelName = 'LearnMoreDetailsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,14 +58,13 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'response_header' => '\SplititSdkClient\Model\ResponseHeader',
-        'installment_plan' => '\SplititSdkClient\Model\InstallmentPlan',
-        'checkout_url' => 'string',
-        'approval_url' => 'string',
-        'terms_and_conditions_url' => 'string',
-        'privacy_policy_url' => 'string',
-        'installment_plan_info_url' => 'string',
-        'public_token' => 'string',
-        'learn_more_url' => 'string'
+        'supports_credit_card' => 'bool',
+        'supports_debit_card' => 'bool',
+        'show_secure_strategy_info' => 'bool',
+        'show_non_secure_strategy_info' => 'bool',
+        'total' => '\SplititSdkClient\Model\MoneyWithCurrencyCode',
+        'installments' => '\SplititSdkClient\Model\Installment[]',
+        'number_of_installments' => 'int'
     ];
 
     /**
@@ -75,14 +74,13 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'response_header' => null,
-        'installment_plan' => null,
-        'checkout_url' => null,
-        'approval_url' => null,
-        'terms_and_conditions_url' => null,
-        'privacy_policy_url' => null,
-        'installment_plan_info_url' => null,
-        'public_token' => null,
-        'learn_more_url' => null
+        'supports_credit_card' => null,
+        'supports_debit_card' => null,
+        'show_secure_strategy_info' => null,
+        'show_non_secure_strategy_info' => null,
+        'total' => null,
+        'installments' => null,
+        'number_of_installments' => 'int32'
     ];
 
     /**
@@ -113,14 +111,13 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'response_header' => 'ResponseHeader',
-        'installment_plan' => 'InstallmentPlan',
-        'checkout_url' => 'CheckoutUrl',
-        'approval_url' => 'ApprovalUrl',
-        'terms_and_conditions_url' => 'TermsAndConditionsUrl',
-        'privacy_policy_url' => 'PrivacyPolicyUrl',
-        'installment_plan_info_url' => 'InstallmentPlanInfoUrl',
-        'public_token' => 'PublicToken',
-        'learn_more_url' => 'LearnMoreUrl'
+        'supports_credit_card' => 'SupportsCreditCard',
+        'supports_debit_card' => 'SupportsDebitCard',
+        'show_secure_strategy_info' => 'ShowSecureStrategyInfo',
+        'show_non_secure_strategy_info' => 'ShowNonSecureStrategyInfo',
+        'total' => 'Total',
+        'installments' => 'Installments',
+        'number_of_installments' => 'NumberOfInstallments'
     ];
 
     /**
@@ -130,14 +127,13 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'response_header' => 'setResponseHeader',
-        'installment_plan' => 'setInstallmentPlan',
-        'checkout_url' => 'setCheckoutUrl',
-        'approval_url' => 'setApprovalUrl',
-        'terms_and_conditions_url' => 'setTermsAndConditionsUrl',
-        'privacy_policy_url' => 'setPrivacyPolicyUrl',
-        'installment_plan_info_url' => 'setInstallmentPlanInfoUrl',
-        'public_token' => 'setPublicToken',
-        'learn_more_url' => 'setLearnMoreUrl'
+        'supports_credit_card' => 'setSupportsCreditCard',
+        'supports_debit_card' => 'setSupportsDebitCard',
+        'show_secure_strategy_info' => 'setShowSecureStrategyInfo',
+        'show_non_secure_strategy_info' => 'setShowNonSecureStrategyInfo',
+        'total' => 'setTotal',
+        'installments' => 'setInstallments',
+        'number_of_installments' => 'setNumberOfInstallments'
     ];
 
     /**
@@ -147,14 +143,13 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'response_header' => 'getResponseHeader',
-        'installment_plan' => 'getInstallmentPlan',
-        'checkout_url' => 'getCheckoutUrl',
-        'approval_url' => 'getApprovalUrl',
-        'terms_and_conditions_url' => 'getTermsAndConditionsUrl',
-        'privacy_policy_url' => 'getPrivacyPolicyUrl',
-        'installment_plan_info_url' => 'getInstallmentPlanInfoUrl',
-        'public_token' => 'getPublicToken',
-        'learn_more_url' => 'getLearnMoreUrl'
+        'supports_credit_card' => 'getSupportsCreditCard',
+        'supports_debit_card' => 'getSupportsDebitCard',
+        'show_secure_strategy_info' => 'getShowSecureStrategyInfo',
+        'show_non_secure_strategy_info' => 'getShowNonSecureStrategyInfo',
+        'total' => 'getTotal',
+        'installments' => 'getInstallments',
+        'number_of_installments' => 'getNumberOfInstallments'
     ];
 
     /**
@@ -218,14 +213,13 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
-        $this->container['installment_plan'] = isset($data['installment_plan']) ? $data['installment_plan'] : null;
-        $this->container['checkout_url'] = isset($data['checkout_url']) ? $data['checkout_url'] : null;
-        $this->container['approval_url'] = isset($data['approval_url']) ? $data['approval_url'] : null;
-        $this->container['terms_and_conditions_url'] = isset($data['terms_and_conditions_url']) ? $data['terms_and_conditions_url'] : null;
-        $this->container['privacy_policy_url'] = isset($data['privacy_policy_url']) ? $data['privacy_policy_url'] : null;
-        $this->container['installment_plan_info_url'] = isset($data['installment_plan_info_url']) ? $data['installment_plan_info_url'] : null;
-        $this->container['public_token'] = isset($data['public_token']) ? $data['public_token'] : null;
-        $this->container['learn_more_url'] = isset($data['learn_more_url']) ? $data['learn_more_url'] : null;
+        $this->container['supports_credit_card'] = isset($data['supports_credit_card']) ? $data['supports_credit_card'] : null;
+        $this->container['supports_debit_card'] = isset($data['supports_debit_card']) ? $data['supports_debit_card'] : null;
+        $this->container['show_secure_strategy_info'] = isset($data['show_secure_strategy_info']) ? $data['show_secure_strategy_info'] : null;
+        $this->container['show_non_secure_strategy_info'] = isset($data['show_non_secure_strategy_info']) ? $data['show_non_secure_strategy_info'] : null;
+        $this->container['total'] = isset($data['total']) ? $data['total'] : null;
+        $this->container['installments'] = isset($data['installments']) ? $data['installments'] : null;
+        $this->container['number_of_installments'] = isset($data['number_of_installments']) ? $data['number_of_installments'] : null;
     }
 
     /**
@@ -237,6 +231,21 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['supports_credit_card'] === null) {
+            $invalidProperties[] = "'supports_credit_card' can't be null";
+        }
+        if ($this->container['supports_debit_card'] === null) {
+            $invalidProperties[] = "'supports_debit_card' can't be null";
+        }
+        if ($this->container['show_secure_strategy_info'] === null) {
+            $invalidProperties[] = "'show_secure_strategy_info' can't be null";
+        }
+        if ($this->container['show_non_secure_strategy_info'] === null) {
+            $invalidProperties[] = "'show_non_secure_strategy_info' can't be null";
+        }
+        if ($this->container['number_of_installments'] === null) {
+            $invalidProperties[] = "'number_of_installments' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -277,193 +286,169 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets installment_plan
+     * Gets supports_credit_card
      *
-     * @return \SplititSdkClient\Model\InstallmentPlan
+     * @return bool
      */
-    public function getInstallmentPlan()
+    public function getSupportsCreditCard()
     {
-        return $this->container['installment_plan'];
+        return $this->container['supports_credit_card'];
     }
 
     /**
-     * Sets installment_plan
+     * Sets supports_credit_card
      *
-     * @param \SplititSdkClient\Model\InstallmentPlan $installment_plan installment_plan
+     * @param bool $supports_credit_card supports_credit_card
      *
      * @return $this
      */
-    public function setInstallmentPlan($installment_plan)
+    public function setSupportsCreditCard($supports_credit_card)
     {
-        $this->container['installment_plan'] = $installment_plan;
+        $this->container['supports_credit_card'] = $supports_credit_card;
 
         return $this;
     }
 
     /**
-     * Gets checkout_url
+     * Gets supports_debit_card
      *
-     * @return string
+     * @return bool
      */
-    public function getCheckoutUrl()
+    public function getSupportsDebitCard()
     {
-        return $this->container['checkout_url'];
+        return $this->container['supports_debit_card'];
     }
 
     /**
-     * Sets checkout_url
+     * Sets supports_debit_card
      *
-     * @param string $checkout_url checkout_url
+     * @param bool $supports_debit_card supports_debit_card
      *
      * @return $this
      */
-    public function setCheckoutUrl($checkout_url)
+    public function setSupportsDebitCard($supports_debit_card)
     {
-        $this->container['checkout_url'] = $checkout_url;
+        $this->container['supports_debit_card'] = $supports_debit_card;
 
         return $this;
     }
 
     /**
-     * Gets approval_url
+     * Gets show_secure_strategy_info
      *
-     * @return string
+     * @return bool
      */
-    public function getApprovalUrl()
+    public function getShowSecureStrategyInfo()
     {
-        return $this->container['approval_url'];
+        return $this->container['show_secure_strategy_info'];
     }
 
     /**
-     * Sets approval_url
+     * Sets show_secure_strategy_info
      *
-     * @param string $approval_url approval_url
+     * @param bool $show_secure_strategy_info show_secure_strategy_info
      *
      * @return $this
      */
-    public function setApprovalUrl($approval_url)
+    public function setShowSecureStrategyInfo($show_secure_strategy_info)
     {
-        $this->container['approval_url'] = $approval_url;
+        $this->container['show_secure_strategy_info'] = $show_secure_strategy_info;
 
         return $this;
     }
 
     /**
-     * Gets terms_and_conditions_url
+     * Gets show_non_secure_strategy_info
      *
-     * @return string
+     * @return bool
      */
-    public function getTermsAndConditionsUrl()
+    public function getShowNonSecureStrategyInfo()
     {
-        return $this->container['terms_and_conditions_url'];
+        return $this->container['show_non_secure_strategy_info'];
     }
 
     /**
-     * Sets terms_and_conditions_url
+     * Sets show_non_secure_strategy_info
      *
-     * @param string $terms_and_conditions_url terms_and_conditions_url
+     * @param bool $show_non_secure_strategy_info show_non_secure_strategy_info
      *
      * @return $this
      */
-    public function setTermsAndConditionsUrl($terms_and_conditions_url)
+    public function setShowNonSecureStrategyInfo($show_non_secure_strategy_info)
     {
-        $this->container['terms_and_conditions_url'] = $terms_and_conditions_url;
+        $this->container['show_non_secure_strategy_info'] = $show_non_secure_strategy_info;
 
         return $this;
     }
 
     /**
-     * Gets privacy_policy_url
+     * Gets total
      *
-     * @return string
+     * @return \SplititSdkClient\Model\MoneyWithCurrencyCode
      */
-    public function getPrivacyPolicyUrl()
+    public function getTotal()
     {
-        return $this->container['privacy_policy_url'];
+        return $this->container['total'];
     }
 
     /**
-     * Sets privacy_policy_url
+     * Sets total
      *
-     * @param string $privacy_policy_url privacy_policy_url
+     * @param \SplititSdkClient\Model\MoneyWithCurrencyCode $total total
      *
      * @return $this
      */
-    public function setPrivacyPolicyUrl($privacy_policy_url)
+    public function setTotal($total)
     {
-        $this->container['privacy_policy_url'] = $privacy_policy_url;
+        $this->container['total'] = $total;
 
         return $this;
     }
 
     /**
-     * Gets installment_plan_info_url
+     * Gets installments
      *
-     * @return string
+     * @return \SplititSdkClient\Model\Installment[]
      */
-    public function getInstallmentPlanInfoUrl()
+    public function getInstallments()
     {
-        return $this->container['installment_plan_info_url'];
+        return $this->container['installments'];
     }
 
     /**
-     * Sets installment_plan_info_url
+     * Sets installments
      *
-     * @param string $installment_plan_info_url installment_plan_info_url
+     * @param \SplititSdkClient\Model\Installment[] $installments installments
      *
      * @return $this
      */
-    public function setInstallmentPlanInfoUrl($installment_plan_info_url)
+    public function setInstallments($installments)
     {
-        $this->container['installment_plan_info_url'] = $installment_plan_info_url;
+        $this->container['installments'] = $installments;
 
         return $this;
     }
 
     /**
-     * Gets public_token
+     * Gets number_of_installments
      *
-     * @return string
+     * @return int
      */
-    public function getPublicToken()
+    public function getNumberOfInstallments()
     {
-        return $this->container['public_token'];
+        return $this->container['number_of_installments'];
     }
 
     /**
-     * Sets public_token
+     * Sets number_of_installments
      *
-     * @param string $public_token public_token
+     * @param int $number_of_installments number_of_installments
      *
      * @return $this
      */
-    public function setPublicToken($public_token)
+    public function setNumberOfInstallments($number_of_installments)
     {
-        $this->container['public_token'] = $public_token;
-
-        return $this;
-    }
-
-    /**
-     * Gets learn_more_url
-     *
-     * @return string
-     */
-    public function getLearnMoreUrl()
-    {
-        return $this->container['learn_more_url'];
-    }
-
-    /**
-     * Sets learn_more_url
-     *
-     * @param string $learn_more_url learn_more_url
-     *
-     * @return $this
-     */
-    public function setLearnMoreUrl($learn_more_url)
-    {
-        $this->container['learn_more_url'] = $learn_more_url;
+        $this->container['number_of_installments'] = $number_of_installments;
 
         return $this;
     }

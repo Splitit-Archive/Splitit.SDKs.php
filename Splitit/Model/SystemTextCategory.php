@@ -66,6 +66,9 @@ class SystemTextCategory
     const POS = 'POS';
     const FLEX_FIELDS = 'FlexFields';
     const MESSAGING_SYSTEM = 'MessagingSystem';
+    const PAYMENT_FORM_V3 = 'PaymentFormV3';
+    const HOW_SPLITIT_WORKS = 'HowSplititWorks';
+    const UPSTREAM_MESSAGING = 'UpstreamMessaging';
     
     /**
      * Gets allowable values of the enum
@@ -96,6 +99,9 @@ class SystemTextCategory
             self::POS,
             self::FLEX_FIELDS,
             self::MESSAGING_SYSTEM,
+            self::PAYMENT_FORM_V3,
+            self::HOW_SPLITIT_WORKS,
+            self::UPSTREAM_MESSAGING,
         ];
     }
 }

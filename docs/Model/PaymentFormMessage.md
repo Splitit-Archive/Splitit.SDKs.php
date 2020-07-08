@@ -1,11 +1,12 @@
-# FlexFieldsDataResponse
+# PaymentFormMessage
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response_header** | [**\SplititSdkClient\Model\ResponseHeader**](ResponseHeader.md) |  | [optional] 
-**picker_type** | **string** |  | [optional] 
-**is_secured** | **bool** |  | 
+**type** | [**\SplititSdkClient\Model\PaymentFormMessageType**](PaymentFormMessageType.md) |  | 
+**code** | **int** |  | 
+**message** | **string** |  | [optional] 
+**is_empty** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

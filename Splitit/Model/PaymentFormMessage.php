@@ -1,6 +1,6 @@
 <?php
 /**
- * PublicTokenResponse
+ * PaymentFormMessage
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * PublicTokenResponse Class Doc Comment
+ * PaymentFormMessage Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PublicTokenResponse implements ModelInterface, ArrayAccess
+class PaymentFormMessage implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PublicTokenResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PublicTokenResponse';
+    protected static $swaggerModelName = 'PaymentFormMessage';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,10 @@ class PublicTokenResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'public_token' => 'string',
-        'checkout_url' => 'string',
-        'privacy_policy_url' => 'string',
-        'terms_and_conditions_url' => 'string',
-        'response_header' => '\SplititSdkClient\Model\ResponseHeader'
+        'type' => '\SplititSdkClient\Model\PaymentFormMessageType',
+        'code' => 'int',
+        'message' => 'string',
+        'is_empty' => 'bool'
     ];
 
     /**
@@ -70,11 +69,10 @@ class PublicTokenResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'public_token' => null,
-        'checkout_url' => null,
-        'privacy_policy_url' => null,
-        'terms_and_conditions_url' => null,
-        'response_header' => null
+        'type' => null,
+        'code' => 'int32',
+        'message' => null,
+        'is_empty' => null
     ];
 
     /**
@@ -104,11 +102,10 @@ class PublicTokenResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'public_token' => 'PublicToken',
-        'checkout_url' => 'CheckoutUrl',
-        'privacy_policy_url' => 'PrivacyPolicyUrl',
-        'terms_and_conditions_url' => 'TermsAndConditionsUrl',
-        'response_header' => 'ResponseHeader'
+        'type' => 'Type',
+        'code' => 'Code',
+        'message' => 'Message',
+        'is_empty' => 'IsEmpty'
     ];
 
     /**
@@ -117,11 +114,10 @@ class PublicTokenResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'public_token' => 'setPublicToken',
-        'checkout_url' => 'setCheckoutUrl',
-        'privacy_policy_url' => 'setPrivacyPolicyUrl',
-        'terms_and_conditions_url' => 'setTermsAndConditionsUrl',
-        'response_header' => 'setResponseHeader'
+        'type' => 'setType',
+        'code' => 'setCode',
+        'message' => 'setMessage',
+        'is_empty' => 'setIsEmpty'
     ];
 
     /**
@@ -130,11 +126,10 @@ class PublicTokenResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'public_token' => 'getPublicToken',
-        'checkout_url' => 'getCheckoutUrl',
-        'privacy_policy_url' => 'getPrivacyPolicyUrl',
-        'terms_and_conditions_url' => 'getTermsAndConditionsUrl',
-        'response_header' => 'getResponseHeader'
+        'type' => 'getType',
+        'code' => 'getCode',
+        'message' => 'getMessage',
+        'is_empty' => 'getIsEmpty'
     ];
 
     /**
@@ -197,11 +192,10 @@ class PublicTokenResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['public_token'] = isset($data['public_token']) ? $data['public_token'] : null;
-        $this->container['checkout_url'] = isset($data['checkout_url']) ? $data['checkout_url'] : null;
-        $this->container['privacy_policy_url'] = isset($data['privacy_policy_url']) ? $data['privacy_policy_url'] : null;
-        $this->container['terms_and_conditions_url'] = isset($data['terms_and_conditions_url']) ? $data['terms_and_conditions_url'] : null;
-        $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['is_empty'] = isset($data['is_empty']) ? $data['is_empty'] : null;
     }
 
     /**
@@ -213,6 +207,15 @@ class PublicTokenResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
+        }
+        if ($this->container['is_empty'] === null) {
+            $invalidProperties[] = "'is_empty' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -229,121 +232,97 @@ class PublicTokenResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets public_token
+     * Gets type
      *
-     * @return string
+     * @return \SplititSdkClient\Model\PaymentFormMessageType
      */
-    public function getPublicToken()
+    public function getType()
     {
-        return $this->container['public_token'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets public_token
+     * Sets type
      *
-     * @param string $public_token public_token
+     * @param \SplititSdkClient\Model\PaymentFormMessageType $type type
      *
      * @return $this
      */
-    public function setPublicToken($public_token)
+    public function setType($type)
     {
-        $this->container['public_token'] = $public_token;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets checkout_url
+     * Gets code
      *
-     * @return string
+     * @return int
      */
-    public function getCheckoutUrl()
+    public function getCode()
     {
-        return $this->container['checkout_url'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets checkout_url
+     * Sets code
      *
-     * @param string $checkout_url checkout_url
+     * @param int $code code
      *
      * @return $this
      */
-    public function setCheckoutUrl($checkout_url)
+    public function setCode($code)
     {
-        $this->container['checkout_url'] = $checkout_url;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets privacy_policy_url
+     * Gets message
      *
      * @return string
      */
-    public function getPrivacyPolicyUrl()
+    public function getMessage()
     {
-        return $this->container['privacy_policy_url'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets privacy_policy_url
+     * Sets message
      *
-     * @param string $privacy_policy_url privacy_policy_url
+     * @param string $message message
      *
      * @return $this
      */
-    public function setPrivacyPolicyUrl($privacy_policy_url)
+    public function setMessage($message)
     {
-        $this->container['privacy_policy_url'] = $privacy_policy_url;
+        $this->container['message'] = $message;
 
         return $this;
     }
 
     /**
-     * Gets terms_and_conditions_url
+     * Gets is_empty
      *
-     * @return string
+     * @return bool
      */
-    public function getTermsAndConditionsUrl()
+    public function getIsEmpty()
     {
-        return $this->container['terms_and_conditions_url'];
+        return $this->container['is_empty'];
     }
 
     /**
-     * Sets terms_and_conditions_url
+     * Sets is_empty
      *
-     * @param string $terms_and_conditions_url terms_and_conditions_url
+     * @param bool $is_empty is_empty
      *
      * @return $this
      */
-    public function setTermsAndConditionsUrl($terms_and_conditions_url)
+    public function setIsEmpty($is_empty)
     {
-        $this->container['terms_and_conditions_url'] = $terms_and_conditions_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets response_header
-     *
-     * @return \SplititSdkClient\Model\ResponseHeader
-     */
-    public function getResponseHeader()
-    {
-        return $this->container['response_header'];
-    }
-
-    /**
-     * Sets response_header
-     *
-     * @param \SplititSdkClient\Model\ResponseHeader $response_header response_header
-     *
-     * @return $this
-     */
-    public function setResponseHeader($response_header)
-    {
-        $this->container['response_header'] = $response_header;
+        $this->container['is_empty'] = $is_empty;
 
         return $this;
     }

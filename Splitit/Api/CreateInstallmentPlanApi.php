@@ -114,6 +114,10 @@ class CreateInstallmentPlanApi
                 $requestHeader->setApiKey($this->config->getApiKey());
             }
 
+            if (!is_null($this->config->getTouchPoint())){
+                $requestHeader->setTouchPoint($this->config->getTouchPoint());
+            }
+
             if (!is_null($this->culture)){
                 $requestHeader->setCultureName($this->culture);
             }

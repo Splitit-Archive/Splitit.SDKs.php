@@ -74,11 +74,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'is_shopper_phone_mandatory' => 'bool',
         'number_of_installments_selections_option' => 'string',
         'address_is_readonly' => 'bool',
+        'phone_is_read_only' => 'bool',
+        'email_is_read_only' => 'bool',
         'logo_url' => 'string',
         'privacy_policy_url' => 'string',
         'terms_and_conditions_url' => 'string',
         'learn_more_url' => 'string',
-        'payment_form_messages' => 'string[]'
+        'payment_form_messages' => '\SplititSdkClient\Model\PaymentFormMessage[]',
+        'display_properties' => 'map[string,string]',
+        'terms_and_conditions' => '\SplititSdkClient\Model\TermsAndConditions'
     ];
 
     /**
@@ -104,11 +108,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'is_shopper_phone_mandatory' => null,
         'number_of_installments_selections_option' => null,
         'address_is_readonly' => null,
+        'phone_is_read_only' => null,
+        'email_is_read_only' => null,
         'logo_url' => null,
         'privacy_policy_url' => null,
         'terms_and_conditions_url' => null,
         'learn_more_url' => null,
-        'payment_form_messages' => null
+        'payment_form_messages' => null,
+        'display_properties' => null,
+        'terms_and_conditions' => null
     ];
 
     /**
@@ -155,11 +163,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'is_shopper_phone_mandatory' => 'IsShopperPhoneMandatory',
         'number_of_installments_selections_option' => 'NumberOfInstallmentsSelectionsOption',
         'address_is_readonly' => 'AddressIsReadonly',
+        'phone_is_read_only' => 'PhoneIsReadOnly',
+        'email_is_read_only' => 'EmailIsReadOnly',
         'logo_url' => 'LogoURL',
         'privacy_policy_url' => 'PrivacyPolicyUrl',
         'terms_and_conditions_url' => 'TermsAndConditionsUrl',
         'learn_more_url' => 'LearnMoreUrl',
-        'payment_form_messages' => 'PaymentFormMessages'
+        'payment_form_messages' => 'PaymentFormMessages',
+        'display_properties' => 'DisplayProperties',
+        'terms_and_conditions' => 'TermsAndConditions'
     ];
 
     /**
@@ -185,11 +197,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'is_shopper_phone_mandatory' => 'setIsShopperPhoneMandatory',
         'number_of_installments_selections_option' => 'setNumberOfInstallmentsSelectionsOption',
         'address_is_readonly' => 'setAddressIsReadonly',
+        'phone_is_read_only' => 'setPhoneIsReadOnly',
+        'email_is_read_only' => 'setEmailIsReadOnly',
         'logo_url' => 'setLogoUrl',
         'privacy_policy_url' => 'setPrivacyPolicyUrl',
         'terms_and_conditions_url' => 'setTermsAndConditionsUrl',
         'learn_more_url' => 'setLearnMoreUrl',
-        'payment_form_messages' => 'setPaymentFormMessages'
+        'payment_form_messages' => 'setPaymentFormMessages',
+        'display_properties' => 'setDisplayProperties',
+        'terms_and_conditions' => 'setTermsAndConditions'
     ];
 
     /**
@@ -215,11 +231,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'is_shopper_phone_mandatory' => 'getIsShopperPhoneMandatory',
         'number_of_installments_selections_option' => 'getNumberOfInstallmentsSelectionsOption',
         'address_is_readonly' => 'getAddressIsReadonly',
+        'phone_is_read_only' => 'getPhoneIsReadOnly',
+        'email_is_read_only' => 'getEmailIsReadOnly',
         'logo_url' => 'getLogoUrl',
         'privacy_policy_url' => 'getPrivacyPolicyUrl',
         'terms_and_conditions_url' => 'getTermsAndConditionsUrl',
         'learn_more_url' => 'getLearnMoreUrl',
-        'payment_form_messages' => 'getPaymentFormMessages'
+        'payment_form_messages' => 'getPaymentFormMessages',
+        'display_properties' => 'getDisplayProperties',
+        'terms_and_conditions' => 'getTermsAndConditions'
     ];
 
     /**
@@ -299,11 +319,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         $this->container['is_shopper_phone_mandatory'] = isset($data['is_shopper_phone_mandatory']) ? $data['is_shopper_phone_mandatory'] : null;
         $this->container['number_of_installments_selections_option'] = isset($data['number_of_installments_selections_option']) ? $data['number_of_installments_selections_option'] : null;
         $this->container['address_is_readonly'] = isset($data['address_is_readonly']) ? $data['address_is_readonly'] : null;
+        $this->container['phone_is_read_only'] = isset($data['phone_is_read_only']) ? $data['phone_is_read_only'] : null;
+        $this->container['email_is_read_only'] = isset($data['email_is_read_only']) ? $data['email_is_read_only'] : null;
         $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
         $this->container['privacy_policy_url'] = isset($data['privacy_policy_url']) ? $data['privacy_policy_url'] : null;
         $this->container['terms_and_conditions_url'] = isset($data['terms_and_conditions_url']) ? $data['terms_and_conditions_url'] : null;
         $this->container['learn_more_url'] = isset($data['learn_more_url']) ? $data['learn_more_url'] : null;
         $this->container['payment_form_messages'] = isset($data['payment_form_messages']) ? $data['payment_form_messages'] : null;
+        $this->container['display_properties'] = isset($data['display_properties']) ? $data['display_properties'] : null;
+        $this->container['terms_and_conditions'] = isset($data['terms_and_conditions']) ? $data['terms_and_conditions'] : null;
     }
 
     /**
@@ -335,6 +359,12 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         }
         if ($this->container['address_is_readonly'] === null) {
             $invalidProperties[] = "'address_is_readonly' can't be null";
+        }
+        if ($this->container['phone_is_read_only'] === null) {
+            $invalidProperties[] = "'phone_is_read_only' can't be null";
+        }
+        if ($this->container['email_is_read_only'] === null) {
+            $invalidProperties[] = "'email_is_read_only' can't be null";
         }
         return $invalidProperties;
     }
@@ -760,6 +790,54 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets phone_is_read_only
+     *
+     * @return bool
+     */
+    public function getPhoneIsReadOnly()
+    {
+        return $this->container['phone_is_read_only'];
+    }
+
+    /**
+     * Sets phone_is_read_only
+     *
+     * @param bool $phone_is_read_only phone_is_read_only
+     *
+     * @return $this
+     */
+    public function setPhoneIsReadOnly($phone_is_read_only)
+    {
+        $this->container['phone_is_read_only'] = $phone_is_read_only;
+
+        return $this;
+    }
+
+    /**
+     * Gets email_is_read_only
+     *
+     * @return bool
+     */
+    public function getEmailIsReadOnly()
+    {
+        return $this->container['email_is_read_only'];
+    }
+
+    /**
+     * Sets email_is_read_only
+     *
+     * @param bool $email_is_read_only email_is_read_only
+     *
+     * @return $this
+     */
+    public function setEmailIsReadOnly($email_is_read_only)
+    {
+        $this->container['email_is_read_only'] = $email_is_read_only;
+
+        return $this;
+    }
+
+    /**
      * Gets logo_url
      *
      * @return string
@@ -858,7 +936,7 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     /**
      * Gets payment_form_messages
      *
-     * @return string[]
+     * @return \SplititSdkClient\Model\PaymentFormMessage[]
      */
     public function getPaymentFormMessages()
     {
@@ -868,13 +946,61 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     /**
      * Sets payment_form_messages
      *
-     * @param string[] $payment_form_messages payment_form_messages
+     * @param \SplititSdkClient\Model\PaymentFormMessage[] $payment_form_messages payment_form_messages
      *
      * @return $this
      */
     public function setPaymentFormMessages($payment_form_messages)
     {
         $this->container['payment_form_messages'] = $payment_form_messages;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_properties
+     *
+     * @return map[string,string]
+     */
+    public function getDisplayProperties()
+    {
+        return $this->container['display_properties'];
+    }
+
+    /**
+     * Sets display_properties
+     *
+     * @param map[string,string] $display_properties display_properties
+     *
+     * @return $this
+     */
+    public function setDisplayProperties($display_properties)
+    {
+        $this->container['display_properties'] = $display_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets terms_and_conditions
+     *
+     * @return \SplititSdkClient\Model\TermsAndConditions
+     */
+    public function getTermsAndConditions()
+    {
+        return $this->container['terms_and_conditions'];
+    }
+
+    /**
+     * Sets terms_and_conditions
+     *
+     * @param \SplititSdkClient\Model\TermsAndConditions $terms_and_conditions terms_and_conditions
+     *
+     * @return $this
+     */
+    public function setTermsAndConditions($terms_and_conditions)
+    {
+        $this->container['terms_and_conditions'] = $terms_and_conditions;
 
         return $this;
     }

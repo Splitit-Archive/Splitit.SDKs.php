@@ -1,6 +1,6 @@
 <?php
 /**
- * DelayResolution
+ * PaymentFormMessageType
  *
  * PHP version 5
  *
@@ -31,7 +31,7 @@ namespace SplititSdkClient\Model;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * DelayResolution Class Doc Comment
+ * PaymentFormMessageType Class Doc Comment
  *
  * @category Class
  * @description 
@@ -39,19 +39,15 @@ use \SplititSdkClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DelayResolution
+class PaymentFormMessageType
 {
     /**
      * Possible values of this enum
      */
-    const UNKNOWN = 'Unknown';
-    const PENDING_TECHNICAL_VERIFICATION = 'PendingTechnicalVerification';
-    const PENDING_BANK_TRANSFER_CONFIRMATION = 'PendingBankTransferConfirmation';
-    const PENDING_MID_ISSUE_RESOLUTION = 'PendingMidIssueResolution';
-    const PENDING_SUSPICIOUS_REVIEW = 'PendingSuspiciousReview';
-    const DEFAULTED_IN_COLLECTION = 'DefaultedInCollection';
-    const DEFAULTED_PERMANENTLY = 'DefaultedPermanently';
-    const DEFAULTED_COLLECTED_FROM_MERCHANT = 'DefaultedCollectedFromMerchant';
+    const GENERAL_NOTICE = 'GeneralNotice';
+    const MERCHANT_NOTICE = 'MerchantNotice';
+    const GENERAL_ERROR = 'GeneralError';
+    const FATAL_ERROR = 'FatalError';
     
     /**
      * Gets allowable values of the enum
@@ -60,14 +56,10 @@ class DelayResolution
     public static function getAllowableEnumValues()
     {
         return [
-            self::UNKNOWN,
-            self::PENDING_TECHNICAL_VERIFICATION,
-            self::PENDING_BANK_TRANSFER_CONFIRMATION,
-            self::PENDING_MID_ISSUE_RESOLUTION,
-            self::PENDING_SUSPICIOUS_REVIEW,
-            self::DEFAULTED_IN_COLLECTION,
-            self::DEFAULTED_PERMANENTLY,
-            self::DEFAULTED_COLLECTED_FROM_MERCHANT,
+            self::GENERAL_NOTICE,
+            self::MERCHANT_NOTICE,
+            self::GENERAL_ERROR,
+            self::FATAL_ERROR,
         ];
     }
 }

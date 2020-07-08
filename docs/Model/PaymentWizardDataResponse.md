@@ -20,11 +20,15 @@ Name | Type | Description | Notes
 **is_shopper_phone_mandatory** | **bool** |  | 
 **number_of_installments_selections_option** | **string** |  | [optional] 
 **address_is_readonly** | **bool** |  | 
+**phone_is_read_only** | **bool** |  | 
+**email_is_read_only** | **bool** |  | 
 **logo_url** | **string** |  | [optional] 
 **privacy_policy_url** | **string** |  | [optional] 
 **terms_and_conditions_url** | **string** |  | [optional] 
 **learn_more_url** | **string** |  | [optional] 
-**payment_form_messages** | **string[]** |  | [optional] 
+**payment_form_messages** | [**\SplititSdkClient\Model\PaymentFormMessage[]**](PaymentFormMessage.md) |  | [optional] 
+**display_properties** | **map[string,string]** |  | [optional] 
+**terms_and_conditions** | [**\SplititSdkClient\Model\TermsAndConditions**](TermsAndConditions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

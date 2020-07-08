@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **privacy_policy_url** | **string** |  | [optional] 
 **installment_plan_info_url** | **string** |  | [optional] 
 **public_token** | **string** |  | [optional] 
+**learn_more_url** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

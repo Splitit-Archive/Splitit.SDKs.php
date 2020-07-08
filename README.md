@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.4.6
+- Package version: 1.5.0
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.4.6"
+    "splitit/sdk": "^1.5.0"
   }
 }
 ```
@@ -132,9 +132,9 @@ try{
 
 ## Flex Fields
 
-Commong usage for Splitit PHP SDK is in making necessary server-side requests as part of FlexFields product integration.
+Common usage for Splitit PHP SDK is in making necessary server-side requests as part of FlexFields product integration.
 The code below is an example of how SDK wrappers can be used to simplify acquiring public token and verifying payment.
-For more information, please visit [FlexFields documentation](https://hosted.production.splitit.com/#php).
+For more information, please visit [FlexFields documentation](https://flex-fields.production.splitit.com/#php).
 
 Server-side code consists of two parts: acquiring public token which needs to be passed to FlexFields JS library 
 and verifying payment before order is finalized and shipped.
@@ -198,17 +198,19 @@ All URIs are relative to *https://webapi.production.splitit.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*InfoApi* | [**infoGetLearnMoreDetails**](docs/Api/InfoApi.md#infogetlearnmoredetails) | **POST** /api/Merchant/GetLearnMoreDetails | 
 *InfrastructureApi* | [**infrastructureGetResources**](docs/Api/InfrastructureApi.md#infrastructuregetresources) | **POST** /api/Infrastructure/GetResources | 
 *InfrastructureApi* | [**infrastructureGetResources2**](docs/Api/InfrastructureApi.md#infrastructuregetresources2) | **GET** /api/Infrastructure/GetResources | 
 *InstallmentPlanApi* | [**installmentPlanApprove**](docs/Api/InstallmentPlanApi.md#installmentplanapprove) | **POST** /api/InstallmentPlan/Approve | 
 *InstallmentPlanApi* | [**installmentPlanCancel**](docs/Api/InstallmentPlanApi.md#installmentplancancel) | **POST** /api/InstallmentPlan/Cancel | 
 *InstallmentPlanApi* | [**installmentPlanChargeBack**](docs/Api/InstallmentPlanApi.md#installmentplanchargeback) | **POST** /api/InstallmentPlan/ChargeBack | 
 *InstallmentPlanApi* | [**installmentPlanCreate**](docs/Api/InstallmentPlanApi.md#installmentplancreate) | **POST** /api/InstallmentPlan/Create | 
-*InstallmentPlanApi* | [**installmentPlanCreatePublicToken**](docs/Api/InstallmentPlanApi.md#installmentplancreatepublictoken) | **POST** /api/InstallmentPlan/CreatePublicToken | 
 *InstallmentPlanApi* | [**installmentPlanGet**](docs/Api/InstallmentPlanApi.md#installmentplanget) | **POST** /api/InstallmentPlan/Get | 
 *InstallmentPlanApi* | [**installmentPlanGet3DSecureParameters**](docs/Api/InstallmentPlanApi.md#installmentplanget3dsecureparameters) | **POST** /api/InstallmentPlan/Get3DSecureParameters | 
 *InstallmentPlanApi* | [**installmentPlanGetExtended**](docs/Api/InstallmentPlanApi.md#installmentplangetextended) | **POST** /api/InstallmentPlan/GetExtended | 
+*InstallmentPlanApi* | [**installmentPlanGetFraudStatusDisplay**](docs/Api/InstallmentPlanApi.md#installmentplangetfraudstatusdisplay) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
 *InstallmentPlanApi* | [**installmentPlanGetInitiatedInstallmentPlanRequest**](docs/Api/InstallmentPlanApi.md#installmentplangetinitiatedinstallmentplanrequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
+*InstallmentPlanApi* | [**installmentPlanGetLearnMoreDetails**](docs/Api/InstallmentPlanApi.md#installmentplangetlearnmoredetails) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
 *InstallmentPlanApi* | [**installmentPlanInitiate**](docs/Api/InstallmentPlanApi.md#installmentplaninitiate) | **POST** /api/InstallmentPlan/Initiate | 
 *InstallmentPlanApi* | [**installmentPlanRefund**](docs/Api/InstallmentPlanApi.md#installmentplanrefund) | **POST** /api/InstallmentPlan/Refund | 
 *InstallmentPlanApi* | [**installmentPlanStartInstallments**](docs/Api/InstallmentPlanApi.md#installmentplanstartinstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -216,7 +218,6 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanUpdate**](docs/Api/InstallmentPlanApi.md#installmentplanupdate) | **POST** /api/InstallmentPlan/Update | 
 *InstallmentPlanApi* | [**installmentPlanVerifyPayment**](docs/Api/InstallmentPlanApi.md#installmentplanverifypayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
 *LoginApi* | [**loginPost**](docs/Api/LoginApi.md#loginpost) | **POST** /api/Login | 
-*TouchPointsApi* | [**touchPointsFlexFieldsData**](docs/Api/TouchPointsApi.md#touchpointsflexfieldsdata) | **GET** /api/TouchPoints/SetupData/FlexFieldsData | 
 
 
 ## Documentation For Models
@@ -235,11 +236,12 @@ Class | Method | HTTP request | Description
  - [Error](docs/Model/Error.md)
  - [EventsEndpoints](docs/Model/EventsEndpoints.md)
  - [ExternalAuth](docs/Model/ExternalAuth.md)
- - [FlexFieldsDataResponse](docs/Model/FlexFieldsDataResponse.md)
  - [FraudCheck](docs/Model/FraudCheck.md)
  - [FraudCheckResult](docs/Model/FraudCheckResult.md)
  - [Get3DSecureParametersRequest](docs/Model/Get3DSecureParametersRequest.md)
  - [Get3DSecureParametersResponse](docs/Model/Get3DSecureParametersResponse.md)
+ - [GetFraudStatusDisplayRequest](docs/Model/GetFraudStatusDisplayRequest.md)
+ - [GetFraudStatusDisplayResponse](docs/Model/GetFraudStatusDisplayResponse.md)
  - [GetInitiatedInstallmentPlanRequest](docs/Model/GetInitiatedInstallmentPlanRequest.md)
  - [GetInitiatedInstallmentPlanResponse](docs/Model/GetInitiatedInstallmentPlanResponse.md)
  - [GetInstallmentsPlanResponse](docs/Model/GetInstallmentsPlanResponse.md)
@@ -249,6 +251,7 @@ Class | Method | HTTP request | Description
  - [GetResourcesResponse](docs/Model/GetResourcesResponse.md)
  - [InitiateInstallmentPlanRequest](docs/Model/InitiateInstallmentPlanRequest.md)
  - [Installment](docs/Model/Installment.md)
+ - [Installment2](docs/Model/Installment2.md)
  - [InstallmentPlan](docs/Model/InstallmentPlan.md)
  - [InstallmentPlanActivityStatus](docs/Model/InstallmentPlanActivityStatus.md)
  - [InstallmentPlanCancelationReason](docs/Model/InstallmentPlanCancelationReason.md)
@@ -259,19 +262,21 @@ Class | Method | HTTP request | Description
  - [InstallmentPlanStatus](docs/Model/InstallmentPlanStatus.md)
  - [InstallmentsPlanDateType](docs/Model/InstallmentsPlanDateType.md)
  - [ItemData](docs/Model/ItemData.md)
+ - [LearnMoreDetailsRequest](docs/Model/LearnMoreDetailsRequest.md)
+ - [LearnMoreDetailsResponse](docs/Model/LearnMoreDetailsResponse.md)
  - [LoginRequest](docs/Model/LoginRequest.md)
  - [LoginResponse2](docs/Model/LoginResponse2.md)
  - [Money](docs/Model/Money.md)
  - [MoneyWithCurrencyCode](docs/Model/MoneyWithCurrencyCode.md)
  - [PagingRequestHeader](docs/Model/PagingRequestHeader.md)
  - [PagingResponseHeader](docs/Model/PagingResponseHeader.md)
+ - [PaymentFormMessage](docs/Model/PaymentFormMessage.md)
+ - [PaymentFormMessageType](docs/Model/PaymentFormMessageType.md)
  - [PaymentToken](docs/Model/PaymentToken.md)
  - [PaymentWizardData](docs/Model/PaymentWizardData.md)
  - [PlanApprovalEvidence](docs/Model/PlanApprovalEvidence.md)
  - [PlanData](docs/Model/PlanData.md)
  - [PlanStrategy](docs/Model/PlanStrategy.md)
- - [PublicTokenRequest](docs/Model/PublicTokenRequest.md)
- - [PublicTokenResponse](docs/Model/PublicTokenResponse.md)
  - [PurchaseMethod](docs/Model/PurchaseMethod.md)
  - [ReAuthorization](docs/Model/ReAuthorization.md)
  - [RedirectUrls](docs/Model/RedirectUrls.md)

@@ -58,7 +58,8 @@ class ResponseHeader implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'succeeded' => 'bool',
-        'errors' => '\SplititSdkClient\Model\Error[]'
+        'errors' => '\SplititSdkClient\Model\Error[]',
+        'trace_id' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class ResponseHeader implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'succeeded' => null,
-        'errors' => null
+        'errors' => null,
+        'trace_id' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class ResponseHeader implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'succeeded' => 'Succeeded',
-        'errors' => 'Errors'
+        'errors' => 'Errors',
+        'trace_id' => 'TraceId'
     ];
 
     /**
@@ -109,7 +112,8 @@ class ResponseHeader implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'succeeded' => 'setSucceeded',
-        'errors' => 'setErrors'
+        'errors' => 'setErrors',
+        'trace_id' => 'setTraceId'
     ];
 
     /**
@@ -119,7 +123,8 @@ class ResponseHeader implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'succeeded' => 'getSucceeded',
-        'errors' => 'getErrors'
+        'errors' => 'getErrors',
+        'trace_id' => 'getTraceId'
     ];
 
     /**
@@ -184,6 +189,7 @@ class ResponseHeader implements ModelInterface, ArrayAccess
     {
         $this->container['succeeded'] = isset($data['succeeded']) ? $data['succeeded'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
+        $this->container['trace_id'] = isset($data['trace_id']) ? $data['trace_id'] : null;
     }
 
     /**
@@ -257,6 +263,30 @@ class ResponseHeader implements ModelInterface, ArrayAccess
     public function setErrors($errors)
     {
         $this->container['errors'] = $errors;
+
+        return $this;
+    }
+
+    /**
+     * Gets trace_id
+     *
+     * @return string
+     */
+    public function getTraceId()
+    {
+        return $this->container['trace_id'];
+    }
+
+    /**
+     * Sets trace_id
+     *
+     * @param string $trace_id trace_id
+     *
+     * @return $this
+     */
+    public function setTraceId($trace_id)
+    {
+        $this->container['trace_id'] = $trace_id;
 
         return $this;
     }

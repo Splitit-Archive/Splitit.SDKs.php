@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **scp_funding_percent** | **float** |  | 
 **test_mode** | [**\SplititSdkClient\Model\TestModes**](TestModes.md) |  | 
 **creation_date_time** | [**\DateTime**](\DateTime.md) |  | 
-**installments** | [**\SplititSdkClient\Model\Installment[]**](Installment.md) |  | [optional] 
+**installments** | [**\SplititSdkClient\Model\Installment2[]**](Installment2.md) |  | [optional] 
 **secure_authorizations** | [**\SplititSdkClient\Model\ReAuthorization[]**](ReAuthorization.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

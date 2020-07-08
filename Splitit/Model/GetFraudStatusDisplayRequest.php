@@ -1,6 +1,6 @@
 <?php
 /**
- * Installment
+ * GetFraudStatusDisplayRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * Installment Class Doc Comment
+ * GetFraudStatusDisplayRequest Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Installment implements ModelInterface, ArrayAccess
+class GetFraudStatusDisplayRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Installment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Installment';
+    protected static $swaggerModelName = 'GetFraudStatusDisplayRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class Installment implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'date' => '\DateTime',
-        'amount' => '\SplititSdkClient\Model\MoneyWithCurrencyCode',
-        'held_amount' => 'float'
+        'provider_reference_id' => 'string',
+        'merchant_id' => 'int',
+        'installment_plan_number' => 'string'
     ];
 
     /**
@@ -68,9 +68,9 @@ class Installment implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'date' => 'date-time',
-        'amount' => null,
-        'held_amount' => 'decimal'
+        'provider_reference_id' => null,
+        'merchant_id' => 'int64',
+        'installment_plan_number' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class Installment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'date' => 'Date',
-        'amount' => 'Amount',
-        'held_amount' => 'HeldAmount'
+        'provider_reference_id' => 'ProviderReferenceId',
+        'merchant_id' => 'MerchantId',
+        'installment_plan_number' => 'InstallmentPlanNumber'
     ];
 
     /**
@@ -111,9 +111,9 @@ class Installment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'date' => 'setDate',
-        'amount' => 'setAmount',
-        'held_amount' => 'setHeldAmount'
+        'provider_reference_id' => 'setProviderReferenceId',
+        'merchant_id' => 'setMerchantId',
+        'installment_plan_number' => 'setInstallmentPlanNumber'
     ];
 
     /**
@@ -122,9 +122,9 @@ class Installment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'date' => 'getDate',
-        'amount' => 'getAmount',
-        'held_amount' => 'getHeldAmount'
+        'provider_reference_id' => 'getProviderReferenceId',
+        'merchant_id' => 'getMerchantId',
+        'installment_plan_number' => 'getInstallmentPlanNumber'
     ];
 
     /**
@@ -187,9 +187,9 @@ class Installment implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['held_amount'] = isset($data['held_amount']) ? $data['held_amount'] : null;
+        $this->container['provider_reference_id'] = isset($data['provider_reference_id']) ? $data['provider_reference_id'] : null;
+        $this->container['merchant_id'] = isset($data['merchant_id']) ? $data['merchant_id'] : null;
+        $this->container['installment_plan_number'] = isset($data['installment_plan_number']) ? $data['installment_plan_number'] : null;
     }
 
     /**
@@ -201,9 +201,6 @@ class Installment implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['held_amount'] === null) {
-            $invalidProperties[] = "'held_amount' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -220,73 +217,73 @@ class Installment implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets date
+     * Gets provider_reference_id
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getDate()
+    public function getProviderReferenceId()
     {
-        return $this->container['date'];
+        return $this->container['provider_reference_id'];
     }
 
     /**
-     * Sets date
+     * Sets provider_reference_id
      *
-     * @param \DateTime $date date
+     * @param string $provider_reference_id provider_reference_id
      *
      * @return $this
      */
-    public function setDate($date)
+    public function setProviderReferenceId($provider_reference_id)
     {
-        $this->container['date'] = $date;
+        $this->container['provider_reference_id'] = $provider_reference_id;
 
         return $this;
     }
 
     /**
-     * Gets amount
+     * Gets merchant_id
      *
-     * @return \SplititSdkClient\Model\MoneyWithCurrencyCode
+     * @return int
      */
-    public function getAmount()
+    public function getMerchantId()
     {
-        return $this->container['amount'];
+        return $this->container['merchant_id'];
     }
 
     /**
-     * Sets amount
+     * Sets merchant_id
      *
-     * @param \SplititSdkClient\Model\MoneyWithCurrencyCode $amount amount
+     * @param int $merchant_id merchant_id
      *
      * @return $this
      */
-    public function setAmount($amount)
+    public function setMerchantId($merchant_id)
     {
-        $this->container['amount'] = $amount;
+        $this->container['merchant_id'] = $merchant_id;
 
         return $this;
     }
 
     /**
-     * Gets held_amount
+     * Gets installment_plan_number
      *
-     * @return float
+     * @return string
      */
-    public function getHeldAmount()
+    public function getInstallmentPlanNumber()
     {
-        return $this->container['held_amount'];
+        return $this->container['installment_plan_number'];
     }
 
     /**
-     * Sets held_amount
+     * Sets installment_plan_number
      *
-     * @param float $held_amount held_amount
+     * @param string $installment_plan_number installment_plan_number
      *
      * @return $this
      */
-    public function setHeldAmount($held_amount)
+    public function setInstallmentPlanNumber($installment_plan_number)
     {
-        $this->container['held_amount'] = $held_amount;
+        $this->container['installment_plan_number'] = $installment_plan_number;
 
         return $this;
     }
