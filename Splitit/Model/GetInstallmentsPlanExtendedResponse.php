@@ -57,7 +57,7 @@ class GetInstallmentsPlanExtendedResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'plans_list' => '\SplititSdkClient\Model\ExtendedInstallmentPlan[]',
+        'plans_list' => '\SplititSdkClient\Model\InstallmentPlan[]',
         'response_header' => '\SplititSdkClient\Model\ResponseHeader',
         'paging_response_header' => '\SplititSdkClient\Model\PagingResponseHeader'
     ];
@@ -219,7 +219,7 @@ class GetInstallmentsPlanExtendedResponse implements ModelInterface, ArrayAccess
     /**
      * Gets plans_list
      *
-     * @return \SplititSdkClient\Model\ExtendedInstallmentPlan[]
+     * @return \SplititSdkClient\Model\InstallmentPlan[]
      */
     public function getPlansList()
     {
@@ -229,7 +229,7 @@ class GetInstallmentsPlanExtendedResponse implements ModelInterface, ArrayAccess
     /**
      * Sets plans_list
      *
-     * @param \SplititSdkClient\Model\ExtendedInstallmentPlan[] $plans_list plans_list
+     * @param \SplititSdkClient\Model\InstallmentPlan[] $plans_list plans_list
      *
      * @return $this
      */

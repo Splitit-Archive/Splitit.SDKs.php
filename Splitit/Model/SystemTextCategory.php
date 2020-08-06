@@ -69,6 +69,7 @@ class SystemTextCategory
     const PAYMENT_FORM_V3 = 'PaymentFormV3';
     const HOW_SPLITIT_WORKS = 'HowSplititWorks';
     const UPSTREAM_MESSAGING = 'UpstreamMessaging';
+    const ONBOARDING = 'Onboarding';
     
     /**
      * Gets allowable values of the enum
@@ -102,6 +103,7 @@ class SystemTextCategory
             self::PAYMENT_FORM_V3,
             self::HOW_SPLITIT_WORKS,
             self::UPSTREAM_MESSAGING,
+            self::ONBOARDING,
         ];
     }
 }

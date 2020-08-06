@@ -60,7 +60,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
         'response_header' => '\SplititSdkClient\Model\ResponseHeader',
         'session_id' => 'string',
         'result' => 'int',
-        'response_status' => '\SplititSdkClient\Model\ResponseStatus'
+        'response_status' => 'object'
     ];
 
     /**
@@ -300,7 +300,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
     /**
      * Gets response_status
      *
-     * @return \SplititSdkClient\Model\ResponseStatus
+     * @return object
      */
     public function getResponseStatus()
     {
@@ -310,7 +310,7 @@ class LoginResponse implements ModelInterface, ArrayAccess
     /**
      * Sets response_status
      *
-     * @param \SplititSdkClient\Model\ResponseStatus $response_status response_status
+     * @param object $response_status response_status
      *
      * @return $this
      */

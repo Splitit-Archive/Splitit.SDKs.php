@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.5.0
+- Package version: 1.5.1
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.5.0"
+    "splitit/sdk": "^1.5.1"
   }
 }
 ```
@@ -305,11 +305,9 @@ Class | Method | HTTP request | Description
  - [VerifyPaymentResponse](docs/Model/VerifyPaymentResponse.md)
  - [AddressData](docs/Model/AddressData.md)
  - [AmountDetails](docs/Model/AmountDetails.md)
- - [BuRef](docs/Model/BuRef.md)
  - [ConsumerData](docs/Model/ConsumerData.md)
  - [CreateInstallmentsPlanResponse](docs/Model/CreateInstallmentsPlanResponse.md)
  - [Currency](docs/Model/Currency.md)
- - [ExtendedInstallmentPlan](docs/Model/ExtendedInstallmentPlan.md)
  - [GetInstallmentsPlanExtendedResponse](docs/Model/GetInstallmentsPlanExtendedResponse.md)
  - [InitiateInstallmentsPlanResponse](docs/Model/InitiateInstallmentsPlanResponse.md)
  - [LoginResponse](docs/Model/LoginResponse.md)
