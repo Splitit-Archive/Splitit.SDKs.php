@@ -1,6 +1,6 @@
 <?php
 /**
- * InstallmentPlanResponse
+ * GetInstallmentsScheduleResponse
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * InstallmentPlanResponse Class Doc Comment
+ * GetInstallmentsScheduleResponse Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InstallmentPlanResponse implements ModelInterface, ArrayAccess
+class GetInstallmentsScheduleResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InstallmentPlanResponse';
+    protected static $swaggerModelName = 'GetInstallmentsScheduleResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'response_header' => '\SplititSdkClient\Model\ResponseHeader',
-        'installment_plan' => '\SplititSdkClient\Model\InstallmentPlan',
-        'gateway_transaction_results' => '\SplititSdkClient\Model\TransactionResult[]'
+        'schedules' => '\SplititSdkClient\Model\Schedule[]',
+        'installments_picker' => 'string',
+        'headline' => 'string'
     ];
 
     /**
@@ -69,8 +70,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'response_header' => null,
-        'installment_plan' => null,
-        'gateway_transaction_results' => null
+        'schedules' => null,
+        'installments_picker' => null,
+        'headline' => null
     ];
 
     /**
@@ -101,8 +103,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'response_header' => 'ResponseHeader',
-        'installment_plan' => 'InstallmentPlan',
-        'gateway_transaction_results' => 'GatewayTransactionResults'
+        'schedules' => 'Schedules',
+        'installments_picker' => 'InstallmentsPicker',
+        'headline' => 'Headline'
     ];
 
     /**
@@ -112,8 +115,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'response_header' => 'setResponseHeader',
-        'installment_plan' => 'setInstallmentPlan',
-        'gateway_transaction_results' => 'setGatewayTransactionResults'
+        'schedules' => 'setSchedules',
+        'installments_picker' => 'setInstallmentsPicker',
+        'headline' => 'setHeadline'
     ];
 
     /**
@@ -123,8 +127,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'response_header' => 'getResponseHeader',
-        'installment_plan' => 'getInstallmentPlan',
-        'gateway_transaction_results' => 'getGatewayTransactionResults'
+        'schedules' => 'getSchedules',
+        'installments_picker' => 'getInstallmentsPicker',
+        'headline' => 'getHeadline'
     ];
 
     /**
@@ -188,8 +193,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
-        $this->container['installment_plan'] = isset($data['installment_plan']) ? $data['installment_plan'] : null;
-        $this->container['gateway_transaction_results'] = isset($data['gateway_transaction_results']) ? $data['gateway_transaction_results'] : null;
+        $this->container['schedules'] = isset($data['schedules']) ? $data['schedules'] : null;
+        $this->container['installments_picker'] = isset($data['installments_picker']) ? $data['installments_picker'] : null;
+        $this->container['headline'] = isset($data['headline']) ? $data['headline'] : null;
     }
 
     /**
@@ -241,49 +247,73 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets installment_plan
+     * Gets schedules
      *
-     * @return \SplititSdkClient\Model\InstallmentPlan
+     * @return \SplititSdkClient\Model\Schedule[]
      */
-    public function getInstallmentPlan()
+    public function getSchedules()
     {
-        return $this->container['installment_plan'];
+        return $this->container['schedules'];
     }
 
     /**
-     * Sets installment_plan
+     * Sets schedules
      *
-     * @param \SplititSdkClient\Model\InstallmentPlan $installment_plan installment_plan
+     * @param \SplititSdkClient\Model\Schedule[] $schedules schedules
      *
      * @return $this
      */
-    public function setInstallmentPlan($installment_plan)
+    public function setSchedules($schedules)
     {
-        $this->container['installment_plan'] = $installment_plan;
+        $this->container['schedules'] = $schedules;
 
         return $this;
     }
 
     /**
-     * Gets gateway_transaction_results
+     * Gets installments_picker
      *
-     * @return \SplititSdkClient\Model\TransactionResult[]
+     * @return string
      */
-    public function getGatewayTransactionResults()
+    public function getInstallmentsPicker()
     {
-        return $this->container['gateway_transaction_results'];
+        return $this->container['installments_picker'];
     }
 
     /**
-     * Sets gateway_transaction_results
+     * Sets installments_picker
      *
-     * @param \SplititSdkClient\Model\TransactionResult[] $gateway_transaction_results gateway_transaction_results
+     * @param string $installments_picker installments_picker
      *
      * @return $this
      */
-    public function setGatewayTransactionResults($gateway_transaction_results)
+    public function setInstallmentsPicker($installments_picker)
     {
-        $this->container['gateway_transaction_results'] = $gateway_transaction_results;
+        $this->container['installments_picker'] = $installments_picker;
+
+        return $this;
+    }
+
+    /**
+     * Gets headline
+     *
+     * @return string
+     */
+    public function getHeadline()
+    {
+        return $this->container['headline'];
+    }
+
+    /**
+     * Sets headline
+     *
+     * @param string $headline headline
+     *
+     * @return $this
+     */
+    public function setHeadline($headline)
+    {
+        $this->container['headline'] = $headline;
 
         return $this;
     }

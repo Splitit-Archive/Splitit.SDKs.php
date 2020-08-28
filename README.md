@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.5.10
+- Package version: 1.5.11
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.5.10"
+    "splitit/sdk": "^1.5.11"
   }
 }
 ```
@@ -211,6 +211,7 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanGetFraudStatusDisplay**](docs/Api/InstallmentPlanApi.md#installmentplangetfraudstatusdisplay) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
 *InstallmentPlanApi* | [**installmentPlanGetInitiatedInstallmentPlanRequest**](docs/Api/InstallmentPlanApi.md#installmentplangetinitiatedinstallmentplanrequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
 *InstallmentPlanApi* | [**installmentPlanGetLearnMoreDetails**](docs/Api/InstallmentPlanApi.md#installmentplangetlearnmoredetails) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
+*InstallmentPlanApi* | [**installmentPlanGetSchedules**](docs/Api/InstallmentPlanApi.md#installmentplangetschedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 *InstallmentPlanApi* | [**installmentPlanInitiate**](docs/Api/InstallmentPlanApi.md#installmentplaninitiate) | **POST** /api/InstallmentPlan/Initiate | 
 *InstallmentPlanApi* | [**installmentPlanRefund**](docs/Api/InstallmentPlanApi.md#installmentplanrefund) | **POST** /api/InstallmentPlan/Refund | 
 *InstallmentPlanApi* | [**installmentPlanStartInstallments**](docs/Api/InstallmentPlanApi.md#installmentplanstartinstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -228,6 +229,7 @@ Class | Method | HTTP request | Description
  - [AuthenticationType](docs/Model/AuthenticationType.md)
  - [CancelInstallmentPlanRequest](docs/Model/CancelInstallmentPlanRequest.md)
  - [CardData](docs/Model/CardData.md)
+ - [CardResult](docs/Model/CardResult.md)
  - [CartData](docs/Model/CartData.md)
  - [ChargebackRequest](docs/Model/ChargebackRequest.md)
  - [CreateInstallmentPlanLegacyResponse](docs/Model/CreateInstallmentPlanLegacyResponse.md)
@@ -244,8 +246,10 @@ Class | Method | HTTP request | Description
  - [GetFraudStatusDisplayResponse](docs/Model/GetFraudStatusDisplayResponse.md)
  - [GetInitiatedInstallmentPlanRequest](docs/Model/GetInitiatedInstallmentPlanRequest.md)
  - [GetInitiatedInstallmentPlanResponse](docs/Model/GetInitiatedInstallmentPlanResponse.md)
+ - [GetInstallmentSchedulesRequest](docs/Model/GetInstallmentSchedulesRequest.md)
  - [GetInstallmentsPlanResponse](docs/Model/GetInstallmentsPlanResponse.md)
  - [GetInstallmentsPlanSearchCriteriaRequest](docs/Model/GetInstallmentsPlanSearchCriteriaRequest.md)
+ - [GetInstallmentsScheduleResponse](docs/Model/GetInstallmentsScheduleResponse.md)
  - [GetResourcesRequest](docs/Model/GetResourcesRequest.md)
  - [GetResourcesRequestContext](docs/Model/GetResourcesRequestContext.md)
  - [GetResourcesResponse](docs/Model/GetResourcesResponse.md)
@@ -289,6 +293,8 @@ Class | Method | HTTP request | Description
  - [ResponseError](docs/Model/ResponseError.md)
  - [ResponseHeader](docs/Model/ResponseHeader.md)
  - [ResponseStatus](docs/Model/ResponseStatus.md)
+ - [Schedule](docs/Model/Schedule.md)
+ - [ScheduleElements](docs/Model/ScheduleElements.md)
  - [StartInstallmentsRequest](docs/Model/StartInstallmentsRequest.md)
  - [SystemTextCategory](docs/Model/SystemTextCategory.md)
  - [TermsAndConditions](docs/Model/TermsAndConditions.md)

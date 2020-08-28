@@ -1,6 +1,6 @@
 <?php
 /**
- * InstallmentPlanResponse
+ * GetInstallmentSchedulesRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * InstallmentPlanResponse Class Doc Comment
+ * GetInstallmentSchedulesRequest Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InstallmentPlanResponse implements ModelInterface, ArrayAccess
+class GetInstallmentSchedulesRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InstallmentPlanResponse';
+    protected static $swaggerModelName = 'GetInstallmentSchedulesRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'response_header' => '\SplititSdkClient\Model\ResponseHeader',
-        'installment_plan' => '\SplititSdkClient\Model\InstallmentPlan',
-        'gateway_transaction_results' => '\SplititSdkClient\Model\TransactionResult[]'
+        'installment_plan_number' => 'string',
+        'amount' => '\SplititSdkClient\Model\MoneyWithCurrencyCode',
+        'card_number' => 'string'
     ];
 
     /**
@@ -68,9 +68,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'response_header' => null,
-        'installment_plan' => null,
-        'gateway_transaction_results' => null
+        'installment_plan_number' => null,
+        'amount' => null,
+        'card_number' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'response_header' => 'ResponseHeader',
-        'installment_plan' => 'InstallmentPlan',
-        'gateway_transaction_results' => 'GatewayTransactionResults'
+        'installment_plan_number' => 'InstallmentPlanNumber',
+        'amount' => 'Amount',
+        'card_number' => 'CardNumber'
     ];
 
     /**
@@ -111,9 +111,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'response_header' => 'setResponseHeader',
-        'installment_plan' => 'setInstallmentPlan',
-        'gateway_transaction_results' => 'setGatewayTransactionResults'
+        'installment_plan_number' => 'setInstallmentPlanNumber',
+        'amount' => 'setAmount',
+        'card_number' => 'setCardNumber'
     ];
 
     /**
@@ -122,9 +122,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'response_header' => 'getResponseHeader',
-        'installment_plan' => 'getInstallmentPlan',
-        'gateway_transaction_results' => 'getGatewayTransactionResults'
+        'installment_plan_number' => 'getInstallmentPlanNumber',
+        'amount' => 'getAmount',
+        'card_number' => 'getCardNumber'
     ];
 
     /**
@@ -187,9 +187,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
-        $this->container['installment_plan'] = isset($data['installment_plan']) ? $data['installment_plan'] : null;
-        $this->container['gateway_transaction_results'] = isset($data['gateway_transaction_results']) ? $data['gateway_transaction_results'] : null;
+        $this->container['installment_plan_number'] = isset($data['installment_plan_number']) ? $data['installment_plan_number'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['card_number'] = isset($data['card_number']) ? $data['card_number'] : null;
     }
 
     /**
@@ -217,73 +217,73 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets response_header
+     * Gets installment_plan_number
      *
-     * @return \SplititSdkClient\Model\ResponseHeader
+     * @return string
      */
-    public function getResponseHeader()
+    public function getInstallmentPlanNumber()
     {
-        return $this->container['response_header'];
+        return $this->container['installment_plan_number'];
     }
 
     /**
-     * Sets response_header
+     * Sets installment_plan_number
      *
-     * @param \SplititSdkClient\Model\ResponseHeader $response_header response_header
+     * @param string $installment_plan_number installment_plan_number
      *
      * @return $this
      */
-    public function setResponseHeader($response_header)
+    public function setInstallmentPlanNumber($installment_plan_number)
     {
-        $this->container['response_header'] = $response_header;
+        $this->container['installment_plan_number'] = $installment_plan_number;
 
         return $this;
     }
 
     /**
-     * Gets installment_plan
+     * Gets amount
      *
-     * @return \SplititSdkClient\Model\InstallmentPlan
+     * @return \SplititSdkClient\Model\MoneyWithCurrencyCode
      */
-    public function getInstallmentPlan()
+    public function getAmount()
     {
-        return $this->container['installment_plan'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets installment_plan
+     * Sets amount
      *
-     * @param \SplititSdkClient\Model\InstallmentPlan $installment_plan installment_plan
+     * @param \SplititSdkClient\Model\MoneyWithCurrencyCode $amount amount
      *
      * @return $this
      */
-    public function setInstallmentPlan($installment_plan)
+    public function setAmount($amount)
     {
-        $this->container['installment_plan'] = $installment_plan;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets gateway_transaction_results
+     * Gets card_number
      *
-     * @return \SplititSdkClient\Model\TransactionResult[]
+     * @return string
      */
-    public function getGatewayTransactionResults()
+    public function getCardNumber()
     {
-        return $this->container['gateway_transaction_results'];
+        return $this->container['card_number'];
     }
 
     /**
-     * Sets gateway_transaction_results
+     * Sets card_number
      *
-     * @param \SplititSdkClient\Model\TransactionResult[] $gateway_transaction_results gateway_transaction_results
+     * @param string $card_number card_number
      *
      * @return $this
      */
-    public function setGatewayTransactionResults($gateway_transaction_results)
+    public function setCardNumber($card_number)
     {
-        $this->container['gateway_transaction_results'] = $gateway_transaction_results;
+        $this->container['card_number'] = $card_number;
 
         return $this;
     }

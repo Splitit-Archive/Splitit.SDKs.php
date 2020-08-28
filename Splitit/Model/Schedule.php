@@ -1,6 +1,6 @@
 <?php
 /**
- * InstallmentPlanResponse
+ * Schedule
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * InstallmentPlanResponse Class Doc Comment
+ * Schedule Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InstallmentPlanResponse implements ModelInterface, ArrayAccess
+class Schedule implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InstallmentPlanResponse';
+    protected static $swaggerModelName = 'Schedule';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'response_header' => '\SplititSdkClient\Model\ResponseHeader',
-        'installment_plan' => '\SplititSdkClient\Model\InstallmentPlan',
-        'gateway_transaction_results' => '\SplititSdkClient\Model\TransactionResult[]'
+        'number_of_installments' => 'int',
+        'deposit' => 'bool',
+        'elements' => '\SplititSdkClient\Model\ScheduleElements[]'
     ];
 
     /**
@@ -68,9 +68,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'response_header' => null,
-        'installment_plan' => null,
-        'gateway_transaction_results' => null
+        'number_of_installments' => 'int32',
+        'deposit' => null,
+        'elements' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'response_header' => 'ResponseHeader',
-        'installment_plan' => 'InstallmentPlan',
-        'gateway_transaction_results' => 'GatewayTransactionResults'
+        'number_of_installments' => 'NumberOfInstallments',
+        'deposit' => 'Deposit',
+        'elements' => 'Elements'
     ];
 
     /**
@@ -111,9 +111,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'response_header' => 'setResponseHeader',
-        'installment_plan' => 'setInstallmentPlan',
-        'gateway_transaction_results' => 'setGatewayTransactionResults'
+        'number_of_installments' => 'setNumberOfInstallments',
+        'deposit' => 'setDeposit',
+        'elements' => 'setElements'
     ];
 
     /**
@@ -122,9 +122,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'response_header' => 'getResponseHeader',
-        'installment_plan' => 'getInstallmentPlan',
-        'gateway_transaction_results' => 'getGatewayTransactionResults'
+        'number_of_installments' => 'getNumberOfInstallments',
+        'deposit' => 'getDeposit',
+        'elements' => 'getElements'
     ];
 
     /**
@@ -187,9 +187,9 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
-        $this->container['installment_plan'] = isset($data['installment_plan']) ? $data['installment_plan'] : null;
-        $this->container['gateway_transaction_results'] = isset($data['gateway_transaction_results']) ? $data['gateway_transaction_results'] : null;
+        $this->container['number_of_installments'] = isset($data['number_of_installments']) ? $data['number_of_installments'] : null;
+        $this->container['deposit'] = isset($data['deposit']) ? $data['deposit'] : null;
+        $this->container['elements'] = isset($data['elements']) ? $data['elements'] : null;
     }
 
     /**
@@ -201,6 +201,12 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['number_of_installments'] === null) {
+            $invalidProperties[] = "'number_of_installments' can't be null";
+        }
+        if ($this->container['deposit'] === null) {
+            $invalidProperties[] = "'deposit' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -217,73 +223,73 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets response_header
+     * Gets number_of_installments
      *
-     * @return \SplititSdkClient\Model\ResponseHeader
+     * @return int
      */
-    public function getResponseHeader()
+    public function getNumberOfInstallments()
     {
-        return $this->container['response_header'];
+        return $this->container['number_of_installments'];
     }
 
     /**
-     * Sets response_header
+     * Sets number_of_installments
      *
-     * @param \SplititSdkClient\Model\ResponseHeader $response_header response_header
+     * @param int $number_of_installments number_of_installments
      *
      * @return $this
      */
-    public function setResponseHeader($response_header)
+    public function setNumberOfInstallments($number_of_installments)
     {
-        $this->container['response_header'] = $response_header;
+        $this->container['number_of_installments'] = $number_of_installments;
 
         return $this;
     }
 
     /**
-     * Gets installment_plan
+     * Gets deposit
      *
-     * @return \SplititSdkClient\Model\InstallmentPlan
+     * @return bool
      */
-    public function getInstallmentPlan()
+    public function getDeposit()
     {
-        return $this->container['installment_plan'];
+        return $this->container['deposit'];
     }
 
     /**
-     * Sets installment_plan
+     * Sets deposit
      *
-     * @param \SplititSdkClient\Model\InstallmentPlan $installment_plan installment_plan
+     * @param bool $deposit deposit
      *
      * @return $this
      */
-    public function setInstallmentPlan($installment_plan)
+    public function setDeposit($deposit)
     {
-        $this->container['installment_plan'] = $installment_plan;
+        $this->container['deposit'] = $deposit;
 
         return $this;
     }
 
     /**
-     * Gets gateway_transaction_results
+     * Gets elements
      *
-     * @return \SplititSdkClient\Model\TransactionResult[]
+     * @return \SplititSdkClient\Model\ScheduleElements[]
      */
-    public function getGatewayTransactionResults()
+    public function getElements()
     {
-        return $this->container['gateway_transaction_results'];
+        return $this->container['elements'];
     }
 
     /**
-     * Sets gateway_transaction_results
+     * Sets elements
      *
-     * @param \SplititSdkClient\Model\TransactionResult[] $gateway_transaction_results gateway_transaction_results
+     * @param \SplititSdkClient\Model\ScheduleElements[] $elements elements
      *
      * @return $this
      */
-    public function setGatewayTransactionResults($gateway_transaction_results)
+    public function setElements($elements)
     {
-        $this->container['gateway_transaction_results'] = $gateway_transaction_results;
+        $this->container['elements'] = $elements;
 
         return $this;
     }

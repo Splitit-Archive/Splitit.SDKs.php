@@ -1,6 +1,6 @@
 <?php
 /**
- * InstallmentPlanResponse
+ * CardResult
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * InstallmentPlanResponse Class Doc Comment
+ * CardResult Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InstallmentPlanResponse implements ModelInterface, ArrayAccess
+class CardResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InstallmentPlanResponse';
+    protected static $swaggerModelName = 'CardResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,8 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'response_header' => '\SplititSdkClient\Model\ResponseHeader',
-        'installment_plan' => '\SplititSdkClient\Model\InstallmentPlan',
-        'gateway_transaction_results' => '\SplititSdkClient\Model\TransactionResult[]'
+        'code' => 'string',
+        'description' => 'string'
     ];
 
     /**
@@ -68,9 +67,8 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'response_header' => null,
-        'installment_plan' => null,
-        'gateway_transaction_results' => null
+        'code' => null,
+        'description' => null
     ];
 
     /**
@@ -100,9 +98,8 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'response_header' => 'ResponseHeader',
-        'installment_plan' => 'InstallmentPlan',
-        'gateway_transaction_results' => 'GatewayTransactionResults'
+        'code' => 'Code',
+        'description' => 'Description'
     ];
 
     /**
@@ -111,9 +108,8 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'response_header' => 'setResponseHeader',
-        'installment_plan' => 'setInstallmentPlan',
-        'gateway_transaction_results' => 'setGatewayTransactionResults'
+        'code' => 'setCode',
+        'description' => 'setDescription'
     ];
 
     /**
@@ -122,9 +118,8 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'response_header' => 'getResponseHeader',
-        'installment_plan' => 'getInstallmentPlan',
-        'gateway_transaction_results' => 'getGatewayTransactionResults'
+        'code' => 'getCode',
+        'description' => 'getDescription'
     ];
 
     /**
@@ -187,9 +182,8 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
-        $this->container['installment_plan'] = isset($data['installment_plan']) ? $data['installment_plan'] : null;
-        $this->container['gateway_transaction_results'] = isset($data['gateway_transaction_results']) ? $data['gateway_transaction_results'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
     }
 
     /**
@@ -217,73 +211,49 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets response_header
+     * Gets code
      *
-     * @return \SplititSdkClient\Model\ResponseHeader
+     * @return string
      */
-    public function getResponseHeader()
+    public function getCode()
     {
-        return $this->container['response_header'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets response_header
+     * Sets code
      *
-     * @param \SplititSdkClient\Model\ResponseHeader $response_header response_header
+     * @param string $code code
      *
      * @return $this
      */
-    public function setResponseHeader($response_header)
+    public function setCode($code)
     {
-        $this->container['response_header'] = $response_header;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets installment_plan
+     * Gets description
      *
-     * @return \SplititSdkClient\Model\InstallmentPlan
+     * @return string
      */
-    public function getInstallmentPlan()
+    public function getDescription()
     {
-        return $this->container['installment_plan'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets installment_plan
+     * Sets description
      *
-     * @param \SplititSdkClient\Model\InstallmentPlan $installment_plan installment_plan
+     * @param string $description description
      *
      * @return $this
      */
-    public function setInstallmentPlan($installment_plan)
+    public function setDescription($description)
     {
-        $this->container['installment_plan'] = $installment_plan;
-
-        return $this;
-    }
-
-    /**
-     * Gets gateway_transaction_results
-     *
-     * @return \SplititSdkClient\Model\TransactionResult[]
-     */
-    public function getGatewayTransactionResults()
-    {
-        return $this->container['gateway_transaction_results'];
-    }
-
-    /**
-     * Sets gateway_transaction_results
-     *
-     * @param \SplititSdkClient\Model\TransactionResult[] $gateway_transaction_results gateway_transaction_results
-     *
-     * @return $this
-     */
-    public function setGatewayTransactionResults($gateway_transaction_results)
-    {
-        $this->container['gateway_transaction_results'] = $gateway_transaction_results;
+        $this->container['description'] = $description;
 
         return $this;
     }

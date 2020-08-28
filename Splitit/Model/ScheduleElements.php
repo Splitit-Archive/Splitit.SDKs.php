@@ -1,6 +1,6 @@
 <?php
 /**
- * InstallmentPlanResponse
+ * ScheduleElements
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * InstallmentPlanResponse Class Doc Comment
+ * ScheduleElements Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InstallmentPlanResponse implements ModelInterface, ArrayAccess
+class ScheduleElements implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InstallmentPlanResponse';
+    protected static $swaggerModelName = 'ScheduleElements';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'response_header' => '\SplititSdkClient\Model\ResponseHeader',
-        'installment_plan' => '\SplititSdkClient\Model\InstallmentPlan',
-        'gateway_transaction_results' => '\SplititSdkClient\Model\TransactionResult[]'
+        'installment_number' => 'int',
+        'charge_date' => 'string',
+        'charge_amount' => 'float',
+        'required_credit' => 'float'
     ];
 
     /**
@@ -68,9 +69,10 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'response_header' => null,
-        'installment_plan' => null,
-        'gateway_transaction_results' => null
+        'installment_number' => 'int32',
+        'charge_date' => null,
+        'charge_amount' => 'decimal',
+        'required_credit' => 'decimal'
     ];
 
     /**
@@ -100,9 +102,10 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'response_header' => 'ResponseHeader',
-        'installment_plan' => 'InstallmentPlan',
-        'gateway_transaction_results' => 'GatewayTransactionResults'
+        'installment_number' => 'InstallmentNumber',
+        'charge_date' => 'ChargeDate',
+        'charge_amount' => 'ChargeAmount',
+        'required_credit' => 'RequiredCredit'
     ];
 
     /**
@@ -111,9 +114,10 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'response_header' => 'setResponseHeader',
-        'installment_plan' => 'setInstallmentPlan',
-        'gateway_transaction_results' => 'setGatewayTransactionResults'
+        'installment_number' => 'setInstallmentNumber',
+        'charge_date' => 'setChargeDate',
+        'charge_amount' => 'setChargeAmount',
+        'required_credit' => 'setRequiredCredit'
     ];
 
     /**
@@ -122,9 +126,10 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'response_header' => 'getResponseHeader',
-        'installment_plan' => 'getInstallmentPlan',
-        'gateway_transaction_results' => 'getGatewayTransactionResults'
+        'installment_number' => 'getInstallmentNumber',
+        'charge_date' => 'getChargeDate',
+        'charge_amount' => 'getChargeAmount',
+        'required_credit' => 'getRequiredCredit'
     ];
 
     /**
@@ -187,9 +192,10 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
-        $this->container['installment_plan'] = isset($data['installment_plan']) ? $data['installment_plan'] : null;
-        $this->container['gateway_transaction_results'] = isset($data['gateway_transaction_results']) ? $data['gateway_transaction_results'] : null;
+        $this->container['installment_number'] = isset($data['installment_number']) ? $data['installment_number'] : null;
+        $this->container['charge_date'] = isset($data['charge_date']) ? $data['charge_date'] : null;
+        $this->container['charge_amount'] = isset($data['charge_amount']) ? $data['charge_amount'] : null;
+        $this->container['required_credit'] = isset($data['required_credit']) ? $data['required_credit'] : null;
     }
 
     /**
@@ -201,6 +207,15 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['installment_number'] === null) {
+            $invalidProperties[] = "'installment_number' can't be null";
+        }
+        if ($this->container['charge_amount'] === null) {
+            $invalidProperties[] = "'charge_amount' can't be null";
+        }
+        if ($this->container['required_credit'] === null) {
+            $invalidProperties[] = "'required_credit' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -217,73 +232,97 @@ class InstallmentPlanResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets response_header
+     * Gets installment_number
      *
-     * @return \SplititSdkClient\Model\ResponseHeader
+     * @return int
      */
-    public function getResponseHeader()
+    public function getInstallmentNumber()
     {
-        return $this->container['response_header'];
+        return $this->container['installment_number'];
     }
 
     /**
-     * Sets response_header
+     * Sets installment_number
      *
-     * @param \SplititSdkClient\Model\ResponseHeader $response_header response_header
+     * @param int $installment_number installment_number
      *
      * @return $this
      */
-    public function setResponseHeader($response_header)
+    public function setInstallmentNumber($installment_number)
     {
-        $this->container['response_header'] = $response_header;
+        $this->container['installment_number'] = $installment_number;
 
         return $this;
     }
 
     /**
-     * Gets installment_plan
+     * Gets charge_date
      *
-     * @return \SplititSdkClient\Model\InstallmentPlan
+     * @return string
      */
-    public function getInstallmentPlan()
+    public function getChargeDate()
     {
-        return $this->container['installment_plan'];
+        return $this->container['charge_date'];
     }
 
     /**
-     * Sets installment_plan
+     * Sets charge_date
      *
-     * @param \SplititSdkClient\Model\InstallmentPlan $installment_plan installment_plan
+     * @param string $charge_date charge_date
      *
      * @return $this
      */
-    public function setInstallmentPlan($installment_plan)
+    public function setChargeDate($charge_date)
     {
-        $this->container['installment_plan'] = $installment_plan;
+        $this->container['charge_date'] = $charge_date;
 
         return $this;
     }
 
     /**
-     * Gets gateway_transaction_results
+     * Gets charge_amount
      *
-     * @return \SplititSdkClient\Model\TransactionResult[]
+     * @return float
      */
-    public function getGatewayTransactionResults()
+    public function getChargeAmount()
     {
-        return $this->container['gateway_transaction_results'];
+        return $this->container['charge_amount'];
     }
 
     /**
-     * Sets gateway_transaction_results
+     * Sets charge_amount
      *
-     * @param \SplititSdkClient\Model\TransactionResult[] $gateway_transaction_results gateway_transaction_results
+     * @param float $charge_amount charge_amount
      *
      * @return $this
      */
-    public function setGatewayTransactionResults($gateway_transaction_results)
+    public function setChargeAmount($charge_amount)
     {
-        $this->container['gateway_transaction_results'] = $gateway_transaction_results;
+        $this->container['charge_amount'] = $charge_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets required_credit
+     *
+     * @return float
+     */
+    public function getRequiredCredit()
+    {
+        return $this->container['required_credit'];
+    }
+
+    /**
+     * Sets required_credit
+     *
+     * @param float $required_credit required_credit
+     *
+     * @return $this
+     */
+    public function setRequiredCredit($required_credit)
+    {
+        $this->container['required_credit'] = $required_credit;
 
         return $this;
     }

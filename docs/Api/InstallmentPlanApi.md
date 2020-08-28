@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**installmentPlanGetFraudStatusDisplay**](InstallmentPlanApi.md#installmentPlanGetFraudStatusDisplay) | **POST** /api/InstallmentPlan/GetFraudStatusDisplay | 
 [**installmentPlanGetInitiatedInstallmentPlanRequest**](InstallmentPlanApi.md#installmentPlanGetInitiatedInstallmentPlanRequest) | **POST** /api/InstallmentPlan/GetInitiatedInstallmentPlanRequest | 
 [**installmentPlanGetLearnMoreDetails**](InstallmentPlanApi.md#installmentPlanGetLearnMoreDetails) | **POST** /api/InstallmentPlan/GetLearnMoreDetails | 
+[**installmentPlanGetSchedules**](InstallmentPlanApi.md#installmentPlanGetSchedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 [**installmentPlanInitiate**](InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installmentPlanRefund**](InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
 [**installmentPlanStartInstallments**](InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
@@ -490,6 +491,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\SplititSdkClient\Model\LearnMoreDetailsResponse**](../Model/LearnMoreDetailsResponse.md)
+
+### Authorization
+
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **installmentPlanGetSchedules**
+> \SplititSdkClient\Model\GetInstallmentsScheduleResponse installmentPlanGetSchedules($request)
+
+
+
+### Example
+```php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+# Use Configuration::production() for production API
+$apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
+    Configuration::sandbox(),
+    $session_id
+);
+
+$request = new \SplititSdkClient\Model\GetInstallmentSchedulesRequest(); // \SplititSdkClient\Model\GetInstallmentSchedulesRequest | 
+
+try {
+    $result = $apiInstance->installmentPlanGetSchedules($request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InstallmentPlanApi->installmentPlanGetSchedules: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\SplititSdkClient\Model\GetInstallmentSchedulesRequest**](../Model/GetInstallmentSchedulesRequest.md)|  |
+
+### Return type
+
+[**\SplititSdkClient\Model\GetInstallmentsScheduleResponse**](../Model/GetInstallmentsScheduleResponse.md)
 
 ### Authorization
 

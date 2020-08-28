@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **gateway_result** | **bool** |  | 
 **gateway_transaction_date** | [**\DateTime**](\DateTime.md) |  | 
 **is_chargeback** | **bool** |  | 
+**avs_result** | [**\SplititSdkClient\Model\CardResult**](CardResult.md) |  | [optional] 
+**cvc_result** | [**\SplititSdkClient\Model\CardResult**](CardResult.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -59,6 +59,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'response_header' => '\SplititSdkClient\Model\ResponseHeader',
         'installment_plan' => '\SplititSdkClient\Model\InstallmentPlan',
+        'gateway_transaction_results' => '\SplititSdkClient\Model\TransactionResult[]',
         'checkout_url' => 'string',
         'approval_url' => 'string',
         'terms_and_conditions_url' => 'string',
@@ -76,6 +77,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'response_header' => null,
         'installment_plan' => null,
+        'gateway_transaction_results' => null,
         'checkout_url' => null,
         'approval_url' => null,
         'terms_and_conditions_url' => null,
@@ -114,6 +116,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'response_header' => 'ResponseHeader',
         'installment_plan' => 'InstallmentPlan',
+        'gateway_transaction_results' => 'GatewayTransactionResults',
         'checkout_url' => 'CheckoutUrl',
         'approval_url' => 'ApprovalUrl',
         'terms_and_conditions_url' => 'TermsAndConditionsUrl',
@@ -131,6 +134,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     protected static $setters = [
         'response_header' => 'setResponseHeader',
         'installment_plan' => 'setInstallmentPlan',
+        'gateway_transaction_results' => 'setGatewayTransactionResults',
         'checkout_url' => 'setCheckoutUrl',
         'approval_url' => 'setApprovalUrl',
         'terms_and_conditions_url' => 'setTermsAndConditionsUrl',
@@ -148,6 +152,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     protected static $getters = [
         'response_header' => 'getResponseHeader',
         'installment_plan' => 'getInstallmentPlan',
+        'gateway_transaction_results' => 'getGatewayTransactionResults',
         'checkout_url' => 'getCheckoutUrl',
         'approval_url' => 'getApprovalUrl',
         'terms_and_conditions_url' => 'getTermsAndConditionsUrl',
@@ -219,6 +224,7 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     {
         $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
         $this->container['installment_plan'] = isset($data['installment_plan']) ? $data['installment_plan'] : null;
+        $this->container['gateway_transaction_results'] = isset($data['gateway_transaction_results']) ? $data['gateway_transaction_results'] : null;
         $this->container['checkout_url'] = isset($data['checkout_url']) ? $data['checkout_url'] : null;
         $this->container['approval_url'] = isset($data['approval_url']) ? $data['approval_url'] : null;
         $this->container['terms_and_conditions_url'] = isset($data['terms_and_conditions_url']) ? $data['terms_and_conditions_url'] : null;
@@ -296,6 +302,30 @@ class InitiateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     public function setInstallmentPlan($installment_plan)
     {
         $this->container['installment_plan'] = $installment_plan;
+
+        return $this;
+    }
+
+    /**
+     * Gets gateway_transaction_results
+     *
+     * @return \SplititSdkClient\Model\TransactionResult[]
+     */
+    public function getGatewayTransactionResults()
+    {
+        return $this->container['gateway_transaction_results'];
+    }
+
+    /**
+     * Sets gateway_transaction_results
+     *
+     * @param \SplititSdkClient\Model\TransactionResult[] $gateway_transaction_results gateway_transaction_results
+     *
+     * @return $this
+     */
+    public function setGatewayTransactionResults($gateway_transaction_results)
+    {
+        $this->container['gateway_transaction_results'] = $gateway_transaction_results;
 
         return $this;
     }

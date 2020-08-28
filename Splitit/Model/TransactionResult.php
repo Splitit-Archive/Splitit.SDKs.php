@@ -64,7 +64,9 @@ class TransactionResult implements ModelInterface, ArrayAccess
         'operation_type' => '\SplititSdkClient\Model\ReferenceEntityBase',
         'gateway_result' => 'bool',
         'gateway_transaction_date' => '\DateTime',
-        'is_chargeback' => 'bool'
+        'is_chargeback' => 'bool',
+        'avs_result' => '\SplititSdkClient\Model\CardResult',
+        'cvc_result' => '\SplititSdkClient\Model\CardResult'
     ];
 
     /**
@@ -80,7 +82,9 @@ class TransactionResult implements ModelInterface, ArrayAccess
         'operation_type' => null,
         'gateway_result' => null,
         'gateway_transaction_date' => 'date-time',
-        'is_chargeback' => null
+        'is_chargeback' => null,
+        'avs_result' => null,
+        'cvc_result' => null
     ];
 
     /**
@@ -117,7 +121,9 @@ class TransactionResult implements ModelInterface, ArrayAccess
         'operation_type' => 'OperationType',
         'gateway_result' => 'GatewayResult',
         'gateway_transaction_date' => 'GatewayTransactionDate',
-        'is_chargeback' => 'IsChargeback'
+        'is_chargeback' => 'IsChargeback',
+        'avs_result' => 'AVSResult',
+        'cvc_result' => 'CVCResult'
     ];
 
     /**
@@ -133,7 +139,9 @@ class TransactionResult implements ModelInterface, ArrayAccess
         'operation_type' => 'setOperationType',
         'gateway_result' => 'setGatewayResult',
         'gateway_transaction_date' => 'setGatewayTransactionDate',
-        'is_chargeback' => 'setIsChargeback'
+        'is_chargeback' => 'setIsChargeback',
+        'avs_result' => 'setAvsResult',
+        'cvc_result' => 'setCvcResult'
     ];
 
     /**
@@ -149,7 +157,9 @@ class TransactionResult implements ModelInterface, ArrayAccess
         'operation_type' => 'getOperationType',
         'gateway_result' => 'getGatewayResult',
         'gateway_transaction_date' => 'getGatewayTransactionDate',
-        'is_chargeback' => 'getIsChargeback'
+        'is_chargeback' => 'getIsChargeback',
+        'avs_result' => 'getAvsResult',
+        'cvc_result' => 'getCvcResult'
     ];
 
     /**
@@ -220,6 +230,8 @@ class TransactionResult implements ModelInterface, ArrayAccess
         $this->container['gateway_result'] = isset($data['gateway_result']) ? $data['gateway_result'] : null;
         $this->container['gateway_transaction_date'] = isset($data['gateway_transaction_date']) ? $data['gateway_transaction_date'] : null;
         $this->container['is_chargeback'] = isset($data['is_chargeback']) ? $data['is_chargeback'] : null;
+        $this->container['avs_result'] = isset($data['avs_result']) ? $data['avs_result'] : null;
+        $this->container['cvc_result'] = isset($data['cvc_result']) ? $data['cvc_result'] : null;
     }
 
     /**
@@ -446,6 +458,54 @@ class TransactionResult implements ModelInterface, ArrayAccess
     public function setIsChargeback($is_chargeback)
     {
         $this->container['is_chargeback'] = $is_chargeback;
+
+        return $this;
+    }
+
+    /**
+     * Gets avs_result
+     *
+     * @return \SplititSdkClient\Model\CardResult
+     */
+    public function getAvsResult()
+    {
+        return $this->container['avs_result'];
+    }
+
+    /**
+     * Sets avs_result
+     *
+     * @param \SplititSdkClient\Model\CardResult $avs_result avs_result
+     *
+     * @return $this
+     */
+    public function setAvsResult($avs_result)
+    {
+        $this->container['avs_result'] = $avs_result;
+
+        return $this;
+    }
+
+    /**
+     * Gets cvc_result
+     *
+     * @return \SplititSdkClient\Model\CardResult
+     */
+    public function getCvcResult()
+    {
+        return $this->container['cvc_result'];
+    }
+
+    /**
+     * Sets cvc_result
+     *
+     * @param \SplititSdkClient\Model\CardResult $cvc_result cvc_result
+     *
+     * @return $this
+     */
+    public function setCvcResult($cvc_result)
+    {
+        $this->container['cvc_result'] = $cvc_result;
 
         return $this;
     }

@@ -59,6 +59,7 @@ class UpdateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'response_header' => '\SplititSdkClient\Model\ResponseHeader',
         'installment_plan' => '\SplititSdkClient\Model\InstallmentPlan',
+        'gateway_transaction_results' => '\SplititSdkClient\Model\TransactionResult[]',
         'approval_url' => 'string'
     ];
 
@@ -70,6 +71,7 @@ class UpdateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'response_header' => null,
         'installment_plan' => null,
+        'gateway_transaction_results' => null,
         'approval_url' => null
     ];
 
@@ -102,6 +104,7 @@ class UpdateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'response_header' => 'ResponseHeader',
         'installment_plan' => 'InstallmentPlan',
+        'gateway_transaction_results' => 'GatewayTransactionResults',
         'approval_url' => 'ApprovalUrl'
     ];
 
@@ -113,6 +116,7 @@ class UpdateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     protected static $setters = [
         'response_header' => 'setResponseHeader',
         'installment_plan' => 'setInstallmentPlan',
+        'gateway_transaction_results' => 'setGatewayTransactionResults',
         'approval_url' => 'setApprovalUrl'
     ];
 
@@ -124,6 +128,7 @@ class UpdateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     protected static $getters = [
         'response_header' => 'getResponseHeader',
         'installment_plan' => 'getInstallmentPlan',
+        'gateway_transaction_results' => 'getGatewayTransactionResults',
         'approval_url' => 'getApprovalUrl'
     ];
 
@@ -189,6 +194,7 @@ class UpdateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     {
         $this->container['response_header'] = isset($data['response_header']) ? $data['response_header'] : null;
         $this->container['installment_plan'] = isset($data['installment_plan']) ? $data['installment_plan'] : null;
+        $this->container['gateway_transaction_results'] = isset($data['gateway_transaction_results']) ? $data['gateway_transaction_results'] : null;
         $this->container['approval_url'] = isset($data['approval_url']) ? $data['approval_url'] : null;
     }
 
@@ -260,6 +266,30 @@ class UpdateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     public function setInstallmentPlan($installment_plan)
     {
         $this->container['installment_plan'] = $installment_plan;
+
+        return $this;
+    }
+
+    /**
+     * Gets gateway_transaction_results
+     *
+     * @return \SplititSdkClient\Model\TransactionResult[]
+     */
+    public function getGatewayTransactionResults()
+    {
+        return $this->container['gateway_transaction_results'];
+    }
+
+    /**
+     * Sets gateway_transaction_results
+     *
+     * @param \SplititSdkClient\Model\TransactionResult[] $gateway_transaction_results gateway_transaction_results
+     *
+     * @return $this
+     */
+    public function setGatewayTransactionResults($gateway_transaction_results)
+    {
+        $this->container['gateway_transaction_results'] = $gateway_transaction_results;
 
         return $this;
     }

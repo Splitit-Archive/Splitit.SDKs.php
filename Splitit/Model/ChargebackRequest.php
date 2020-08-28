@@ -59,7 +59,8 @@ class ChargebackRequest implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'transaction_ids_to_mark' => 'int[]',
         'transaction_ids_to_unmark' => 'int[]',
-        'installment_plan_number' => 'string'
+        'installment_plan_number' => 'string',
+        'partial_response_mapping' => 'bool'
     ];
 
     /**
@@ -70,7 +71,8 @@ class ChargebackRequest implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'transaction_ids_to_mark' => 'int64',
         'transaction_ids_to_unmark' => 'int64',
-        'installment_plan_number' => null
+        'installment_plan_number' => null,
+        'partial_response_mapping' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class ChargebackRequest implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'transaction_ids_to_mark' => 'TransactionIdsToMark',
         'transaction_ids_to_unmark' => 'TransactionIdsToUnmark',
-        'installment_plan_number' => 'InstallmentPlanNumber'
+        'installment_plan_number' => 'InstallmentPlanNumber',
+        'partial_response_mapping' => 'PartialResponseMapping'
     ];
 
     /**
@@ -113,7 +116,8 @@ class ChargebackRequest implements ModelInterface, ArrayAccess
     protected static $setters = [
         'transaction_ids_to_mark' => 'setTransactionIdsToMark',
         'transaction_ids_to_unmark' => 'setTransactionIdsToUnmark',
-        'installment_plan_number' => 'setInstallmentPlanNumber'
+        'installment_plan_number' => 'setInstallmentPlanNumber',
+        'partial_response_mapping' => 'setPartialResponseMapping'
     ];
 
     /**
@@ -124,7 +128,8 @@ class ChargebackRequest implements ModelInterface, ArrayAccess
     protected static $getters = [
         'transaction_ids_to_mark' => 'getTransactionIdsToMark',
         'transaction_ids_to_unmark' => 'getTransactionIdsToUnmark',
-        'installment_plan_number' => 'getInstallmentPlanNumber'
+        'installment_plan_number' => 'getInstallmentPlanNumber',
+        'partial_response_mapping' => 'getPartialResponseMapping'
     ];
 
     /**
@@ -190,6 +195,7 @@ class ChargebackRequest implements ModelInterface, ArrayAccess
         $this->container['transaction_ids_to_mark'] = isset($data['transaction_ids_to_mark']) ? $data['transaction_ids_to_mark'] : null;
         $this->container['transaction_ids_to_unmark'] = isset($data['transaction_ids_to_unmark']) ? $data['transaction_ids_to_unmark'] : null;
         $this->container['installment_plan_number'] = isset($data['installment_plan_number']) ? $data['installment_plan_number'] : null;
+        $this->container['partial_response_mapping'] = isset($data['partial_response_mapping']) ? $data['partial_response_mapping'] : null;
     }
 
     /**
@@ -201,6 +207,9 @@ class ChargebackRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['partial_response_mapping'] === null) {
+            $invalidProperties[] = "'partial_response_mapping' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -284,6 +293,30 @@ class ChargebackRequest implements ModelInterface, ArrayAccess
     public function setInstallmentPlanNumber($installment_plan_number)
     {
         $this->container['installment_plan_number'] = $installment_plan_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets partial_response_mapping
+     *
+     * @return bool
+     */
+    public function getPartialResponseMapping()
+    {
+        return $this->container['partial_response_mapping'];
+    }
+
+    /**
+     * Sets partial_response_mapping
+     *
+     * @param bool $partial_response_mapping partial_response_mapping
+     *
+     * @return $this
+     */
+    public function setPartialResponseMapping($partial_response_mapping)
+    {
+        $this->container['partial_response_mapping'] = $partial_response_mapping;
 
         return $this;
     }
