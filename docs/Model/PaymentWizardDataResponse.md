@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **is_opened_in_iframe** | **bool** |  | 
 **payment_form_message** | **string** |  | [optional] 
 **show_address_elements** | **string** |  | [optional] 
-**currency_display** | [**\SplititSdkClient\Model\Currency**](Currency.md) |  | [optional] 
+**currency_display** | [**\SplititSdkClient\Model\ExtendedCurrency**](ExtendedCurrency.md) |  | [optional] 
 **force_display_important_notes** | **bool** |  | 
 **show_shopper_details_expended_on_start** | **bool** |  | 
 **show_payment_schedule_required_credit** | **bool** |  | 
@@ -22,10 +22,14 @@ Name | Type | Description | Notes
 **address_is_readonly** | **bool** |  | 
 **phone_is_read_only** | **bool** |  | 
 **email_is_read_only** | **bool** |  | 
+**show_learn_more** | **bool** |  | 
+**show_mobile_phone** | **bool** |  | 
 **logo_url** | **string** |  | [optional] 
 **privacy_policy_url** | **string** |  | [optional] 
 **terms_and_conditions_url** | **string** |  | [optional] 
 **learn_more_url** | **string** |  | [optional] 
+**potential_card_types** | [**\SplititSdkClient\Model\CardType[]**](CardType.md) |  | [optional] 
+**potential_card_brands** | [**\SplititSdkClient\Model\CardBrand[]**](CardBrand.md) |  | [optional] 
 **payment_form_messages** | [**\SplititSdkClient\Model\PaymentFormMessage[]**](PaymentFormMessage.md) |  | [optional] 
 **display_properties** | **map[string,string]** |  | [optional] 
 **terms_and_conditions** | [**\SplititSdkClient\Model\TermsAndConditions**](TermsAndConditions.md) |  | [optional] 

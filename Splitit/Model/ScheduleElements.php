@@ -58,7 +58,7 @@ class ScheduleElements implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'installment_number' => 'int',
-        'charge_date' => 'string',
+        'charge_date' => '\DateTime',
         'charge_amount' => 'float',
         'required_credit' => 'float'
     ];
@@ -70,7 +70,7 @@ class ScheduleElements implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'installment_number' => 'int32',
-        'charge_date' => null,
+        'charge_date' => 'date-time',
         'charge_amount' => 'decimal',
         'required_credit' => 'decimal'
     ];
@@ -210,6 +210,9 @@ class ScheduleElements implements ModelInterface, ArrayAccess
         if ($this->container['installment_number'] === null) {
             $invalidProperties[] = "'installment_number' can't be null";
         }
+        if ($this->container['charge_date'] === null) {
+            $invalidProperties[] = "'charge_date' can't be null";
+        }
         if ($this->container['charge_amount'] === null) {
             $invalidProperties[] = "'charge_amount' can't be null";
         }
@@ -258,7 +261,7 @@ class ScheduleElements implements ModelInterface, ArrayAccess
     /**
      * Gets charge_date
      *
-     * @return string
+     * @return \DateTime
      */
     public function getChargeDate()
     {
@@ -268,7 +271,7 @@ class ScheduleElements implements ModelInterface, ArrayAccess
     /**
      * Sets charge_date
      *
-     * @param string $charge_date charge_date
+     * @param \DateTime $charge_date charge_date
      *
      * @return $this
      */

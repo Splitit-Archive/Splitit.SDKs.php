@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **creation_date_time** | [**\DateTime**](\DateTime.md) |  | 
 **installments** | [**\SplititSdkClient\Model\Installment2[]**](Installment2.md) |  | [optional] 
 **secure_authorizations** | [**\SplititSdkClient\Model\ReAuthorization[]**](ReAuthorization.md) |  | [optional] 
+**logo_url** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

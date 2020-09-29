@@ -52,6 +52,8 @@ class DelayResolution
     const DEFAULTED_IN_COLLECTION = 'DefaultedInCollection';
     const DEFAULTED_PERMANENTLY = 'DefaultedPermanently';
     const DEFAULTED_COLLECTED_FROM_MERCHANT = 'DefaultedCollectedFromMerchant';
+    const DEFAULTED_SPLITIT_LIABLE_PAIDTO_MERCHANT = 'DefaultedSplititLiablePaidtoMerchant';
+    const DEFAULTED_CHARGEBACK_COLLECTED_FROM_MERCHANT = 'DefaultedChargebackCollectedFromMerchant';
     
     /**
      * Gets allowable values of the enum
@@ -68,6 +70,8 @@ class DelayResolution
             self::DEFAULTED_IN_COLLECTION,
             self::DEFAULTED_PERMANENTLY,
             self::DEFAULTED_COLLECTED_FROM_MERCHANT,
+            self::DEFAULTED_SPLITIT_LIABLE_PAIDTO_MERCHANT,
+            self::DEFAULTED_CHARGEBACK_COLLECTED_FROM_MERCHANT,
         ];
     }
 }

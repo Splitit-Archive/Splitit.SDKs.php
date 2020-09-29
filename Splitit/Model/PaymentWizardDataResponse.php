@@ -66,7 +66,7 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'is_opened_in_iframe' => 'bool',
         'payment_form_message' => 'string',
         'show_address_elements' => 'string',
-        'currency_display' => '\SplititSdkClient\Model\Currency',
+        'currency_display' => '\SplititSdkClient\Model\ExtendedCurrency',
         'force_display_important_notes' => 'bool',
         'show_shopper_details_expended_on_start' => 'bool',
         'show_payment_schedule_required_credit' => 'bool',
@@ -76,10 +76,14 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'address_is_readonly' => 'bool',
         'phone_is_read_only' => 'bool',
         'email_is_read_only' => 'bool',
+        'show_learn_more' => 'bool',
+        'show_mobile_phone' => 'bool',
         'logo_url' => 'string',
         'privacy_policy_url' => 'string',
         'terms_and_conditions_url' => 'string',
         'learn_more_url' => 'string',
+        'potential_card_types' => '\SplititSdkClient\Model\CardType[]',
+        'potential_card_brands' => '\SplititSdkClient\Model\CardBrand[]',
         'payment_form_messages' => '\SplititSdkClient\Model\PaymentFormMessage[]',
         'display_properties' => 'map[string,string]',
         'terms_and_conditions' => '\SplititSdkClient\Model\TermsAndConditions'
@@ -110,10 +114,14 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'address_is_readonly' => null,
         'phone_is_read_only' => null,
         'email_is_read_only' => null,
+        'show_learn_more' => null,
+        'show_mobile_phone' => null,
         'logo_url' => null,
         'privacy_policy_url' => null,
         'terms_and_conditions_url' => null,
         'learn_more_url' => null,
+        'potential_card_types' => null,
+        'potential_card_brands' => null,
         'payment_form_messages' => null,
         'display_properties' => null,
         'terms_and_conditions' => null
@@ -165,10 +173,14 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'address_is_readonly' => 'AddressIsReadonly',
         'phone_is_read_only' => 'PhoneIsReadOnly',
         'email_is_read_only' => 'EmailIsReadOnly',
+        'show_learn_more' => 'ShowLearnMore',
+        'show_mobile_phone' => 'ShowMobilePhone',
         'logo_url' => 'LogoURL',
         'privacy_policy_url' => 'PrivacyPolicyUrl',
         'terms_and_conditions_url' => 'TermsAndConditionsUrl',
         'learn_more_url' => 'LearnMoreUrl',
+        'potential_card_types' => 'PotentialCardTypes',
+        'potential_card_brands' => 'PotentialCardBrands',
         'payment_form_messages' => 'PaymentFormMessages',
         'display_properties' => 'DisplayProperties',
         'terms_and_conditions' => 'TermsAndConditions'
@@ -199,10 +211,14 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'address_is_readonly' => 'setAddressIsReadonly',
         'phone_is_read_only' => 'setPhoneIsReadOnly',
         'email_is_read_only' => 'setEmailIsReadOnly',
+        'show_learn_more' => 'setShowLearnMore',
+        'show_mobile_phone' => 'setShowMobilePhone',
         'logo_url' => 'setLogoUrl',
         'privacy_policy_url' => 'setPrivacyPolicyUrl',
         'terms_and_conditions_url' => 'setTermsAndConditionsUrl',
         'learn_more_url' => 'setLearnMoreUrl',
+        'potential_card_types' => 'setPotentialCardTypes',
+        'potential_card_brands' => 'setPotentialCardBrands',
         'payment_form_messages' => 'setPaymentFormMessages',
         'display_properties' => 'setDisplayProperties',
         'terms_and_conditions' => 'setTermsAndConditions'
@@ -233,10 +249,14 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'address_is_readonly' => 'getAddressIsReadonly',
         'phone_is_read_only' => 'getPhoneIsReadOnly',
         'email_is_read_only' => 'getEmailIsReadOnly',
+        'show_learn_more' => 'getShowLearnMore',
+        'show_mobile_phone' => 'getShowMobilePhone',
         'logo_url' => 'getLogoUrl',
         'privacy_policy_url' => 'getPrivacyPolicyUrl',
         'terms_and_conditions_url' => 'getTermsAndConditionsUrl',
         'learn_more_url' => 'getLearnMoreUrl',
+        'potential_card_types' => 'getPotentialCardTypes',
+        'potential_card_brands' => 'getPotentialCardBrands',
         'payment_form_messages' => 'getPaymentFormMessages',
         'display_properties' => 'getDisplayProperties',
         'terms_and_conditions' => 'getTermsAndConditions'
@@ -321,10 +341,14 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         $this->container['address_is_readonly'] = isset($data['address_is_readonly']) ? $data['address_is_readonly'] : null;
         $this->container['phone_is_read_only'] = isset($data['phone_is_read_only']) ? $data['phone_is_read_only'] : null;
         $this->container['email_is_read_only'] = isset($data['email_is_read_only']) ? $data['email_is_read_only'] : null;
+        $this->container['show_learn_more'] = isset($data['show_learn_more']) ? $data['show_learn_more'] : null;
+        $this->container['show_mobile_phone'] = isset($data['show_mobile_phone']) ? $data['show_mobile_phone'] : null;
         $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
         $this->container['privacy_policy_url'] = isset($data['privacy_policy_url']) ? $data['privacy_policy_url'] : null;
         $this->container['terms_and_conditions_url'] = isset($data['terms_and_conditions_url']) ? $data['terms_and_conditions_url'] : null;
         $this->container['learn_more_url'] = isset($data['learn_more_url']) ? $data['learn_more_url'] : null;
+        $this->container['potential_card_types'] = isset($data['potential_card_types']) ? $data['potential_card_types'] : null;
+        $this->container['potential_card_brands'] = isset($data['potential_card_brands']) ? $data['potential_card_brands'] : null;
         $this->container['payment_form_messages'] = isset($data['payment_form_messages']) ? $data['payment_form_messages'] : null;
         $this->container['display_properties'] = isset($data['display_properties']) ? $data['display_properties'] : null;
         $this->container['terms_and_conditions'] = isset($data['terms_and_conditions']) ? $data['terms_and_conditions'] : null;
@@ -365,6 +389,12 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         }
         if ($this->container['email_is_read_only'] === null) {
             $invalidProperties[] = "'email_is_read_only' can't be null";
+        }
+        if ($this->container['show_learn_more'] === null) {
+            $invalidProperties[] = "'show_learn_more' can't be null";
+        }
+        if ($this->container['show_mobile_phone'] === null) {
+            $invalidProperties[] = "'show_mobile_phone' can't be null";
         }
         return $invalidProperties;
     }
@@ -600,7 +630,7 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     /**
      * Gets currency_display
      *
-     * @return \SplititSdkClient\Model\Currency
+     * @return \SplititSdkClient\Model\ExtendedCurrency
      */
     public function getCurrencyDisplay()
     {
@@ -610,7 +640,7 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     /**
      * Sets currency_display
      *
-     * @param \SplititSdkClient\Model\Currency $currency_display currency_display
+     * @param \SplititSdkClient\Model\ExtendedCurrency $currency_display currency_display
      *
      * @return $this
      */
@@ -838,6 +868,54 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets show_learn_more
+     *
+     * @return bool
+     */
+    public function getShowLearnMore()
+    {
+        return $this->container['show_learn_more'];
+    }
+
+    /**
+     * Sets show_learn_more
+     *
+     * @param bool $show_learn_more show_learn_more
+     *
+     * @return $this
+     */
+    public function setShowLearnMore($show_learn_more)
+    {
+        $this->container['show_learn_more'] = $show_learn_more;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_mobile_phone
+     *
+     * @return bool
+     */
+    public function getShowMobilePhone()
+    {
+        return $this->container['show_mobile_phone'];
+    }
+
+    /**
+     * Sets show_mobile_phone
+     *
+     * @param bool $show_mobile_phone show_mobile_phone
+     *
+     * @return $this
+     */
+    public function setShowMobilePhone($show_mobile_phone)
+    {
+        $this->container['show_mobile_phone'] = $show_mobile_phone;
+
+        return $this;
+    }
+
+    /**
      * Gets logo_url
      *
      * @return string
@@ -929,6 +1007,54 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     public function setLearnMoreUrl($learn_more_url)
     {
         $this->container['learn_more_url'] = $learn_more_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets potential_card_types
+     *
+     * @return \SplititSdkClient\Model\CardType[]
+     */
+    public function getPotentialCardTypes()
+    {
+        return $this->container['potential_card_types'];
+    }
+
+    /**
+     * Sets potential_card_types
+     *
+     * @param \SplititSdkClient\Model\CardType[] $potential_card_types potential_card_types
+     *
+     * @return $this
+     */
+    public function setPotentialCardTypes($potential_card_types)
+    {
+        $this->container['potential_card_types'] = $potential_card_types;
+
+        return $this;
+    }
+
+    /**
+     * Gets potential_card_brands
+     *
+     * @return \SplititSdkClient\Model\CardBrand[]
+     */
+    public function getPotentialCardBrands()
+    {
+        return $this->container['potential_card_brands'];
+    }
+
+    /**
+     * Sets potential_card_brands
+     *
+     * @param \SplititSdkClient\Model\CardBrand[] $potential_card_brands potential_card_brands
+     *
+     * @return $this
+     */
+    public function setPotentialCardBrands($potential_card_brands)
+    {
+        $this->container['potential_card_brands'] = $potential_card_brands;
 
         return $this;
     }

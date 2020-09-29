@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.5.11
+- Package version: 1.5.12
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.5.11"
+    "splitit/sdk": "^1.5.12"
   }
 }
 ```
@@ -228,8 +228,10 @@ Class | Method | HTTP request | Description
  - [ApproveInstallmentPlanRequest](docs/Model/ApproveInstallmentPlanRequest.md)
  - [AuthenticationType](docs/Model/AuthenticationType.md)
  - [CancelInstallmentPlanRequest](docs/Model/CancelInstallmentPlanRequest.md)
+ - [CardBrand](docs/Model/CardBrand.md)
  - [CardData](docs/Model/CardData.md)
  - [CardResult](docs/Model/CardResult.md)
+ - [CardType](docs/Model/CardType.md)
  - [CartData](docs/Model/CartData.md)
  - [ChargebackRequest](docs/Model/ChargebackRequest.md)
  - [CreateInstallmentPlanLegacyResponse](docs/Model/CreateInstallmentPlanLegacyResponse.md)
@@ -322,6 +324,7 @@ Class | Method | HTTP request | Description
  - [RefundInstallmentPlanResponse](docs/Model/RefundInstallmentPlanResponse.md)
  - [UpdateInstallmentPlanRequest](docs/Model/UpdateInstallmentPlanRequest.md)
  - [UpdateInstallmentsPlanResponse](docs/Model/UpdateInstallmentsPlanResponse.md)
+ - [ExtendedCurrency](docs/Model/ExtendedCurrency.md)
 
 
 ## Author

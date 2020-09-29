@@ -1,6 +1,6 @@
 <?php
 /**
- * CancelInstallmentPlanRequest
+ * ExtendedCurrency
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * CancelInstallmentPlanRequest Class Doc Comment
+ * ExtendedCurrency Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
+class ExtendedCurrency implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CancelInstallmentPlanRequest';
+    protected static $swaggerModelName = 'ExtendedCurrency';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +57,11 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'installment_plan_number' => 'string',
-        'refund_under_cancelation' => '\SplititSdkClient\Model\RefundUnderCancelation',
-        'cancelation_reason' => '\SplititSdkClient\Model\InstallmentPlanCancelationReason',
-        'is_executed_unattended' => 'bool',
-        'partial_response_mapping' => 'bool'
+        'id' => 'int',
+        'code' => 'string',
+        'description' => 'string',
+        'symbol' => 'string',
+        'decimal_places' => 'int'
     ];
 
     /**
@@ -70,11 +70,11 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'installment_plan_number' => null,
-        'refund_under_cancelation' => null,
-        'cancelation_reason' => null,
-        'is_executed_unattended' => null,
-        'partial_response_mapping' => null
+        'id' => 'int64',
+        'code' => null,
+        'description' => null,
+        'symbol' => null,
+        'decimal_places' => 'int32'
     ];
 
     /**
@@ -104,11 +104,11 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'installment_plan_number' => 'InstallmentPlanNumber',
-        'refund_under_cancelation' => 'RefundUnderCancelation',
-        'cancelation_reason' => 'CancelationReason',
-        'is_executed_unattended' => 'IsExecutedUnattended',
-        'partial_response_mapping' => 'PartialResponseMapping'
+        'id' => 'Id',
+        'code' => 'Code',
+        'description' => 'Description',
+        'symbol' => 'Symbol',
+        'decimal_places' => 'DecimalPlaces'
     ];
 
     /**
@@ -117,11 +117,11 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'installment_plan_number' => 'setInstallmentPlanNumber',
-        'refund_under_cancelation' => 'setRefundUnderCancelation',
-        'cancelation_reason' => 'setCancelationReason',
-        'is_executed_unattended' => 'setIsExecutedUnattended',
-        'partial_response_mapping' => 'setPartialResponseMapping'
+        'id' => 'setId',
+        'code' => 'setCode',
+        'description' => 'setDescription',
+        'symbol' => 'setSymbol',
+        'decimal_places' => 'setDecimalPlaces'
     ];
 
     /**
@@ -130,11 +130,11 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'installment_plan_number' => 'getInstallmentPlanNumber',
-        'refund_under_cancelation' => 'getRefundUnderCancelation',
-        'cancelation_reason' => 'getCancelationReason',
-        'is_executed_unattended' => 'getIsExecutedUnattended',
-        'partial_response_mapping' => 'getPartialResponseMapping'
+        'id' => 'getId',
+        'code' => 'getCode',
+        'description' => 'getDescription',
+        'symbol' => 'getSymbol',
+        'decimal_places' => 'getDecimalPlaces'
     ];
 
     /**
@@ -197,11 +197,11 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['installment_plan_number'] = isset($data['installment_plan_number']) ? $data['installment_plan_number'] : null;
-        $this->container['refund_under_cancelation'] = isset($data['refund_under_cancelation']) ? $data['refund_under_cancelation'] : null;
-        $this->container['cancelation_reason'] = isset($data['cancelation_reason']) ? $data['cancelation_reason'] : null;
-        $this->container['is_executed_unattended'] = isset($data['is_executed_unattended']) ? $data['is_executed_unattended'] : null;
-        $this->container['partial_response_mapping'] = isset($data['partial_response_mapping']) ? $data['partial_response_mapping'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['symbol'] = isset($data['symbol']) ? $data['symbol'] : null;
+        $this->container['decimal_places'] = isset($data['decimal_places']) ? $data['decimal_places'] : null;
     }
 
     /**
@@ -213,14 +213,11 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['refund_under_cancelation'] === null) {
-            $invalidProperties[] = "'refund_under_cancelation' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
-        if ($this->container['is_executed_unattended'] === null) {
-            $invalidProperties[] = "'is_executed_unattended' can't be null";
-        }
-        if ($this->container['partial_response_mapping'] === null) {
-            $invalidProperties[] = "'partial_response_mapping' can't be null";
+        if ($this->container['decimal_places'] === null) {
+            $invalidProperties[] = "'decimal_places' can't be null";
         }
         return $invalidProperties;
     }
@@ -238,121 +235,121 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets installment_plan_number
+     * Gets id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
      *
      * @return string
      */
-    public function getInstallmentPlanNumber()
+    public function getCode()
     {
-        return $this->container['installment_plan_number'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets installment_plan_number
+     * Sets code
      *
-     * @param string $installment_plan_number installment_plan_number
+     * @param string $code code
      *
      * @return $this
      */
-    public function setInstallmentPlanNumber($installment_plan_number)
+    public function setCode($code)
     {
-        $this->container['installment_plan_number'] = $installment_plan_number;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets refund_under_cancelation
+     * Gets description
      *
-     * @return \SplititSdkClient\Model\RefundUnderCancelation
+     * @return string
      */
-    public function getRefundUnderCancelation()
+    public function getDescription()
     {
-        return $this->container['refund_under_cancelation'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets refund_under_cancelation
+     * Sets description
      *
-     * @param \SplititSdkClient\Model\RefundUnderCancelation $refund_under_cancelation refund_under_cancelation
+     * @param string $description description
      *
      * @return $this
      */
-    public function setRefundUnderCancelation($refund_under_cancelation)
+    public function setDescription($description)
     {
-        $this->container['refund_under_cancelation'] = $refund_under_cancelation;
+        $this->container['description'] = $description;
 
         return $this;
     }
 
     /**
-     * Gets cancelation_reason
+     * Gets symbol
      *
-     * @return \SplititSdkClient\Model\InstallmentPlanCancelationReason
+     * @return string
      */
-    public function getCancelationReason()
+    public function getSymbol()
     {
-        return $this->container['cancelation_reason'];
+        return $this->container['symbol'];
     }
 
     /**
-     * Sets cancelation_reason
+     * Sets symbol
      *
-     * @param \SplititSdkClient\Model\InstallmentPlanCancelationReason $cancelation_reason cancelation_reason
+     * @param string $symbol symbol
      *
      * @return $this
      */
-    public function setCancelationReason($cancelation_reason)
+    public function setSymbol($symbol)
     {
-        $this->container['cancelation_reason'] = $cancelation_reason;
+        $this->container['symbol'] = $symbol;
 
         return $this;
     }
 
     /**
-     * Gets is_executed_unattended
+     * Gets decimal_places
      *
-     * @return bool
+     * @return int
      */
-    public function getIsExecutedUnattended()
+    public function getDecimalPlaces()
     {
-        return $this->container['is_executed_unattended'];
+        return $this->container['decimal_places'];
     }
 
     /**
-     * Sets is_executed_unattended
+     * Sets decimal_places
      *
-     * @param bool $is_executed_unattended is_executed_unattended
+     * @param int $decimal_places decimal_places
      *
      * @return $this
      */
-    public function setIsExecutedUnattended($is_executed_unattended)
+    public function setDecimalPlaces($decimal_places)
     {
-        $this->container['is_executed_unattended'] = $is_executed_unattended;
-
-        return $this;
-    }
-
-    /**
-     * Gets partial_response_mapping
-     *
-     * @return bool
-     */
-    public function getPartialResponseMapping()
-    {
-        return $this->container['partial_response_mapping'];
-    }
-
-    /**
-     * Sets partial_response_mapping
-     *
-     * @param bool $partial_response_mapping partial_response_mapping
-     *
-     * @return $this
-     */
-    public function setPartialResponseMapping($partial_response_mapping)
-    {
-        $this->container['partial_response_mapping'] = $partial_response_mapping;
+        $this->container['decimal_places'] = $decimal_places;
 
         return $this;
     }

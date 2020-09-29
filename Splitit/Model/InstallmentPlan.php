@@ -81,7 +81,8 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'test_mode' => '\SplititSdkClient\Model\TestModes',
         'creation_date_time' => '\DateTime',
         'installments' => '\SplititSdkClient\Model\Installment2[]',
-        'secure_authorizations' => '\SplititSdkClient\Model\ReAuthorization[]'
+        'secure_authorizations' => '\SplititSdkClient\Model\ReAuthorization[]',
+        'logo_url' => 'string'
     ];
 
     /**
@@ -114,7 +115,8 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'test_mode' => null,
         'creation_date_time' => 'date-time',
         'installments' => null,
-        'secure_authorizations' => null
+        'secure_authorizations' => null,
+        'logo_url' => null
     ];
 
     /**
@@ -168,7 +170,8 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'test_mode' => 'TestMode',
         'creation_date_time' => 'CreationDateTime',
         'installments' => 'Installments',
-        'secure_authorizations' => 'SecureAuthorizations'
+        'secure_authorizations' => 'SecureAuthorizations',
+        'logo_url' => 'LogoUrl'
     ];
 
     /**
@@ -201,7 +204,8 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'test_mode' => 'setTestMode',
         'creation_date_time' => 'setCreationDateTime',
         'installments' => 'setInstallments',
-        'secure_authorizations' => 'setSecureAuthorizations'
+        'secure_authorizations' => 'setSecureAuthorizations',
+        'logo_url' => 'setLogoUrl'
     ];
 
     /**
@@ -234,7 +238,8 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'test_mode' => 'getTestMode',
         'creation_date_time' => 'getCreationDateTime',
         'installments' => 'getInstallments',
-        'secure_authorizations' => 'getSecureAuthorizations'
+        'secure_authorizations' => 'getSecureAuthorizations',
+        'logo_url' => 'getLogoUrl'
     ];
 
     /**
@@ -322,6 +327,7 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         $this->container['creation_date_time'] = isset($data['creation_date_time']) ? $data['creation_date_time'] : null;
         $this->container['installments'] = isset($data['installments']) ? $data['installments'] : null;
         $this->container['secure_authorizations'] = isset($data['secure_authorizations']) ? $data['secure_authorizations'] : null;
+        $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
     }
 
     /**
@@ -968,6 +974,30 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
     public function setSecureAuthorizations($secure_authorizations)
     {
         $this->container['secure_authorizations'] = $secure_authorizations;
+
+        return $this;
+    }
+
+    /**
+     * Gets logo_url
+     *
+     * @return string
+     */
+    public function getLogoUrl()
+    {
+        return $this->container['logo_url'];
+    }
+
+    /**
+     * Sets logo_url
+     *
+     * @param string $logo_url logo_url
+     *
+     * @return $this
+     */
+    public function setLogoUrl($logo_url)
+    {
+        $this->container['logo_url'] = $logo_url;
 
         return $this;
     }
