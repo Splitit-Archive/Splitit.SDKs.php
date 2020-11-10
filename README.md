@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.5.16
+- Package version: 1.5.-56
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.5.16"
+    "splitit/sdk": "^1.5.-56"
   }
 }
 ```
@@ -218,7 +218,6 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanTermsAndConditions**](docs/Api/InstallmentPlanApi.md#installmentplantermsandconditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 *InstallmentPlanApi* | [**installmentPlanUpdate**](docs/Api/InstallmentPlanApi.md#installmentplanupdate) | **POST** /api/InstallmentPlan/Update | 
 *InstallmentPlanApi* | [**installmentPlanVerifyPayment**](docs/Api/InstallmentPlanApi.md#installmentplanverifypayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
-*LoginApi* | [**loginPost**](docs/Api/LoginApi.md#loginpost) | **POST** /api/Login | 
 
 
 ## Documentation For Models
@@ -270,8 +269,6 @@ Class | Method | HTTP request | Description
  - [ItemData](docs/Model/ItemData.md)
  - [LearnMoreDetailsRequest](docs/Model/LearnMoreDetailsRequest.md)
  - [LearnMoreDetailsResponse](docs/Model/LearnMoreDetailsResponse.md)
- - [LoginRequest](docs/Model/LoginRequest.md)
- - [LoginResponse2](docs/Model/LoginResponse2.md)
  - [Money](docs/Model/Money.md)
  - [MoneyWithCurrencyCode](docs/Model/MoneyWithCurrencyCode.md)
  - [PagingRequestHeader](docs/Model/PagingRequestHeader.md)
@@ -292,9 +289,7 @@ Class | Method | HTTP request | Description
  - [RefundUnderCancelation](docs/Model/RefundUnderCancelation.md)
  - [RelationsLoad](docs/Model/RelationsLoad.md)
  - [RequestHeader](docs/Model/RequestHeader.md)
- - [ResponseError](docs/Model/ResponseError.md)
  - [ResponseHeader](docs/Model/ResponseHeader.md)
- - [ResponseStatus](docs/Model/ResponseStatus.md)
  - [Schedule](docs/Model/Schedule.md)
  - [ScheduleElements](docs/Model/ScheduleElements.md)
  - [StartInstallmentsRequest](docs/Model/StartInstallmentsRequest.md)
@@ -318,7 +313,6 @@ Class | Method | HTTP request | Description
  - [Currency](docs/Model/Currency.md)
  - [GetInstallmentsPlanExtendedResponse](docs/Model/GetInstallmentsPlanExtendedResponse.md)
  - [InitiateInstallmentsPlanResponse](docs/Model/InitiateInstallmentsPlanResponse.md)
- - [LoginResponse](docs/Model/LoginResponse.md)
  - [MerchantRef](docs/Model/MerchantRef.md)
  - [PaymentWizardDataResponse](docs/Model/PaymentWizardDataResponse.md)
  - [RefundInstallmentPlanResponse](docs/Model/RefundInstallmentPlanResponse.md)

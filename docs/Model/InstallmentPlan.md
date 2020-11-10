@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **is_charged_back** | **bool** |  | 
 **are_payments_on_hold** | **bool** |  | 
 **scp_funding_percent** | **float** |  | 
+**is_funded** | **bool** |  | 
 **test_mode** | [**\SplititSdkClient\Model\TestModes**](TestModes.md) |  | 
 **creation_date_time** | [**\DateTime**](\DateTime.md) |  | 
 **installments** | [**\SplititSdkClient\Model\Installment2[]**](Installment2.md) |  | [optional] 

@@ -78,6 +78,7 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'is_charged_back' => 'bool',
         'are_payments_on_hold' => 'bool',
         'scp_funding_percent' => 'float',
+        'is_funded' => 'bool',
         'test_mode' => '\SplititSdkClient\Model\TestModes',
         'creation_date_time' => '\DateTime',
         'installments' => '\SplititSdkClient\Model\Installment2[]',
@@ -112,6 +113,7 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'is_charged_back' => null,
         'are_payments_on_hold' => null,
         'scp_funding_percent' => 'decimal',
+        'is_funded' => null,
         'test_mode' => null,
         'creation_date_time' => 'date-time',
         'installments' => null,
@@ -167,6 +169,7 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'is_charged_back' => 'IsChargedBack',
         'are_payments_on_hold' => 'ArePaymentsOnHold',
         'scp_funding_percent' => 'ScpFundingPercent',
+        'is_funded' => 'IsFunded',
         'test_mode' => 'TestMode',
         'creation_date_time' => 'CreationDateTime',
         'installments' => 'Installments',
@@ -201,6 +204,7 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'is_charged_back' => 'setIsChargedBack',
         'are_payments_on_hold' => 'setArePaymentsOnHold',
         'scp_funding_percent' => 'setScpFundingPercent',
+        'is_funded' => 'setIsFunded',
         'test_mode' => 'setTestMode',
         'creation_date_time' => 'setCreationDateTime',
         'installments' => 'setInstallments',
@@ -235,6 +239,7 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'is_charged_back' => 'getIsChargedBack',
         'are_payments_on_hold' => 'getArePaymentsOnHold',
         'scp_funding_percent' => 'getScpFundingPercent',
+        'is_funded' => 'getIsFunded',
         'test_mode' => 'getTestMode',
         'creation_date_time' => 'getCreationDateTime',
         'installments' => 'getInstallments',
@@ -323,6 +328,7 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         $this->container['is_charged_back'] = isset($data['is_charged_back']) ? $data['is_charged_back'] : null;
         $this->container['are_payments_on_hold'] = isset($data['are_payments_on_hold']) ? $data['are_payments_on_hold'] : null;
         $this->container['scp_funding_percent'] = isset($data['scp_funding_percent']) ? $data['scp_funding_percent'] : null;
+        $this->container['is_funded'] = isset($data['is_funded']) ? $data['is_funded'] : null;
         $this->container['test_mode'] = isset($data['test_mode']) ? $data['test_mode'] : null;
         $this->container['creation_date_time'] = isset($data['creation_date_time']) ? $data['creation_date_time'] : null;
         $this->container['installments'] = isset($data['installments']) ? $data['installments'] : null;
@@ -356,6 +362,9 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         }
         if ($this->container['scp_funding_percent'] === null) {
             $invalidProperties[] = "'scp_funding_percent' can't be null";
+        }
+        if ($this->container['is_funded'] === null) {
+            $invalidProperties[] = "'is_funded' can't be null";
         }
         if ($this->container['test_mode'] === null) {
             $invalidProperties[] = "'test_mode' can't be null";
@@ -878,6 +887,30 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
     public function setScpFundingPercent($scp_funding_percent)
     {
         $this->container['scp_funding_percent'] = $scp_funding_percent;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_funded
+     *
+     * @return bool
+     */
+    public function getIsFunded()
+    {
+        return $this->container['is_funded'];
+    }
+
+    /**
+     * Sets is_funded
+     *
+     * @param bool $is_funded is_funded
+     *
+     * @return $this
+     */
+    public function setIsFunded($is_funded)
+    {
+        $this->container['is_funded'] = $is_funded;
 
         return $this;
     }
