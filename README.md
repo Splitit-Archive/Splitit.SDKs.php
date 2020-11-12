@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.5.18
+- Package version: 1.5.31
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.5.18"
+    "splitit/sdk": "^1.5.31"
   }
 }
 ```
@@ -218,6 +218,8 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanTermsAndConditions**](docs/Api/InstallmentPlanApi.md#installmentplantermsandconditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 *InstallmentPlanApi* | [**installmentPlanUpdate**](docs/Api/InstallmentPlanApi.md#installmentplanupdate) | **POST** /api/InstallmentPlan/Update | 
 *InstallmentPlanApi* | [**installmentPlanVerifyPayment**](docs/Api/InstallmentPlanApi.md#installmentplanverifypayment) | **POST** /api/InstallmentPlan/Get/VerifyPayment | 
+*LoginApi* | [**loginPost**](docs/Api/LoginApi.md#loginpost) | **POST** /api/login | 
+*LogoutApi* | [**logoutPost**](docs/Api/LogoutApi.md#logoutpost) | **POST** /api/logout | 
 
 
 ## Documentation For Models
@@ -269,6 +271,10 @@ Class | Method | HTTP request | Description
  - [ItemData](docs/Model/ItemData.md)
  - [LearnMoreDetailsRequest](docs/Model/LearnMoreDetailsRequest.md)
  - [LearnMoreDetailsResponse](docs/Model/LearnMoreDetailsResponse.md)
+ - [LoginRequest](docs/Model/LoginRequest.md)
+ - [LoginResponse](docs/Model/LoginResponse.md)
+ - [LogoutRequest](docs/Model/LogoutRequest.md)
+ - [LogoutResponse](docs/Model/LogoutResponse.md)
  - [Money](docs/Model/Money.md)
  - [MoneyWithCurrencyCode](docs/Model/MoneyWithCurrencyCode.md)
  - [PagingRequestHeader](docs/Model/PagingRequestHeader.md)
