@@ -47,6 +47,7 @@ class RefundStrategy
     const FUTURE_INSTALLMENTS_FIRST = 'FutureInstallmentsFirst';
     const FUTURE_INSTALLMENTS_LAST = 'FutureInstallmentsLast';
     const FUTURE_INSTALLMENTS_NOT_ALLOWED = 'FutureInstallmentsNotAllowed';
+    const REDUCE_FROM_LAST_INSTALLMENT = 'ReduceFromLastInstallment';
     
     /**
      * Gets allowable values of the enum
@@ -58,6 +59,7 @@ class RefundStrategy
             self::FUTURE_INSTALLMENTS_FIRST,
             self::FUTURE_INSTALLMENTS_LAST,
             self::FUTURE_INSTALLMENTS_NOT_ALLOWED,
+            self::REDUCE_FROM_LAST_INSTALLMENT,
         ];
     }
 }
