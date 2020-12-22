@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **pa_req** | **string** |  | [optional] 
 **md** | **string** |  | [optional] 
 **term_url** | **string** |  | [optional] 
+**three_d_secure_params** | **map[string,string]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

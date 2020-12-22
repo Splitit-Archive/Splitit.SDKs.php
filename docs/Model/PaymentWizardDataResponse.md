@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **is_shopper_email_mandatory** | **bool** |  | 
 **is_shopper_phone_mandatory** | **bool** |  | 
 **number_of_installments_selections_option** | **string** |  | [optional] 
+**is3ds2_supported** | **bool** |  | 
+**processor_name** | **string** |  | [optional] 
 **address_is_readonly** | **bool** |  | 
 **phone_is_read_only** | **bool** |  | 
 **email_is_read_only** | **bool** |  | 

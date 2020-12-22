@@ -50,6 +50,7 @@ class CardBrand
     const MAESTRO = 'Maestro';
     const JCB = 'JCB';
     const CUP = 'CUP';
+    const UPI = 'UPI';
     const DISCOVER = 'Discover';
     const OTHER = 'Other';
     
@@ -66,6 +67,7 @@ class CardBrand
             self::MAESTRO,
             self::JCB,
             self::CUP,
+            self::UPI,
             self::DISCOVER,
             self::OTHER,
         ];

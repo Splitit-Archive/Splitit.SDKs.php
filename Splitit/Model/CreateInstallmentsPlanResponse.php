@@ -60,7 +60,8 @@ class CreateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         'response_header' => '\SplititSdkClient\Model\ResponseHeader',
         'installment_plan' => '\SplititSdkClient\Model\InstallmentPlan',
         'gateway_transaction_results' => '\SplititSdkClient\Model\TransactionResult[]',
-        'approval_url' => 'string'
+        'approval_url' => 'string',
+        'three_d_redirect_url' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class CreateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         'response_header' => null,
         'installment_plan' => null,
         'gateway_transaction_results' => null,
-        'approval_url' => null
+        'approval_url' => null,
+        'three_d_redirect_url' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class CreateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         'response_header' => 'ResponseHeader',
         'installment_plan' => 'InstallmentPlan',
         'gateway_transaction_results' => 'GatewayTransactionResults',
-        'approval_url' => 'ApprovalUrl'
+        'approval_url' => 'ApprovalUrl',
+        'three_d_redirect_url' => 'ThreeDRedirectUrl'
     ];
 
     /**
@@ -117,7 +120,8 @@ class CreateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         'response_header' => 'setResponseHeader',
         'installment_plan' => 'setInstallmentPlan',
         'gateway_transaction_results' => 'setGatewayTransactionResults',
-        'approval_url' => 'setApprovalUrl'
+        'approval_url' => 'setApprovalUrl',
+        'three_d_redirect_url' => 'setThreeDRedirectUrl'
     ];
 
     /**
@@ -129,7 +133,8 @@ class CreateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         'response_header' => 'getResponseHeader',
         'installment_plan' => 'getInstallmentPlan',
         'gateway_transaction_results' => 'getGatewayTransactionResults',
-        'approval_url' => 'getApprovalUrl'
+        'approval_url' => 'getApprovalUrl',
+        'three_d_redirect_url' => 'getThreeDRedirectUrl'
     ];
 
     /**
@@ -196,6 +201,7 @@ class CreateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
         $this->container['installment_plan'] = isset($data['installment_plan']) ? $data['installment_plan'] : null;
         $this->container['gateway_transaction_results'] = isset($data['gateway_transaction_results']) ? $data['gateway_transaction_results'] : null;
         $this->container['approval_url'] = isset($data['approval_url']) ? $data['approval_url'] : null;
+        $this->container['three_d_redirect_url'] = isset($data['three_d_redirect_url']) ? $data['three_d_redirect_url'] : null;
     }
 
     /**
@@ -314,6 +320,30 @@ class CreateInstallmentsPlanResponse implements ModelInterface, ArrayAccess
     public function setApprovalUrl($approval_url)
     {
         $this->container['approval_url'] = $approval_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets three_d_redirect_url
+     *
+     * @return string
+     */
+    public function getThreeDRedirectUrl()
+    {
+        return $this->container['three_d_redirect_url'];
+    }
+
+    /**
+     * Sets three_d_redirect_url
+     *
+     * @param string $three_d_redirect_url three_d_redirect_url
+     *
+     * @return $this
+     */
+    public function setThreeDRedirectUrl($three_d_redirect_url)
+    {
+        $this->container['three_d_redirect_url'] = $three_d_redirect_url;
 
         return $this;
     }

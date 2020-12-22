@@ -61,7 +61,8 @@ class Get3DSecureParametersResponse implements ModelInterface, ArrayAccess
         'issuer_redirect_url' => 'string',
         'pa_req' => 'string',
         'md' => 'string',
-        'term_url' => 'string'
+        'term_url' => 'string',
+        'three_d_secure_params' => 'map[string,string]'
     ];
 
     /**
@@ -74,7 +75,8 @@ class Get3DSecureParametersResponse implements ModelInterface, ArrayAccess
         'issuer_redirect_url' => null,
         'pa_req' => null,
         'md' => null,
-        'term_url' => null
+        'term_url' => null,
+        'three_d_secure_params' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class Get3DSecureParametersResponse implements ModelInterface, ArrayAccess
         'issuer_redirect_url' => 'IssuerRedirectUrl',
         'pa_req' => 'PaReq',
         'md' => 'Md',
-        'term_url' => 'TermUrl'
+        'term_url' => 'TermUrl',
+        'three_d_secure_params' => 'ThreeDSecureParams'
     ];
 
     /**
@@ -121,7 +124,8 @@ class Get3DSecureParametersResponse implements ModelInterface, ArrayAccess
         'issuer_redirect_url' => 'setIssuerRedirectUrl',
         'pa_req' => 'setPaReq',
         'md' => 'setMd',
-        'term_url' => 'setTermUrl'
+        'term_url' => 'setTermUrl',
+        'three_d_secure_params' => 'setThreeDSecureParams'
     ];
 
     /**
@@ -134,7 +138,8 @@ class Get3DSecureParametersResponse implements ModelInterface, ArrayAccess
         'issuer_redirect_url' => 'getIssuerRedirectUrl',
         'pa_req' => 'getPaReq',
         'md' => 'getMd',
-        'term_url' => 'getTermUrl'
+        'term_url' => 'getTermUrl',
+        'three_d_secure_params' => 'getThreeDSecureParams'
     ];
 
     /**
@@ -202,6 +207,7 @@ class Get3DSecureParametersResponse implements ModelInterface, ArrayAccess
         $this->container['pa_req'] = isset($data['pa_req']) ? $data['pa_req'] : null;
         $this->container['md'] = isset($data['md']) ? $data['md'] : null;
         $this->container['term_url'] = isset($data['term_url']) ? $data['term_url'] : null;
+        $this->container['three_d_secure_params'] = isset($data['three_d_secure_params']) ? $data['three_d_secure_params'] : null;
     }
 
     /**
@@ -344,6 +350,30 @@ class Get3DSecureParametersResponse implements ModelInterface, ArrayAccess
     public function setTermUrl($term_url)
     {
         $this->container['term_url'] = $term_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets three_d_secure_params
+     *
+     * @return map[string,string]
+     */
+    public function getThreeDSecureParams()
+    {
+        return $this->container['three_d_secure_params'];
+    }
+
+    /**
+     * Sets three_d_secure_params
+     *
+     * @param map[string,string] $three_d_secure_params three_d_secure_params
+     *
+     * @return $this
+     */
+    public function setThreeDSecureParams($three_d_secure_params)
+    {
+        $this->container['three_d_secure_params'] = $three_d_secure_params;
 
         return $this;
     }

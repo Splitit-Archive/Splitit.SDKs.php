@@ -73,6 +73,8 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'is_shopper_email_mandatory' => 'bool',
         'is_shopper_phone_mandatory' => 'bool',
         'number_of_installments_selections_option' => 'string',
+        'is3ds2_supported' => 'bool',
+        'processor_name' => 'string',
         'address_is_readonly' => 'bool',
         'phone_is_read_only' => 'bool',
         'email_is_read_only' => 'bool',
@@ -111,6 +113,8 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'is_shopper_email_mandatory' => null,
         'is_shopper_phone_mandatory' => null,
         'number_of_installments_selections_option' => null,
+        'is3ds2_supported' => null,
+        'processor_name' => null,
         'address_is_readonly' => null,
         'phone_is_read_only' => null,
         'email_is_read_only' => null,
@@ -170,6 +174,8 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'is_shopper_email_mandatory' => 'IsShopperEmailMandatory',
         'is_shopper_phone_mandatory' => 'IsShopperPhoneMandatory',
         'number_of_installments_selections_option' => 'NumberOfInstallmentsSelectionsOption',
+        'is3ds2_supported' => 'Is3ds2Supported',
+        'processor_name' => 'ProcessorName',
         'address_is_readonly' => 'AddressIsReadonly',
         'phone_is_read_only' => 'PhoneIsReadOnly',
         'email_is_read_only' => 'EmailIsReadOnly',
@@ -208,6 +214,8 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'is_shopper_email_mandatory' => 'setIsShopperEmailMandatory',
         'is_shopper_phone_mandatory' => 'setIsShopperPhoneMandatory',
         'number_of_installments_selections_option' => 'setNumberOfInstallmentsSelectionsOption',
+        'is3ds2_supported' => 'setIs3ds2Supported',
+        'processor_name' => 'setProcessorName',
         'address_is_readonly' => 'setAddressIsReadonly',
         'phone_is_read_only' => 'setPhoneIsReadOnly',
         'email_is_read_only' => 'setEmailIsReadOnly',
@@ -246,6 +254,8 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'is_shopper_email_mandatory' => 'getIsShopperEmailMandatory',
         'is_shopper_phone_mandatory' => 'getIsShopperPhoneMandatory',
         'number_of_installments_selections_option' => 'getNumberOfInstallmentsSelectionsOption',
+        'is3ds2_supported' => 'getIs3ds2Supported',
+        'processor_name' => 'getProcessorName',
         'address_is_readonly' => 'getAddressIsReadonly',
         'phone_is_read_only' => 'getPhoneIsReadOnly',
         'email_is_read_only' => 'getEmailIsReadOnly',
@@ -338,6 +348,8 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         $this->container['is_shopper_email_mandatory'] = isset($data['is_shopper_email_mandatory']) ? $data['is_shopper_email_mandatory'] : null;
         $this->container['is_shopper_phone_mandatory'] = isset($data['is_shopper_phone_mandatory']) ? $data['is_shopper_phone_mandatory'] : null;
         $this->container['number_of_installments_selections_option'] = isset($data['number_of_installments_selections_option']) ? $data['number_of_installments_selections_option'] : null;
+        $this->container['is3ds2_supported'] = isset($data['is3ds2_supported']) ? $data['is3ds2_supported'] : null;
+        $this->container['processor_name'] = isset($data['processor_name']) ? $data['processor_name'] : null;
         $this->container['address_is_readonly'] = isset($data['address_is_readonly']) ? $data['address_is_readonly'] : null;
         $this->container['phone_is_read_only'] = isset($data['phone_is_read_only']) ? $data['phone_is_read_only'] : null;
         $this->container['email_is_read_only'] = isset($data['email_is_read_only']) ? $data['email_is_read_only'] : null;
@@ -380,6 +392,9 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         }
         if ($this->container['is_shopper_phone_mandatory'] === null) {
             $invalidProperties[] = "'is_shopper_phone_mandatory' can't be null";
+        }
+        if ($this->container['is3ds2_supported'] === null) {
+            $invalidProperties[] = "'is3ds2_supported' can't be null";
         }
         if ($this->container['address_is_readonly'] === null) {
             $invalidProperties[] = "'address_is_readonly' can't be null";
@@ -791,6 +806,54 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     public function setNumberOfInstallmentsSelectionsOption($number_of_installments_selections_option)
     {
         $this->container['number_of_installments_selections_option'] = $number_of_installments_selections_option;
+
+        return $this;
+    }
+
+    /**
+     * Gets is3ds2_supported
+     *
+     * @return bool
+     */
+    public function getIs3ds2Supported()
+    {
+        return $this->container['is3ds2_supported'];
+    }
+
+    /**
+     * Sets is3ds2_supported
+     *
+     * @param bool $is3ds2_supported is3ds2_supported
+     *
+     * @return $this
+     */
+    public function setIs3ds2Supported($is3ds2_supported)
+    {
+        $this->container['is3ds2_supported'] = $is3ds2_supported;
+
+        return $this;
+    }
+
+    /**
+     * Gets processor_name
+     *
+     * @return string
+     */
+    public function getProcessorName()
+    {
+        return $this->container['processor_name'];
+    }
+
+    /**
+     * Sets processor_name
+     *
+     * @param string $processor_name processor_name
+     *
+     * @return $this
+     */
+    public function setProcessorName($processor_name)
+    {
+        $this->container['processor_name'] = $processor_name;
 
         return $this;
     }
