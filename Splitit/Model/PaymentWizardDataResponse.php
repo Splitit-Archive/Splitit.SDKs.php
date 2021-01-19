@@ -75,12 +75,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'string',
         'is3ds2_supported' => 'bool',
         'processor_name' => 'string',
+        'is3d_secure_in_popup' => 'bool',
         'address_is_readonly' => 'bool',
         'phone_is_read_only' => 'bool',
         'email_is_read_only' => 'bool',
         'show_learn_more' => 'bool',
         'show_mobile_phone' => 'bool',
+        'show_close_dialog_before_abandon' => 'bool',
         'logo_url' => 'string',
+        'default_num_of_installments' => 'int',
         'privacy_policy_url' => 'string',
         'terms_and_conditions_url' => 'string',
         'learn_more_url' => 'string',
@@ -115,12 +118,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => null,
         'is3ds2_supported' => null,
         'processor_name' => null,
+        'is3d_secure_in_popup' => null,
         'address_is_readonly' => null,
         'phone_is_read_only' => null,
         'email_is_read_only' => null,
         'show_learn_more' => null,
         'show_mobile_phone' => null,
+        'show_close_dialog_before_abandon' => null,
         'logo_url' => null,
+        'default_num_of_installments' => 'int32',
         'privacy_policy_url' => null,
         'terms_and_conditions_url' => null,
         'learn_more_url' => null,
@@ -176,12 +182,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'NumberOfInstallmentsSelectionsOption',
         'is3ds2_supported' => 'Is3ds2Supported',
         'processor_name' => 'ProcessorName',
+        'is3d_secure_in_popup' => 'Is3dSecureInPopup',
         'address_is_readonly' => 'AddressIsReadonly',
         'phone_is_read_only' => 'PhoneIsReadOnly',
         'email_is_read_only' => 'EmailIsReadOnly',
         'show_learn_more' => 'ShowLearnMore',
         'show_mobile_phone' => 'ShowMobilePhone',
+        'show_close_dialog_before_abandon' => 'ShowCloseDialogBeforeAbandon',
         'logo_url' => 'LogoURL',
+        'default_num_of_installments' => 'DefaultNumOfInstallments',
         'privacy_policy_url' => 'PrivacyPolicyUrl',
         'terms_and_conditions_url' => 'TermsAndConditionsUrl',
         'learn_more_url' => 'LearnMoreUrl',
@@ -216,12 +225,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'setNumberOfInstallmentsSelectionsOption',
         'is3ds2_supported' => 'setIs3ds2Supported',
         'processor_name' => 'setProcessorName',
+        'is3d_secure_in_popup' => 'setIs3dSecureInPopup',
         'address_is_readonly' => 'setAddressIsReadonly',
         'phone_is_read_only' => 'setPhoneIsReadOnly',
         'email_is_read_only' => 'setEmailIsReadOnly',
         'show_learn_more' => 'setShowLearnMore',
         'show_mobile_phone' => 'setShowMobilePhone',
+        'show_close_dialog_before_abandon' => 'setShowCloseDialogBeforeAbandon',
         'logo_url' => 'setLogoUrl',
+        'default_num_of_installments' => 'setDefaultNumOfInstallments',
         'privacy_policy_url' => 'setPrivacyPolicyUrl',
         'terms_and_conditions_url' => 'setTermsAndConditionsUrl',
         'learn_more_url' => 'setLearnMoreUrl',
@@ -256,12 +268,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'getNumberOfInstallmentsSelectionsOption',
         'is3ds2_supported' => 'getIs3ds2Supported',
         'processor_name' => 'getProcessorName',
+        'is3d_secure_in_popup' => 'getIs3dSecureInPopup',
         'address_is_readonly' => 'getAddressIsReadonly',
         'phone_is_read_only' => 'getPhoneIsReadOnly',
         'email_is_read_only' => 'getEmailIsReadOnly',
         'show_learn_more' => 'getShowLearnMore',
         'show_mobile_phone' => 'getShowMobilePhone',
+        'show_close_dialog_before_abandon' => 'getShowCloseDialogBeforeAbandon',
         'logo_url' => 'getLogoUrl',
+        'default_num_of_installments' => 'getDefaultNumOfInstallments',
         'privacy_policy_url' => 'getPrivacyPolicyUrl',
         'terms_and_conditions_url' => 'getTermsAndConditionsUrl',
         'learn_more_url' => 'getLearnMoreUrl',
@@ -350,12 +365,15 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         $this->container['number_of_installments_selections_option'] = isset($data['number_of_installments_selections_option']) ? $data['number_of_installments_selections_option'] : null;
         $this->container['is3ds2_supported'] = isset($data['is3ds2_supported']) ? $data['is3ds2_supported'] : null;
         $this->container['processor_name'] = isset($data['processor_name']) ? $data['processor_name'] : null;
+        $this->container['is3d_secure_in_popup'] = isset($data['is3d_secure_in_popup']) ? $data['is3d_secure_in_popup'] : null;
         $this->container['address_is_readonly'] = isset($data['address_is_readonly']) ? $data['address_is_readonly'] : null;
         $this->container['phone_is_read_only'] = isset($data['phone_is_read_only']) ? $data['phone_is_read_only'] : null;
         $this->container['email_is_read_only'] = isset($data['email_is_read_only']) ? $data['email_is_read_only'] : null;
         $this->container['show_learn_more'] = isset($data['show_learn_more']) ? $data['show_learn_more'] : null;
         $this->container['show_mobile_phone'] = isset($data['show_mobile_phone']) ? $data['show_mobile_phone'] : null;
+        $this->container['show_close_dialog_before_abandon'] = isset($data['show_close_dialog_before_abandon']) ? $data['show_close_dialog_before_abandon'] : null;
         $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
+        $this->container['default_num_of_installments'] = isset($data['default_num_of_installments']) ? $data['default_num_of_installments'] : null;
         $this->container['privacy_policy_url'] = isset($data['privacy_policy_url']) ? $data['privacy_policy_url'] : null;
         $this->container['terms_and_conditions_url'] = isset($data['terms_and_conditions_url']) ? $data['terms_and_conditions_url'] : null;
         $this->container['learn_more_url'] = isset($data['learn_more_url']) ? $data['learn_more_url'] : null;
@@ -396,6 +414,9 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         if ($this->container['is3ds2_supported'] === null) {
             $invalidProperties[] = "'is3ds2_supported' can't be null";
         }
+        if ($this->container['is3d_secure_in_popup'] === null) {
+            $invalidProperties[] = "'is3d_secure_in_popup' can't be null";
+        }
         if ($this->container['address_is_readonly'] === null) {
             $invalidProperties[] = "'address_is_readonly' can't be null";
         }
@@ -410,6 +431,12 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         }
         if ($this->container['show_mobile_phone'] === null) {
             $invalidProperties[] = "'show_mobile_phone' can't be null";
+        }
+        if ($this->container['show_close_dialog_before_abandon'] === null) {
+            $invalidProperties[] = "'show_close_dialog_before_abandon' can't be null";
+        }
+        if ($this->container['default_num_of_installments'] === null) {
+            $invalidProperties[] = "'default_num_of_installments' can't be null";
         }
         return $invalidProperties;
     }
@@ -859,6 +886,30 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets is3d_secure_in_popup
+     *
+     * @return bool
+     */
+    public function getIs3dSecureInPopup()
+    {
+        return $this->container['is3d_secure_in_popup'];
+    }
+
+    /**
+     * Sets is3d_secure_in_popup
+     *
+     * @param bool $is3d_secure_in_popup is3d_secure_in_popup
+     *
+     * @return $this
+     */
+    public function setIs3dSecureInPopup($is3d_secure_in_popup)
+    {
+        $this->container['is3d_secure_in_popup'] = $is3d_secure_in_popup;
+
+        return $this;
+    }
+
+    /**
      * Gets address_is_readonly
      *
      * @return bool
@@ -979,6 +1030,30 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets show_close_dialog_before_abandon
+     *
+     * @return bool
+     */
+    public function getShowCloseDialogBeforeAbandon()
+    {
+        return $this->container['show_close_dialog_before_abandon'];
+    }
+
+    /**
+     * Sets show_close_dialog_before_abandon
+     *
+     * @param bool $show_close_dialog_before_abandon show_close_dialog_before_abandon
+     *
+     * @return $this
+     */
+    public function setShowCloseDialogBeforeAbandon($show_close_dialog_before_abandon)
+    {
+        $this->container['show_close_dialog_before_abandon'] = $show_close_dialog_before_abandon;
+
+        return $this;
+    }
+
+    /**
      * Gets logo_url
      *
      * @return string
@@ -998,6 +1073,30 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     public function setLogoUrl($logo_url)
     {
         $this->container['logo_url'] = $logo_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets default_num_of_installments
+     *
+     * @return int
+     */
+    public function getDefaultNumOfInstallments()
+    {
+        return $this->container['default_num_of_installments'];
+    }
+
+    /**
+     * Sets default_num_of_installments
+     *
+     * @param int $default_num_of_installments default_num_of_installments
+     *
+     * @return $this
+     */
+    public function setDefaultNumOfInstallments($default_num_of_installments)
+    {
+        $this->container['default_num_of_installments'] = $default_num_of_installments;
 
         return $this;
     }

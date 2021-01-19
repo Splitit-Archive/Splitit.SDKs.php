@@ -47,6 +47,7 @@ class TestModes
     const NONE = 'None';
     const REGULAR = 'Regular';
     const FAST = 'Fast';
+    const AUTOMATION = 'Automation';
     
     /**
      * Gets allowable values of the enum
@@ -58,6 +59,7 @@ class TestModes
             self::NONE,
             self::REGULAR,
             self::FAST,
+            self::AUTOMATION,
         ];
     }
 }

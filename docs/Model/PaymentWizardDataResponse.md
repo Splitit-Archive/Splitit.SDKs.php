@@ -21,12 +21,15 @@ Name | Type | Description | Notes
 **number_of_installments_selections_option** | **string** |  | [optional] 
 **is3ds2_supported** | **bool** |  | 
 **processor_name** | **string** |  | [optional] 
+**is3d_secure_in_popup** | **bool** |  | 
 **address_is_readonly** | **bool** |  | 
 **phone_is_read_only** | **bool** |  | 
 **email_is_read_only** | **bool** |  | 
 **show_learn_more** | **bool** |  | 
 **show_mobile_phone** | **bool** |  | 
+**show_close_dialog_before_abandon** | **bool** |  | 
 **logo_url** | **string** |  | [optional] 
+**default_num_of_installments** | **int** |  | 
 **privacy_policy_url** | **string** |  | [optional] 
 **terms_and_conditions_url** | **string** |  | [optional] 
 **learn_more_url** | **string** |  | [optional] 

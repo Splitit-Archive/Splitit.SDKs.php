@@ -70,6 +70,7 @@ class SystemTextCategory
     const HOW_SPLITIT_WORKS = 'HowSplititWorks';
     const UPSTREAM_MESSAGING = 'UpstreamMessaging';
     const ONBOARDING = 'Onboarding';
+    const UPDATE_CARD_FORM = 'UpdateCardForm';
     
     /**
      * Gets allowable values of the enum
@@ -104,6 +105,7 @@ class SystemTextCategory
             self::HOW_SPLITIT_WORKS,
             self::UPSTREAM_MESSAGING,
             self::ONBOARDING,
+            self::UPDATE_CARD_FORM,
         ];
     }
 }
