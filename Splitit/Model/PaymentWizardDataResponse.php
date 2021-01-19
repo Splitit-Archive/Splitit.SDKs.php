@@ -64,6 +64,7 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'success_async_url' => 'string',
         'view_name' => 'string',
         'is_opened_in_iframe' => 'bool',
+        'is3d_secure_in_popup' => 'bool',
         'payment_form_message' => 'string',
         'show_address_elements' => 'string',
         'currency_display' => '\SplititSdkClient\Model\ExtendedCurrency',
@@ -75,7 +76,6 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'string',
         'is3ds2_supported' => 'bool',
         'processor_name' => 'string',
-        'is3d_secure_in_popup' => 'bool',
         'address_is_readonly' => 'bool',
         'phone_is_read_only' => 'bool',
         'email_is_read_only' => 'bool',
@@ -107,6 +107,7 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'success_async_url' => null,
         'view_name' => null,
         'is_opened_in_iframe' => null,
+        'is3d_secure_in_popup' => null,
         'payment_form_message' => null,
         'show_address_elements' => null,
         'currency_display' => null,
@@ -118,7 +119,6 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => null,
         'is3ds2_supported' => null,
         'processor_name' => null,
-        'is3d_secure_in_popup' => null,
         'address_is_readonly' => null,
         'phone_is_read_only' => null,
         'email_is_read_only' => null,
@@ -171,6 +171,7 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'success_async_url' => 'SuccessAsyncUrl',
         'view_name' => 'ViewName',
         'is_opened_in_iframe' => 'IsOpenedInIframe',
+        'is3d_secure_in_popup' => 'Is3dSecureInPopup',
         'payment_form_message' => 'PaymentFormMessage',
         'show_address_elements' => 'ShowAddressElements',
         'currency_display' => 'CurrencyDisplay',
@@ -182,7 +183,6 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'NumberOfInstallmentsSelectionsOption',
         'is3ds2_supported' => 'Is3ds2Supported',
         'processor_name' => 'ProcessorName',
-        'is3d_secure_in_popup' => 'Is3dSecureInPopup',
         'address_is_readonly' => 'AddressIsReadonly',
         'phone_is_read_only' => 'PhoneIsReadOnly',
         'email_is_read_only' => 'EmailIsReadOnly',
@@ -214,6 +214,7 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'success_async_url' => 'setSuccessAsyncUrl',
         'view_name' => 'setViewName',
         'is_opened_in_iframe' => 'setIsOpenedInIframe',
+        'is3d_secure_in_popup' => 'setIs3dSecureInPopup',
         'payment_form_message' => 'setPaymentFormMessage',
         'show_address_elements' => 'setShowAddressElements',
         'currency_display' => 'setCurrencyDisplay',
@@ -225,7 +226,6 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'setNumberOfInstallmentsSelectionsOption',
         'is3ds2_supported' => 'setIs3ds2Supported',
         'processor_name' => 'setProcessorName',
-        'is3d_secure_in_popup' => 'setIs3dSecureInPopup',
         'address_is_readonly' => 'setAddressIsReadonly',
         'phone_is_read_only' => 'setPhoneIsReadOnly',
         'email_is_read_only' => 'setEmailIsReadOnly',
@@ -257,6 +257,7 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'success_async_url' => 'getSuccessAsyncUrl',
         'view_name' => 'getViewName',
         'is_opened_in_iframe' => 'getIsOpenedInIframe',
+        'is3d_secure_in_popup' => 'getIs3dSecureInPopup',
         'payment_form_message' => 'getPaymentFormMessage',
         'show_address_elements' => 'getShowAddressElements',
         'currency_display' => 'getCurrencyDisplay',
@@ -268,7 +269,6 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         'number_of_installments_selections_option' => 'getNumberOfInstallmentsSelectionsOption',
         'is3ds2_supported' => 'getIs3ds2Supported',
         'processor_name' => 'getProcessorName',
-        'is3d_secure_in_popup' => 'getIs3dSecureInPopup',
         'address_is_readonly' => 'getAddressIsReadonly',
         'phone_is_read_only' => 'getPhoneIsReadOnly',
         'email_is_read_only' => 'getEmailIsReadOnly',
@@ -354,6 +354,7 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         $this->container['success_async_url'] = isset($data['success_async_url']) ? $data['success_async_url'] : null;
         $this->container['view_name'] = isset($data['view_name']) ? $data['view_name'] : null;
         $this->container['is_opened_in_iframe'] = isset($data['is_opened_in_iframe']) ? $data['is_opened_in_iframe'] : null;
+        $this->container['is3d_secure_in_popup'] = isset($data['is3d_secure_in_popup']) ? $data['is3d_secure_in_popup'] : null;
         $this->container['payment_form_message'] = isset($data['payment_form_message']) ? $data['payment_form_message'] : null;
         $this->container['show_address_elements'] = isset($data['show_address_elements']) ? $data['show_address_elements'] : null;
         $this->container['currency_display'] = isset($data['currency_display']) ? $data['currency_display'] : null;
@@ -365,7 +366,6 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         $this->container['number_of_installments_selections_option'] = isset($data['number_of_installments_selections_option']) ? $data['number_of_installments_selections_option'] : null;
         $this->container['is3ds2_supported'] = isset($data['is3ds2_supported']) ? $data['is3ds2_supported'] : null;
         $this->container['processor_name'] = isset($data['processor_name']) ? $data['processor_name'] : null;
-        $this->container['is3d_secure_in_popup'] = isset($data['is3d_secure_in_popup']) ? $data['is3d_secure_in_popup'] : null;
         $this->container['address_is_readonly'] = isset($data['address_is_readonly']) ? $data['address_is_readonly'] : null;
         $this->container['phone_is_read_only'] = isset($data['phone_is_read_only']) ? $data['phone_is_read_only'] : null;
         $this->container['email_is_read_only'] = isset($data['email_is_read_only']) ? $data['email_is_read_only'] : null;
@@ -413,9 +413,6 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
         }
         if ($this->container['is3ds2_supported'] === null) {
             $invalidProperties[] = "'is3ds2_supported' can't be null";
-        }
-        if ($this->container['is3d_secure_in_popup'] === null) {
-            $invalidProperties[] = "'is3d_secure_in_popup' can't be null";
         }
         if ($this->container['address_is_readonly'] === null) {
             $invalidProperties[] = "'address_is_readonly' can't be null";
@@ -617,6 +614,30 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     public function setIsOpenedInIframe($is_opened_in_iframe)
     {
         $this->container['is_opened_in_iframe'] = $is_opened_in_iframe;
+
+        return $this;
+    }
+
+    /**
+     * Gets is3d_secure_in_popup
+     *
+     * @return bool
+     */
+    public function getIs3dSecureInPopup()
+    {
+        return $this->container['is3d_secure_in_popup'];
+    }
+
+    /**
+     * Sets is3d_secure_in_popup
+     *
+     * @param bool $is3d_secure_in_popup is3d_secure_in_popup
+     *
+     * @return $this
+     */
+    public function setIs3dSecureInPopup($is3d_secure_in_popup)
+    {
+        $this->container['is3d_secure_in_popup'] = $is3d_secure_in_popup;
 
         return $this;
     }
@@ -881,30 +902,6 @@ class PaymentWizardDataResponse implements ModelInterface, ArrayAccess
     public function setProcessorName($processor_name)
     {
         $this->container['processor_name'] = $processor_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets is3d_secure_in_popup
-     *
-     * @return bool
-     */
-    public function getIs3dSecureInPopup()
-    {
-        return $this->container['is3d_secure_in_popup'];
-    }
-
-    /**
-     * Sets is3d_secure_in_popup
-     *
-     * @param bool $is3d_secure_in_popup is3d_secure_in_popup
-     *
-     * @return $this
-     */
-    public function setIs3dSecureInPopup($is3d_secure_in_popup)
-    {
-        $this->container['is3d_secure_in_popup'] = $is3d_secure_in_popup;
 
         return $this;
     }

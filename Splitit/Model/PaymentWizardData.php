@@ -64,6 +64,7 @@ class PaymentWizardData implements ModelInterface, ArrayAccess
         'success_async_url' => 'string',
         'view_name' => 'string',
         'is_opened_in_iframe' => 'bool',
+        'is3d_secure_in_popup' => 'bool',
         'payment_form_message' => 'string'
     ];
 
@@ -80,6 +81,7 @@ class PaymentWizardData implements ModelInterface, ArrayAccess
         'success_async_url' => null,
         'view_name' => null,
         'is_opened_in_iframe' => null,
+        'is3d_secure_in_popup' => null,
         'payment_form_message' => null
     ];
 
@@ -117,6 +119,7 @@ class PaymentWizardData implements ModelInterface, ArrayAccess
         'success_async_url' => 'SuccessAsyncUrl',
         'view_name' => 'ViewName',
         'is_opened_in_iframe' => 'IsOpenedInIframe',
+        'is3d_secure_in_popup' => 'Is3dSecureInPopup',
         'payment_form_message' => 'PaymentFormMessage'
     ];
 
@@ -133,6 +136,7 @@ class PaymentWizardData implements ModelInterface, ArrayAccess
         'success_async_url' => 'setSuccessAsyncUrl',
         'view_name' => 'setViewName',
         'is_opened_in_iframe' => 'setIsOpenedInIframe',
+        'is3d_secure_in_popup' => 'setIs3dSecureInPopup',
         'payment_form_message' => 'setPaymentFormMessage'
     ];
 
@@ -149,6 +153,7 @@ class PaymentWizardData implements ModelInterface, ArrayAccess
         'success_async_url' => 'getSuccessAsyncUrl',
         'view_name' => 'getViewName',
         'is_opened_in_iframe' => 'getIsOpenedInIframe',
+        'is3d_secure_in_popup' => 'getIs3dSecureInPopup',
         'payment_form_message' => 'getPaymentFormMessage'
     ];
 
@@ -219,6 +224,7 @@ class PaymentWizardData implements ModelInterface, ArrayAccess
         $this->container['success_async_url'] = isset($data['success_async_url']) ? $data['success_async_url'] : null;
         $this->container['view_name'] = isset($data['view_name']) ? $data['view_name'] : null;
         $this->container['is_opened_in_iframe'] = isset($data['is_opened_in_iframe']) ? $data['is_opened_in_iframe'] : null;
+        $this->container['is3d_secure_in_popup'] = isset($data['is3d_secure_in_popup']) ? $data['is3d_secure_in_popup'] : null;
         $this->container['payment_form_message'] = isset($data['payment_form_message']) ? $data['payment_form_message'] : null;
     }
 
@@ -413,6 +419,30 @@ class PaymentWizardData implements ModelInterface, ArrayAccess
     public function setIsOpenedInIframe($is_opened_in_iframe)
     {
         $this->container['is_opened_in_iframe'] = $is_opened_in_iframe;
+
+        return $this;
+    }
+
+    /**
+     * Gets is3d_secure_in_popup
+     *
+     * @return bool
+     */
+    public function getIs3dSecureInPopup()
+    {
+        return $this->container['is3d_secure_in_popup'];
+    }
+
+    /**
+     * Sets is3d_secure_in_popup
+     *
+     * @param bool $is3d_secure_in_popup is3d_secure_in_popup
+     *
+     * @return $this
+     */
+    public function setIs3dSecureInPopup($is3d_secure_in_popup)
+    {
+        $this->container['is3d_secure_in_popup'] = $is3d_secure_in_popup;
 
         return $this;
     }

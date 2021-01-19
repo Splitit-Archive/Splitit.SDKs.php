@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **success_async_url** | **string** |  | [optional] 
 **view_name** | **string** |  | [optional] 
 **is_opened_in_iframe** | **bool** |  | 
+**is3d_secure_in_popup** | **bool** |  | [optional] 
 **payment_form_message** | **string** |  | [optional] 
 **show_address_elements** | **string** |  | [optional] 
 **currency_display** | [**\SplititSdkClient\Model\ExtendedCurrency**](ExtendedCurrency.md) |  | [optional] 
@@ -21,7 +22,6 @@ Name | Type | Description | Notes
 **number_of_installments_selections_option** | **string** |  | [optional] 
 **is3ds2_supported** | **bool** |  | 
 **processor_name** | **string** |  | [optional] 
-**is3d_secure_in_popup** | **bool** |  | 
 **address_is_readonly** | **bool** |  | 
 **phone_is_read_only** | **bool** |  | 
 **email_is_read_only** | **bool** |  | 
