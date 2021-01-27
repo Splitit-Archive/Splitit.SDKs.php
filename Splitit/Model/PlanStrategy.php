@@ -49,6 +49,7 @@ class PlanStrategy
     const SECURED_PLAN_CAPTURE_EXISTING_SECURITY_AUTH = 'SecuredPlanCaptureExistingSecurityAuth';
     const SECURED_PLAN3 = 'SecuredPlan3';
     const SINGLE_PAYMENT = 'SinglePayment';
+    const EXTERNAL_INSTALLMENT_PROVIDER = 'ExternalInstallmentProvider';
     
     /**
      * Gets allowable values of the enum
@@ -62,6 +63,7 @@ class PlanStrategy
             self::SECURED_PLAN_CAPTURE_EXISTING_SECURITY_AUTH,
             self::SECURED_PLAN3,
             self::SINGLE_PAYMENT,
+            self::EXTERNAL_INSTALLMENT_PROVIDER,
         ];
     }
 }

@@ -68,7 +68,8 @@ class PlanData implements ModelInterface, ArrayAccess
         'first_charge_date' => '\DateTime',
         'auto_capture' => 'bool',
         'is_funded' => 'bool',
-        'attempt3_d_secure' => 'bool'
+        'attempt3_d_secure' => 'bool',
+        'external_provider_supported' => 'bool'
     ];
 
     /**
@@ -88,7 +89,8 @@ class PlanData implements ModelInterface, ArrayAccess
         'first_charge_date' => 'date-time',
         'auto_capture' => null,
         'is_funded' => null,
-        'attempt3_d_secure' => null
+        'attempt3_d_secure' => null,
+        'external_provider_supported' => null
     ];
 
     /**
@@ -129,7 +131,8 @@ class PlanData implements ModelInterface, ArrayAccess
         'first_charge_date' => 'FirstChargeDate',
         'auto_capture' => 'AutoCapture',
         'is_funded' => 'IsFunded',
-        'attempt3_d_secure' => 'Attempt3DSecure'
+        'attempt3_d_secure' => 'Attempt3DSecure',
+        'external_provider_supported' => 'ExternalProviderSupported'
     ];
 
     /**
@@ -149,7 +152,8 @@ class PlanData implements ModelInterface, ArrayAccess
         'first_charge_date' => 'setFirstChargeDate',
         'auto_capture' => 'setAutoCapture',
         'is_funded' => 'setIsFunded',
-        'attempt3_d_secure' => 'setAttempt3DSecure'
+        'attempt3_d_secure' => 'setAttempt3DSecure',
+        'external_provider_supported' => 'setExternalProviderSupported'
     ];
 
     /**
@@ -169,7 +173,8 @@ class PlanData implements ModelInterface, ArrayAccess
         'first_charge_date' => 'getFirstChargeDate',
         'auto_capture' => 'getAutoCapture',
         'is_funded' => 'getIsFunded',
-        'attempt3_d_secure' => 'getAttempt3DSecure'
+        'attempt3_d_secure' => 'getAttempt3DSecure',
+        'external_provider_supported' => 'getExternalProviderSupported'
     ];
 
     /**
@@ -244,6 +249,7 @@ class PlanData implements ModelInterface, ArrayAccess
         $this->container['auto_capture'] = isset($data['auto_capture']) ? $data['auto_capture'] : null;
         $this->container['is_funded'] = isset($data['is_funded']) ? $data['is_funded'] : null;
         $this->container['attempt3_d_secure'] = isset($data['attempt3_d_secure']) ? $data['attempt3_d_secure'] : null;
+        $this->container['external_provider_supported'] = isset($data['external_provider_supported']) ? $data['external_provider_supported'] : null;
     }
 
     /**
@@ -255,6 +261,9 @@ class PlanData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['external_provider_supported'] === null) {
+            $invalidProperties[] = "'external_provider_supported' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -554,6 +563,30 @@ class PlanData implements ModelInterface, ArrayAccess
     public function setAttempt3DSecure($attempt3_d_secure)
     {
         $this->container['attempt3_d_secure'] = $attempt3_d_secure;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_provider_supported
+     *
+     * @return bool
+     */
+    public function getExternalProviderSupported()
+    {
+        return $this->container['external_provider_supported'];
+    }
+
+    /**
+     * Sets external_provider_supported
+     *
+     * @param bool $external_provider_supported external_provider_supported
+     *
+     * @return $this
+     */
+    public function setExternalProviderSupported($external_provider_supported)
+    {
+        $this->container['external_provider_supported'] = $external_provider_supported;
 
         return $this;
     }

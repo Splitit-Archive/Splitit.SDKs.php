@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **auto_capture** | **bool** |  | [optional] 
 **is_funded** | **bool** |  | [optional] 
 **attempt3_d_secure** | **bool** |  | [optional] 
+**external_provider_supported** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
