@@ -58,6 +58,7 @@ class ConsumerData implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
+        'unique_id' => 'string',
         'user_name' => 'string',
         'full_name' => 'string',
         'email' => 'string',
@@ -75,6 +76,7 @@ class ConsumerData implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
+        'unique_id' => null,
         'user_name' => null,
         'full_name' => null,
         'email' => null,
@@ -113,6 +115,7 @@ class ConsumerData implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'Id',
+        'unique_id' => 'UniqueId',
         'user_name' => 'UserName',
         'full_name' => 'FullName',
         'email' => 'Email',
@@ -130,6 +133,7 @@ class ConsumerData implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
+        'unique_id' => 'setUniqueId',
         'user_name' => 'setUserName',
         'full_name' => 'setFullName',
         'email' => 'setEmail',
@@ -147,6 +151,7 @@ class ConsumerData implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
+        'unique_id' => 'getUniqueId',
         'user_name' => 'getUserName',
         'full_name' => 'getFullName',
         'email' => 'getEmail',
@@ -218,6 +223,7 @@ class ConsumerData implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['unique_id'] = isset($data['unique_id']) ? $data['unique_id'] : null;
         $this->container['user_name'] = isset($data['user_name']) ? $data['user_name'] : null;
         $this->container['full_name'] = isset($data['full_name']) ? $data['full_name'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
@@ -278,6 +284,30 @@ class ConsumerData implements ModelInterface, ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets unique_id
+     *
+     * @return string
+     */
+    public function getUniqueId()
+    {
+        return $this->container['unique_id'];
+    }
+
+    /**
+     * Sets unique_id
+     *
+     * @param string $unique_id unique_id
+     *
+     * @return $this
+     */
+    public function setUniqueId($unique_id)
+    {
+        $this->container['unique_id'] = $unique_id;
 
         return $this;
     }

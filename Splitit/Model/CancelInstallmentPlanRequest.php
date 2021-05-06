@@ -60,7 +60,6 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
         'installment_plan_number' => 'string',
         'refund_under_cancelation' => '\SplititSdkClient\Model\RefundUnderCancelation',
         'cancelation_reason' => '\SplititSdkClient\Model\InstallmentPlanCancelationReason',
-        'is_executed_unattended' => 'bool',
         'partial_response_mapping' => 'bool'
     ];
 
@@ -73,7 +72,6 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
         'installment_plan_number' => null,
         'refund_under_cancelation' => null,
         'cancelation_reason' => null,
-        'is_executed_unattended' => null,
         'partial_response_mapping' => null
     ];
 
@@ -107,7 +105,6 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
         'installment_plan_number' => 'InstallmentPlanNumber',
         'refund_under_cancelation' => 'RefundUnderCancelation',
         'cancelation_reason' => 'CancelationReason',
-        'is_executed_unattended' => 'IsExecutedUnattended',
         'partial_response_mapping' => 'PartialResponseMapping'
     ];
 
@@ -120,7 +117,6 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
         'installment_plan_number' => 'setInstallmentPlanNumber',
         'refund_under_cancelation' => 'setRefundUnderCancelation',
         'cancelation_reason' => 'setCancelationReason',
-        'is_executed_unattended' => 'setIsExecutedUnattended',
         'partial_response_mapping' => 'setPartialResponseMapping'
     ];
 
@@ -133,7 +129,6 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
         'installment_plan_number' => 'getInstallmentPlanNumber',
         'refund_under_cancelation' => 'getRefundUnderCancelation',
         'cancelation_reason' => 'getCancelationReason',
-        'is_executed_unattended' => 'getIsExecutedUnattended',
         'partial_response_mapping' => 'getPartialResponseMapping'
     ];
 
@@ -200,7 +195,6 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
         $this->container['installment_plan_number'] = isset($data['installment_plan_number']) ? $data['installment_plan_number'] : null;
         $this->container['refund_under_cancelation'] = isset($data['refund_under_cancelation']) ? $data['refund_under_cancelation'] : null;
         $this->container['cancelation_reason'] = isset($data['cancelation_reason']) ? $data['cancelation_reason'] : null;
-        $this->container['is_executed_unattended'] = isset($data['is_executed_unattended']) ? $data['is_executed_unattended'] : null;
         $this->container['partial_response_mapping'] = isset($data['partial_response_mapping']) ? $data['partial_response_mapping'] : null;
     }
 
@@ -215,9 +209,6 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
 
         if ($this->container['refund_under_cancelation'] === null) {
             $invalidProperties[] = "'refund_under_cancelation' can't be null";
-        }
-        if ($this->container['is_executed_unattended'] === null) {
-            $invalidProperties[] = "'is_executed_unattended' can't be null";
         }
         if ($this->container['partial_response_mapping'] === null) {
             $invalidProperties[] = "'partial_response_mapping' can't be null";
@@ -305,30 +296,6 @@ class CancelInstallmentPlanRequest implements ModelInterface, ArrayAccess
     public function setCancelationReason($cancelation_reason)
     {
         $this->container['cancelation_reason'] = $cancelation_reason;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_executed_unattended
-     *
-     * @return bool
-     */
-    public function getIsExecutedUnattended()
-    {
-        return $this->container['is_executed_unattended'];
-    }
-
-    /**
-     * Sets is_executed_unattended
-     *
-     * @param bool $is_executed_unattended is_executed_unattended
-     *
-     * @return $this
-     */
-    public function setIsExecutedUnattended($is_executed_unattended)
-    {
-        $this->container['is_executed_unattended'] = $is_executed_unattended;
 
         return $this;
     }

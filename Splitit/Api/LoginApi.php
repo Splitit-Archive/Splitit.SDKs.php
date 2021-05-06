@@ -317,7 +317,7 @@ class LoginApi
             );
         }
 
-        $resourcePath = '/api/login';
+        $resourcePath = '/api/Login';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
