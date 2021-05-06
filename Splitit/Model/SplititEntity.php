@@ -53,6 +53,7 @@ class SplititEntity
     const SPLITIT_PAYMENTS_LTD = 'SplititPaymentsLtd';
     const SPLITIT_AUSTRALIA_CAPITAL_PTY_LTD = 'SplititAustraliaCapitalPtyLtd';
     const SPLITIT_AUSTRALIA_PTY_LTD = 'SplititAustraliaPtyLtd';
+    const SPLITIT_OPERATIONS_CA_LTD = 'SplititOperationsCALtd';
     
     /**
      * Gets allowable values of the enum
@@ -70,6 +71,7 @@ class SplititEntity
             self::SPLITIT_PAYMENTS_LTD,
             self::SPLITIT_AUSTRALIA_CAPITAL_PTY_LTD,
             self::SPLITIT_AUSTRALIA_PTY_LTD,
+            self::SPLITIT_OPERATIONS_CA_LTD,
         ];
     }
 }

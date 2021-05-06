@@ -44,7 +44,7 @@ class MoneyFlows
     /**
      * Possible values of this enum
      */
-    const NONE = 'None';
+    const NOT_DETERMINED = 'NotDetermined';
     const MONTHLY = 'Monthly';
     const SCP = 'SCP';
     const CUSTOM = 'Custom';
@@ -57,7 +57,7 @@ class MoneyFlows
     public static function getAllowableEnumValues()
     {
         return [
-            self::NONE,
+            self::NOT_DETERMINED,
             self::MONTHLY,
             self::SCP,
             self::CUSTOM,

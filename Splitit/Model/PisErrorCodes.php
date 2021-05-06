@@ -191,6 +191,7 @@ class PisErrorCodes
     const AMOUNT_EXCEEDED_MAX_ALLOWED_FOR_FUNDING_OPERATION = 'AmountExceededMaxAllowedForFundingOperation';
     const FUNDED_PLANS_CANNOT_BE_CANCELED_WITHOUT_REFUND = 'FundedPlansCannotBeCanceledWithoutRefund';
     const INSTALLMENTS_CANNOT_BE_UPDATED_ON_FUNDED_PLAN_WITH_LOWER_PLAN_AMOUNT = 'InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount';
+    const NO_FUNDING_SETUP_FOR_BUSINESS_UNIT = 'NoFundingSetupForBusinessUnit';
     const SALESFORCE_OPERATION_ERROR = 'SalesforceOperationError';
     const MULTIPLE_MESSAGING_MEANS_PROVIDED = 'MultipleMessagingMeansProvided';
     const NO_MESSAGING_MEANS_WAS_PROVIDED = 'NoMessagingMeansWasProvided';
@@ -366,6 +367,7 @@ class PisErrorCodes
             self::AMOUNT_EXCEEDED_MAX_ALLOWED_FOR_FUNDING_OPERATION,
             self::FUNDED_PLANS_CANNOT_BE_CANCELED_WITHOUT_REFUND,
             self::INSTALLMENTS_CANNOT_BE_UPDATED_ON_FUNDED_PLAN_WITH_LOWER_PLAN_AMOUNT,
+            self::NO_FUNDING_SETUP_FOR_BUSINESS_UNIT,
             self::SALESFORCE_OPERATION_ERROR,
             self::MULTIPLE_MESSAGING_MEANS_PROVIDED,
             self::NO_MESSAGING_MEANS_WAS_PROVIDED,
