@@ -50,6 +50,7 @@ class PlanStrategy
     const SECURED_PLAN3 = 'SecuredPlan3';
     const SINGLE_PAYMENT = 'SinglePayment';
     const EXTERNAL_INSTALLMENT_PROVIDER = 'ExternalInstallmentProvider';
+    const SECURED_PLAN4 = 'SecuredPlan4';
     
     /**
      * Gets allowable values of the enum
@@ -64,6 +65,7 @@ class PlanStrategy
             self::SECURED_PLAN3,
             self::SINGLE_PAYMENT,
             self::EXTERNAL_INSTALLMENT_PROVIDER,
+            self::SECURED_PLAN4,
         ];
     }
 }

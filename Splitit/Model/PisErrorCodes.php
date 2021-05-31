@@ -191,7 +191,9 @@ class PisErrorCodes
     const AMOUNT_EXCEEDED_MAX_ALLOWED_FOR_FUNDING_OPERATION = 'AmountExceededMaxAllowedForFundingOperation';
     const FUNDED_PLANS_CANNOT_BE_CANCELED_WITHOUT_REFUND = 'FundedPlansCannotBeCanceledWithoutRefund';
     const INSTALLMENTS_CANNOT_BE_UPDATED_ON_FUNDED_PLAN_WITH_LOWER_PLAN_AMOUNT = 'InstallmentsCannotBeUpdatedOnFundedPlanWithLowerPlanAmount';
+    const NO_FUNDING_PLAN_INFO_FOR_INSTALLMENT_PLAN = 'NoFundingPlanInfoForInstallmentPlan';
     const NO_FUNDING_SETUP_FOR_BUSINESS_UNIT = 'NoFundingSetupForBusinessUnit';
+    const MERCHANT_IS_NOT_FINANCED_YET = 'MerchantIsNotFinancedYet';
     const SALESFORCE_OPERATION_ERROR = 'SalesforceOperationError';
     const MULTIPLE_MESSAGING_MEANS_PROVIDED = 'MultipleMessagingMeansProvided';
     const NO_MESSAGING_MEANS_WAS_PROVIDED = 'NoMessagingMeansWasProvided';
@@ -199,6 +201,7 @@ class PisErrorCodes
     const PLAN_IS_LOCKED_FOR_CHANGES = 'PlanIsLockedForChanges';
     const CANNOT_PERFROM_ACTION_DUE_TO_ACTIVE_DELAYD_CHARGE = 'CannotPerfromActionDueToActiveDelaydCharge';
     const EXTERNAL_INSTALLMENT_PROVIDER_ERROR = 'ExternalInstallmentProviderError';
+    const CANNOT_CHANGE_AMOUNT_WHEN_STATUS_ISNT_INITIALIZE = 'CannotChangeAmountWhenStatusIsntInitialize';
     const INVALID_CC_CARD_TYPE_NOT_SUPPORTED_MORE_THAN_X_INSTALLMENTS = 'InvalidCCCardTypeNotSupportedMoreThanXInstallments';
     const INVALID_CC_CARD_TYPE_NOT_SUPPORTED_MORE_THAN_X_AMOUNT = 'InvalidCCCardTypeNotSupportedMoreThanXAmount';
     const PLAN_AMOUNT_EXCEEDS_ALLOWED_DECIMAL_PLACES = 'PlanAmountExceedsAllowedDecimalPlaces';
@@ -367,7 +370,9 @@ class PisErrorCodes
             self::AMOUNT_EXCEEDED_MAX_ALLOWED_FOR_FUNDING_OPERATION,
             self::FUNDED_PLANS_CANNOT_BE_CANCELED_WITHOUT_REFUND,
             self::INSTALLMENTS_CANNOT_BE_UPDATED_ON_FUNDED_PLAN_WITH_LOWER_PLAN_AMOUNT,
+            self::NO_FUNDING_PLAN_INFO_FOR_INSTALLMENT_PLAN,
             self::NO_FUNDING_SETUP_FOR_BUSINESS_UNIT,
+            self::MERCHANT_IS_NOT_FINANCED_YET,
             self::SALESFORCE_OPERATION_ERROR,
             self::MULTIPLE_MESSAGING_MEANS_PROVIDED,
             self::NO_MESSAGING_MEANS_WAS_PROVIDED,
@@ -375,6 +380,7 @@ class PisErrorCodes
             self::PLAN_IS_LOCKED_FOR_CHANGES,
             self::CANNOT_PERFROM_ACTION_DUE_TO_ACTIVE_DELAYD_CHARGE,
             self::EXTERNAL_INSTALLMENT_PROVIDER_ERROR,
+            self::CANNOT_CHANGE_AMOUNT_WHEN_STATUS_ISNT_INITIALIZE,
             self::INVALID_CC_CARD_TYPE_NOT_SUPPORTED_MORE_THAN_X_INSTALLMENTS,
             self::INVALID_CC_CARD_TYPE_NOT_SUPPORTED_MORE_THAN_X_AMOUNT,
             self::PLAN_AMOUNT_EXCEEDS_ALLOWED_DECIMAL_PLACES,

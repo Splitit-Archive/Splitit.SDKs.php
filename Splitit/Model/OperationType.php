@@ -51,6 +51,7 @@ class OperationType
     const REFUND = 'Refund';
     const CANCEL = 'Cancel';
     const CHECK_CAPTURE_ASYNC_RESPONSE = 'CheckCaptureAsyncResponse';
+    const VERIFY_CARD = 'VerifyCard';
     
     /**
      * Gets allowable values of the enum
@@ -66,6 +67,7 @@ class OperationType
             self::REFUND,
             self::CANCEL,
             self::CHECK_CAPTURE_ASYNC_RESPONSE,
+            self::VERIFY_CARD,
         ];
     }
 }

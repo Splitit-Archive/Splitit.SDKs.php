@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.6.7
+- Package version: 1.6.8
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.6.7"
+    "splitit/sdk": "^1.6.8"
   }
 }
 ```
@@ -216,6 +216,7 @@ Class | Method | HTTP request | Description
 *InstallmentPlanApi* | [**installmentPlanGetSchedules**](docs/Api/InstallmentPlanApi.md#installmentplangetschedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 *InstallmentPlanApi* | [**installmentPlanInitiate**](docs/Api/InstallmentPlanApi.md#installmentplaninitiate) | **POST** /api/InstallmentPlan/Initiate | 
 *InstallmentPlanApi* | [**installmentPlanRefund**](docs/Api/InstallmentPlanApi.md#installmentplanrefund) | **POST** /api/InstallmentPlan/Refund | 
+*InstallmentPlanApi* | [**installmentPlanRequestPayment**](docs/Api/InstallmentPlanApi.md#installmentplanrequestpayment) | **POST** /api/InstallmentPlan/RequestPayment | 
 *InstallmentPlanApi* | [**installmentPlanStartInstallments**](docs/Api/InstallmentPlanApi.md#installmentplanstartinstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
 *InstallmentPlanApi* | [**installmentPlanTermsAndConditions**](docs/Api/InstallmentPlanApi.md#installmentplantermsandconditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 *InstallmentPlanApi* | [**installmentPlanTestCard**](docs/Api/InstallmentPlanApi.md#installmentplantestcard) | **POST** /api/InstallmentPlan/TestCard | 
@@ -330,6 +331,8 @@ Class | Method | HTTP request | Description
  - [RefundUnderCancelation](docs/Model/RefundUnderCancelation.md)
  - [RelationsLoad](docs/Model/RelationsLoad.md)
  - [RequestHeader](docs/Model/RequestHeader.md)
+ - [RequestPaymentRequest](docs/Model/RequestPaymentRequest.md)
+ - [RequestPaymentResponse](docs/Model/RequestPaymentResponse.md)
  - [ResponseHeader](docs/Model/ResponseHeader.md)
  - [Schedule](docs/Model/Schedule.md)
  - [ScheduleElements](docs/Model/ScheduleElements.md)

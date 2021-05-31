@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**installmentPlanGetSchedules**](InstallmentPlanApi.md#installmentPlanGetSchedules) | **POST** /api/InstallmentPlan/GetSchedules | 
 [**installmentPlanInitiate**](InstallmentPlanApi.md#installmentPlanInitiate) | **POST** /api/InstallmentPlan/Initiate | 
 [**installmentPlanRefund**](InstallmentPlanApi.md#installmentPlanRefund) | **POST** /api/InstallmentPlan/Refund | 
+[**installmentPlanRequestPayment**](InstallmentPlanApi.md#installmentPlanRequestPayment) | **POST** /api/InstallmentPlan/RequestPayment | 
 [**installmentPlanStartInstallments**](InstallmentPlanApi.md#installmentPlanStartInstallments) | **POST** /api/InstallmentPlan/StartInstallments | 
 [**installmentPlanTermsAndConditions**](InstallmentPlanApi.md#installmentPlanTermsAndConditions) | **POST** /api/InstallmentPlan/TermsAndConditions | 
 [**installmentPlanTestCard**](InstallmentPlanApi.md#installmentPlanTestCard) | **POST** /api/InstallmentPlan/TestCard | 
@@ -730,6 +731,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\SplititSdkClient\Model\RefundInstallmentPlanResponse**](../Model/RefundInstallmentPlanResponse.md)
+
+### Authorization
+
+Use session_id received from LoginApi and pass it to InstallmentPlanApi constructor.
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **installmentPlanRequestPayment**
+> \SplititSdkClient\Model\RequestPaymentResponse installmentPlanRequestPayment($request)
+
+
+
+### Example
+```php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+# Use Configuration::production() for production API
+$apiInstance = new SplititSdkClient\Api\InstallmentPlanApi(
+    Configuration::sandbox(),
+    $session_id
+);
+
+$request = new \SplititSdkClient\Model\RequestPaymentRequest(); // \SplititSdkClient\Model\RequestPaymentRequest | 
+
+try {
+    $result = $apiInstance->installmentPlanRequestPayment($request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InstallmentPlanApi->installmentPlanRequestPayment: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\SplititSdkClient\Model\RequestPaymentRequest**](../Model/RequestPaymentRequest.md)|  |
+
+### Return type
+
+[**\SplititSdkClient\Model\RequestPaymentResponse**](../Model/RequestPaymentResponse.md)
 
 ### Authorization
 
