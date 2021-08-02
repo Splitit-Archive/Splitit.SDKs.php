@@ -78,12 +78,14 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'is_charged_back' => 'bool',
         'are_payments_on_hold' => 'bool',
         'scp_funding_percent' => 'float',
-        'is_funded' => 'bool',
+        'funding_status' => '\SplititSdkClient\Model\MoneyFlows',
         'test_mode' => '\SplititSdkClient\Model\TestModes',
         'creation_date_time' => '\DateTime',
+        'life_time_url_expiration_time' => '\DateTime',
         'installments' => '\SplititSdkClient\Model\Installment2[]',
         'secure_authorizations' => '\SplititSdkClient\Model\ReAuthorization[]',
-        'logo_url' => 'string'
+        'logo_url' => 'string',
+        'is_in_auto_retry' => 'bool'
     ];
 
     /**
@@ -113,12 +115,14 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'is_charged_back' => null,
         'are_payments_on_hold' => null,
         'scp_funding_percent' => 'decimal',
-        'is_funded' => null,
+        'funding_status' => null,
         'test_mode' => null,
         'creation_date_time' => 'date-time',
+        'life_time_url_expiration_time' => 'date-time',
         'installments' => null,
         'secure_authorizations' => null,
-        'logo_url' => null
+        'logo_url' => null,
+        'is_in_auto_retry' => null
     ];
 
     /**
@@ -169,12 +173,14 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'is_charged_back' => 'IsChargedBack',
         'are_payments_on_hold' => 'ArePaymentsOnHold',
         'scp_funding_percent' => 'ScpFundingPercent',
-        'is_funded' => 'IsFunded',
+        'funding_status' => 'FundingStatus',
         'test_mode' => 'TestMode',
         'creation_date_time' => 'CreationDateTime',
+        'life_time_url_expiration_time' => 'LifeTimeUrlExpirationTime',
         'installments' => 'Installments',
         'secure_authorizations' => 'SecureAuthorizations',
-        'logo_url' => 'LogoUrl'
+        'logo_url' => 'LogoUrl',
+        'is_in_auto_retry' => 'IsInAutoRetry'
     ];
 
     /**
@@ -204,12 +210,14 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'is_charged_back' => 'setIsChargedBack',
         'are_payments_on_hold' => 'setArePaymentsOnHold',
         'scp_funding_percent' => 'setScpFundingPercent',
-        'is_funded' => 'setIsFunded',
+        'funding_status' => 'setFundingStatus',
         'test_mode' => 'setTestMode',
         'creation_date_time' => 'setCreationDateTime',
+        'life_time_url_expiration_time' => 'setLifeTimeUrlExpirationTime',
         'installments' => 'setInstallments',
         'secure_authorizations' => 'setSecureAuthorizations',
-        'logo_url' => 'setLogoUrl'
+        'logo_url' => 'setLogoUrl',
+        'is_in_auto_retry' => 'setIsInAutoRetry'
     ];
 
     /**
@@ -239,12 +247,14 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'is_charged_back' => 'getIsChargedBack',
         'are_payments_on_hold' => 'getArePaymentsOnHold',
         'scp_funding_percent' => 'getScpFundingPercent',
-        'is_funded' => 'getIsFunded',
+        'funding_status' => 'getFundingStatus',
         'test_mode' => 'getTestMode',
         'creation_date_time' => 'getCreationDateTime',
+        'life_time_url_expiration_time' => 'getLifeTimeUrlExpirationTime',
         'installments' => 'getInstallments',
         'secure_authorizations' => 'getSecureAuthorizations',
-        'logo_url' => 'getLogoUrl'
+        'logo_url' => 'getLogoUrl',
+        'is_in_auto_retry' => 'getIsInAutoRetry'
     ];
 
     /**
@@ -328,12 +338,14 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         $this->container['is_charged_back'] = isset($data['is_charged_back']) ? $data['is_charged_back'] : null;
         $this->container['are_payments_on_hold'] = isset($data['are_payments_on_hold']) ? $data['are_payments_on_hold'] : null;
         $this->container['scp_funding_percent'] = isset($data['scp_funding_percent']) ? $data['scp_funding_percent'] : null;
-        $this->container['is_funded'] = isset($data['is_funded']) ? $data['is_funded'] : null;
+        $this->container['funding_status'] = isset($data['funding_status']) ? $data['funding_status'] : null;
         $this->container['test_mode'] = isset($data['test_mode']) ? $data['test_mode'] : null;
         $this->container['creation_date_time'] = isset($data['creation_date_time']) ? $data['creation_date_time'] : null;
+        $this->container['life_time_url_expiration_time'] = isset($data['life_time_url_expiration_time']) ? $data['life_time_url_expiration_time'] : null;
         $this->container['installments'] = isset($data['installments']) ? $data['installments'] : null;
         $this->container['secure_authorizations'] = isset($data['secure_authorizations']) ? $data['secure_authorizations'] : null;
         $this->container['logo_url'] = isset($data['logo_url']) ? $data['logo_url'] : null;
+        $this->container['is_in_auto_retry'] = isset($data['is_in_auto_retry']) ? $data['is_in_auto_retry'] : null;
     }
 
     /**
@@ -363,14 +375,20 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         if ($this->container['scp_funding_percent'] === null) {
             $invalidProperties[] = "'scp_funding_percent' can't be null";
         }
-        if ($this->container['is_funded'] === null) {
-            $invalidProperties[] = "'is_funded' can't be null";
+        if ($this->container['funding_status'] === null) {
+            $invalidProperties[] = "'funding_status' can't be null";
         }
         if ($this->container['test_mode'] === null) {
             $invalidProperties[] = "'test_mode' can't be null";
         }
         if ($this->container['creation_date_time'] === null) {
             $invalidProperties[] = "'creation_date_time' can't be null";
+        }
+        if ($this->container['life_time_url_expiration_time'] === null) {
+            $invalidProperties[] = "'life_time_url_expiration_time' can't be null";
+        }
+        if ($this->container['is_in_auto_retry'] === null) {
+            $invalidProperties[] = "'is_in_auto_retry' can't be null";
         }
         return $invalidProperties;
     }
@@ -892,25 +910,25 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets is_funded
+     * Gets funding_status
      *
-     * @return bool
+     * @return \SplititSdkClient\Model\MoneyFlows
      */
-    public function getIsFunded()
+    public function getFundingStatus()
     {
-        return $this->container['is_funded'];
+        return $this->container['funding_status'];
     }
 
     /**
-     * Sets is_funded
+     * Sets funding_status
      *
-     * @param bool $is_funded is_funded
+     * @param \SplititSdkClient\Model\MoneyFlows $funding_status funding_status
      *
      * @return $this
      */
-    public function setIsFunded($is_funded)
+    public function setFundingStatus($funding_status)
     {
-        $this->container['is_funded'] = $is_funded;
+        $this->container['funding_status'] = $funding_status;
 
         return $this;
     }
@@ -959,6 +977,30 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
     public function setCreationDateTime($creation_date_time)
     {
         $this->container['creation_date_time'] = $creation_date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets life_time_url_expiration_time
+     *
+     * @return \DateTime
+     */
+    public function getLifeTimeUrlExpirationTime()
+    {
+        return $this->container['life_time_url_expiration_time'];
+    }
+
+    /**
+     * Sets life_time_url_expiration_time
+     *
+     * @param \DateTime $life_time_url_expiration_time life_time_url_expiration_time
+     *
+     * @return $this
+     */
+    public function setLifeTimeUrlExpirationTime($life_time_url_expiration_time)
+    {
+        $this->container['life_time_url_expiration_time'] = $life_time_url_expiration_time;
 
         return $this;
     }
@@ -1031,6 +1073,30 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
     public function setLogoUrl($logo_url)
     {
         $this->container['logo_url'] = $logo_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_in_auto_retry
+     *
+     * @return bool
+     */
+    public function getIsInAutoRetry()
+    {
+        return $this->container['is_in_auto_retry'];
+    }
+
+    /**
+     * Sets is_in_auto_retry
+     *
+     * @param bool $is_in_auto_retry is_in_auto_retry
+     *
+     * @return $this
+     */
+    public function setIsInAutoRetry($is_in_auto_retry)
+    {
+        $this->container['is_in_auto_retry'] = $is_in_auto_retry;
 
         return $this;
     }

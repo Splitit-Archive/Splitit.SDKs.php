@@ -66,7 +66,8 @@ class User implements ModelInterface, ArrayAccess
         'culture_name' => 'string',
         'role_name' => 'string',
         'is_locked' => 'bool',
-        'is_data_restricted' => 'bool'
+        'is_data_restricted' => 'bool',
+        'is_data_private_restricted' => 'bool'
     ];
 
     /**
@@ -84,7 +85,8 @@ class User implements ModelInterface, ArrayAccess
         'culture_name' => null,
         'role_name' => null,
         'is_locked' => null,
-        'is_data_restricted' => null
+        'is_data_restricted' => null,
+        'is_data_private_restricted' => null
     ];
 
     /**
@@ -123,7 +125,8 @@ class User implements ModelInterface, ArrayAccess
         'culture_name' => 'CultureName',
         'role_name' => 'RoleName',
         'is_locked' => 'IsLocked',
-        'is_data_restricted' => 'IsDataRestricted'
+        'is_data_restricted' => 'IsDataRestricted',
+        'is_data_private_restricted' => 'IsDataPrivateRestricted'
     ];
 
     /**
@@ -141,7 +144,8 @@ class User implements ModelInterface, ArrayAccess
         'culture_name' => 'setCultureName',
         'role_name' => 'setRoleName',
         'is_locked' => 'setIsLocked',
-        'is_data_restricted' => 'setIsDataRestricted'
+        'is_data_restricted' => 'setIsDataRestricted',
+        'is_data_private_restricted' => 'setIsDataPrivateRestricted'
     ];
 
     /**
@@ -159,7 +163,8 @@ class User implements ModelInterface, ArrayAccess
         'culture_name' => 'getCultureName',
         'role_name' => 'getRoleName',
         'is_locked' => 'getIsLocked',
-        'is_data_restricted' => 'getIsDataRestricted'
+        'is_data_restricted' => 'getIsDataRestricted',
+        'is_data_private_restricted' => 'getIsDataPrivateRestricted'
     ];
 
     /**
@@ -232,6 +237,7 @@ class User implements ModelInterface, ArrayAccess
         $this->container['role_name'] = isset($data['role_name']) ? $data['role_name'] : null;
         $this->container['is_locked'] = isset($data['is_locked']) ? $data['is_locked'] : null;
         $this->container['is_data_restricted'] = isset($data['is_data_restricted']) ? $data['is_data_restricted'] : null;
+        $this->container['is_data_private_restricted'] = isset($data['is_data_private_restricted']) ? $data['is_data_private_restricted'] : null;
     }
 
     /**
@@ -248,6 +254,9 @@ class User implements ModelInterface, ArrayAccess
         }
         if ($this->container['is_data_restricted'] === null) {
             $invalidProperties[] = "'is_data_restricted' can't be null";
+        }
+        if ($this->container['is_data_private_restricted'] === null) {
+            $invalidProperties[] = "'is_data_private_restricted' can't be null";
         }
         return $invalidProperties;
     }
@@ -500,6 +509,30 @@ class User implements ModelInterface, ArrayAccess
     public function setIsDataRestricted($is_data_restricted)
     {
         $this->container['is_data_restricted'] = $is_data_restricted;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_data_private_restricted
+     *
+     * @return bool
+     */
+    public function getIsDataPrivateRestricted()
+    {
+        return $this->container['is_data_private_restricted'];
+    }
+
+    /**
+     * Sets is_data_private_restricted
+     *
+     * @param bool $is_data_private_restricted is_data_private_restricted
+     *
+     * @return $this
+     */
+    public function setIsDataPrivateRestricted($is_data_private_restricted)
+    {
+        $this->container['is_data_private_restricted'] = $is_data_private_restricted;
 
         return $this;
     }

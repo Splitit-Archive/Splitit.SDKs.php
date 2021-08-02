@@ -71,6 +71,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         'any_filter' => 'string',
         'eula' => 'bool',
         'show_chargeback_plans' => 'bool',
+        'is_in_auto_retry' => 'bool',
+        'strategy' => '\SplititSdkClient\Model\PlanStrategy',
         'initiated_statuses' => '\SplititSdkClient\Model\InstallmentPlanInitiatedStatuses',
         'fraud_check_result' => '\SplititSdkClient\Model\FraudCheckResult',
         'installments_plan_statuses' => '\SplititSdkClient\Model\InstallmentPlanStatus[]',
@@ -100,6 +102,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         'any_filter' => null,
         'eula' => null,
         'show_chargeback_plans' => null,
+        'is_in_auto_retry' => null,
+        'strategy' => null,
         'initiated_statuses' => null,
         'fraud_check_result' => null,
         'installments_plan_statuses' => null,
@@ -150,6 +154,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         'any_filter' => 'AnyFilter',
         'eula' => 'Eula',
         'show_chargeback_plans' => 'ShowChargebackPlans',
+        'is_in_auto_retry' => 'IsInAutoRetry',
+        'strategy' => 'Strategy',
         'initiated_statuses' => 'InitiatedStatuses',
         'fraud_check_result' => 'FraudCheckResult',
         'installments_plan_statuses' => 'InstallmentsPlanStatuses',
@@ -179,6 +185,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         'any_filter' => 'setAnyFilter',
         'eula' => 'setEula',
         'show_chargeback_plans' => 'setShowChargebackPlans',
+        'is_in_auto_retry' => 'setIsInAutoRetry',
+        'strategy' => 'setStrategy',
         'initiated_statuses' => 'setInitiatedStatuses',
         'fraud_check_result' => 'setFraudCheckResult',
         'installments_plan_statuses' => 'setInstallmentsPlanStatuses',
@@ -208,6 +216,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         'any_filter' => 'getAnyFilter',
         'eula' => 'getEula',
         'show_chargeback_plans' => 'getShowChargebackPlans',
+        'is_in_auto_retry' => 'getIsInAutoRetry',
+        'strategy' => 'getStrategy',
         'initiated_statuses' => 'getInitiatedStatuses',
         'fraud_check_result' => 'getFraudCheckResult',
         'installments_plan_statuses' => 'getInstallmentsPlanStatuses',
@@ -291,6 +301,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         $this->container['any_filter'] = isset($data['any_filter']) ? $data['any_filter'] : null;
         $this->container['eula'] = isset($data['eula']) ? $data['eula'] : null;
         $this->container['show_chargeback_plans'] = isset($data['show_chargeback_plans']) ? $data['show_chargeback_plans'] : null;
+        $this->container['is_in_auto_retry'] = isset($data['is_in_auto_retry']) ? $data['is_in_auto_retry'] : null;
+        $this->container['strategy'] = isset($data['strategy']) ? $data['strategy'] : null;
         $this->container['initiated_statuses'] = isset($data['initiated_statuses']) ? $data['initiated_statuses'] : null;
         $this->container['fraud_check_result'] = isset($data['fraud_check_result']) ? $data['fraud_check_result'] : null;
         $this->container['installments_plan_statuses'] = isset($data['installments_plan_statuses']) ? $data['installments_plan_statuses'] : null;
@@ -677,6 +689,54 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     public function setShowChargebackPlans($show_chargeback_plans)
     {
         $this->container['show_chargeback_plans'] = $show_chargeback_plans;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_in_auto_retry
+     *
+     * @return bool
+     */
+    public function getIsInAutoRetry()
+    {
+        return $this->container['is_in_auto_retry'];
+    }
+
+    /**
+     * Sets is_in_auto_retry
+     *
+     * @param bool $is_in_auto_retry is_in_auto_retry
+     *
+     * @return $this
+     */
+    public function setIsInAutoRetry($is_in_auto_retry)
+    {
+        $this->container['is_in_auto_retry'] = $is_in_auto_retry;
+
+        return $this;
+    }
+
+    /**
+     * Gets strategy
+     *
+     * @return \SplititSdkClient\Model\PlanStrategy
+     */
+    public function getStrategy()
+    {
+        return $this->container['strategy'];
+    }
+
+    /**
+     * Sets strategy
+     *
+     * @param \SplititSdkClient\Model\PlanStrategy $strategy strategy
+     *
+     * @return $this
+     */
+    public function setStrategy($strategy)
+    {
+        $this->container['strategy'] = $strategy;
 
         return $this;
     }

@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **any_filter** | **string** |  | [optional] 
 **eula** | **bool** |  | 
 **show_chargeback_plans** | **bool** |  | 
+**is_in_auto_retry** | **bool** |  | [optional] 
+**strategy** | [**\SplititSdkClient\Model\PlanStrategy**](PlanStrategy.md) |  | [optional] 
 **initiated_statuses** | [**\SplititSdkClient\Model\InstallmentPlanInitiatedStatuses**](InstallmentPlanInitiatedStatuses.md) |  | [optional] 
 **fraud_check_result** | [**\SplititSdkClient\Model\FraudCheckResult**](FraudCheckResult.md) |  | [optional] 
 **installments_plan_statuses** | [**\SplititSdkClient\Model\InstallmentPlanStatus[]**](InstallmentPlanStatus.md) |  | [optional] 

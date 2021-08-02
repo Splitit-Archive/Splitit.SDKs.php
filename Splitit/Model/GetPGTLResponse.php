@@ -58,7 +58,7 @@ class GetPGTLResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'response_header' => '\SplititSdkClient\Model\ResponseHeader',
-        'payment_gatewaytransaction_responses' => 'map[string,\SplititSdkClient\Model\PaymentGatewayTransactionLogs[]]'
+        'payment_gatewaytransaction_responses' => 'map[string,\SplititSdkClient\Model\PgtlDto[]]'
     ];
 
     /**
@@ -237,7 +237,7 @@ class GetPGTLResponse implements ModelInterface, ArrayAccess
     /**
      * Gets payment_gatewaytransaction_responses
      *
-     * @return map[string,\SplititSdkClient\Model\PaymentGatewayTransactionLogs[]]
+     * @return map[string,\SplititSdkClient\Model\PgtlDto[]]
      */
     public function getPaymentGatewaytransactionResponses()
     {
@@ -247,7 +247,7 @@ class GetPGTLResponse implements ModelInterface, ArrayAccess
     /**
      * Sets payment_gatewaytransaction_responses
      *
-     * @param map[string,\SplititSdkClient\Model\PaymentGatewayTransactionLogs[]] $payment_gatewaytransaction_responses payment_gatewaytransaction_responses
+     * @param map[string,\SplititSdkClient\Model\PgtlDto[]] $payment_gatewaytransaction_responses payment_gatewaytransaction_responses
      *
      * @return $this
      */

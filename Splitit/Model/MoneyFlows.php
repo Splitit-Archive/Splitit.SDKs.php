@@ -48,6 +48,7 @@ class MoneyFlows
     const MONTHLY = 'Monthly';
     const SCP = 'SCP';
     const CUSTOM = 'Custom';
+    const PENDING_FUNDING = 'PendingFunding';
     const CHOOSE = 'Choose';
     
     /**
@@ -61,6 +62,7 @@ class MoneyFlows
             self::MONTHLY,
             self::SCP,
             self::CUSTOM,
+            self::PENDING_FUNDING,
             self::CHOOSE,
         ];
     }
