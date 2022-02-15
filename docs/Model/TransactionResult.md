@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **is_chargeback** | **bool** |  | 
 **avs_result** | [**\SplititSdkClient\Model\CardResult**](CardResult.md) |  | [optional] 
 **cvc_result** | [**\SplititSdkClient\Model\CardResult**](CardResult.md) |  | [optional] 
+**is_in_dispute** | **bool** |  | [optional] 
+**dispute_status** | [**\SplititSdkClient\Model\DisputeStatus**](DisputeStatus.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **installment_plan_status** | [**\SplititSdkClient\Model\ReferenceEntityBase**](ReferenceEntityBase.md) |  | [optional] 
 **amount** | [**\SplititSdkClient\Model\Money**](Money.md) |  | [optional] 
 **outstanding_amount** | [**\SplititSdkClient\Model\Money**](Money.md) |  | [optional] 
+**disputes** | [**\SplititSdkClient\Model\Disputes**](Disputes.md) |  | [optional] 
 **number_of_installments** | **int** |  | 
 **number_of_processed_installments** | **int** |  | 
 **original_amount** | [**\SplititSdkClient\Model\Money**](Money.md) |  | [optional] 
@@ -32,6 +33,8 @@ Name | Type | Description | Notes
 **secure_authorizations** | [**\SplititSdkClient\Model\ReAuthorization[]**](ReAuthorization.md) |  | [optional] 
 **logo_url** | **string** |  | [optional] 
 **is_in_auto_retry** | **bool** |  | 
+**payment_method** | **string** |  | [optional] 
+**allow_card_update_on_splitit_portals** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

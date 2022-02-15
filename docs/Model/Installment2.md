@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **transaction_results** | [**\SplititSdkClient\Model\TransactionResult[]**](TransactionResult.md) |  | [optional] 
 **card_details** | [**\SplititSdkClient\Model\CardData**](CardData.md) |  | [optional] 
 **result** | **bool** |  | [optional] 
+**payment_method** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

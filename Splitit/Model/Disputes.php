@@ -1,6 +1,6 @@
 <?php
 /**
- * Money
+ * Disputes
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * Money Class Doc Comment
+ * Disputes Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Money implements ModelInterface, ArrayAccess
+class Disputes implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Money implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Money';
+    protected static $swaggerModelName = 'Disputes';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,8 @@ class Money implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'value' => 'float',
-        'currency' => '\SplititSdkClient\Model\Currency'
+        'in_dispute' => 'bool',
+        'evidence_provided_on' => '\DateTime'
     ];
 
     /**
@@ -67,8 +67,8 @@ class Money implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'value' => 'decimal',
-        'currency' => null
+        'in_dispute' => null,
+        'evidence_provided_on' => 'date-time'
     ];
 
     /**
@@ -98,8 +98,8 @@ class Money implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'Value',
-        'currency' => 'Currency'
+        'in_dispute' => 'InDispute',
+        'evidence_provided_on' => 'EvidenceProvidedOn'
     ];
 
     /**
@@ -108,8 +108,8 @@ class Money implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue',
-        'currency' => 'setCurrency'
+        'in_dispute' => 'setInDispute',
+        'evidence_provided_on' => 'setEvidenceProvidedOn'
     ];
 
     /**
@@ -118,8 +118,8 @@ class Money implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue',
-        'currency' => 'getCurrency'
+        'in_dispute' => 'getInDispute',
+        'evidence_provided_on' => 'getEvidenceProvidedOn'
     ];
 
     /**
@@ -182,8 +182,8 @@ class Money implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['in_dispute'] = isset($data['in_dispute']) ? $data['in_dispute'] : null;
+        $this->container['evidence_provided_on'] = isset($data['evidence_provided_on']) ? $data['evidence_provided_on'] : null;
     }
 
     /**
@@ -195,9 +195,6 @@ class Money implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['value'] === null) {
-            $invalidProperties[] = "'value' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -214,49 +211,49 @@ class Money implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets value
+     * Gets in_dispute
      *
-     * @return float
+     * @return bool
      */
-    public function getValue()
+    public function getInDispute()
     {
-        return $this->container['value'];
+        return $this->container['in_dispute'];
     }
 
     /**
-     * Sets value
+     * Sets in_dispute
      *
-     * @param float $value value
+     * @param bool $in_dispute in_dispute
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setInDispute($in_dispute)
     {
-        $this->container['value'] = $value;
+        $this->container['in_dispute'] = $in_dispute;
 
         return $this;
     }
 
     /**
-     * Gets currency
+     * Gets evidence_provided_on
      *
-     * @return \SplititSdkClient\Model\Currency
+     * @return \DateTime
      */
-    public function getCurrency()
+    public function getEvidenceProvidedOn()
     {
-        return $this->container['currency'];
+        return $this->container['evidence_provided_on'];
     }
 
     /**
-     * Sets currency
+     * Sets evidence_provided_on
      *
-     * @param \SplititSdkClient\Model\Currency $currency currency
+     * @param \DateTime $evidence_provided_on evidence_provided_on
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setEvidenceProvidedOn($evidence_provided_on)
     {
-        $this->container['currency'] = $currency;
+        $this->container['evidence_provided_on'] = $evidence_provided_on;
 
         return $this;
     }

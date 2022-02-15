@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **is_opened_in_iframe** | **bool** |  | 
 **is3d_secure_in_popup** | **bool** |  | [optional] 
 **payment_form_message** | **string** |  | [optional] 
+**set_short_url** | **bool** |  | 
 **show_address_elements** | **string** |  | [optional] 
 **currency_display** | [**\SplititSdkClient\Model\ExtendedCurrency**](ExtendedCurrency.md) |  | [optional] 
 **force_display_important_notes** | **bool** |  | 
@@ -38,6 +39,9 @@ Name | Type | Description | Notes
 **payment_form_messages** | [**\SplititSdkClient\Model\PaymentFormMessage[]**](PaymentFormMessage.md) |  | [optional] 
 **display_properties** | **map[string,string]** |  | [optional] 
 **terms_and_conditions** | [**\SplititSdkClient\Model\TermsAndConditions**](TermsAndConditions.md) |  | [optional] 
+**payment_methods** | [**\SplititSdkClient\Model\PaymentMethods[]**](PaymentMethods.md) |  | [optional] 
+**status** | [**\SplititSdkClient\Model\InstallmentPlanStatus**](InstallmentPlanStatus.md) |  | 
+**is_attempt3_dsecure** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

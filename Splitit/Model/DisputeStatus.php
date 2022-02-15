@@ -1,6 +1,6 @@
 <?php
 /**
- * PurchaseMethod
+ * DisputeStatus
  *
  * PHP version 5
  *
@@ -31,7 +31,7 @@ namespace SplititSdkClient\Model;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * PurchaseMethod Class Doc Comment
+ * DisputeStatus Class Doc Comment
  *
  * @category Class
  * @description 
@@ -39,14 +39,16 @@ use \SplititSdkClient\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PurchaseMethod
+class DisputeStatus
 {
     /**
      * Possible values of this enum
      */
-    const IN_STORE = 'InStore';
-    const PHONE_ORDER = 'PhoneOrder';
-    const E_COMMERCE = 'ECommerce';
+    const OPEN = 'Open';
+    const WON = 'Won';
+    const LOST = 'Lost';
+    const CLOSED = 'Closed';
+    const OTHER = 'Other';
     
     /**
      * Gets allowable values of the enum
@@ -55,9 +57,11 @@ class PurchaseMethod
     public static function getAllowableEnumValues()
     {
         return [
-            self::IN_STORE,
-            self::PHONE_ORDER,
-            self::E_COMMERCE,
+            self::OPEN,
+            self::WON,
+            self::LOST,
+            self::CLOSED,
+            self::OTHER,
         ];
     }
 }

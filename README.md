@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.6.9
+- Package version: 1.6.5516
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.6.9"
+    "splitit/sdk": "^1.6.5516"
   }
 }
 ```
@@ -241,6 +241,8 @@ Class | Method | HTTP request | Description
  - [CreateInstallmentPlanLegacyResponse](docs/Model/CreateInstallmentPlanLegacyResponse.md)
  - [CreateInstallmentPlanRequest](docs/Model/CreateInstallmentPlanRequest.md)
  - [DelayResolution](docs/Model/DelayResolution.md)
+ - [DisputeStatus](docs/Model/DisputeStatus.md)
+ - [Disputes](docs/Model/Disputes.md)
  - [Error](docs/Model/Error.md)
  - [EventsEndpoints](docs/Model/EventsEndpoints.md)
  - [ExternalAuth](docs/Model/ExternalAuth.md)
@@ -287,6 +289,7 @@ Class | Method | HTTP request | Description
  - [PagingResponseHeader](docs/Model/PagingResponseHeader.md)
  - [PaymentFormMessage](docs/Model/PaymentFormMessage.md)
  - [PaymentFormMessageType](docs/Model/PaymentFormMessageType.md)
+ - [PaymentMethods](docs/Model/PaymentMethods.md)
  - [PaymentToken](docs/Model/PaymentToken.md)
  - [PaymentWizardData](docs/Model/PaymentWizardData.md)
  - [PgtlDto](docs/Model/PgtlDto.md)
