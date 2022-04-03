@@ -59,6 +59,7 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'merchant_id' => 'int',
         'currency_id' => 'int',
+        'business_unit_ids' => 'int[]',
         'installment_plan_id' => 'int',
         'installment_plan_number' => 'string',
         'ref_order_number' => 'string',
@@ -70,9 +71,10 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         'pis_member_id' => 'int',
         'any_filter' => 'string',
         'eula' => 'bool',
+        'are_payments_on_hold' => 'bool',
         'show_chargeback_plans' => 'bool',
         'is_in_auto_retry' => 'bool',
-        'strategy' => '\SplititSdkClient\Model\PlanStrategy',
+        'strategies' => '\SplititSdkClient\Model\PlanStrategy[]',
         'initiated_statuses' => '\SplititSdkClient\Model\InstallmentPlanInitiatedStatuses',
         'fraud_check_result' => '\SplititSdkClient\Model\FraudCheckResult',
         'installments_plan_statuses' => '\SplititSdkClient\Model\InstallmentPlanStatus[]',
@@ -90,6 +92,7 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'merchant_id' => 'int64',
         'currency_id' => 'int64',
+        'business_unit_ids' => 'int64',
         'installment_plan_id' => 'int64',
         'installment_plan_number' => null,
         'ref_order_number' => null,
@@ -101,9 +104,10 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         'pis_member_id' => 'int64',
         'any_filter' => null,
         'eula' => null,
+        'are_payments_on_hold' => null,
         'show_chargeback_plans' => null,
         'is_in_auto_retry' => null,
-        'strategy' => null,
+        'strategies' => null,
         'initiated_statuses' => null,
         'fraud_check_result' => null,
         'installments_plan_statuses' => null,
@@ -142,6 +146,7 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'merchant_id' => 'MerchantId',
         'currency_id' => 'CurrencyId',
+        'business_unit_ids' => 'BusinessUnitIds',
         'installment_plan_id' => 'InstallmentPlanId',
         'installment_plan_number' => 'InstallmentPlanNumber',
         'ref_order_number' => 'RefOrderNumber',
@@ -153,9 +158,10 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         'pis_member_id' => 'PisMemberId',
         'any_filter' => 'AnyFilter',
         'eula' => 'Eula',
+        'are_payments_on_hold' => 'ArePaymentsOnHold',
         'show_chargeback_plans' => 'ShowChargebackPlans',
         'is_in_auto_retry' => 'IsInAutoRetry',
-        'strategy' => 'Strategy',
+        'strategies' => 'Strategies',
         'initiated_statuses' => 'InitiatedStatuses',
         'fraud_check_result' => 'FraudCheckResult',
         'installments_plan_statuses' => 'InstallmentsPlanStatuses',
@@ -173,6 +179,7 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     protected static $setters = [
         'merchant_id' => 'setMerchantId',
         'currency_id' => 'setCurrencyId',
+        'business_unit_ids' => 'setBusinessUnitIds',
         'installment_plan_id' => 'setInstallmentPlanId',
         'installment_plan_number' => 'setInstallmentPlanNumber',
         'ref_order_number' => 'setRefOrderNumber',
@@ -184,9 +191,10 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         'pis_member_id' => 'setPisMemberId',
         'any_filter' => 'setAnyFilter',
         'eula' => 'setEula',
+        'are_payments_on_hold' => 'setArePaymentsOnHold',
         'show_chargeback_plans' => 'setShowChargebackPlans',
         'is_in_auto_retry' => 'setIsInAutoRetry',
-        'strategy' => 'setStrategy',
+        'strategies' => 'setStrategies',
         'initiated_statuses' => 'setInitiatedStatuses',
         'fraud_check_result' => 'setFraudCheckResult',
         'installments_plan_statuses' => 'setInstallmentsPlanStatuses',
@@ -204,6 +212,7 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     protected static $getters = [
         'merchant_id' => 'getMerchantId',
         'currency_id' => 'getCurrencyId',
+        'business_unit_ids' => 'getBusinessUnitIds',
         'installment_plan_id' => 'getInstallmentPlanId',
         'installment_plan_number' => 'getInstallmentPlanNumber',
         'ref_order_number' => 'getRefOrderNumber',
@@ -215,9 +224,10 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         'pis_member_id' => 'getPisMemberId',
         'any_filter' => 'getAnyFilter',
         'eula' => 'getEula',
+        'are_payments_on_hold' => 'getArePaymentsOnHold',
         'show_chargeback_plans' => 'getShowChargebackPlans',
         'is_in_auto_retry' => 'getIsInAutoRetry',
-        'strategy' => 'getStrategy',
+        'strategies' => 'getStrategies',
         'initiated_statuses' => 'getInitiatedStatuses',
         'fraud_check_result' => 'getFraudCheckResult',
         'installments_plan_statuses' => 'getInstallmentsPlanStatuses',
@@ -289,6 +299,7 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     {
         $this->container['merchant_id'] = isset($data['merchant_id']) ? $data['merchant_id'] : null;
         $this->container['currency_id'] = isset($data['currency_id']) ? $data['currency_id'] : null;
+        $this->container['business_unit_ids'] = isset($data['business_unit_ids']) ? $data['business_unit_ids'] : null;
         $this->container['installment_plan_id'] = isset($data['installment_plan_id']) ? $data['installment_plan_id'] : null;
         $this->container['installment_plan_number'] = isset($data['installment_plan_number']) ? $data['installment_plan_number'] : null;
         $this->container['ref_order_number'] = isset($data['ref_order_number']) ? $data['ref_order_number'] : null;
@@ -300,9 +311,10 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
         $this->container['pis_member_id'] = isset($data['pis_member_id']) ? $data['pis_member_id'] : null;
         $this->container['any_filter'] = isset($data['any_filter']) ? $data['any_filter'] : null;
         $this->container['eula'] = isset($data['eula']) ? $data['eula'] : null;
+        $this->container['are_payments_on_hold'] = isset($data['are_payments_on_hold']) ? $data['are_payments_on_hold'] : null;
         $this->container['show_chargeback_plans'] = isset($data['show_chargeback_plans']) ? $data['show_chargeback_plans'] : null;
         $this->container['is_in_auto_retry'] = isset($data['is_in_auto_retry']) ? $data['is_in_auto_retry'] : null;
-        $this->container['strategy'] = isset($data['strategy']) ? $data['strategy'] : null;
+        $this->container['strategies'] = isset($data['strategies']) ? $data['strategies'] : null;
         $this->container['initiated_statuses'] = isset($data['initiated_statuses']) ? $data['initiated_statuses'] : null;
         $this->container['fraud_check_result'] = isset($data['fraud_check_result']) ? $data['fraud_check_result'] : null;
         $this->container['installments_plan_statuses'] = isset($data['installments_plan_statuses']) ? $data['installments_plan_statuses'] : null;
@@ -401,6 +413,30 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     public function setCurrencyId($currency_id)
     {
         $this->container['currency_id'] = $currency_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_unit_ids
+     *
+     * @return int[]
+     */
+    public function getBusinessUnitIds()
+    {
+        return $this->container['business_unit_ids'];
+    }
+
+    /**
+     * Sets business_unit_ids
+     *
+     * @param int[] $business_unit_ids business_unit_ids
+     *
+     * @return $this
+     */
+    public function setBusinessUnitIds($business_unit_ids)
+    {
+        $this->container['business_unit_ids'] = $business_unit_ids;
 
         return $this;
     }
@@ -670,6 +706,30 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets are_payments_on_hold
+     *
+     * @return bool
+     */
+    public function getArePaymentsOnHold()
+    {
+        return $this->container['are_payments_on_hold'];
+    }
+
+    /**
+     * Sets are_payments_on_hold
+     *
+     * @param bool $are_payments_on_hold are_payments_on_hold
+     *
+     * @return $this
+     */
+    public function setArePaymentsOnHold($are_payments_on_hold)
+    {
+        $this->container['are_payments_on_hold'] = $are_payments_on_hold;
+
+        return $this;
+    }
+
+    /**
      * Gets show_chargeback_plans
      *
      * @return bool
@@ -718,25 +778,25 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets strategy
+     * Gets strategies
      *
-     * @return \SplititSdkClient\Model\PlanStrategy
+     * @return \SplititSdkClient\Model\PlanStrategy[]
      */
-    public function getStrategy()
+    public function getStrategies()
     {
-        return $this->container['strategy'];
+        return $this->container['strategies'];
     }
 
     /**
-     * Sets strategy
+     * Sets strategies
      *
-     * @param \SplititSdkClient\Model\PlanStrategy $strategy strategy
+     * @param \SplititSdkClient\Model\PlanStrategy[] $strategies strategies
      *
      * @return $this
      */
-    public function setStrategy($strategy)
+    public function setStrategies($strategies)
     {
-        $this->container['strategy'] = $strategy;
+        $this->container['strategies'] = $strategies;
 
         return $this;
     }

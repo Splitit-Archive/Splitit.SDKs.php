@@ -127,282 +127,7 @@ class InfrastructureApi
     }
 
     /**
-     * Operation infrastructureGetResources
-     *
-     * @param  \SplititSdkClient\Model\GetResourcesRequest $request request (required)
-     *
-     * @throws \SplititSdkClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \SplititSdkClient\Model\GetResourcesResponse
-     */
-    public function infrastructureGetResources($request)
-    {
-        list($response) = $this->infrastructureGetResourcesWithHttpInfo($request);
-        return $response;
-    }
-
-    /**
-     * Operation infrastructureGetResourcesWithHttpInfo
-     *
-     * @param  \SplititSdkClient\Model\GetResourcesRequest $request (required)
-     *
-     * @throws \SplititSdkClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \SplititSdkClient\Model\GetResourcesResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function infrastructureGetResourcesWithHttpInfo($request)
-    {
-        $returnType = '\SplititSdkClient\Model\GetResourcesResponse';
-        $request = $this->infrastructureGetResourcesRequest($request);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            $result = ObjectSerializer::deserialize($content, $returnType, []);
-
-            if (!$result->getResponseHeader()->getSucceeded()){
-                throw ApiException::splitit($result->getResponseHeader());
-            }
-
-            return [
-                $result,
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SplititSdkClient\Model\GetResourcesResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation infrastructureGetResourcesAsync
-     *
-     * 
-     *
-     * @param  \SplititSdkClient\Model\GetResourcesRequest $request (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function infrastructureGetResourcesAsync($request)
-    {
-        return $this->infrastructureGetResourcesAsyncWithHttpInfo($request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation infrastructureGetResourcesAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  \SplititSdkClient\Model\GetResourcesRequest $request (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function infrastructureGetResourcesAsyncWithHttpInfo($request)
-    {
-        $returnType = '\SplititSdkClient\Model\GetResourcesResponse';
-        $request = $this->infrastructureGetResourcesRequest($request);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    $result = ObjectSerializer::deserialize($content, $returnType, []);
-
-                    if (!$result->getResponseHeader()->getSucceeded()){
-                        throw ApiException::splitit($result->getResponseHeader());
-                    }
-
-                    return [
-                        $result,
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'infrastructureGetResources'
-     *
-     * @param  \SplititSdkClient\Model\GetResourcesRequest $request (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function infrastructureGetResourcesRequest($request)
-    {
-        // verify the required parameter 'request' is set
-        if ($request === null || (is_array($request) && count($request) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $request when calling infrastructureGetResources'
-            );
-        }
-
-        $resourcePath = '/api/Infrastructure/GetResources';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // body params
-        $_tempBody = null;
-        if (isset($request)) {
-            $this->injectSessionRequestHeaders($request);
-            $_tempBody = $request;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['text/plain', 'application/json', 'text/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['text/plain', 'application/json', 'text/json'],
-                ['application/json-patch+json', 'application/json', 'text/json', 'application/_*+json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
-                // \stdClass has no __toString(), so we should encode it manually
-                if ($httpBody instanceof \stdClass) {
-                    $httpBody = \GuzzleHttp\json_encode($httpBody);
-                }
-                // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation infrastructureGetResources2
+     * Operation infrastructureGetResourcesGET
      *
      * @param  string $api_key api_key (optional)
      * @param  string $session_id session_id (optional)
@@ -415,14 +140,14 @@ class InfrastructureApi
      * @throws \InvalidArgumentException
      * @return \SplititSdkClient\Model\GetResourcesResponse
      */
-    public function infrastructureGetResources2($api_key = null, $session_id = null, $merchant_code = null, $culture_name = null, $touch_point_code = null, $system_text_categories = null)
+    public function infrastructureGetResourcesGET($api_key = null, $session_id = null, $merchant_code = null, $culture_name = null, $touch_point_code = null, $system_text_categories = null)
     {
-        list($response) = $this->infrastructureGetResources2WithHttpInfo($api_key, $session_id, $merchant_code, $culture_name, $touch_point_code, $system_text_categories);
+        list($response) = $this->infrastructureGetResourcesGETWithHttpInfo($api_key, $session_id, $merchant_code, $culture_name, $touch_point_code, $system_text_categories);
         return $response;
     }
 
     /**
-     * Operation infrastructureGetResources2WithHttpInfo
+     * Operation infrastructureGetResourcesGETWithHttpInfo
      *
      * @param  string $api_key (optional)
      * @param  string $session_id (optional)
@@ -435,10 +160,10 @@ class InfrastructureApi
      * @throws \InvalidArgumentException
      * @return array of \SplititSdkClient\Model\GetResourcesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function infrastructureGetResources2WithHttpInfo($api_key = null, $session_id = null, $merchant_code = null, $culture_name = null, $touch_point_code = null, $system_text_categories = null)
+    public function infrastructureGetResourcesGETWithHttpInfo($api_key = null, $session_id = null, $merchant_code = null, $culture_name = null, $touch_point_code = null, $system_text_categories = null)
     {
         $returnType = '\SplititSdkClient\Model\GetResourcesResponse';
-        $request = $this->infrastructureGetResources2Request($api_key, $session_id, $merchant_code, $culture_name, $touch_point_code, $system_text_categories);
+        $request = $this->infrastructureGetResourcesGETRequest($api_key, $session_id, $merchant_code, $culture_name, $touch_point_code, $system_text_categories);
 
         try {
             $options = $this->createHttpClientOption();
@@ -507,7 +232,7 @@ class InfrastructureApi
     }
 
     /**
-     * Operation infrastructureGetResources2Async
+     * Operation infrastructureGetResourcesGETAsync
      *
      * 
      *
@@ -521,9 +246,9 @@ class InfrastructureApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function infrastructureGetResources2Async($api_key = null, $session_id = null, $merchant_code = null, $culture_name = null, $touch_point_code = null, $system_text_categories = null)
+    public function infrastructureGetResourcesGETAsync($api_key = null, $session_id = null, $merchant_code = null, $culture_name = null, $touch_point_code = null, $system_text_categories = null)
     {
-        return $this->infrastructureGetResources2AsyncWithHttpInfo($api_key, $session_id, $merchant_code, $culture_name, $touch_point_code, $system_text_categories)
+        return $this->infrastructureGetResourcesGETAsyncWithHttpInfo($api_key, $session_id, $merchant_code, $culture_name, $touch_point_code, $system_text_categories)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -532,7 +257,7 @@ class InfrastructureApi
     }
 
     /**
-     * Operation infrastructureGetResources2AsyncWithHttpInfo
+     * Operation infrastructureGetResourcesGETAsyncWithHttpInfo
      *
      * 
      *
@@ -546,10 +271,10 @@ class InfrastructureApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function infrastructureGetResources2AsyncWithHttpInfo($api_key = null, $session_id = null, $merchant_code = null, $culture_name = null, $touch_point_code = null, $system_text_categories = null)
+    public function infrastructureGetResourcesGETAsyncWithHttpInfo($api_key = null, $session_id = null, $merchant_code = null, $culture_name = null, $touch_point_code = null, $system_text_categories = null)
     {
         $returnType = '\SplititSdkClient\Model\GetResourcesResponse';
-        $request = $this->infrastructureGetResources2Request($api_key, $session_id, $merchant_code, $culture_name, $touch_point_code, $system_text_categories);
+        $request = $this->infrastructureGetResourcesGETRequest($api_key, $session_id, $merchant_code, $culture_name, $touch_point_code, $system_text_categories);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -596,7 +321,7 @@ class InfrastructureApi
     }
 
     /**
-     * Create request for operation 'infrastructureGetResources2'
+     * Create request for operation 'infrastructureGetResourcesGET'
      *
      * @param  string $api_key (optional)
      * @param  string $session_id (optional)
@@ -608,7 +333,7 @@ class InfrastructureApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function infrastructureGetResources2Request($api_key = null, $session_id = null, $merchant_code = null, $culture_name = null, $touch_point_code = null, $system_text_categories = null)
+    protected function infrastructureGetResourcesGETRequest($api_key = null, $session_id = null, $merchant_code = null, $culture_name = null, $touch_point_code = null, $system_text_categories = null)
     {
 
         $resourcePath = '/api/Infrastructure/GetResources';
@@ -712,6 +437,281 @@ class InfrastructureApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation infrastructureGetResourcesPOST
+     *
+     * @param  \SplititSdkClient\Model\GetResourcesRequest $request request (required)
+     *
+     * @throws \SplititSdkClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SplititSdkClient\Model\GetResourcesResponse
+     */
+    public function infrastructureGetResourcesPOST($request)
+    {
+        list($response) = $this->infrastructureGetResourcesPOSTWithHttpInfo($request);
+        return $response;
+    }
+
+    /**
+     * Operation infrastructureGetResourcesPOSTWithHttpInfo
+     *
+     * @param  \SplititSdkClient\Model\GetResourcesRequest $request (required)
+     *
+     * @throws \SplititSdkClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SplititSdkClient\Model\GetResourcesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function infrastructureGetResourcesPOSTWithHttpInfo($request)
+    {
+        $returnType = '\SplititSdkClient\Model\GetResourcesResponse';
+        $request = $this->infrastructureGetResourcesPOSTRequest($request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            $result = ObjectSerializer::deserialize($content, $returnType, []);
+
+            if (!$result->getResponseHeader()->getSucceeded()){
+                throw ApiException::splitit($result->getResponseHeader());
+            }
+
+            return [
+                $result,
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SplititSdkClient\Model\GetResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation infrastructureGetResourcesPOSTAsync
+     *
+     * 
+     *
+     * @param  \SplititSdkClient\Model\GetResourcesRequest $request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function infrastructureGetResourcesPOSTAsync($request)
+    {
+        return $this->infrastructureGetResourcesPOSTAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation infrastructureGetResourcesPOSTAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \SplititSdkClient\Model\GetResourcesRequest $request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function infrastructureGetResourcesPOSTAsyncWithHttpInfo($request)
+    {
+        $returnType = '\SplititSdkClient\Model\GetResourcesResponse';
+        $request = $this->infrastructureGetResourcesPOSTRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    $result = ObjectSerializer::deserialize($content, $returnType, []);
+
+                    if (!$result->getResponseHeader()->getSucceeded()){
+                        throw ApiException::splitit($result->getResponseHeader());
+                    }
+
+                    return [
+                        $result,
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'infrastructureGetResourcesPOST'
+     *
+     * @param  \SplititSdkClient\Model\GetResourcesRequest $request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function infrastructureGetResourcesPOSTRequest($request)
+    {
+        // verify the required parameter 'request' is set
+        if ($request === null || (is_array($request) && count($request) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $request when calling infrastructureGetResourcesPOST'
+            );
+        }
+
+        $resourcePath = '/api/Infrastructure/GetResources';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($request)) {
+            $this->injectSessionRequestHeaders($request);
+            $_tempBody = $request;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['text/plain', 'application/json', 'text/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['text/plain', 'application/json', 'text/json'],
+                ['application/json-patch+json', 'application/json', 'text/json', 'application/_*+json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

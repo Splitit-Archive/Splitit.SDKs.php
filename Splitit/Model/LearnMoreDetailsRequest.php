@@ -58,7 +58,8 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'amount' => '\SplititSdkClient\Model\MoneyWithCurrencyCode',
-        'number_of_installments' => 'int'
+        'number_of_installments' => 'int',
+        'installment_plan_number' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'amount' => null,
-        'number_of_installments' => 'int32'
+        'number_of_installments' => 'int32',
+        'installment_plan_number' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'amount' => 'Amount',
-        'number_of_installments' => 'NumberOfInstallments'
+        'number_of_installments' => 'NumberOfInstallments',
+        'installment_plan_number' => 'InstallmentPlanNumber'
     ];
 
     /**
@@ -109,7 +112,8 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'amount' => 'setAmount',
-        'number_of_installments' => 'setNumberOfInstallments'
+        'number_of_installments' => 'setNumberOfInstallments',
+        'installment_plan_number' => 'setInstallmentPlanNumber'
     ];
 
     /**
@@ -119,7 +123,8 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'amount' => 'getAmount',
-        'number_of_installments' => 'getNumberOfInstallments'
+        'number_of_installments' => 'getNumberOfInstallments',
+        'installment_plan_number' => 'getInstallmentPlanNumber'
     ];
 
     /**
@@ -184,6 +189,7 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
     {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['number_of_installments'] = isset($data['number_of_installments']) ? $data['number_of_installments'] : null;
+        $this->container['installment_plan_number'] = isset($data['installment_plan_number']) ? $data['installment_plan_number'] : null;
     }
 
     /**
@@ -254,6 +260,30 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
     public function setNumberOfInstallments($number_of_installments)
     {
         $this->container['number_of_installments'] = $number_of_installments;
+
+        return $this;
+    }
+
+    /**
+     * Gets installment_plan_number
+     *
+     * @return string
+     */
+    public function getInstallmentPlanNumber()
+    {
+        return $this->container['installment_plan_number'];
+    }
+
+    /**
+     * Sets installment_plan_number
+     *
+     * @param string $installment_plan_number installment_plan_number
+     *
+     * @return $this
+     */
+    public function setInstallmentPlanNumber($installment_plan_number)
+    {
+        $this->container['installment_plan_number'] = $installment_plan_number;
 
         return $this;
     }

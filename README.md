@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.6.10
+- Package version: 1.6.11
 
 ## Requirements
 
@@ -17,7 +17,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "splitit/sdk": "^1.6.10"
+    "splitit/sdk": "^1.6.11"
   }
 }
 ```
@@ -199,8 +199,8 @@ All URIs are relative to *https://webapi.production.splitit.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *InfoApi* | [**infoGetLearnMoreDetails**](docs/Api/InfoApi.md#infogetlearnmoredetails) | **POST** /api/Merchant/GetLearnMoreDetails | 
-*InfrastructureApi* | [**infrastructureGetResources**](docs/Api/InfrastructureApi.md#infrastructuregetresources) | **POST** /api/Infrastructure/GetResources | 
-*InfrastructureApi* | [**infrastructureGetResources2**](docs/Api/InfrastructureApi.md#infrastructuregetresources2) | **GET** /api/Infrastructure/GetResources | 
+*InfrastructureApi* | [**infrastructureGetResourcesGET**](docs/Api/InfrastructureApi.md#infrastructuregetresourcesget) | **GET** /api/Infrastructure/GetResources | 
+*InfrastructureApi* | [**infrastructureGetResourcesPOST**](docs/Api/InfrastructureApi.md#infrastructuregetresourcespost) | **POST** /api/Infrastructure/GetResources | 
 *InstallmentPlanApi* | [**installmentPlanApprove**](docs/Api/InstallmentPlanApi.md#installmentplanapprove) | **POST** /api/InstallmentPlan/Approve | 
 *InstallmentPlanApi* | [**installmentPlanCancel**](docs/Api/InstallmentPlanApi.md#installmentplancancel) | **POST** /api/InstallmentPlan/Cancel | 
 *InstallmentPlanApi* | [**installmentPlanChargeBack**](docs/Api/InstallmentPlanApi.md#installmentplanchargeback) | **POST** /api/InstallmentPlan/ChargeBack | 

@@ -88,7 +88,9 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'logo_url' => 'string',
         'is_in_auto_retry' => 'bool',
         'payment_method' => 'string',
-        'allow_card_update_on_splitit_portals' => 'bool'
+        'allow_card_update_on_splitit_portals' => 'bool',
+        'on_hold_last_open_date' => '\DateTime',
+        'on_hold_last_open_user_id' => 'string'
     ];
 
     /**
@@ -128,7 +130,9 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'logo_url' => null,
         'is_in_auto_retry' => null,
         'payment_method' => null,
-        'allow_card_update_on_splitit_portals' => null
+        'allow_card_update_on_splitit_portals' => null,
+        'on_hold_last_open_date' => 'date-time',
+        'on_hold_last_open_user_id' => null
     ];
 
     /**
@@ -189,7 +193,9 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'logo_url' => 'LogoUrl',
         'is_in_auto_retry' => 'IsInAutoRetry',
         'payment_method' => 'PaymentMethod',
-        'allow_card_update_on_splitit_portals' => 'AllowCardUpdateOnSplititPortals'
+        'allow_card_update_on_splitit_portals' => 'AllowCardUpdateOnSplititPortals',
+        'on_hold_last_open_date' => 'OnHoldLastOpenDate',
+        'on_hold_last_open_user_id' => 'OnHoldLastOpenUserId'
     ];
 
     /**
@@ -229,7 +235,9 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'logo_url' => 'setLogoUrl',
         'is_in_auto_retry' => 'setIsInAutoRetry',
         'payment_method' => 'setPaymentMethod',
-        'allow_card_update_on_splitit_portals' => 'setAllowCardUpdateOnSplititPortals'
+        'allow_card_update_on_splitit_portals' => 'setAllowCardUpdateOnSplititPortals',
+        'on_hold_last_open_date' => 'setOnHoldLastOpenDate',
+        'on_hold_last_open_user_id' => 'setOnHoldLastOpenUserId'
     ];
 
     /**
@@ -269,7 +277,9 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         'logo_url' => 'getLogoUrl',
         'is_in_auto_retry' => 'getIsInAutoRetry',
         'payment_method' => 'getPaymentMethod',
-        'allow_card_update_on_splitit_portals' => 'getAllowCardUpdateOnSplititPortals'
+        'allow_card_update_on_splitit_portals' => 'getAllowCardUpdateOnSplititPortals',
+        'on_hold_last_open_date' => 'getOnHoldLastOpenDate',
+        'on_hold_last_open_user_id' => 'getOnHoldLastOpenUserId'
     ];
 
     /**
@@ -364,6 +374,8 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
         $this->container['is_in_auto_retry'] = isset($data['is_in_auto_retry']) ? $data['is_in_auto_retry'] : null;
         $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
         $this->container['allow_card_update_on_splitit_portals'] = isset($data['allow_card_update_on_splitit_portals']) ? $data['allow_card_update_on_splitit_portals'] : null;
+        $this->container['on_hold_last_open_date'] = isset($data['on_hold_last_open_date']) ? $data['on_hold_last_open_date'] : null;
+        $this->container['on_hold_last_open_user_id'] = isset($data['on_hold_last_open_user_id']) ? $data['on_hold_last_open_user_id'] : null;
     }
 
     /**
@@ -1190,6 +1202,54 @@ class InstallmentPlan implements ModelInterface, ArrayAccess
     public function setAllowCardUpdateOnSplititPortals($allow_card_update_on_splitit_portals)
     {
         $this->container['allow_card_update_on_splitit_portals'] = $allow_card_update_on_splitit_portals;
+
+        return $this;
+    }
+
+    /**
+     * Gets on_hold_last_open_date
+     *
+     * @return \DateTime
+     */
+    public function getOnHoldLastOpenDate()
+    {
+        return $this->container['on_hold_last_open_date'];
+    }
+
+    /**
+     * Sets on_hold_last_open_date
+     *
+     * @param \DateTime $on_hold_last_open_date on_hold_last_open_date
+     *
+     * @return $this
+     */
+    public function setOnHoldLastOpenDate($on_hold_last_open_date)
+    {
+        $this->container['on_hold_last_open_date'] = $on_hold_last_open_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets on_hold_last_open_user_id
+     *
+     * @return string
+     */
+    public function getOnHoldLastOpenUserId()
+    {
+        return $this->container['on_hold_last_open_user_id'];
+    }
+
+    /**
+     * Sets on_hold_last_open_user_id
+     *
+     * @param string $on_hold_last_open_user_id on_hold_last_open_user_id
+     *
+     * @return $this
+     */
+    public function setOnHoldLastOpenUserId($on_hold_last_open_user_id)
+    {
+        $this->container['on_hold_last_open_user_id'] = $on_hold_last_open_user_id;
 
         return $this;
     }

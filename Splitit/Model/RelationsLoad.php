@@ -58,7 +58,8 @@ class RelationsLoad implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'installments' => '\SplititSdkClient\Model\InstallmentPlanActivityStatus',
-        'secure_authorizations' => '\SplititSdkClient\Model\InstallmentPlanActivityStatus'
+        'secure_authorizations' => '\SplititSdkClient\Model\InstallmentPlanActivityStatus',
+        'disputes' => 'bool'
     ];
 
     /**
@@ -68,7 +69,8 @@ class RelationsLoad implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'installments' => null,
-        'secure_authorizations' => null
+        'secure_authorizations' => null,
+        'disputes' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class RelationsLoad implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'installments' => 'Installments',
-        'secure_authorizations' => 'SecureAuthorizations'
+        'secure_authorizations' => 'SecureAuthorizations',
+        'disputes' => 'Disputes'
     ];
 
     /**
@@ -109,7 +112,8 @@ class RelationsLoad implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'installments' => 'setInstallments',
-        'secure_authorizations' => 'setSecureAuthorizations'
+        'secure_authorizations' => 'setSecureAuthorizations',
+        'disputes' => 'setDisputes'
     ];
 
     /**
@@ -119,7 +123,8 @@ class RelationsLoad implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'installments' => 'getInstallments',
-        'secure_authorizations' => 'getSecureAuthorizations'
+        'secure_authorizations' => 'getSecureAuthorizations',
+        'disputes' => 'getDisputes'
     ];
 
     /**
@@ -184,6 +189,7 @@ class RelationsLoad implements ModelInterface, ArrayAccess
     {
         $this->container['installments'] = isset($data['installments']) ? $data['installments'] : null;
         $this->container['secure_authorizations'] = isset($data['secure_authorizations']) ? $data['secure_authorizations'] : null;
+        $this->container['disputes'] = isset($data['disputes']) ? $data['disputes'] : null;
     }
 
     /**
@@ -200,6 +206,9 @@ class RelationsLoad implements ModelInterface, ArrayAccess
         }
         if ($this->container['secure_authorizations'] === null) {
             $invalidProperties[] = "'secure_authorizations' can't be null";
+        }
+        if ($this->container['disputes'] === null) {
+            $invalidProperties[] = "'disputes' can't be null";
         }
         return $invalidProperties;
     }
@@ -260,6 +269,30 @@ class RelationsLoad implements ModelInterface, ArrayAccess
     public function setSecureAuthorizations($secure_authorizations)
     {
         $this->container['secure_authorizations'] = $secure_authorizations;
+
+        return $this;
+    }
+
+    /**
+     * Gets disputes
+     *
+     * @return bool
+     */
+    public function getDisputes()
+    {
+        return $this->container['disputes'];
+    }
+
+    /**
+     * Sets disputes
+     *
+     * @param bool $disputes disputes
+     *
+     * @return $this
+     */
+    public function setDisputes($disputes)
+    {
+        $this->container['disputes'] = $disputes;
 
         return $this;
     }

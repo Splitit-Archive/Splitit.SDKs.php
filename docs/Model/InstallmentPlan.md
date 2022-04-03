@@ -35,6 +35,8 @@ Name | Type | Description | Notes
 **is_in_auto_retry** | **bool** |  | 
 **payment_method** | **string** |  | [optional] 
 **allow_card_update_on_splitit_portals** | **bool** |  | 
+**on_hold_last_open_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**on_hold_last_open_user_id** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

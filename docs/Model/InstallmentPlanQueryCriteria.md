@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchant_id** | **int** |  | 
 **currency_id** | **int** |  | 
+**business_unit_ids** | **int[]** |  | [optional] 
 **installment_plan_id** | **int** |  | 
 **installment_plan_number** | **string** |  | [optional] 
 **ref_order_number** | **string** |  | [optional] 
@@ -16,9 +17,10 @@ Name | Type | Description | Notes
 **pis_member_id** | **int** |  | 
 **any_filter** | **string** |  | [optional] 
 **eula** | **bool** |  | 
+**are_payments_on_hold** | **bool** |  | [optional] 
 **show_chargeback_plans** | **bool** |  | 
 **is_in_auto_retry** | **bool** |  | [optional] 
-**strategy** | [**\SplititSdkClient\Model\PlanStrategy**](PlanStrategy.md) |  | [optional] 
+**strategies** | [**\SplititSdkClient\Model\PlanStrategy[]**](PlanStrategy.md) |  | [optional] 
 **initiated_statuses** | [**\SplititSdkClient\Model\InstallmentPlanInitiatedStatuses**](InstallmentPlanInitiatedStatuses.md) |  | [optional] 
 **fraud_check_result** | [**\SplititSdkClient\Model\FraudCheckResult**](FraudCheckResult.md) |  | [optional] 
 **installments_plan_statuses** | [**\SplititSdkClient\Model\InstallmentPlanStatus[]**](InstallmentPlanStatus.md) |  | [optional] 
