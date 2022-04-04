@@ -1,6 +1,6 @@
 {
     "name": "splitit/sdk",
-    "version": "1.6.11",
+    "version": "1.6.2",
     "description": "Splitit Web API SDK for PHP",
     "keywords": [
         "splitit",
