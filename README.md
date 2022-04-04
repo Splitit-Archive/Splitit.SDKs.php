@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.7.0
+- Package version: 1.6.14
 
 ## Requirements
 
@@ -14,13 +14,27 @@ PHP 5.5 and later
 
 To install the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:
 
+- PHP 5.5+, PHP 7.x
+
 ```
 {
   "require": {
-    "splitit/sdk": "^1.7.0"
+    "splitit/sdk": "1.6.*"
   }
 }
 ```
+
+- PHP 8.x
+
+```
+{
+  "require": {
+    "splitit/sdk": "1.7.*"
+  }
+}
+```
+
+
 
 Then run `composer install`.
 

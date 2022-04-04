@@ -537,7 +537,7 @@ class GetInitiatedUpdatePaymentDataResponse implements ModelInterface, ArrayAcce
      *
      * @return boolean
      */
-    public function offsetExists($offset): bool
+    public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
     }
@@ -549,7 +549,7 @@ class GetInitiatedUpdatePaymentDataResponse implements ModelInterface, ArrayAcce
      *
      * @return mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
@@ -562,7 +562,7 @@ class GetInitiatedUpdatePaymentDataResponse implements ModelInterface, ArrayAcce
      *
      * @return void
      */
-    public function offsetSet($offset, $value): void
+    public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -578,7 +578,7 @@ class GetInitiatedUpdatePaymentDataResponse implements ModelInterface, ArrayAcce
      *
      * @return void
      */
-    public function offsetUnset($offset): void
+    public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
     }
@@ -600,4 +600,5 @@ class GetInitiatedUpdatePaymentDataResponse implements ModelInterface, ArrayAcce
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
 

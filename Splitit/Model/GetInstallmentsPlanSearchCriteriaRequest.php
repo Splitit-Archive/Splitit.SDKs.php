@@ -294,7 +294,7 @@ class GetInstallmentsPlanSearchCriteriaRequest implements ModelInterface, ArrayA
      *
      * @return boolean
      */
-    public function offsetExists($offset): bool
+    public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
     }
@@ -306,7 +306,7 @@ class GetInstallmentsPlanSearchCriteriaRequest implements ModelInterface, ArrayA
      *
      * @return mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
@@ -319,7 +319,7 @@ class GetInstallmentsPlanSearchCriteriaRequest implements ModelInterface, ArrayA
      *
      * @return void
      */
-    public function offsetSet($offset, $value): void
+    public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -335,7 +335,7 @@ class GetInstallmentsPlanSearchCriteriaRequest implements ModelInterface, ArrayA
      *
      * @return void
      */
-    public function offsetUnset($offset): void
+    public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
     }
@@ -357,4 +357,5 @@ class GetInstallmentsPlanSearchCriteriaRequest implements ModelInterface, ArrayA
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
 
