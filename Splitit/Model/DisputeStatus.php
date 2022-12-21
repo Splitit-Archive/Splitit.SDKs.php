@@ -49,6 +49,7 @@ class DisputeStatus
     const LOST = 'Lost';
     const CLOSED = 'Closed';
     const OTHER = 'Other';
+    const PENDING = 'Pending';
     
     /**
      * Gets allowable values of the enum
@@ -62,6 +63,7 @@ class DisputeStatus
             self::LOST,
             self::CLOSED,
             self::OTHER,
+            self::PENDING,
         ];
     }
 }

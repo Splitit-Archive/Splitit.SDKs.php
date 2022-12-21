@@ -58,8 +58,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'merchant_id' => 'int',
-        'currency_id' => 'int',
         'currency_code' => 'string',
+        'currency_id' => 'int',
         'business_unit_ids' => 'int[]',
         'installment_plan_id' => 'int',
         'installment_plan_number' => 'string',
@@ -93,8 +93,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'merchant_id' => 'int64',
-        'currency_id' => 'int64',
         'currency_code' => null,
+        'currency_id' => 'int32',
         'business_unit_ids' => 'int64',
         'installment_plan_id' => 'int64',
         'installment_plan_number' => null,
@@ -149,8 +149,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'merchant_id' => 'MerchantId',
-        'currency_id' => 'CurrencyId',
         'currency_code' => 'CurrencyCode',
+        'currency_id' => 'CurrencyId',
         'business_unit_ids' => 'BusinessUnitIds',
         'installment_plan_id' => 'InstallmentPlanId',
         'installment_plan_number' => 'InstallmentPlanNumber',
@@ -184,8 +184,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'merchant_id' => 'setMerchantId',
-        'currency_id' => 'setCurrencyId',
         'currency_code' => 'setCurrencyCode',
+        'currency_id' => 'setCurrencyId',
         'business_unit_ids' => 'setBusinessUnitIds',
         'installment_plan_id' => 'setInstallmentPlanId',
         'installment_plan_number' => 'setInstallmentPlanNumber',
@@ -219,8 +219,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'merchant_id' => 'getMerchantId',
-        'currency_id' => 'getCurrencyId',
         'currency_code' => 'getCurrencyCode',
+        'currency_id' => 'getCurrencyId',
         'business_unit_ids' => 'getBusinessUnitIds',
         'installment_plan_id' => 'getInstallmentPlanId',
         'installment_plan_number' => 'getInstallmentPlanNumber',
@@ -308,8 +308,8 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['merchant_id'] = isset($data['merchant_id']) ? $data['merchant_id'] : null;
-        $this->container['currency_id'] = isset($data['currency_id']) ? $data['currency_id'] : null;
         $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
+        $this->container['currency_id'] = isset($data['currency_id']) ? $data['currency_id'] : null;
         $this->container['business_unit_ids'] = isset($data['business_unit_ids']) ? $data['business_unit_ids'] : null;
         $this->container['installment_plan_id'] = isset($data['installment_plan_id']) ? $data['installment_plan_id'] : null;
         $this->container['installment_plan_number'] = isset($data['installment_plan_number']) ? $data['installment_plan_number'] : null;
@@ -406,30 +406,6 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets currency_id
-     *
-     * @return int
-     */
-    public function getCurrencyId()
-    {
-        return $this->container['currency_id'];
-    }
-
-    /**
-     * Sets currency_id
-     *
-     * @param int $currency_id currency_id
-     *
-     * @return $this
-     */
-    public function setCurrencyId($currency_id)
-    {
-        $this->container['currency_id'] = $currency_id;
-
-        return $this;
-    }
-
-    /**
      * Gets currency_code
      *
      * @return string
@@ -449,6 +425,30 @@ class InstallmentPlanQueryCriteria implements ModelInterface, ArrayAccess
     public function setCurrencyCode($currency_code)
     {
         $this->container['currency_code'] = $currency_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency_id
+     *
+     * @return int
+     */
+    public function getCurrencyId()
+    {
+        return $this->container['currency_id'];
+    }
+
+    /**
+     * Sets currency_id
+     *
+     * @param int $currency_id currency_id
+     *
+     * @return $this
+     */
+    public function setCurrencyId($currency_id)
+    {
+        $this->container['currency_id'] = $currency_id;
 
         return $this;
     }

@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchant_id** | **int** |  | 
-**currency_id** | **int** |  | 
 **currency_code** | **string** |  | [optional] 
+**currency_id** | **int** |  | 
 **business_unit_ids** | **int[]** |  | [optional] 
 **installment_plan_id** | **int** |  | 
 **installment_plan_number** | **string** |  | [optional] 

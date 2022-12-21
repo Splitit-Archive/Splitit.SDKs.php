@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **result_message_message_text** | **string** |  | [optional] 
 **type** | [**\SplititSdkClient\Model\OperationType**](OperationType.md) |  | 
 **reference_payment_gateway_transaction_log_id** | **string** |  | [optional] 
+**idempotency_key** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

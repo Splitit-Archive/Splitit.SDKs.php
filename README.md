@@ -3,7 +3,7 @@
 This is Splitit Web API SDK source code for PHP 5.5+ applications. For other languages, please visit [Splitit.SDKs](https://github.com/Splitit/Splitit.SDKs).
 
 - API version: 1.0.0
-- Package version: 1.8.0
+- Package version: 1.6.10
 
 ## Requirements
 
@@ -278,7 +278,7 @@ Class | Method | HTTP request | Description
  - [InstallmentPlanStatus](docs/Model/InstallmentPlanStatus.md)
  - [InstallmentsPlanDateType](docs/Model/InstallmentsPlanDateType.md)
  - [ItemData](docs/Model/ItemData.md)
- - [LearnMoreDetailsRequest](docs/Model/LearnMoreDetailsRequest.md)
+ - [LearnMoreDetailCommonRequest](docs/Model/LearnMoreDetailCommonRequest.md)
  - [LearnMoreDetailsResponse](docs/Model/LearnMoreDetailsResponse.md)
  - [LoginRequest](docs/Model/LoginRequest.md)
  - [LoginResponse](docs/Model/LoginResponse.md)
@@ -337,6 +337,7 @@ Class | Method | HTTP request | Description
  - [Currency](docs/Model/Currency.md)
  - [GetInstallmentsPlanExtendedResponse](docs/Model/GetInstallmentsPlanExtendedResponse.md)
  - [InitiateInstallmentsPlanResponse](docs/Model/InitiateInstallmentsPlanResponse.md)
+ - [LearnMoreDetailsRequest](docs/Model/LearnMoreDetailsRequest.md)
  - [MerchantRef](docs/Model/MerchantRef.md)
  - [PaymentWizardDataResponse](docs/Model/PaymentWizardDataResponse.md)
  - [RefundInstallmentPlanResponse](docs/Model/RefundInstallmentPlanResponse.md)

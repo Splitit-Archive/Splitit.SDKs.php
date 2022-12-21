@@ -77,7 +77,8 @@ class PgtlDto implements ModelInterface, ArrayAccess
         'result_message_message_code' => 'string',
         'result_message_message_text' => 'string',
         'type' => '\SplititSdkClient\Model\OperationType',
-        'reference_payment_gateway_transaction_log_id' => 'string'
+        'reference_payment_gateway_transaction_log_id' => 'string',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -106,7 +107,8 @@ class PgtlDto implements ModelInterface, ArrayAccess
         'result_message_message_code' => null,
         'result_message_message_text' => null,
         'type' => null,
-        'reference_payment_gateway_transaction_log_id' => null
+        'reference_payment_gateway_transaction_log_id' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -156,7 +158,8 @@ class PgtlDto implements ModelInterface, ArrayAccess
         'result_message_message_code' => 'ResultMessageMessageCode',
         'result_message_message_text' => 'ResultMessageMessageText',
         'type' => 'Type',
-        'reference_payment_gateway_transaction_log_id' => 'ReferencePaymentGatewayTransactionLogId'
+        'reference_payment_gateway_transaction_log_id' => 'ReferencePaymentGatewayTransactionLogId',
+        'idempotency_key' => 'IdempotencyKey'
     ];
 
     /**
@@ -185,7 +188,8 @@ class PgtlDto implements ModelInterface, ArrayAccess
         'result_message_message_code' => 'setResultMessageMessageCode',
         'result_message_message_text' => 'setResultMessageMessageText',
         'type' => 'setType',
-        'reference_payment_gateway_transaction_log_id' => 'setReferencePaymentGatewayTransactionLogId'
+        'reference_payment_gateway_transaction_log_id' => 'setReferencePaymentGatewayTransactionLogId',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -214,7 +218,8 @@ class PgtlDto implements ModelInterface, ArrayAccess
         'result_message_message_code' => 'getResultMessageMessageCode',
         'result_message_message_text' => 'getResultMessageMessageText',
         'type' => 'getType',
-        'reference_payment_gateway_transaction_log_id' => 'getReferencePaymentGatewayTransactionLogId'
+        'reference_payment_gateway_transaction_log_id' => 'getReferencePaymentGatewayTransactionLogId',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -298,6 +303,7 @@ class PgtlDto implements ModelInterface, ArrayAccess
         $this->container['result_message_message_text'] = isset($data['result_message_message_text']) ? $data['result_message_message_text'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['reference_payment_gateway_transaction_log_id'] = isset($data['reference_payment_gateway_transaction_log_id']) ? $data['reference_payment_gateway_transaction_log_id'] : null;
+        $this->container['idempotency_key'] = isset($data['idempotency_key']) ? $data['idempotency_key'] : null;
     }
 
     /**
@@ -842,6 +848,30 @@ class PgtlDto implements ModelInterface, ArrayAccess
     public function setReferencePaymentGatewayTransactionLogId($reference_payment_gateway_transaction_log_id)
     {
         $this->container['reference_payment_gateway_transaction_log_id'] = $reference_payment_gateway_transaction_log_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string $idempotency_key idempotency_key
+     *
+     * @return $this
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

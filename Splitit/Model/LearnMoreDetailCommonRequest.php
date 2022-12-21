@@ -1,6 +1,6 @@
 <?php
 /**
- * LearnMoreDetailsRequest
+ * LearnMoreDetailCommonRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \SplititSdkClient\ObjectSerializer;
 
 /**
- * LearnMoreDetailsRequest Class Doc Comment
+ * LearnMoreDetailCommonRequest Class Doc Comment
  *
  * @category Class
  * @package  SplititSdkClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
+class LearnMoreDetailCommonRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LearnMoreDetailsRequest';
+    protected static $swaggerModelName = 'LearnMoreDetailCommonRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,7 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'amount' => '\SplititSdkClient\Model\MoneyWithCurrencyCode',
-        'installment_plan_number' => 'string',
-        'number_of_installments' => 'int'
+        'installment_plan_number' => 'string'
     ];
 
     /**
@@ -69,8 +68,7 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'amount' => null,
-        'installment_plan_number' => null,
-        'number_of_installments' => 'int64'
+        'installment_plan_number' => null
     ];
 
     /**
@@ -101,8 +99,7 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'amount' => 'Amount',
-        'installment_plan_number' => 'InstallmentPlanNumber',
-        'number_of_installments' => 'NumberOfInstallments'
+        'installment_plan_number' => 'InstallmentPlanNumber'
     ];
 
     /**
@@ -112,8 +109,7 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'amount' => 'setAmount',
-        'installment_plan_number' => 'setInstallmentPlanNumber',
-        'number_of_installments' => 'setNumberOfInstallments'
+        'installment_plan_number' => 'setInstallmentPlanNumber'
     ];
 
     /**
@@ -123,8 +119,7 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'amount' => 'getAmount',
-        'installment_plan_number' => 'getInstallmentPlanNumber',
-        'number_of_installments' => 'getNumberOfInstallments'
+        'installment_plan_number' => 'getInstallmentPlanNumber'
     ];
 
     /**
@@ -189,7 +184,6 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
     {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['installment_plan_number'] = isset($data['installment_plan_number']) ? $data['installment_plan_number'] : null;
-        $this->container['number_of_installments'] = isset($data['number_of_installments']) ? $data['number_of_installments'] : null;
     }
 
     /**
@@ -260,30 +254,6 @@ class LearnMoreDetailsRequest implements ModelInterface, ArrayAccess
     public function setInstallmentPlanNumber($installment_plan_number)
     {
         $this->container['installment_plan_number'] = $installment_plan_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets number_of_installments
-     *
-     * @return int
-     */
-    public function getNumberOfInstallments()
-    {
-        return $this->container['number_of_installments'];
-    }
-
-    /**
-     * Sets number_of_installments
-     *
-     * @param int $number_of_installments number_of_installments
-     *
-     * @return $this
-     */
-    public function setNumberOfInstallments($number_of_installments)
-    {
-        $this->container['number_of_installments'] = $number_of_installments;
 
         return $this;
     }

@@ -62,9 +62,12 @@ class LearnMoreDetailsResponse implements ModelInterface, ArrayAccess
         'supports_debit_card' => 'bool',
         'show_secure_strategy_info' => 'bool',
         'show_non_secure_strategy_info' => 'bool',
+        'isfortnightly' => 'bool',
+        'is_white_label' => 'bool',
         'total' => '\SplititSdkClient\Model\MoneyWithCurrencyCode',
         'installments' => '\SplititSdkClient\Model\Installment2[]',
-        'number_of_installments' => 'int'
+        'number_of_installments' => 'int',
+        'plan_strategy' => '\SplititSdkClient\Model\PlanStrategy'
     ];
 
     /**
@@ -78,9 +81,12 @@ class LearnMoreDetailsResponse implements ModelInterface, ArrayAccess
         'supports_debit_card' => null,
         'show_secure_strategy_info' => null,
         'show_non_secure_strategy_info' => null,
+        'isfortnightly' => null,
+        'is_white_label' => null,
         'total' => null,
         'installments' => null,
-        'number_of_installments' => 'int32'
+        'number_of_installments' => 'int32',
+        'plan_strategy' => null
     ];
 
     /**
@@ -115,9 +121,12 @@ class LearnMoreDetailsResponse implements ModelInterface, ArrayAccess
         'supports_debit_card' => 'SupportsDebitCard',
         'show_secure_strategy_info' => 'ShowSecureStrategyInfo',
         'show_non_secure_strategy_info' => 'ShowNonSecureStrategyInfo',
+        'isfortnightly' => 'Isfortnightly',
+        'is_white_label' => 'IsWhiteLabel',
         'total' => 'Total',
         'installments' => 'Installments',
-        'number_of_installments' => 'NumberOfInstallments'
+        'number_of_installments' => 'NumberOfInstallments',
+        'plan_strategy' => 'PlanStrategy'
     ];
 
     /**
@@ -131,9 +140,12 @@ class LearnMoreDetailsResponse implements ModelInterface, ArrayAccess
         'supports_debit_card' => 'setSupportsDebitCard',
         'show_secure_strategy_info' => 'setShowSecureStrategyInfo',
         'show_non_secure_strategy_info' => 'setShowNonSecureStrategyInfo',
+        'isfortnightly' => 'setIsfortnightly',
+        'is_white_label' => 'setIsWhiteLabel',
         'total' => 'setTotal',
         'installments' => 'setInstallments',
-        'number_of_installments' => 'setNumberOfInstallments'
+        'number_of_installments' => 'setNumberOfInstallments',
+        'plan_strategy' => 'setPlanStrategy'
     ];
 
     /**
@@ -147,9 +159,12 @@ class LearnMoreDetailsResponse implements ModelInterface, ArrayAccess
         'supports_debit_card' => 'getSupportsDebitCard',
         'show_secure_strategy_info' => 'getShowSecureStrategyInfo',
         'show_non_secure_strategy_info' => 'getShowNonSecureStrategyInfo',
+        'isfortnightly' => 'getIsfortnightly',
+        'is_white_label' => 'getIsWhiteLabel',
         'total' => 'getTotal',
         'installments' => 'getInstallments',
-        'number_of_installments' => 'getNumberOfInstallments'
+        'number_of_installments' => 'getNumberOfInstallments',
+        'plan_strategy' => 'getPlanStrategy'
     ];
 
     /**
@@ -217,9 +232,12 @@ class LearnMoreDetailsResponse implements ModelInterface, ArrayAccess
         $this->container['supports_debit_card'] = isset($data['supports_debit_card']) ? $data['supports_debit_card'] : null;
         $this->container['show_secure_strategy_info'] = isset($data['show_secure_strategy_info']) ? $data['show_secure_strategy_info'] : null;
         $this->container['show_non_secure_strategy_info'] = isset($data['show_non_secure_strategy_info']) ? $data['show_non_secure_strategy_info'] : null;
+        $this->container['isfortnightly'] = isset($data['isfortnightly']) ? $data['isfortnightly'] : null;
+        $this->container['is_white_label'] = isset($data['is_white_label']) ? $data['is_white_label'] : null;
         $this->container['total'] = isset($data['total']) ? $data['total'] : null;
         $this->container['installments'] = isset($data['installments']) ? $data['installments'] : null;
         $this->container['number_of_installments'] = isset($data['number_of_installments']) ? $data['number_of_installments'] : null;
+        $this->container['plan_strategy'] = isset($data['plan_strategy']) ? $data['plan_strategy'] : null;
     }
 
     /**
@@ -242,6 +260,12 @@ class LearnMoreDetailsResponse implements ModelInterface, ArrayAccess
         }
         if ($this->container['show_non_secure_strategy_info'] === null) {
             $invalidProperties[] = "'show_non_secure_strategy_info' can't be null";
+        }
+        if ($this->container['isfortnightly'] === null) {
+            $invalidProperties[] = "'isfortnightly' can't be null";
+        }
+        if ($this->container['is_white_label'] === null) {
+            $invalidProperties[] = "'is_white_label' can't be null";
         }
         if ($this->container['number_of_installments'] === null) {
             $invalidProperties[] = "'number_of_installments' can't be null";
@@ -382,6 +406,54 @@ class LearnMoreDetailsResponse implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets isfortnightly
+     *
+     * @return bool
+     */
+    public function getIsfortnightly()
+    {
+        return $this->container['isfortnightly'];
+    }
+
+    /**
+     * Sets isfortnightly
+     *
+     * @param bool $isfortnightly isfortnightly
+     *
+     * @return $this
+     */
+    public function setIsfortnightly($isfortnightly)
+    {
+        $this->container['isfortnightly'] = $isfortnightly;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_white_label
+     *
+     * @return bool
+     */
+    public function getIsWhiteLabel()
+    {
+        return $this->container['is_white_label'];
+    }
+
+    /**
+     * Sets is_white_label
+     *
+     * @param bool $is_white_label is_white_label
+     *
+     * @return $this
+     */
+    public function setIsWhiteLabel($is_white_label)
+    {
+        $this->container['is_white_label'] = $is_white_label;
+
+        return $this;
+    }
+
+    /**
      * Gets total
      *
      * @return \SplititSdkClient\Model\MoneyWithCurrencyCode
@@ -449,6 +521,30 @@ class LearnMoreDetailsResponse implements ModelInterface, ArrayAccess
     public function setNumberOfInstallments($number_of_installments)
     {
         $this->container['number_of_installments'] = $number_of_installments;
+
+        return $this;
+    }
+
+    /**
+     * Gets plan_strategy
+     *
+     * @return \SplititSdkClient\Model\PlanStrategy
+     */
+    public function getPlanStrategy()
+    {
+        return $this->container['plan_strategy'];
+    }
+
+    /**
+     * Sets plan_strategy
+     *
+     * @param \SplititSdkClient\Model\PlanStrategy $plan_strategy plan_strategy
+     *
+     * @return $this
+     */
+    public function setPlanStrategy($plan_strategy)
+    {
+        $this->container['plan_strategy'] = $plan_strategy;
 
         return $this;
     }

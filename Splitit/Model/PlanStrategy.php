@@ -55,6 +55,7 @@ class PlanStrategy
     const SECURED_PLAN2_A = 'SecuredPlan2A';
     const SECURED_PLAN2 = 'SecuredPlan2';
     const SECURED_PLAN4 = 'SecuredPlan4';
+    const SECURED_PLAN4_A = 'SecuredPlan4A';
     
     /**
      * Gets allowable values of the enum
@@ -74,6 +75,7 @@ class PlanStrategy
             self::SECURED_PLAN2_A,
             self::SECURED_PLAN2,
             self::SECURED_PLAN4,
+            self::SECURED_PLAN4_A,
         ];
     }
 }
